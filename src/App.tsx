@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Navigate, Route, Routes, useParams } from 'react-router'
 import { AppSidebar } from '@/components/app-sidebar'
 import { CollectionPage } from '@/components/collection-page'
 import { DetailPage } from '@/components/detail-page'
@@ -6,53 +7,56 @@ import { ExploreSection } from '@/components/explore-section'
 import { HeroPanel } from '@/components/hero-panel'
 import { SearchResultsPage } from '@/components/search-results-page'
 import { TopBar } from '@/components/top-bar'
-import type { CollectionItem } from '@/data/collections'
-import type { ViewId } from '@/data/navigation'
+import { findCollectionItem } from '@/data/collections'
+import type { CollectionCategory } from '@/data/collections'
 import './App.css'
 
-type DetailState = {
-  view: Exclude<ViewId, 'discover' | 'about'>
-  item: CollectionItem
-} | null
+function DiscoverPage() {
+  return (
+    <>
+      <HeroPanel />
+      <ExploreSection />
+    </>
+  )
+}
+
+function RoutedDetailPage({ view }: { view: CollectionCategory }) {
+  const { itemId } = useParams()
+  const item = findCollectionItem(view, itemId)
+
+  if (!item) {
+    return <Navigate to={`/${view}`} replace />
+  }
+
+  return <DetailPage item={item} view={view} />
+}
 
 function App() {
-  const [activeView, setActiveView] = useState<ViewId>('discover')
   const [searchQuery, setSearchQuery] = useState('')
-  const [detailState, setDetailState] = useState<DetailState>(null)
   const hasSearchQuery = searchQuery.trim().length > 0
-  const handleViewChange = (view: ViewId) => {
-    setActiveView(view)
-    setSearchQuery('')
-    setDetailState(null)
-  }
-  const handleSearchChange = (query: string) => {
-    setSearchQuery(query)
-    setDetailState(null)
-  }
 
   return (
     <div className="app-shell">
-      <AppSidebar activeView={activeView} onViewChange={handleViewChange} />
+      <AppSidebar onNavigate={() => setSearchQuery('')} />
 
       <div className="workspace">
-        <TopBar searchQuery={searchQuery} onSearchChange={handleSearchChange} />
+        <TopBar searchQuery={searchQuery} onSearchChange={setSearchQuery} />
 
         <main className="content">
-          {detailState ? (
-            <DetailPage
-              item={detailState.item}
-              view={detailState.view}
-              onBack={() => setDetailState(null)}
-            />
-          ) : hasSearchQuery ? (
-            <SearchResultsPage query={searchQuery} onSelectResult={(view, item) => setDetailState({ view, item })} />
-          ) : activeView === 'discover' ? (
-            <>
-              <HeroPanel />
-              <ExploreSection />
-            </>
+          {hasSearchQuery ? (
+            <SearchResultsPage query={searchQuery} onNavigate={() => setSearchQuery('')} />
           ) : (
-            <CollectionPage view={activeView} onSelectItem={(view, item) => setDetailState({ view, item })} />
+            <Routes>
+              <Route path="/" element={<DiscoverPage />} />
+              <Route path="/works" element={<CollectionPage view="works" />} />
+              <Route path="/works/:itemId" element={<RoutedDetailPage view="works" />} />
+              <Route path="/composers" element={<CollectionPage view="composers" />} />
+              <Route path="/composers/:itemId" element={<RoutedDetailPage view="composers" />} />
+              <Route path="/guides" element={<CollectionPage view="guides" />} />
+              <Route path="/guides/:itemId" element={<RoutedDetailPage view="guides" />} />
+              <Route path="/about" element={<CollectionPage view="about" />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
           )}
         </main>
       </div>

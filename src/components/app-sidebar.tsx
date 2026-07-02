@@ -1,14 +1,12 @@
 import wordmark from '@/assets/sonatina-wordmark.png'
-import type { ViewId } from '@/data/navigation'
 import { aboutItem, navItems } from '@/data/navigation'
 import { SidebarLink } from './sidebar-link'
 
 type AppSidebarProps = {
-  activeView: ViewId
-  onViewChange: (view: ViewId) => void
+  onNavigate: () => void
 }
 
-export function AppSidebar({ activeView, onViewChange }: AppSidebarProps) {
+export function AppSidebar({ onNavigate }: AppSidebarProps) {
   return (
     <aside className="sidebar" aria-label="Primary">
       <div className="brand">
@@ -18,19 +16,17 @@ export function AppSidebar({ activeView, onViewChange }: AppSidebarProps) {
       <nav className="sidebar-group" aria-label="Browse">
         {navItems.map((item) => (
           <SidebarLink
-            active={activeView === item.id}
             item={item}
             key={item.label}
-            onSelect={onViewChange}
+            onNavigate={onNavigate}
           />
         ))}
       </nav>
 
       <div className="sidebar-footer">
         <SidebarLink
-          active={activeView === aboutItem.id}
           item={aboutItem}
-          onSelect={onViewChange}
+          onNavigate={onNavigate}
         />
       </div>
     </aside>

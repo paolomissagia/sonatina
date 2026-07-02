@@ -1,29 +1,26 @@
+import { Link } from 'react-router'
 import { catalogAssets } from '@/data/catalog-assets'
-import type { CollectionItem } from '@/data/collections'
+import type { CollectionCategory, CollectionItem } from '@/data/collections'
 import { collectionPages } from '@/data/collections'
-import type { ViewId } from '@/data/navigation'
-
-type DetailView = Exclude<ViewId, 'discover' | 'about'>
 
 type DetailPageProps = {
   item: CollectionItem
-  view: DetailView
-  onBack: () => void
+  view: CollectionCategory
 }
 
-const detailLabels: Record<DetailView, string> = {
+const detailLabels: Record<CollectionCategory, string> = {
   works: 'About the work',
   composers: 'About the composer',
   guides: 'About this guide',
 }
 
-const tabLabels: Record<DetailView, string[]> = {
+const tabLabels: Record<CollectionCategory, string[]> = {
   works: ['Overview', 'Recordings', 'Details'],
   composers: ['Overview', 'Works', 'Recordings'],
   guides: ['Overview', 'Related works', 'Notes'],
 }
 
-function getTags(view: DetailView, item: CollectionItem) {
+function getTags(view: CollectionCategory, item: CollectionItem) {
   if (view === 'works') {
     return [item.period, item.meta, item.title.includes('Symphony') ? 'Symphony' : 'Work'].filter(Boolean)
   }
@@ -35,15 +32,15 @@ function getTags(view: DetailView, item: CollectionItem) {
   return [item.subtitle, item.meta, 'Guide'].filter(Boolean)
 }
 
-export function DetailPage({ item, onBack, view }: DetailPageProps) {
+export function DetailPage({ item, view }: DetailPageProps) {
   const page = collectionPages[view]
 
   return (
     <article className="detail-page">
       <nav className="detail-breadcrumb" aria-label="Breadcrumb">
-        <button type="button" onClick={onBack}>
+        <Link to={`/${view}`}>
           {page.title}
-        </button>
+        </Link>
         <span>›</span>
         <span>{item.subtitle}</span>
         <span>›</span>

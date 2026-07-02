@@ -1,16 +1,16 @@
+import { Link } from 'react-router'
 import { catalogAssets } from '@/data/catalog-assets'
 import type { CollectionItem } from '@/data/collections'
-import type { ViewId } from '@/data/navigation'
+import type { CollectionCategory } from '@/data/collections'
 
 type CollectionCardProps = {
   item: CollectionItem
-  view: Exclude<ViewId, 'discover' | 'about'>
-  onSelect: (view: Exclude<ViewId, 'discover' | 'about'>, item: CollectionItem) => void
+  view: CollectionCategory
 }
 
-export function CollectionCard({ item, onSelect, view }: CollectionCardProps) {
+export function CollectionCard({ item, view }: CollectionCardProps) {
   return (
-    <button className="collection-card" type="button" onClick={() => onSelect(view, item)}>
+    <Link className="collection-card" to={`/${view}/${item.id}`}>
       <div className="collection-card-image">
         <img src={catalogAssets[item.asset]} alt="" />
       </div>
@@ -21,6 +21,6 @@ export function CollectionCard({ item, onSelect, view }: CollectionCardProps) {
         </div>
         {item.period ? <span>{item.period}</span> : null}
       </div>
-    </button>
+    </Link>
   )
 }

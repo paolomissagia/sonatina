@@ -1,23 +1,27 @@
+import { NavLink } from 'react-router'
 import type { NavItem } from '@/data/navigation'
 
 type SidebarLinkProps = {
   item: NavItem
-  active: boolean
-  onSelect: (id: NavItem['id']) => void
+  onNavigate: () => void
 }
 
-export function SidebarLink({ active, item, onSelect }: SidebarLinkProps) {
+function getPath(id: NavItem['id']) {
+  return id === 'discover' ? '/' : `/${id}`
+}
+
+export function SidebarLink({ item, onNavigate }: SidebarLinkProps) {
   const Icon = item.icon
 
   return (
-    <button
-      aria-current={active ? 'page' : undefined}
-      className={active ? 'sidebar-link active' : 'sidebar-link'}
-      type="button"
-      onClick={() => onSelect(item.id)}
+    <NavLink
+      className={({ isActive }) => (isActive ? 'sidebar-link active' : 'sidebar-link')}
+      end={item.id === 'discover'}
+      to={getPath(item.id)}
+      onClick={onNavigate}
     >
       <Icon size={17} strokeWidth={1.9} />
       <span>{item.label}</span>
-    </button>
+    </NavLink>
   )
 }

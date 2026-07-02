@@ -1,16 +1,14 @@
 import { catalogAssets } from '@/data/catalog-assets'
 import { collectionPages } from '@/data/collections'
-import type { CollectionItem } from '@/data/collections'
 import type { ViewId } from '@/data/navigation'
 import { CollectionCard } from './collection-card'
 import { SectionHeading } from './section-heading'
 
 type CollectionPageProps = {
   view: Exclude<ViewId, 'discover'>
-  onSelectItem: (view: Exclude<ViewId, 'discover' | 'about'>, item: CollectionItem) => void
 }
 
-export function CollectionPage({ onSelectItem, view }: CollectionPageProps) {
+export function CollectionPage({ view }: CollectionPageProps) {
   const page = collectionPages[view]
   const canOpenDetail = view !== 'about'
 
@@ -24,9 +22,9 @@ export function CollectionPage({ onSelectItem, view }: CollectionPageProps) {
       <div className="collection-grid">
         {page.items.map((item) => (
           canOpenDetail ? (
-            <CollectionCard item={item} key={item.title} onSelect={onSelectItem} view={view} />
+            <CollectionCard item={item} key={item.id} view={view} />
           ) : (
-            <article className="collection-card static-card" key={item.title}>
+            <article className="collection-card static-card" key={item.id}>
               <div className="collection-card-image">
                 <img src={catalogAssets[item.asset]} alt="" />
               </div>

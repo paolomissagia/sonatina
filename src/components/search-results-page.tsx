@@ -1,19 +1,19 @@
 import { catalogAssets } from '@/data/catalog-assets'
 import { useState } from 'react'
+import { Link } from 'react-router'
 import { collectionPages, type CollectionItem } from '@/data/collections'
-import type { ViewId } from '@/data/navigation'
+import type { CollectionCategory } from '@/data/collections'
 import { SectionHeading } from './section-heading'
 
-type SearchCategory = Exclude<ViewId, 'discover' | 'about'>
 type SearchResult = CollectionItem & {
-  category: SearchCategory
+  category: CollectionCategory
 }
 
-const categoryOrder: SearchCategory[] = ['works', 'composers', 'guides']
+const categoryOrder: CollectionCategory[] = ['works', 'composers', 'guides']
 
 type SearchResultsPageProps = {
   query: string
-  onSelectResult: (view: SearchCategory, item: CollectionItem) => void
+  onNavigate: () => void
 }
 
 const searchableItems: SearchResult[] = categoryOrder.flatMap((category) =>
@@ -41,14 +41,14 @@ function matchesQuery(result: SearchResult, query: string) {
 }
 
 function SearchResultRow({
-  onSelectResult,
+  onNavigate,
   result,
 }: {
   result: SearchResult
-  onSelectResult: (view: SearchCategory, item: CollectionItem) => void
+  onNavigate: () => void
 }) {
   return (
-    <button className="search-result-row" type="button" onClick={() => onSelectResult(result.category, result)}>
+    <Link className="search-result-row" to={`/${result.category}/${result.id}`} onClick={onNavigate}>
       <div className="search-result-image">
         <img src={catalogAssets[result.asset]} alt="" />
       </div>
@@ -61,12 +61,12 @@ function SearchResultRow({
         {result.meta ? <strong>{result.meta}</strong> : null}
       </div>
       <span className="search-result-arrow">›</span>
-    </button>
+    </Link>
   )
 }
 
-export function SearchResultsPage({ onSelectResult, query }: SearchResultsPageProps) {
-  const [activeCategory, setActiveCategory] = useState<SearchCategory | 'all'>('all')
+export function SearchResultsPage({ onNavigate, query }: SearchResultsPageProps) {
+  const [activeCategory, setActiveCategory] = useState<CollectionCategory | 'all'>('all')
   const trimmedQuery = query.trim()
   const results = searchableItems.filter((result) => matchesQuery(result, trimmedQuery))
   const groupedResults = categoryOrder.map((category) => ({
@@ -115,15 +115,17 @@ export function SearchResultsPage({ onSelectResult, query }: SearchResultsPagePr
               <div className="search-result-section-heading">
                 <h3>{collectionPages[category].title}</h3>
                 {categoryResults.length > 2 ? (
-                  <button type="button">View all ({categoryResults.length})</button>
+                  <button type="button" onClick={() => setActiveCategory(category)}>
+                    View all ({categoryResults.length})
+                  </button>
                 ) : null}
               </div>
               <div className="search-result-list">
                 {categoryResults.slice(0, 3).map((result) => (
                   <SearchResultRow
-                    onSelectResult={onSelectResult}
+                    onNavigate={onNavigate}
                     result={result}
-                    key={`${result.category}-${result.title}`}
+                    key={`${result.category}-${result.id}`}
                   />
                 ))}
               </div>

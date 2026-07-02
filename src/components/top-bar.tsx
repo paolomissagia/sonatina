@@ -14,7 +14,7 @@ export function TopBar({ searchQuery, onSearchChange }: TopBarProps) {
       <label className="search-field">
         <Search size={18} />
         <input
-          placeholder="Search works, composers, recordings..."
+          placeholder="Search works, composers, guides..."
           value={searchQuery}
           onChange={(event) => onSearchChange(event.target.value)}
         />
