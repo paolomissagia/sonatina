@@ -35,8 +35,8 @@ export function CollectionPage({ onSelectItem, view }: CollectionPageProps) {
                   <h3>{item.title}</h3>
                   <p>{item.subtitle}</p>
                 </div>
+                {item.period ? <span>{item.period}</span> : null}
               </div>
-              <p>{item.detail}</p>
             </article>
           )
         ))}

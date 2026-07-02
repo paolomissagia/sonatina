@@ -7,6 +7,7 @@ export type CollectionItem = {
   detail: string
   asset: CatalogAssetKey
   meta?: string
+  period?: string
 }
 
 export type CollectionPageData = {
@@ -26,6 +27,7 @@ export const collectionPages: Record<Exclude<ViewId, 'discover'>, CollectionPage
         detail: 'A defining symphonic statement in four movements.',
         asset: 'symphony',
         meta: '1808',
+        period: 'Classical / Romantic',
       },
       {
         title: 'The Four Seasons',
@@ -33,6 +35,7 @@ export const collectionPages: Record<Exclude<ViewId, 'discover'>, CollectionPage
         detail: 'Four violin concertos with vivid seasonal character.',
         asset: 'violinConcerto',
         meta: '1725',
+        period: 'Baroque',
       },
       {
         title: 'Requiem',
@@ -40,6 +43,7 @@ export const collectionPages: Record<Exclude<ViewId, 'discover'>, CollectionPage
         detail: 'A dramatic sacred work left unfinished at Mozart’s death.',
         asset: 'chamberSonata',
         meta: '1791',
+        period: 'Classical',
       },
       {
         title: 'Cello Suite No. 1',
@@ -47,6 +51,7 @@ export const collectionPages: Record<Exclude<ViewId, 'discover'>, CollectionPage
         detail: 'A foundational work for solo cello.',
         asset: 'chamberSonata',
         meta: 'c. 1720',
+        period: 'Baroque',
       },
       {
         title: 'Clair de lune',
@@ -54,6 +59,7 @@ export const collectionPages: Record<Exclude<ViewId, 'discover'>, CollectionPage
         detail: 'A luminous piano miniature from Suite bergamasque.',
         asset: 'pianoConcerto',
         meta: '1905',
+        period: 'Impressionist',
       },
       {
         title: 'Symphony No. 9',
@@ -61,6 +67,7 @@ export const collectionPages: Record<Exclude<ViewId, 'discover'>, CollectionPage
         detail: 'The New World symphony, expansive and lyrical.',
         asset: 'symphony',
         meta: '1893',
+        period: 'Romantic',
       },
     ],
   },

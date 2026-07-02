@@ -25,7 +25,7 @@ const tabLabels: Record<DetailView, string[]> = {
 
 function getTags(view: DetailView, item: CollectionItem) {
   if (view === 'works') {
-    return [item.subtitle, item.meta, item.title.includes('Symphony') ? 'Symphony' : 'Work'].filter(Boolean)
+    return [item.period, item.meta, item.title.includes('Symphony') ? 'Symphony' : 'Work'].filter(Boolean)
   }
 
   if (view === 'composers') {

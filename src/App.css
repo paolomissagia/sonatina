@@ -375,8 +375,7 @@ button.collection-card:focus-visible,
   letter-spacing: -0.025em;
 }
 
-.collection-card-copy p,
-.collection-card > p {
+.collection-card-copy p {
   margin: 0;
   color: rgb(103 95 84);
   line-height: 1.4;
@@ -387,10 +386,6 @@ button.collection-card:focus-visible,
   color: rgb(130 94 48);
   font-size: 13px;
   font-weight: 750;
-}
-
-.collection-card > p {
-  margin-top: 12px;
 }
 
 .search-page {

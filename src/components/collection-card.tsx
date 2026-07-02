@@ -19,9 +19,8 @@ export function CollectionCard({ item, onSelect, view }: CollectionCardProps) {
           <h3>{item.title}</h3>
           <p>{item.subtitle}</p>
         </div>
-        {item.meta ? <span>{item.meta}</span> : null}
+        {item.period ? <span>{item.period}</span> : null}
       </div>
-      <p>{item.detail}</p>
     </button>
   )
 }
