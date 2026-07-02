@@ -1,121 +1,129 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import {
+  BookOpen,
+  Home,
+  Info,
+  Menu,
+  Music2,
+  Newspaper,
+  Search,
+  UserRound,
+  UsersRound,
+} from 'lucide-react'
+import heroArtwork from './assets/classical-dashboard-hero.png'
+import wordmark from './assets/sonatina-wordmark.png'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+const navItems = [
+  { label: 'Discover', icon: Home, active: true },
+  { label: 'Works', icon: Music2 },
+  { label: 'Composers', icon: UserRound },
+  { label: 'Conductors', icon: UsersRound },
+  { label: 'Guides', icon: BookOpen },
+  { label: 'Articles', icon: Newspaper },
+]
+
+const exploreItems = [
+  {
+    title: 'Featured Works',
+    description: 'Handpicked masterpieces',
+    position: '20% 50%',
+  },
+  {
+    title: 'Top Recordings',
+    description: 'Highly rated by the community',
+    position: '48% 50%',
+  },
+  {
+    title: 'New Releases',
+    description: 'The latest recordings',
+    position: '72% 50%',
+  },
+  {
+    title: 'Composer Spotlight',
+    description: 'Discover great composers',
+    position: '88% 50%',
+  },
+]
+
+function SidebarLink({
+  item,
+}: {
+  item: { label: string; icon: typeof Home; active?: boolean }
+}) {
+  const Icon = item.icon
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <button className={item.active ? 'sidebar-link active' : 'sidebar-link'} type="button">
+      <Icon size={17} strokeWidth={1.9} />
+      <span>{item.label}</span>
+    </button>
+  )
+}
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+function App() {
+  return (
+    <div className="app-shell">
+      <aside className="sidebar" aria-label="Primary">
+        <div className="brand">
+          <img src={wordmark} alt="Sonatina" />
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+        <nav className="sidebar-group" aria-label="Browse">
+          {navItems.map((item) => (
+            <SidebarLink item={item} key={item.label} />
+          ))}
+        </nav>
+        <div className="sidebar-footer">
+          <SidebarLink item={{ label: 'About', icon: Info }} />
+        </div>
+      </aside>
+
+      <div className="workspace">
+        <header className="topbar">
+          <button className="icon-button mobile-menu" type="button" aria-label="Open menu">
+            <Menu size={19} />
+          </button>
+          <label className="search-field">
+            <Search size={18} />
+            <input placeholder="Search works, composers, recordings..." />
+          </label>
+        </header>
+
+        <main className="content">
+          <section className="hero-panel">
+            <img src={heroArtwork} alt="" />
+            <div className="hero-copy">
+              <h1>
+                Discover
+                <span>the world of</span>
+                <em>classical music.</em>
+              </h1>
+              <p>Explore works, recordings and more.</p>
+              <button type="button">Start exploring</button>
+            </div>
+          </section>
+
+          <section className="content-section">
+            <div className="section-heading">
+              <h2>Explore</h2>
+              <button type="button">View all</button>
+            </div>
+            <div className="explore-grid">
+              {exploreItems.map((item) => (
+                <article className="explore-card" key={item.title}>
+                  <div className="image-tile" style={{ objectPosition: item.position }}>
+                    <img src={heroArtwork} alt="" />
+                  </div>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+
+        </main>
+      </div>
+    </div>
   )
 }
 
