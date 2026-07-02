@@ -1,6 +1,11 @@
 import { Menu, Search } from 'lucide-react'
 
-export function TopBar() {
+type TopBarProps = {
+  searchQuery: string
+  onSearchChange: (value: string) => void
+}
+
+export function TopBar({ searchQuery, onSearchChange }: TopBarProps) {
   return (
     <header className="topbar">
       <button className="icon-button mobile-menu" type="button" aria-label="Open menu">
@@ -8,7 +13,11 @@ export function TopBar() {
       </button>
       <label className="search-field">
         <Search size={18} />
-        <input placeholder="Search works, composers, recordings..." />
+        <input
+          placeholder="Search works, composers, recordings..."
+          value={searchQuery}
+          onChange={(event) => onSearchChange(event.target.value)}
+        />
       </label>
     </header>
   )

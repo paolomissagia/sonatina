@@ -5,16 +5,29 @@ import {
   Music2,
   Newspaper,
   UserRound,
-  UsersRound,
 } from 'lucide-react'
+import type { LucideIcon } from 'lucide-react'
 
-export const navItems = [
-  { label: 'Discover', icon: Home, active: true },
-  { label: 'Works', icon: Music2 },
-  { label: 'Composers', icon: UserRound },
-  { label: 'Conductors', icon: UsersRound },
-  { label: 'Guides', icon: BookOpen },
-  { label: 'Articles', icon: Newspaper },
+export type ViewId =
+  | 'discover'
+  | 'works'
+  | 'composers'
+  | 'guides'
+  | 'articles'
+  | 'about'
+
+export type NavItem = {
+  id: ViewId
+  label: string
+  icon: LucideIcon
+}
+
+export const navItems: NavItem[] = [
+  { id: 'discover', label: 'Discover', icon: Home },
+  { id: 'works', label: 'Works', icon: Music2 },
+  { id: 'composers', label: 'Composers', icon: UserRound },
+  { id: 'guides', label: 'Guides', icon: BookOpen },
+  { id: 'articles', label: 'Articles', icon: Newspaper },
 ]
 
-export const aboutItem = { label: 'About', icon: Info }
+export const aboutItem: NavItem = { id: 'about', label: 'About', icon: Info }
