@@ -1,0 +1,7 @@
+services:
+  app:
+    container_name: sonatina
+    image: sonatina
+    build: .
+    ports:
+      - "4173:4173"

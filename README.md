@@ -2,6 +2,23 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+## Docker
+
+Build and run the app with Docker:
+
+```sh
+docker build -t sonatina .
+docker run --rm -p 4173:4173 sonatina
+```
+
+Then open http://localhost:4173.
+
+Or use Docker Compose:
+
+```sh
+docker compose up --build
+```
+
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
