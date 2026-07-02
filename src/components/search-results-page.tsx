@@ -1,17 +1,19 @@
 import { catalogAssets } from '@/data/catalog-assets'
+import { useState } from 'react'
 import { collectionPages, type CollectionItem } from '@/data/collections'
 import type { ViewId } from '@/data/navigation'
 import { SectionHeading } from './section-heading'
 
-type SearchCategory = Exclude<ViewId, 'discover'>
+type SearchCategory = Exclude<ViewId, 'discover' | 'about'>
 type SearchResult = CollectionItem & {
   category: SearchCategory
 }
 
-const categoryOrder: SearchCategory[] = ['works', 'composers', 'guides', 'articles', 'about']
+const categoryOrder: SearchCategory[] = ['works', 'composers', 'guides']
 
 type SearchResultsPageProps = {
   query: string
+  onSelectResult: (view: SearchCategory, item: CollectionItem) => void
 }
 
 const searchableItems: SearchResult[] = categoryOrder.flatMap((category) =>
@@ -38,9 +40,15 @@ function matchesQuery(result: SearchResult, query: string) {
   return terms.every((term) => haystack.includes(term))
 }
 
-function SearchResultRow({ result }: { result: SearchResult }) {
+function SearchResultRow({
+  onSelectResult,
+  result,
+}: {
+  result: SearchResult
+  onSelectResult: (view: SearchCategory, item: CollectionItem) => void
+}) {
   return (
-    <article className="search-result-row">
+    <button className="search-result-row" type="button" onClick={() => onSelectResult(result.category, result)}>
       <div className="search-result-image">
         <img src={catalogAssets[result.asset]} alt="" />
       </div>
@@ -53,17 +61,22 @@ function SearchResultRow({ result }: { result: SearchResult }) {
         {result.meta ? <strong>{result.meta}</strong> : null}
       </div>
       <span className="search-result-arrow">›</span>
-    </article>
+    </button>
   )
 }
 
-export function SearchResultsPage({ query }: SearchResultsPageProps) {
+export function SearchResultsPage({ onSelectResult, query }: SearchResultsPageProps) {
+  const [activeCategory, setActiveCategory] = useState<SearchCategory | 'all'>('all')
   const trimmedQuery = query.trim()
   const results = searchableItems.filter((result) => matchesQuery(result, trimmedQuery))
   const groupedResults = categoryOrder.map((category) => ({
     category,
     results: results.filter((result) => result.category === category),
   }))
+  const visibleGroups =
+    activeCategory === 'all'
+      ? groupedResults
+      : groupedResults.filter((group) => group.category === activeCategory)
   const totalResults = results.length
 
   return (
@@ -71,11 +84,20 @@ export function SearchResultsPage({ query }: SearchResultsPageProps) {
       <SectionHeading title={`Search results for "${trimmedQuery}"`} />
 
       <div className="search-tabs" aria-label="Search result categories">
-        <button className="active" type="button">
+        <button
+          className={activeCategory === 'all' ? 'active' : undefined}
+          type="button"
+          onClick={() => setActiveCategory('all')}
+        >
           All ({totalResults})
         </button>
         {groupedResults.map(({ category, results: categoryResults }) => (
-          <button type="button" key={category}>
+          <button
+            className={activeCategory === category ? 'active' : undefined}
+            type="button"
+            key={category}
+            onClick={() => setActiveCategory(category)}
+          >
             {collectionPages[category].title} ({categoryResults.length})
           </button>
         ))}
@@ -84,10 +106,10 @@ export function SearchResultsPage({ query }: SearchResultsPageProps) {
       {totalResults === 0 ? (
         <div className="empty-results">
           <h3>No results found</h3>
-          <p>Try searching for a composer, work, guide, or article.</p>
+          <p>Try searching for a composer, work, or guide.</p>
         </div>
       ) : (
-        groupedResults.map(({ category, results: categoryResults }) =>
+        visibleGroups.map(({ category, results: categoryResults }) =>
           categoryResults.length > 0 ? (
             <section className="search-result-section" key={category}>
               <div className="search-result-section-heading">
@@ -98,7 +120,11 @@ export function SearchResultsPage({ query }: SearchResultsPageProps) {
               </div>
               <div className="search-result-list">
                 {categoryResults.slice(0, 3).map((result) => (
-                  <SearchResultRow result={result} key={`${result.category}-${result.title}`} />
+                  <SearchResultRow
+                    onSelectResult={onSelectResult}
+                    result={result}
+                    key={`${result.category}-${result.title}`}
+                  />
                 ))}
               </div>
             </section>

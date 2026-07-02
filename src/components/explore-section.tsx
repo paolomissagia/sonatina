@@ -5,7 +5,7 @@ import { SectionHeading } from './section-heading'
 export function ExploreSection() {
   return (
     <section className="content-section">
-      <SectionHeading title="Explore" actionLabel="View all" />
+      <SectionHeading title="Explore" />
       <div className="explore-grid">
         {exploreItems.map((item) => (
           <ExploreCard item={item} key={item.title} />

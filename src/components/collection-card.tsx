@@ -1,13 +1,16 @@
 import { catalogAssets } from '@/data/catalog-assets'
 import type { CollectionItem } from '@/data/collections'
+import type { ViewId } from '@/data/navigation'
 
 type CollectionCardProps = {
   item: CollectionItem
+  view: Exclude<ViewId, 'discover' | 'about'>
+  onSelect: (view: Exclude<ViewId, 'discover' | 'about'>, item: CollectionItem) => void
 }
 
-export function CollectionCard({ item }: CollectionCardProps) {
+export function CollectionCard({ item, onSelect, view }: CollectionCardProps) {
   return (
-    <article className="collection-card">
+    <button className="collection-card" type="button" onClick={() => onSelect(view, item)}>
       <div className="collection-card-image">
         <img src={catalogAssets[item.asset]} alt="" />
       </div>
@@ -19,6 +22,6 @@ export function CollectionCard({ item }: CollectionCardProps) {
         {item.meta ? <span>{item.meta}</span> : null}
       </div>
       <p>{item.detail}</p>
-    </article>
+    </button>
   )
 }

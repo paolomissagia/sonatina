@@ -86,7 +86,7 @@ export const collectionPages: Record<Exclude<ViewId, 'discover'>, CollectionPage
         title: 'Ludwig van Beethoven',
         subtitle: 'Classical / Romantic',
         detail: 'Symphonic drama, piano sonatas, quartets, and concertos.',
-        asset: 'composerRomantic',
+        asset: 'composerBeethoven',
         meta: '1770-1827',
       },
       {
@@ -100,14 +100,14 @@ export const collectionPages: Record<Exclude<ViewId, 'discover'>, CollectionPage
         title: 'Claude Debussy',
         subtitle: 'Modern',
         detail: 'Color, atmosphere, and harmonic ambiguity.',
-        asset: 'composerModern',
+        asset: 'composerDebussy',
         meta: '1862-1918',
       },
       {
         title: 'Igor Stravinsky',
         subtitle: 'Modern',
         detail: 'Rhythmic force, ballet, neoclassicism, and reinvention.',
-        asset: 'composerModern',
+        asset: 'composerStravinsky',
         meta: '1882-1971',
       },
     ],
@@ -139,40 +139,6 @@ export const collectionPages: Record<Exclude<ViewId, 'discover'>, CollectionPage
       },
     ],
   },
-  articles: {
-    title: 'Articles',
-    description: 'News, essays, and context from the classical music world.',
-    items: [
-      {
-        title: 'New Mahler cycle announced for autumn',
-        subtitle: 'News',
-        detail: 'A major European orchestra plans a complete symphony cycle.',
-        asset: 'symphony',
-        meta: 'Today',
-      },
-      {
-        title: 'How labels are restoring historic recordings',
-        subtitle: 'Feature',
-        detail: 'Inside the remastering work behind archival releases.',
-        asset: 'pianoConcerto',
-        meta: 'Yesterday',
-      },
-      {
-        title: 'Young quartets reshaping the recital circuit',
-        subtitle: 'Essay',
-        detail: 'New ensembles are bringing fresh programming to chamber stages.',
-        asset: 'chamberSonata',
-        meta: 'Jul 1',
-      },
-      {
-        title: 'Festival season puts early music in focus',
-        subtitle: 'News',
-        detail: 'Historically informed performance takes a larger summer spotlight.',
-        asset: 'violinConcerto',
-        meta: 'Jun 30',
-      },
-    ],
-  },
   about: {
     title: 'About Sonatina',
     description: 'A focused workspace for discovering classical works, people, and context.',
@@ -180,7 +146,7 @@ export const collectionPages: Record<Exclude<ViewId, 'discover'>, CollectionPage
       {
         title: 'Built for listening with context',
         subtitle: 'Product note',
-        detail: 'Sonatina connects repertoire, composers, performers, guides, and articles in one calm interface.',
+        detail: 'Sonatina connects repertoire, composers, guides, and listening context in one calm interface.',
         asset: 'heroArtwork',
       },
       {
