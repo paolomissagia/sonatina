@@ -4,20 +4,13 @@ This template provides a minimal setup to get React working in Vite with HMR and
 
 ## Docker
 
-Build and run the app with Docker:
-
-```sh
-docker build -t sonatina .
-docker run --rm -p 4173:4173 sonatina
-```
-
-Then open http://localhost:4173.
-
-Or use Docker Compose:
+Run the development server with Docker Compose:
 
 ```sh
 docker compose up --build
 ```
+
+Then open http://localhost:5173. Source changes are mounted into the container and served by Vite's dev server.
 
 Currently, two official plugins are available:
 

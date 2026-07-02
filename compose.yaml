@@ -3,5 +3,10 @@ services:
     container_name: sonatina
     image: sonatina
     build: .
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
     ports:
-      - "4173:4173"
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
