@@ -4,22 +4,12 @@ import { AboutPage } from '@/components/about-page'
 import { AppSidebar } from '@/components/app-sidebar'
 import { CollectionPage } from '@/components/collection-page'
 import { DetailPage } from '@/components/detail-page'
-import { ExploreSection } from '@/components/explore-section'
-import { HeroPanel } from '@/components/hero-panel'
+import { HomePage } from '@/components/home-page'
 import { SearchResultsPage } from '@/components/search-results-page'
 import { TopBar } from '@/components/top-bar'
 import { findCollectionItem } from '@/data/collections'
 import type { CollectionCategory } from '@/data/collections'
 import './App.css'
-
-function DiscoverPage() {
-  return (
-    <>
-      <HeroPanel />
-      <ExploreSection />
-    </>
-  )
-}
 
 function RoutedDetailPage({ view }: { view: CollectionCategory }) {
   const { id } = useParams()
@@ -70,7 +60,7 @@ function App() {
             <SearchResultsPage query={searchQuery} onNavigate={handleNavigate} />
           ) : (
             <Routes>
-              <Route path="/" element={<DiscoverPage />} />
+              <Route path="/" element={<HomePage />} />
               <Route path="/works" element={<CollectionPage view="works" />} />
               <Route path="/works/:id" element={<RoutedDetailPage view="works" />} />
               <Route path="/composers" element={<CollectionPage view="composers" />} />
