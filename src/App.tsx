@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Navigate, Route, Routes, useParams } from 'react-router'
+import { AboutPage } from '@/components/about-page'
 import { AppSidebar } from '@/components/app-sidebar'
 import { CollectionPage } from '@/components/collection-page'
 import { DetailPage } from '@/components/detail-page'
@@ -54,7 +55,7 @@ function App() {
               <Route path="/composers/:id" element={<RoutedDetailPage view="composers" />} />
               <Route path="/guides" element={<CollectionPage view="guides" />} />
               <Route path="/guides/:id" element={<RoutedDetailPage view="guides" />} />
-              <Route path="/about" element={<CollectionPage view="about" />} />
+              <Route path="/about" element={<AboutPage />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           )}

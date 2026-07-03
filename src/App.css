@@ -304,6 +304,50 @@ button {
   padding-top: 6px;
 }
 
+.about-page {
+  max-width: 780px;
+  padding-top: 6px;
+}
+
+.about-intro {
+  margin-bottom: 42px;
+}
+
+.about-intro .section-heading {
+  margin-bottom: 12px;
+}
+
+.about-intro p {
+  margin: 0;
+  color: rgb(53 47 41);
+  font-size: 22px;
+  line-height: 1.55;
+}
+
+.about-body {
+  display: grid;
+  gap: 28px;
+}
+
+.about-body section {
+  padding-top: 24px;
+  border-top: 1px solid rgb(226 221 211);
+}
+
+.about-body h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.about-body p {
+  margin: 0;
+  color: rgb(94 85 75);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
 .page-intro {
   max-width: 700px;
   margin-bottom: 28px;
