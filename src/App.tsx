@@ -8,9 +8,11 @@ import { DetailPage } from '@/components/detail-page'
 import { HomePage } from '@/components/home-page'
 import { SearchPage } from '@/components/search-page'
 import { TopBar } from '@/components/top-bar'
+import { WorkDetailPage } from '@/components/work-detail-page'
 import { findCatalogItem } from '@/data/catalog'
 import { findComposer } from '@/data/composers'
 import type { CatalogSection } from '@/data/models'
+import { findWork } from '@/data/works'
 import './App.css'
 
 function RoutedDetailPage({ view }: { view: CatalogSection }) {
@@ -33,6 +35,17 @@ function RoutedComposerDetailPage() {
   }
 
   return <ComposerDetailPage composer={composer} />
+}
+
+function RoutedWorkDetailPage() {
+  const { id } = useParams()
+  const work = findWork(id)
+
+  if (!work) {
+    return <Navigate to="/works" replace />
+  }
+
+  return <WorkDetailPage work={work} />
 }
 
 function App() {
@@ -67,7 +80,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/works" element={<CollectionPage view="works" />} />
-            <Route path="/works/:id" element={<RoutedDetailPage view="works" />} />
+            <Route path="/works/:id" element={<RoutedWorkDetailPage />} />
             <Route path="/composers" element={<CollectionPage view="composers" />} />
             <Route path="/composers/:id" element={<RoutedComposerDetailPage />} />
             <Route path="/guides" element={<CollectionPage view="guides" />} />

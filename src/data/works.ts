@@ -10,6 +10,16 @@ export const works: Work[] = [
     asset: 'symphony',
     year: '1808',
     period: 'Classical / Romantic',
+    duration: '50 min',
+    form: 'Symphony',
+    overview:
+      'Beethoven’s Fifth Symphony is one of the most recognisable works ever written. Its famous four-note opening became a symbol of determination and triumph, but the symphony’s real power lies in how that simple idea evolves into an extraordinary journey.',
+    movements: [
+      { number: 'I.', title: 'Allegro con brio', character: 'Intensity' },
+      { number: 'II.', title: 'Andante con moto', character: 'Resolve' },
+      { number: 'III.', title: 'Scherzo. Allegro', character: 'Energy' },
+      { number: 'IV.', title: 'Allegro', character: 'Triumph' },
+    ],
   },
   {
     id: '2',
@@ -20,6 +30,16 @@ export const works: Work[] = [
     asset: 'violinConcerto',
     year: '1725',
     period: 'Baroque',
+    duration: '42 min',
+    form: 'Concerto',
+    overview:
+      'Vivaldi’s four concertos turn the seasons into vivid musical scenes, from birdsong and summer storms to harvest dances and winter cold.',
+    movements: [
+      { number: 'I.', title: 'Spring', character: 'Brightness' },
+      { number: 'II.', title: 'Summer', character: 'Heat' },
+      { number: 'III.', title: 'Autumn', character: 'Celebration' },
+      { number: 'IV.', title: 'Winter', character: 'Chill' },
+    ],
   },
   {
     id: '3',
@@ -30,6 +50,16 @@ export const works: Work[] = [
     asset: 'chamberSonata',
     year: '1791',
     period: 'Classical',
+    duration: '55 min',
+    form: 'Sacred work',
+    overview:
+      'Mozart’s Requiem blends ceremony, grief, and theatrical urgency in a sacred work whose unfinished state has become part of its legend.',
+    movements: [
+      { number: 'I.', title: 'Introitus', character: 'Mystery' },
+      { number: 'II.', title: 'Kyrie', character: 'Drive' },
+      { number: 'III.', title: 'Dies irae', character: 'Drama' },
+      { number: 'IV.', title: 'Lacrimosa', character: 'Grief' },
+    ],
   },
   {
     id: '4',
@@ -40,6 +70,16 @@ export const works: Work[] = [
     asset: 'chamberSonata',
     year: 'c. 1720',
     period: 'Baroque',
+    duration: '18 min',
+    form: 'Suite',
+    overview:
+      'The first cello suite unfolds with clarity and poise, turning a single instrument into a complete world of dance, line, and resonance.',
+    movements: [
+      { number: 'I.', title: 'Prelude', character: 'Flow' },
+      { number: 'II.', title: 'Allemande', character: 'Grace' },
+      { number: 'III.', title: 'Courante', character: 'Motion' },
+      { number: 'IV.', title: 'Gigue', character: 'Lift' },
+    ],
   },
   {
     id: '5',
@@ -50,6 +90,15 @@ export const works: Work[] = [
     asset: 'pianoConcerto',
     year: '1905',
     period: 'Impressionist',
+    duration: '5 min',
+    form: 'Piano miniature',
+    overview:
+      'Clair de lune captures moonlit stillness through floating harmony, soft melodic curves, and a sense of suspended time.',
+    movements: [
+      { number: 'I.', title: 'Andante tres expressif', character: 'Glow' },
+      { number: 'II.', title: 'Middle section', character: 'Motion' },
+      { number: 'III.', title: 'Return', character: 'Calm' },
+    ],
   },
   {
     id: '6',
@@ -60,6 +109,16 @@ export const works: Work[] = [
     asset: 'symphony',
     year: '1893',
     period: 'Romantic',
+    duration: '40 min',
+    form: 'Symphony',
+    overview:
+      'Dvorak’s New World Symphony combines sweeping Romantic form with melodic impressions of America, nostalgia, and distance.',
+    movements: [
+      { number: 'I.', title: 'Adagio. Allegro molto', character: 'Arrival' },
+      { number: 'II.', title: 'Largo', character: 'Longing' },
+      { number: 'III.', title: 'Scherzo', character: 'Dance' },
+      { number: 'IV.', title: 'Allegro con fuoco', character: 'Fire' },
+    ],
   },
   {
     id: '7',
@@ -70,6 +129,15 @@ export const works: Work[] = [
     asset: 'pianoConcerto',
     year: '1801',
     period: 'Classical / Romantic',
+    duration: '15 min',
+    form: 'Sonata',
+    overview:
+      'The Moonlight Sonata begins in intimate shadow before moving toward restless energy and a stormy finale.',
+    movements: [
+      { number: 'I.', title: 'Adagio sostenuto', character: 'Stillness' },
+      { number: 'II.', title: 'Allegretto', character: 'Grace' },
+      { number: 'III.', title: 'Presto agitato', character: 'Storm' },
+    ],
   },
   {
     id: '8',
@@ -80,6 +148,15 @@ export const works: Work[] = [
     asset: 'operaCurtain',
     year: '1805',
     period: 'Classical / Romantic',
+    duration: '2 h 20 min',
+    form: 'Opera',
+    overview:
+      'Fidelio is Beethoven’s only opera, a drama of courage, loyalty, and liberation built around the rescue of a political prisoner.',
+    movements: [
+      { number: 'I.', title: 'Overture', character: 'Resolve' },
+      { number: 'II.', title: 'Act I', character: 'Tension' },
+      { number: 'III.', title: 'Act II', character: 'Liberation' },
+    ],
   },
   {
     id: '9',
@@ -90,6 +167,16 @@ export const works: Work[] = [
     asset: 'pianoKeys',
     year: '1741',
     period: 'Baroque',
+    duration: '75 min',
+    form: 'Variations',
+    overview:
+      'The Goldberg Variations transform a graceful aria into a vast architecture of invention, virtuosity, and quiet reflection.',
+    movements: [
+      { number: 'I.', title: 'Aria', character: 'Poise' },
+      { number: 'II.', title: 'Canons', character: 'Design' },
+      { number: 'III.', title: 'Virtuoso variations', character: 'Brilliance' },
+      { number: 'IV.', title: 'Aria da capo', character: 'Return' },
+    ],
   },
   {
     id: '10',
@@ -100,6 +187,16 @@ export const works: Work[] = [
     asset: 'chamberMusicCategory',
     year: '1721',
     period: 'Baroque',
+    duration: '1 h 40 min',
+    form: 'Concertos',
+    overview:
+      'The Brandenburg Concertos show Bach’s imagination for instrumental color, pairing different solo groups with brilliant rhythmic life.',
+    movements: [
+      { number: 'I.', title: 'Concerto No. 1', character: 'Ceremony' },
+      { number: 'II.', title: 'Concerto No. 2', character: 'Brilliance' },
+      { number: 'III.', title: 'Concerto No. 3', character: 'Energy' },
+      { number: 'IV.', title: 'Concerto No. 5', character: 'Virtuosity' },
+    ],
   },
   {
     id: '11',
@@ -110,6 +207,16 @@ export const works: Work[] = [
     asset: 'chamberMusicCategory',
     year: '1787',
     period: 'Classical',
+    duration: '20 min',
+    form: 'Serenade',
+    overview:
+      'Eine kleine Nachtmusik is Mozart at his most direct and graceful, a compact serenade full of balance, charm, and memorable melody.',
+    movements: [
+      { number: 'I.', title: 'Allegro', character: 'Spark' },
+      { number: 'II.', title: 'Romanze', character: 'Elegance' },
+      { number: 'III.', title: 'Menuetto', character: 'Poise' },
+      { number: 'IV.', title: 'Rondo', character: 'Delight' },
+    ],
   },
   {
     id: '12',
@@ -120,5 +227,22 @@ export const works: Work[] = [
     asset: 'symphonyOrchestra',
     year: '1913',
     period: 'Modern',
+    duration: '35 min',
+    form: 'Ballet',
+    overview:
+      'The Rite of Spring changed twentieth-century music with raw rhythm, sharp orchestral color, and a ritual energy that still feels startling.',
+    movements: [
+      { number: 'I.', title: 'Adoration of the Earth', character: 'Ritual' },
+      { number: 'II.', title: 'Augurs of Spring', character: 'Force' },
+      { number: 'III.', title: 'Sacrificial Dance', character: 'Frenzy' },
+    ],
   },
 ]
+
+export function findWork(id: string | undefined) {
+  if (!id) {
+    return undefined
+  }
+
+  return works.find((work) => work.id === id)
+}

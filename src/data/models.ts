@@ -11,6 +11,16 @@ export type Work = {
   asset: CatalogAssetKey
   year: string
   period: string
+  duration: string
+  form: string
+  overview: string
+  movements: WorkMovement[]
+}
+
+export type WorkMovement = {
+  number: string
+  title: string
+  character: string
 }
 
 export type Composer = {
