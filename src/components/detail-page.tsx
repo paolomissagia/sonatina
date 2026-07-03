@@ -26,7 +26,7 @@ function getTags(view: CollectionCategory, item: CollectionItem) {
   }
 
   if (view === 'composers') {
-    return [item.subtitle, item.meta, 'Composer'].filter(Boolean)
+    return [item.meta, 'Composer'].filter(Boolean)
   }
 
   return [item.subtitle, item.meta, 'Guide'].filter(Boolean)

@@ -19,7 +19,6 @@ export function CollectionCard({ item, view }: CollectionCardProps) {
           <h3>{item.title}</h3>
           <p>{item.subtitle}</p>
         </div>
-        {item.period ? <span>{item.period}</span> : null}
       </div>
     </Link>
   )

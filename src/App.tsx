@@ -21,8 +21,8 @@ function DiscoverPage() {
 }
 
 function RoutedDetailPage({ view }: { view: CollectionCategory }) {
-  const { itemId } = useParams()
-  const item = findCollectionItem(view, itemId)
+  const { id } = useParams()
+  const item = findCollectionItem(view, id)
 
   if (!item) {
     return <Navigate to={`/${view}`} replace />
@@ -49,11 +49,11 @@ function App() {
             <Routes>
               <Route path="/" element={<DiscoverPage />} />
               <Route path="/works" element={<CollectionPage view="works" />} />
-              <Route path="/works/:itemId" element={<RoutedDetailPage view="works" />} />
+              <Route path="/works/:id" element={<RoutedDetailPage view="works" />} />
               <Route path="/composers" element={<CollectionPage view="composers" />} />
-              <Route path="/composers/:itemId" element={<RoutedDetailPage view="composers" />} />
+              <Route path="/composers/:id" element={<RoutedDetailPage view="composers" />} />
               <Route path="/guides" element={<CollectionPage view="guides" />} />
-              <Route path="/guides/:itemId" element={<RoutedDetailPage view="guides" />} />
+              <Route path="/guides/:id" element={<RoutedDetailPage view="guides" />} />
               <Route path="/about" element={<CollectionPage view="about" />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
