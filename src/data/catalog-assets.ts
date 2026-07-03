@@ -12,9 +12,11 @@ import pianoConcerto from '@/assets/catalog/piano-concerto.png'
 import symphony from '@/assets/catalog/symphony.png'
 import symphonyOrchestra from '@/assets/home/symphony-orchestra.png'
 import violinConcerto from '@/assets/catalog/violin-concerto.png'
+import aboutConcertHall from '@/assets/about-concert-hall.png'
 import heroArtwork from '@/assets/classical-dashboard-hero.png'
 
 export const catalogAssets = {
+  aboutConcertHall,
   chamberSonata,
   chamberMusicCategory,
   composerAvatar,

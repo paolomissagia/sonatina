@@ -10,7 +10,7 @@ export const composers: Composer[] = [
     years: '1685-1750',
     nationality: 'German',
     knownFor: ['Counterpoint', 'Sacred music', 'Keyboard works'],
-    quote: 'The aim and final end of all music should be none other than the glory of God and the refreshment of the soul.',
+    quote: 'The aim of music is the refreshment of the soul.',
     overview:
       'Bach brought Baroque counterpoint to a level of clarity and expressive force that still shapes how musicians understand harmony, form, and sacred drama.',
   },
@@ -49,7 +49,7 @@ export const composers: Composer[] = [
     years: '1819-1896',
     nationality: 'German',
     knownFor: ['Piano works', 'Songs', 'Concert performance'],
-    quote: 'Composing gives me great pleasure. There is nothing that surpasses the joy of creation.',
+    quote: 'Nothing surpasses the joy of creation.',
     overview:
       'Clara Schumann was one of the nineteenth century’s defining pianists and a composer of intimate, finely crafted works for piano, voice, and chamber ensemble.',
   },

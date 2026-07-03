@@ -1,6 +1,7 @@
 import { catalogPageMeta, getCatalogItems } from '@/data/catalog'
 import type { CatalogSection } from '@/data/models'
 import { CollectionCard } from './collection-card'
+import { GuidesPage } from './guides-page'
 import { SectionHeading } from './section-heading'
 
 type CollectionPageProps = {
@@ -8,6 +9,10 @@ type CollectionPageProps = {
 }
 
 export function CollectionPage({ view }: CollectionPageProps) {
+  if (view === 'guides') {
+    return <GuidesPage />
+  }
+
   const page = catalogPageMeta[view]
   const items = getCatalogItems(view)
 
