@@ -1,4 +1,5 @@
-import { X } from 'lucide-react'
+import { Search, X } from 'lucide-react'
+import { NavLink } from 'react-router'
 import wordmark from '@/assets/sonatina-wordmark.png'
 import { aboutItem, navItems } from '@/data/navigation'
 import { SidebarLink } from './sidebar-link'
@@ -32,6 +33,14 @@ export function AppSidebar({ isOpen, onClose, onNavigate }: AppSidebarProps) {
       </nav>
 
       <div className="sidebar-footer">
+        <NavLink
+          className={({ isActive }) => (isActive ? 'sidebar-link active' : 'sidebar-link')}
+          to="/search"
+          onClick={onNavigate}
+        >
+          <Search size={17} strokeWidth={1.9} />
+          <span>Search</span>
+        </NavLink>
         <SidebarLink
           item={aboutItem}
           onNavigate={onNavigate}

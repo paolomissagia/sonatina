@@ -5,6 +5,7 @@ export type CatalogSection = 'works' | 'composers' | 'guides'
 export type Work = {
   id: string
   title: string
+  composerId: string
   composerName: string
   description: string
   asset: CatalogAssetKey
@@ -19,6 +20,10 @@ export type Composer = {
   bio: string
   asset: CatalogAssetKey
   years: string
+  nationality: string
+  knownFor: string[]
+  quote: string
+  overview: string
 }
 
 export type Guide = {
