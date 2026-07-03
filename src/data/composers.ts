@@ -1,4 +1,4 @@
-import type { Composer } from './models'
+import type { Composer } from '@/models/composer'
 
 export const composers: Composer[] = [
   {
@@ -79,6 +79,32 @@ export const composers: Composer[] = [
     overview:
       'Stravinsky repeatedly reinvented his musical language, from explosive ballet scores to crisp neoclassical works and later serial experiments.',
   },
+  {
+    id: '7',
+    name: 'Antonio Vivaldi',
+    period: 'Baroque',
+    bio: 'Concertos, operas, sacred music, and vivid instrumental color.',
+    asset: 'composerBaroque',
+    years: '1678-1741',
+    nationality: 'Italian',
+    knownFor: ['Violin concertos', 'Opera', 'Sacred music'],
+    quote: 'There are no words; there is only music there.',
+    overview:
+      'Vivaldi gave Baroque concerto form extraordinary energy and color, shaping instrumental writing through rhythm, contrast, and theatrical imagination.',
+  },
+  {
+    id: '8',
+    name: 'Antonin Dvorak',
+    period: 'Romantic',
+    bio: 'Symphonies, chamber music, dances, and lyrical orchestral works.',
+    asset: 'composerRomantic',
+    years: '1841-1904',
+    nationality: 'Czech',
+    knownFor: ['Symphonies', 'Chamber music', 'Slavonic Dances'],
+    quote: 'Melodies simply pour out of me.',
+    overview:
+      'Dvorak combined Romantic sweep with folk-inflected melody, creating music known for warmth, rhythmic vitality, and generous lyricism.',
+  },
 ]
 
 export function findComposer(id: string | undefined) {
@@ -87,4 +113,8 @@ export function findComposer(id: string | undefined) {
   }
 
   return composers.find((composer) => composer.id === id)
+}
+
+export function getComposerName(composerId: string) {
+  return findComposer(composerId)?.name ?? 'Unknown composer'
 }

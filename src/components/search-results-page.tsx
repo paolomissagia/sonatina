@@ -2,7 +2,7 @@ import { catalogAssets } from '@/data/catalog-assets'
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { catalogPageMeta, getCatalogItems } from '@/data/catalog'
-import type { CatalogItem, CatalogSection } from '@/data/models'
+import type { CatalogItem, CatalogSection } from '@/models/catalog'
 import { SectionHeading } from './section-heading'
 
 type SearchResult = CatalogItem & {

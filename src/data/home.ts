@@ -1,47 +1,4 @@
-import type { CatalogAssetKey } from './catalog-assets'
-
-export type HomeExploreCategory = {
-  title: string
-  description: string
-  asset: CatalogAssetKey
-  to: string
-}
-
-export type EditorPick = {
-  type: string
-  title: string
-  subtitle: string
-  meta: string
-  asset: CatalogAssetKey
-  to: string
-}
-
-export const homeExploreCategories: HomeExploreCategory[] = [
-  {
-    title: 'Opera',
-    description: 'Voices, drama, and stage works',
-    asset: 'operaCurtain',
-    to: '/works',
-  },
-  {
-    title: 'Piano',
-    description: 'Sonatas, concertos, and miniatures',
-    asset: 'pianoKeys',
-    to: '/works/5',
-  },
-  {
-    title: 'Symphonies',
-    description: 'Large-scale orchestral landmarks',
-    asset: 'symphonyOrchestra',
-    to: '/works/1',
-  },
-  {
-    title: 'Chamber Music',
-    description: 'Quartets, suites, and intimate forms',
-    asset: 'chamberMusicCategory',
-    to: '/guides/3',
-  },
-]
+import type { EditorPick } from '@/models/home'
 
 export const editorPicks: EditorPick[] = [
   {

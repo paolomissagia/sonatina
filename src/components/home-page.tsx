@@ -1,7 +1,8 @@
 import { Clock3 } from 'lucide-react'
 import { Link } from 'react-router'
 import { catalogAssets } from '@/data/catalog-assets'
-import { editorPicks, homeExploreCategories } from '@/data/home'
+import { exploreCategories } from '@/data/explore-categories'
+import { editorPicks } from '@/data/home'
 
 export function HomePage() {
   return (
@@ -28,7 +29,7 @@ export function HomePage() {
           <h2>Explore</h2>
         </div>
         <div className="home-explore-grid">
-          {homeExploreCategories.map((category) => (
+          {exploreCategories.map((category) => (
             <Link className="home-category-card" to={category.to} key={category.title}>
               <img src={catalogAssets[category.asset]} alt="" />
               <span>{category.title}</span>

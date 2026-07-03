@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 import { catalogAssets } from '@/data/catalog-assets'
-import type { Composer } from '@/data/models'
+import type { Composer } from '@/models/composer'
 import { works } from '@/data/works'
 
 type ComposerDetailPageProps = {

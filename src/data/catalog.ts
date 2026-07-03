@@ -1,6 +1,9 @@
-import { composers } from './composers'
+import { composers, getComposerName } from './composers'
 import { guides } from './guides'
-import type { CatalogItem, CatalogSection, Composer, Guide, Work } from './models'
+import type { CatalogItem, CatalogSection } from '@/models/catalog'
+import type { Composer } from '@/models/composer'
+import type { Guide } from '@/models/guide'
+import type { Work } from '@/models/work'
 import { works } from './works'
 
 export type CatalogPageMeta = {
@@ -33,7 +36,7 @@ function workToCatalogItem(work: Work): CatalogItem {
   return {
     id: work.id,
     title: work.title,
-    subtitle: work.composerName,
+    subtitle: getComposerName(work.composerId),
     detail: work.description,
     asset: work.asset,
     meta: work.year,

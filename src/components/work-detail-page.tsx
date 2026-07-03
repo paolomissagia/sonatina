@@ -1,7 +1,7 @@
 import { Link } from 'react-router'
 import { catalogAssets, type CatalogAssetKey } from '@/data/catalog-assets'
-import { composers } from '@/data/composers'
-import type { Work } from '@/data/models'
+import { composers, getComposerName } from '@/data/composers'
+import type { Work } from '@/models/work'
 import { works } from '@/data/works'
 
 type WorkDetailPageProps = {
@@ -61,6 +61,7 @@ function getRelatedWorks(work: Work) {
 
 export function WorkDetailPage({ work }: WorkDetailPageProps) {
   const composer = getComposer(work)
+  const composerName = getComposerName(work.composerId)
   const relatedWorks = getRelatedWorks(work)
 
   return (
@@ -73,7 +74,7 @@ export function WorkDetailPage({ work }: WorkDetailPageProps) {
             <span>›</span>
             {composer ? (
               <>
-                <Link to={`/composers/${composer.id}`}>{work.composerName}</Link>
+                <Link to={`/composers/${composer.id}`}>{composerName}</Link>
                 <span>›</span>
               </>
             ) : null}
@@ -81,7 +82,7 @@ export function WorkDetailPage({ work }: WorkDetailPageProps) {
           </nav>
 
           <h1>{work.title}</h1>
-          <p className="work-composer">{work.composerName}</p>
+          <p className="work-composer">{composerName}</p>
           <p className="work-description">{work.description}</p>
 
           <div className="work-meta-list">
@@ -151,7 +152,7 @@ export function WorkDetailPage({ work }: WorkDetailPageProps) {
                 <img src={catalogAssets[relatedWork.asset]} alt="" />
                 <span>
                   <strong>{relatedWork.title}</strong>
-                  <small>{relatedWork.composerName}</small>
+                  <small>{getComposerName(relatedWork.composerId)}</small>
                 </span>
               </Link>
             ))}

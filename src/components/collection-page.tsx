@@ -1,5 +1,5 @@
 import { catalogPageMeta, getCatalogItems } from '@/data/catalog'
-import type { CatalogSection } from '@/data/models'
+import type { CatalogSection } from '@/models/catalog'
 import { CollectionCard } from './collection-card'
 import { GuidesPage } from './guides-page'
 import { SectionHeading } from './section-heading'

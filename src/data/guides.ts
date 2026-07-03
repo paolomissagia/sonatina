@@ -1,4 +1,4 @@
-import type { Guide } from './models'
+import type { Guide } from '@/models/guide'
 
 export const guides: Guide[] = [
   {

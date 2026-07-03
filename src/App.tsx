@@ -11,7 +11,7 @@ import { TopBar } from '@/components/top-bar'
 import { WorkDetailPage } from '@/components/work-detail-page'
 import { findCatalogItem } from '@/data/catalog'
 import { findComposer } from '@/data/composers'
-import type { CatalogSection } from '@/data/models'
+import type { CatalogSection } from '@/models/catalog'
 import { findWork } from '@/data/works'
 import './App.css'
 
