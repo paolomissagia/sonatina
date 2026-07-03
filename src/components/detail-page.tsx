@@ -1,26 +1,26 @@
 import { Link } from 'react-router'
 import { catalogAssets } from '@/data/catalog-assets'
-import type { CollectionCategory, CollectionItem } from '@/data/collections'
-import { collectionPages } from '@/data/collections'
+import { catalogPageMeta } from '@/data/catalog'
+import type { CatalogItem, CatalogSection } from '@/data/models'
 
 type DetailPageProps = {
-  item: CollectionItem
-  view: CollectionCategory
+  item: CatalogItem
+  view: CatalogSection
 }
 
-const detailLabels: Record<CollectionCategory, string> = {
+const detailLabels: Record<CatalogSection, string> = {
   works: 'About the work',
   composers: 'About the composer',
   guides: 'About this guide',
 }
 
-const tabLabels: Record<CollectionCategory, string[]> = {
+const tabLabels: Record<CatalogSection, string[]> = {
   works: ['Overview', 'Recordings', 'Details'],
   composers: ['Overview', 'Works', 'Recordings'],
   guides: ['Overview', 'Related works', 'Notes'],
 }
 
-function getTags(view: CollectionCategory, item: CollectionItem) {
+function getTags(view: CatalogSection, item: CatalogItem) {
   if (view === 'works') {
     return [item.period, item.meta, item.title.includes('Symphony') ? 'Symphony' : 'Work'].filter(Boolean)
   }
@@ -33,7 +33,7 @@ function getTags(view: CollectionCategory, item: CollectionItem) {
 }
 
 export function DetailPage({ item, view }: DetailPageProps) {
-  const page = collectionPages[view]
+  const page = catalogPageMeta[view]
 
   return (
     <article className="detail-page">

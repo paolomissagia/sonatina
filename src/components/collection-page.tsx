@@ -1,16 +1,15 @@
-import { catalogAssets } from '@/data/catalog-assets'
-import { collectionPages } from '@/data/collections'
-import type { ViewId } from '@/data/navigation'
+import { catalogPageMeta, getCatalogItems } from '@/data/catalog'
+import type { CatalogSection } from '@/data/models'
 import { CollectionCard } from './collection-card'
 import { SectionHeading } from './section-heading'
 
 type CollectionPageProps = {
-  view: Exclude<ViewId, 'discover'>
+  view: CatalogSection
 }
 
 export function CollectionPage({ view }: CollectionPageProps) {
-  const page = collectionPages[view]
-  const canOpenDetail = view !== 'about'
+  const page = catalogPageMeta[view]
+  const items = getCatalogItems(view)
 
   return (
     <section className="collection-page">
@@ -20,23 +19,8 @@ export function CollectionPage({ view }: CollectionPageProps) {
       </div>
 
       <div className="collection-grid">
-        {page.items.map((item) => (
-          canOpenDetail ? (
-            <CollectionCard item={item} key={item.id} view={view} />
-          ) : (
-            <article className="collection-card static-card" key={item.id}>
-              <div className="collection-card-image">
-                <img src={catalogAssets[item.asset]} alt="" />
-              </div>
-              <div className="collection-card-copy">
-                <div>
-                  <h3>{item.title}</h3>
-                  <p>{item.subtitle}</p>
-                </div>
-                {item.period ? <span>{item.period}</span> : null}
-              </div>
-            </article>
-          )
+        {items.map((item) => (
+          <CollectionCard item={item} key={item.id} view={view} />
         ))}
       </div>
     </section>

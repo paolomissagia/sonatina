@@ -1,0 +1,58 @@
+import type { Work } from './models'
+
+export const works: Work[] = [
+  {
+    id: '1',
+    title: 'Symphony No. 5',
+    composerName: 'Ludwig van Beethoven',
+    description: 'A defining symphonic statement in four movements.',
+    asset: 'symphony',
+    year: '1808',
+    period: 'Classical / Romantic',
+  },
+  {
+    id: '2',
+    title: 'The Four Seasons',
+    composerName: 'Antonio Vivaldi',
+    description: 'Four violin concertos with vivid seasonal character.',
+    asset: 'violinConcerto',
+    year: '1725',
+    period: 'Baroque',
+  },
+  {
+    id: '3',
+    title: 'Requiem',
+    composerName: 'Wolfgang Amadeus Mozart',
+    description: 'A dramatic sacred work left unfinished at Mozart’s death.',
+    asset: 'chamberSonata',
+    year: '1791',
+    period: 'Classical',
+  },
+  {
+    id: '4',
+    title: 'Cello Suite No. 1',
+    composerName: 'Johann Sebastian Bach',
+    description: 'A foundational work for solo cello.',
+    asset: 'chamberSonata',
+    year: 'c. 1720',
+    period: 'Baroque',
+  },
+  {
+    id: '5',
+    title: 'Clair de lune',
+    composerName: 'Claude Debussy',
+    description: 'A luminous piano miniature from Suite bergamasque.',
+    asset: 'pianoConcerto',
+    year: '1905',
+    period: 'Impressionist',
+  },
+  {
+    id: '6',
+    title: 'Symphony No. 9',
+    composerName: 'Antonin Dvorak',
+    description: 'The New World symphony, expansive and lyrical.',
+    asset: 'symphony',
+    year: '1893',
+    period: 'Romantic',
+  },
+]

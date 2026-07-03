@@ -1,15 +1,15 @@
 import { catalogAssets } from '@/data/catalog-assets'
 import { useState } from 'react'
 import { Link } from 'react-router'
-import { collectionPages, type CollectionItem } from '@/data/collections'
-import type { CollectionCategory } from '@/data/collections'
+import { catalogPageMeta, getCatalogItems } from '@/data/catalog'
+import type { CatalogItem, CatalogSection } from '@/data/models'
 import { SectionHeading } from './section-heading'
 
-type SearchResult = CollectionItem & {
-  category: CollectionCategory
+type SearchResult = CatalogItem & {
+  category: CatalogSection
 }
 
-const categoryOrder: CollectionCategory[] = ['works', 'composers', 'guides']
+const categoryOrder: CatalogSection[] = ['works', 'composers', 'guides']
 
 type SearchResultsPageProps = {
   query: string
@@ -17,7 +17,7 @@ type SearchResultsPageProps = {
 }
 
 const searchableItems: SearchResult[] = categoryOrder.flatMap((category) =>
-  collectionPages[category].items.map((item) => ({
+  getCatalogItems(category).map((item) => ({
     ...item,
     category,
   })),
@@ -35,7 +35,7 @@ function matchesQuery(result: SearchResult, query: string) {
   }
 
   const haystack =
-    `${result.title} ${result.subtitle} ${result.detail} ${result.meta ?? ''} ${collectionPages[result.category].title}`.toLowerCase()
+    `${result.title} ${result.subtitle} ${result.detail} ${result.meta ?? ''} ${catalogPageMeta[result.category].title}`.toLowerCase()
 
   return terms.every((term) => haystack.includes(term))
 }
@@ -66,7 +66,7 @@ function SearchResultRow({
 }
 
 export function SearchResultsPage({ onNavigate, query }: SearchResultsPageProps) {
-  const [activeCategory, setActiveCategory] = useState<CollectionCategory | 'all'>('all')
+  const [activeCategory, setActiveCategory] = useState<CatalogSection | 'all'>('all')
   const trimmedQuery = query.trim()
   const results = searchableItems.filter((result) => matchesQuery(result, trimmedQuery))
   const groupedResults = categoryOrder.map((category) => ({
@@ -98,7 +98,7 @@ export function SearchResultsPage({ onNavigate, query }: SearchResultsPageProps)
             key={category}
             onClick={() => setActiveCategory(category)}
           >
-            {collectionPages[category].title} ({categoryResults.length})
+            {catalogPageMeta[category].title} ({categoryResults.length})
           </button>
         ))}
       </div>
@@ -113,7 +113,7 @@ export function SearchResultsPage({ onNavigate, query }: SearchResultsPageProps)
           categoryResults.length > 0 ? (
             <section className="search-result-section" key={category}>
               <div className="search-result-section-heading">
-                <h3>{collectionPages[category].title}</h3>
+                <h3>{catalogPageMeta[category].title}</h3>
                 {categoryResults.length > 2 ? (
                   <button type="button" onClick={() => setActiveCategory(category)}>
                     View all ({categoryResults.length})

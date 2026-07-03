@@ -1,11 +1,10 @@
 import { Link } from 'react-router'
 import { catalogAssets } from '@/data/catalog-assets'
-import type { CollectionItem } from '@/data/collections'
-import type { CollectionCategory } from '@/data/collections'
+import type { CatalogItem, CatalogSection } from '@/data/models'
 
 type CollectionCardProps = {
-  item: CollectionItem
-  view: CollectionCategory
+  item: CatalogItem
+  view: CatalogSection
 }
 
 export function CollectionCard({ item, view }: CollectionCardProps) {

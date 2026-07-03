@@ -7,13 +7,13 @@ import { DetailPage } from '@/components/detail-page'
 import { HomePage } from '@/components/home-page'
 import { SearchResultsPage } from '@/components/search-results-page'
 import { TopBar } from '@/components/top-bar'
-import { findCollectionItem } from '@/data/collections'
-import type { CollectionCategory } from '@/data/collections'
+import { findCatalogItem } from '@/data/catalog'
+import type { CatalogSection } from '@/data/models'
 import './App.css'
 
-function RoutedDetailPage({ view }: { view: CollectionCategory }) {
+function RoutedDetailPage({ view }: { view: CatalogSection }) {
   const { id } = useParams()
-  const item = findCollectionItem(view, id)
+  const item = findCatalogItem(view, id)
 
   if (!item) {
     return <Navigate to={`/${view}`} replace />
