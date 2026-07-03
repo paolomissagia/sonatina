@@ -11,6 +11,8 @@ export const works: Work[] = [
     period: 'Classical / Romantic',
     duration: '50 min',
     form: 'Symphony',
+    premiere: 'December 22, 1808, Theater an der Wien, Vienna',
+    instrumentation: 'Orchestra',
     overview:
       'Beethoven’s Fifth Symphony is one of the most recognisable works ever written. Its famous four-note opening became a symbol of determination and triumph, but the symphony’s real power lies in how that simple idea evolves into an extraordinary journey.',
     movements: [
@@ -25,11 +27,13 @@ export const works: Work[] = [
     title: 'The Four Seasons',
     composerId: '7',
     description: 'Four violin concertos with vivid seasonal character.',
-    asset: 'violinConcerto',
+    asset: 'workConcerto',
     year: '1725',
     period: 'Baroque',
     duration: '42 min',
     form: 'Concerto',
+    premiere: 'Published in Amsterdam, 1725',
+    instrumentation: 'Solo violin and string orchestra',
     overview:
       'Vivaldi’s four concertos turn the seasons into vivid musical scenes, from birdsong and summer storms to harvest dances and winter cold.',
     movements: [
@@ -44,11 +48,13 @@ export const works: Work[] = [
     title: 'Requiem',
     composerId: '2',
     description: 'A dramatic sacred work left unfinished at Mozart’s death.',
-    asset: 'chamberSonata',
+    asset: 'workSacred',
     year: '1791',
     period: 'Classical',
     duration: '55 min',
     form: 'Sacred work',
+    premiere: 'January 2, 1793, Vienna',
+    instrumentation: 'Choir, soloists, and orchestra',
     overview:
       'Mozart’s Requiem blends ceremony, grief, and theatrical urgency in a sacred work whose unfinished state has become part of its legend.',
     movements: [
@@ -63,11 +69,13 @@ export const works: Work[] = [
     title: 'Cello Suite No. 1',
     composerId: '1',
     description: 'A foundational work for solo cello.',
-    asset: 'chamberSonata',
+    asset: 'workSuite',
     year: 'c. 1720',
     period: 'Baroque',
     duration: '18 min',
     form: 'Suite',
+    premiere: 'Likely composed in Kothen, c. 1720',
+    instrumentation: 'Solo cello',
     overview:
       'The first cello suite unfolds with clarity and poise, turning a single instrument into a complete world of dance, line, and resonance.',
     movements: [
@@ -82,11 +90,13 @@ export const works: Work[] = [
     title: 'Clair de lune',
     composerId: '5',
     description: 'A luminous piano miniature from Suite bergamasque.',
-    asset: 'pianoConcerto',
+    asset: 'pianoKeys',
     year: '1905',
     period: 'Impressionist',
     duration: '5 min',
     form: 'Piano miniature',
+    premiere: 'Published in Paris, 1905',
+    instrumentation: 'Solo piano',
     overview:
       'Clair de lune captures moonlit stillness through floating harmony, soft melodic curves, and a sense of suspended time.',
     movements: [
@@ -105,6 +115,8 @@ export const works: Work[] = [
     period: 'Romantic',
     duration: '40 min',
     form: 'Symphony',
+    premiere: 'December 16, 1893, Carnegie Hall, New York',
+    instrumentation: 'Orchestra',
     overview:
       'Dvorak’s New World Symphony combines sweeping Romantic form with melodic impressions of America, nostalgia, and distance.',
     movements: [
@@ -119,11 +131,13 @@ export const works: Work[] = [
     title: 'Piano Sonata No. 14',
     composerId: '3',
     description: 'The Moonlight sonata, intimate and dramatic.',
-    asset: 'pianoConcerto',
+    asset: 'pianoKeys',
     year: '1801',
     period: 'Classical / Romantic',
     duration: '15 min',
     form: 'Sonata',
+    premiere: 'Published in Vienna, 1802',
+    instrumentation: 'Solo piano',
     overview:
       'The Moonlight Sonata begins in intimate shadow before moving toward restless energy and a stormy finale.',
     movements: [
@@ -142,6 +156,8 @@ export const works: Work[] = [
     period: 'Classical / Romantic',
     duration: '2 h 20 min',
     form: 'Opera',
+    premiere: 'November 20, 1805, Theater an der Wien, Vienna',
+    instrumentation: 'Soloists, chorus, and orchestra',
     overview:
       'Fidelio is Beethoven’s only opera, a drama of courage, loyalty, and liberation built around the rescue of a political prisoner.',
     movements: [
@@ -160,6 +176,8 @@ export const works: Work[] = [
     period: 'Baroque',
     duration: '75 min',
     form: 'Variations',
+    premiere: 'Published in Nuremberg, 1741',
+    instrumentation: 'Keyboard',
     overview:
       'The Goldberg Variations transform a graceful aria into a vast architecture of invention, virtuosity, and quiet reflection.',
     movements: [
@@ -174,11 +192,13 @@ export const works: Work[] = [
     title: 'Brandenburg Concertos',
     composerId: '1',
     description: 'Six concertos with brilliant instrumental variety.',
-    asset: 'chamberMusicCategory',
+    asset: 'workConcerto',
     year: '1721',
     period: 'Baroque',
     duration: '1 h 40 min',
     form: 'Concertos',
+    premiere: 'Dedicated to Christian Ludwig of Brandenburg, 1721',
+    instrumentation: 'Solo groups and chamber orchestra',
     overview:
       'The Brandenburg Concertos show Bach’s imagination for instrumental color, pairing different solo groups with brilliant rhythmic life.',
     movements: [
@@ -193,11 +213,13 @@ export const works: Work[] = [
     title: 'Eine kleine Nachtmusik',
     composerId: '2',
     description: 'A graceful serenade for strings.',
-    asset: 'chamberMusicCategory',
+    asset: 'workSerenade',
     year: '1787',
     period: 'Classical',
     duration: '20 min',
     form: 'Serenade',
+    premiere: 'Composed in Vienna, 1787',
+    instrumentation: 'String ensemble',
     overview:
       'Eine kleine Nachtmusik is Mozart at his most direct and graceful, a compact serenade full of balance, charm, and memorable melody.',
     movements: [
@@ -217,6 +239,8 @@ export const works: Work[] = [
     period: 'Modern',
     duration: '35 min',
     form: 'Ballet',
+    premiere: 'May 29, 1913, Theatre des Champs-Elysees, Paris',
+    instrumentation: 'Large orchestra',
     overview:
       'The Rite of Spring changed twentieth-century music with raw rhythm, sharp orchestral color, and a ritual energy that still feels startling.',
     movements: [

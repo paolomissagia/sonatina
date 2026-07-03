@@ -1,4 +1,4 @@
-import type { CatalogAssetKey } from '@/data/catalog-assets'
+import type { CatalogAssetKey } from '@/assets/catalog-assets'
 
 export type Guide = {
   id: string
@@ -8,4 +8,7 @@ export type Guide = {
   description: string
   asset: CatalogAssetKey
   readTime: string
+  audience: string
+  overview: string
+  sections: string[]
 }

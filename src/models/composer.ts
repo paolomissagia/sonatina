@@ -1,4 +1,4 @@
-import type { CatalogAssetKey } from '@/data/catalog-assets'
+import type { CatalogAssetKey } from '@/assets/catalog-assets'
 
 export type Composer = {
   id: string

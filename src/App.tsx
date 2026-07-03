@@ -1,30 +1,18 @@
 import { useState } from 'react'
 import { Navigate, Route, Routes, useParams } from 'react-router'
-import { AboutPage } from '@/components/about-page'
 import { AppSidebar } from '@/components/app-sidebar'
-import { CollectionPage } from '@/components/collection-page'
-import { ComposerDetailPage } from '@/components/composer-detail-page'
-import { DetailPage } from '@/components/detail-page'
-import { HomePage } from '@/components/home-page'
-import { SearchPage } from '@/components/search-page'
 import { TopBar } from '@/components/top-bar'
-import { WorkDetailPage } from '@/components/work-detail-page'
-import { findCatalogItem } from '@/data/catalog'
 import { findComposer } from '@/data/composers'
-import type { CatalogSection } from '@/models/catalog'
+import { findGuide } from '@/data/guides'
 import { findWork } from '@/data/works'
+import { AboutPage } from '@/pages/about-page'
+import { CollectionPage } from '@/pages/collection-page'
+import { ComposerDetailPage } from '@/pages/composer-detail-page'
+import { GuideDetailPage } from '@/pages/guide-detail-page'
+import { HomePage } from '@/pages/home-page'
+import { SearchPage } from '@/pages/search-page'
+import { WorkDetailPage } from '@/pages/work-detail-page'
 import './App.css'
-
-function RoutedDetailPage({ view }: { view: CatalogSection }) {
-  const { id } = useParams()
-  const item = findCatalogItem(view, id)
-
-  if (!item) {
-    return <Navigate to={`/${view}`} replace />
-  }
-
-  return <DetailPage item={item} view={view} />
-}
 
 function RoutedComposerDetailPage() {
   const { id } = useParams()
@@ -46,6 +34,17 @@ function RoutedWorkDetailPage() {
   }
 
   return <WorkDetailPage work={work} />
+}
+
+function RoutedGuideDetailPage() {
+  const { id } = useParams()
+  const guide = findGuide(id)
+
+  if (!guide) {
+    return <Navigate to="/guides" replace />
+  }
+
+  return <GuideDetailPage guide={guide} />
 }
 
 function App() {
@@ -84,7 +83,7 @@ function App() {
             <Route path="/composers" element={<CollectionPage view="composers" />} />
             <Route path="/composers/:id" element={<RoutedComposerDetailPage />} />
             <Route path="/guides" element={<CollectionPage view="guides" />} />
-            <Route path="/guides/:id" element={<RoutedDetailPage view="guides" />} />
+            <Route path="/guides/:id" element={<RoutedGuideDetailPage />} />
             <Route path="/search" element={<SearchPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />

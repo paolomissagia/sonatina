@@ -39,6 +39,7 @@ function workToCatalogItem(work: Work): CatalogItem {
     subtitle: getComposerName(work.composerId),
     detail: work.description,
     asset: work.asset,
+    form: work.form,
     meta: work.year,
     period: work.period,
   }

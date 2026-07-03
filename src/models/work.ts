@@ -1,4 +1,4 @@
-import type { CatalogAssetKey } from '@/data/catalog-assets'
+import type { CatalogAssetKey } from '@/assets/catalog-assets'
 
 export type WorkMovement = {
   number: string
@@ -16,6 +16,8 @@ export type Work = {
   period: string
   duration: string
   form: string
+  premiere: string
+  instrumentation: string
   overview: string
   movements: WorkMovement[]
 }

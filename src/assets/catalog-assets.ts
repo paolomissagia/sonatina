@@ -14,6 +14,10 @@ import symphonyOrchestra from '@/assets/home/symphony-orchestra.png'
 import violinConcerto from '@/assets/catalog/violin-concerto.png'
 import aboutConcertHall from '@/assets/about-concert-hall.png'
 import heroArtwork from '@/assets/classical-dashboard-hero.png'
+import workConcerto from '@/assets/catalog/work-concerto.png'
+import workSacred from '@/assets/catalog/work-sacred.png'
+import workSerenade from '@/assets/catalog/work-serenade.png'
+import workSuite from '@/assets/catalog/work-suite.png'
 
 export const catalogAssets = {
   aboutConcertHall,
@@ -32,6 +36,10 @@ export const catalogAssets = {
   symphony,
   symphonyOrchestra,
   violinConcerto,
+  workConcerto,
+  workSacred,
+  workSerenade,
+  workSuite,
 }
 
 export type CatalogAssetKey = keyof typeof catalogAssets

@@ -1,5 +1,5 @@
 import { Link } from 'react-router'
-import { catalogAssets } from '@/data/catalog-assets'
+import { catalogAssets } from '@/assets/catalog-assets'
 import type { CatalogItem, CatalogSection } from '@/models/catalog'
 
 type CollectionCardProps = {

@@ -1,6 +1,6 @@
 import { Clock3 } from 'lucide-react'
 import { Link } from 'react-router'
-import { catalogAssets } from '@/data/catalog-assets'
+import { catalogAssets } from '@/assets/catalog-assets'
 import { exploreCategories } from '@/data/explore-categories'
 import { editorPicks } from '@/data/home'
 

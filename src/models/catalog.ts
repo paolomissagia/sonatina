@@ -1,4 +1,4 @@
-import type { CatalogAssetKey } from '@/data/catalog-assets'
+import type { CatalogAssetKey } from '@/assets/catalog-assets'
 import type { Composer } from './composer'
 import type { Guide } from './guide'
 import type { Work } from './work'
@@ -13,6 +13,7 @@ export type CatalogItem = {
   subtitle: string
   detail: string
   asset: CatalogAssetKey
+  form?: string
   meta?: string
   period?: string
 }

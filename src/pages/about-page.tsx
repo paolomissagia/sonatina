@@ -1,5 +1,5 @@
 import { BookOpen, Music2, UsersRound } from 'lucide-react'
-import { catalogAssets } from '@/data/catalog-assets'
+import { catalogAssets } from '@/assets/catalog-assets'
 
 const principles = [
   {

@@ -1,4 +1,4 @@
-import { catalogAssets } from '@/data/catalog-assets'
+import { catalogAssets } from '@/assets/catalog-assets'
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { catalogPageMeta, getCatalogItems } from '@/data/catalog'

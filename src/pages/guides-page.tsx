@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router'
-import { catalogAssets } from '@/data/catalog-assets'
+import { catalogAssets } from '@/assets/catalog-assets'
 import { guides } from '@/data/guides'
 
 const guideFilters = ['All', 'Getting started', 'Composers', 'Genres', 'Periods', 'Listening']

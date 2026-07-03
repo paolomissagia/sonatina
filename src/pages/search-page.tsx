@@ -1,6 +1,6 @@
 import { Search } from 'lucide-react'
 import { useState } from 'react'
-import { SearchResultsPage } from './search-results-page'
+import { SearchResultsPage } from '@/components/search-results-page'
 
 export function SearchPage() {
   const [query, setQuery] = useState('')
