@@ -1,16 +1,24 @@
+import { X } from 'lucide-react'
 import wordmark from '@/assets/sonatina-wordmark.png'
 import { aboutItem, navItems } from '@/data/navigation'
 import { SidebarLink } from './sidebar-link'
 
 type AppSidebarProps = {
+  isOpen: boolean
+  onClose: () => void
   onNavigate: () => void
 }
 
-export function AppSidebar({ onNavigate }: AppSidebarProps) {
+export function AppSidebar({ isOpen, onClose, onNavigate }: AppSidebarProps) {
   return (
-    <aside className="sidebar" aria-label="Primary">
-      <div className="brand">
-        <img src={wordmark} alt="Sonatina" />
+    <aside className={isOpen ? 'sidebar open' : 'sidebar'} aria-label="Primary">
+      <div className="sidebar-header">
+        <div className="brand">
+          <img src={wordmark} alt="Sonatina" />
+        </div>
+        <button className="icon-button sidebar-close" type="button" aria-label="Close menu" onClick={onClose}>
+          <X size={18} />
+        </button>
       </div>
 
       <nav className="sidebar-group" aria-label="Browse">

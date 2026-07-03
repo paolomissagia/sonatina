@@ -34,18 +34,40 @@ function RoutedDetailPage({ view }: { view: CollectionCategory }) {
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('')
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const hasSearchQuery = searchQuery.trim().length > 0
+  const handleNavigate = () => {
+    setSearchQuery('')
+    setIsSidebarOpen(false)
+  }
 
   return (
     <div className="app-shell">
-      <AppSidebar onNavigate={() => setSearchQuery('')} />
+      <AppSidebar
+        isOpen={isSidebarOpen}
+        onClose={() => setIsSidebarOpen(false)}
+        onNavigate={handleNavigate}
+      />
+      {isSidebarOpen ? (
+        <button
+          className="sidebar-backdrop"
+          type="button"
+          aria-label="Close menu"
+          onClick={() => setIsSidebarOpen(false)}
+        />
+      ) : null}
 
       <div className="workspace">
-        <TopBar searchQuery={searchQuery} onSearchChange={setSearchQuery} />
+        <TopBar
+          isMenuOpen={isSidebarOpen}
+          searchQuery={searchQuery}
+          onMenuClick={() => setIsSidebarOpen(true)}
+          onSearchChange={setSearchQuery}
+        />
 
         <main className="content">
           {hasSearchQuery ? (
-            <SearchResultsPage query={searchQuery} onNavigate={() => setSearchQuery('')} />
+            <SearchResultsPage query={searchQuery} onNavigate={handleNavigate} />
           ) : (
             <Routes>
               <Route path="/" element={<DiscoverPage />} />
