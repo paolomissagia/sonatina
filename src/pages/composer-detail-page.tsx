@@ -38,6 +38,11 @@ export function ComposerDetailPage({ composer }: ComposerDetailPageProps) {
         ]}
         facts={facts}
         factsTitle="Quick facts"
+        imageAlt={`Portrait of ${composer.name}`}
+        imageCredit={{
+          label: `Portrait: ${composer.portrait.artist}, ${composer.portrait.year} · Wikimedia Commons`,
+          href: composer.portrait.source,
+        }}
         imageSrc={catalogAssets[composer.asset]}
         quote={composer.quote}
         subtitle={composer.years}

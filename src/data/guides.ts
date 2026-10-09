@@ -46,7 +46,7 @@ export const guides: Guide[] = [
     type: 'Period guide',
     category: 'Periods',
     description: 'A look at the era of emotion, expression, and grandeur.',
-    asset: 'composerRomantic',
+    asset: 'composerClaraSchumann',
     readTime: '7 min read',
     audience: 'History explorers',
     overview:
@@ -59,7 +59,7 @@ export const guides: Guide[] = [
     type: 'Composer guide',
     category: 'Composers',
     description: 'Counterpoint, sacred drama, and the architecture behind the music.',
-    asset: 'composerBaroque',
+    asset: 'composerBach',
     readTime: '6 min read',
     audience: 'Composer-focused listeners',
     overview:

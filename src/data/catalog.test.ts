@@ -45,6 +45,15 @@ describe('catalog data', () => {
     }
   })
 
+  it('gives every composer their own credited portrait', () => {
+    expect(new Set(composers.map((composer) => composer.asset)).size).toBe(composers.length)
+
+    for (const composer of composers) {
+      expect(composer.portrait.artist, composer.name).not.toBe('')
+      expect(composer.portrait.source, composer.name).toMatch(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/)
+    }
+  })
+
   it('gives every guide at least one section', () => {
     for (const guide of guides) {
       expect(guide.sections.length, guide.title).toBeGreaterThan(0)

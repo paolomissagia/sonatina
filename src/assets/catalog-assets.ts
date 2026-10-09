@@ -1,11 +1,13 @@
 import chamberSonata from '@/assets/catalog/chamber-sonata.webp'
 import chamberMusicCategory from '@/assets/home/chamber-music.webp'
-import composerAvatar from '@/assets/catalog/composer-avatar.webp'
-import composerBaroque from '@/assets/catalog/composer-baroque.webp'
+import composerBach from '@/assets/catalog/composer-bach.webp'
 import composerBeethoven from '@/assets/catalog/composer-beethoven.webp'
+import composerClaraSchumann from '@/assets/catalog/composer-clara-schumann.webp'
 import composerDebussy from '@/assets/catalog/composer-debussy.webp'
-import composerRomantic from '@/assets/catalog/composer-romantic.webp'
+import composerDvorak from '@/assets/catalog/composer-dvorak.webp'
+import composerMozart from '@/assets/catalog/composer-mozart.webp'
 import composerStravinsky from '@/assets/catalog/composer-stravinsky.webp'
+import composerVivaldi from '@/assets/catalog/composer-vivaldi.webp'
 import operaCurtain from '@/assets/home/opera-curtain.webp'
 import pianoKeys from '@/assets/home/piano-keys.webp'
 import pianoConcerto from '@/assets/catalog/piano-concerto.webp'
@@ -22,12 +24,14 @@ export const catalogAssets = {
   aboutConcertHall,
   chamberSonata,
   chamberMusicCategory,
-  composerAvatar,
-  composerBaroque,
+  composerBach,
   composerBeethoven,
+  composerClaraSchumann,
   composerDebussy,
-  composerRomantic,
+  composerDvorak,
+  composerMozart,
   composerStravinsky,
+  composerVivaldi,
   operaCurtain,
   pianoKeys,
   pianoConcerto,

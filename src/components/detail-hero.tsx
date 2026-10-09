@@ -8,12 +8,18 @@ type DetailHeroBreadcrumb = {
   to?: string
 }
 
+type DetailHeroImageCredit = {
+  label: string
+  href: string
+}
+
 type DetailHeroProps = {
   breadcrumb: DetailHeroBreadcrumb[]
   description?: string
   facts?: FactListItem[]
   factsTitle?: string
   imageAlt?: string
+  imageCredit?: DetailHeroImageCredit
   imageSrc: string
   meta?: ReactNode
   quote?: string
@@ -27,6 +33,7 @@ export function DetailHero({
   facts,
   factsTitle,
   imageAlt = '',
+  imageCredit,
   imageSrc,
   meta,
   quote,
@@ -36,6 +43,11 @@ export function DetailHero({
   return (
     <section className="detail-visual-hero">
       <img src={imageSrc} alt={imageAlt} />
+      {imageCredit ? (
+        <a className="detail-visual-credit" href={imageCredit.href} target="_blank" rel="noreferrer">
+          {imageCredit.label}
+        </a>
+      ) : null}
       <div className="detail-visual-hero-copy">
         <nav className="detail-visual-breadcrumb" aria-label="Breadcrumb">
           {breadcrumb.map((item, index) => (

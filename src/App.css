@@ -1154,6 +1154,24 @@ button {
   object-position: center;
 }
 
+.detail-visual-credit {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  z-index: 2;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgb(29 27 24 / 0.55);
+  color: rgb(255 253 248 / 0.88);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.detail-visual-credit:hover {
+  background: rgb(29 27 24 / 0.75);
+}
+
 .detail-visual-hero-copy {
   position: relative;
   z-index: 2;
@@ -1709,7 +1727,25 @@ button {
     opacity: 0.46;
   }
 
-  .detail-visual-hero-copy {
+  .detail-visual-credit {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  z-index: 2;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgb(29 27 24 / 0.55);
+  color: rgb(255 253 248 / 0.88);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.detail-visual-credit:hover {
+  background: rgb(29 27 24 / 0.75);
+}
+
+.detail-visual-hero-copy {
     width: auto;
     max-width: none;
     padding: 36px 34px 46px;
@@ -1847,7 +1883,25 @@ button {
     gap: 12px;
   }
 
-  .detail-visual-hero-copy {
+  .detail-visual-credit {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  z-index: 2;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgb(29 27 24 / 0.55);
+  color: rgb(255 253 248 / 0.88);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.detail-visual-credit:hover {
+  background: rgb(29 27 24 / 0.75);
+}
+
+.detail-visual-hero-copy {
     padding: 30px 24px 36px;
   }
 
