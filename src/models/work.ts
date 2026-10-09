@@ -1,6 +1,6 @@
 import type { CatalogAssetKey } from '@/assets/catalog-assets'
 
-export const genres = ['Symphony', 'Concerto', 'Orchestral', 'Keyboard', 'Chamber', 'Solo', 'Song', 'Choral', 'Opera', 'Ballet'] as const
+export const genres = ['Symphony', 'Concerto', 'Orchestral', 'Piano', 'Chamber', 'Choral', 'Opera', 'Ballet'] as const
 
 export type Genre = (typeof genres)[number]
 

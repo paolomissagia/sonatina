@@ -9,9 +9,9 @@ export const exploreCategories: HomeExploreCategory[] = [
   },
   {
     title: 'Piano',
-    description: 'Sonatas, miniatures, and keyboard classics',
+    description: 'Sonatas, nocturnes, and miniatures',
     asset: 'categoryPiano',
-    to: '/works?genre=keyboard',
+    to: '/works?genre=piano',
   },
   {
     title: 'Symphonies',

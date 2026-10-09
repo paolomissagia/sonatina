@@ -189,11 +189,11 @@ describe('matchesWorkFilter', () => {
   })
 
   it('groups works by genre', () => {
-    expect(titlesFor('keyboard')).toEqual(
+    expect(titlesFor('piano')).toEqual(
       expect.arrayContaining(['Clair de lune', 'Piano Sonata No. 14, “Moonlight”', 'Goldberg Variations']),
     )
     expect(titlesFor('concerto')).toEqual(expect.arrayContaining(['The Four Seasons', 'Brandenburg Concertos']))
-    expect(titlesFor('song')).toEqual(['Winterreise'])
+    expect(titlesFor('chamber')).toEqual(expect.arrayContaining(['Winterreise', 'Cello Suite No. 1']))
     expect(items.filter((item) => matchesWorkFilter(item, 'opera')).every((item) => item.genre === 'Opera')).toBe(true)
   })
 

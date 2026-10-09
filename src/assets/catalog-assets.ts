@@ -19,7 +19,6 @@ import composerPuccini from '@/assets/catalog/composer-puccini.webp'
 import composerRavel from '@/assets/catalog/composer-ravel.webp'
 import composerGrieg from '@/assets/catalog/composer-grieg.webp'
 import genreOrchestral from '@/assets/home/genre-orchestral.webp'
-import genreSong from '@/assets/home/genre-song.webp'
 import workMagicFlute from '@/assets/catalog/work-magic-flute.webp'
 import workDonGiovanni from '@/assets/catalog/work-don-giovanni.webp'
 import workMozartPianoConcerto21 from '@/assets/catalog/work-mozart-piano-concerto-21.webp'
@@ -36,6 +35,7 @@ import workUnfinishedSymphony from '@/assets/catalog/work-unfinished-symphony.we
 import workLaMer from '@/assets/catalog/work-la-mer.webp'
 import workBeethovenSymphony9 from '@/assets/catalog/work-beethoven-symphony-9.webp'
 import workDasJahr from '@/assets/catalog/work-das-jahr.webp'
+import workWinterreise from '@/assets/catalog/work-winterreise.webp'
 import workBeethoven5 from '@/assets/catalog/work-beethoven-5.webp'
 import workBrandenburg from '@/assets/catalog/work-brandenburg.webp'
 import workCelloSuite from '@/assets/catalog/work-cello-suite.webp'
@@ -58,7 +58,6 @@ import concertAtSanssouci from '@/assets/home/concert-at-sanssouci.webp'
 import genreBallet from '@/assets/home/genre-ballet.webp'
 import genreChoral from '@/assets/home/genre-choral.webp'
 import genreConcerto from '@/assets/home/genre-concerto.webp'
-import genreSolo from '@/assets/home/genre-solo.webp'
 
 export const catalogAssets = {
   burgtheaterAuditorium,
@@ -78,7 +77,6 @@ export const catalogAssets = {
   genreBallet,
   genreChoral,
   genreConcerto,
-  genreSolo,
   composerHandel,
   composerHaydn,
   composerSchubert,
@@ -92,7 +90,7 @@ export const catalogAssets = {
   composerRavel,
   composerGrieg,
   genreOrchestral,
-  genreSong,
+  workWinterreise,
   workMagicFlute,
   workDonGiovanni,
   workMozartPianoConcerto21,
@@ -231,12 +229,6 @@ export const assetCredits: Record<CatalogAssetKey, ImageCredit> = {
     year: '1831',
     source: commons('Nicolo_Paganini_by_Richard_James_Lane.jpg'),
   },
-  genreSolo: {
-    title: 'A Woman Playing the Theorbo-Lute and a Cavalier',
-    artist: 'Gerard ter Borch',
-    year: 'c. 1658',
-    source: commons('A_Woman_Playing_the_Theorbo-Lute_and_a_Cavalier_MET_DP145907.jpg'),
-  },
   composerHandel: {
     artist: 'Attributed to Balthasar Denner',
     year: 'c. 1726–28',
@@ -303,7 +295,7 @@ export const assetCredits: Record<CatalogAssetKey, ImageCredit> = {
     year: '1862',
     source: commons('MANET_-_M%C3%BAsica_en_las_Tuller%C3%ADas_(National_Gallery,_Londres,_1862).jpg'),
   },
-  genreSong: {
+  workWinterreise: {
     title: 'A Schubertiade',
     artist: 'Julius Schmid',
     year: '1897',
