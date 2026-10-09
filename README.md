@@ -2,6 +2,8 @@
 
 A friendly guide to classical music: browse works, composers, and listening guides, with curated picks and cross-linked recommendations.
 
+Live at https://sonatina.vercel.app (deploys from `main`). Brand and voice: [BRAND.md](BRAND.md).
+
 ## Stack
 
 - React 19 + TypeScript, built with Vite 8
