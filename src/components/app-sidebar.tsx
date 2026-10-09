@@ -1,6 +1,6 @@
 import { Search, X } from 'lucide-react'
 import { NavLink } from 'react-router'
-import wordmark from '@/assets/sonatina-wordmark.png'
+import wordmark from '@/assets/sonatina-wordmark.webp'
 import { aboutItem, navItems } from '@/data/navigation'
 import { SidebarLink } from './sidebar-link'
 
