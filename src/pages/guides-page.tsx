@@ -1,9 +1,10 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router'
 import { catalogAssets } from '@/assets/catalog-assets'
-import { guides } from '@/data/guides'
+import { getReadTime, guides } from '@/data/guides'
+import { guideCategories } from '@/models/guide'
 
-const guideFilters = ['All', 'Getting started', 'Composers', 'Genres', 'Periods', 'Listening']
+const guideFilters = ['All', ...guideCategories]
 
 export function GuidesPage() {
   const [activeFilter, setActiveFilter] = useState('All')
@@ -47,7 +48,7 @@ export function GuidesPage() {
               <span>{guide.category}</span>
               <h2>{guide.title}</h2>
               <p>{guide.description}</p>
-              <small>{guide.readTime}</small>
+              <small>{getReadTime(guide)}</small>
             </div>
           </Link>
         ))}

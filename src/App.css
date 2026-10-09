@@ -1232,9 +1232,20 @@ button {
   font-weight: 780;
 }
 
-.detail-visual-hero blockquote {
+.detail-visual-quote {
   max-width: 470px;
   margin: 0 0 36px;
+}
+
+.detail-visual-quote figcaption {
+  margin-top: 10px;
+  color: rgb(118 107 94);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.detail-visual-hero blockquote {
+  margin: 0;
   color: rgb(83 75 67);
   font-family: Georgia, 'Times New Roman', serif;
   font-size: 23px;
@@ -1350,6 +1361,34 @@ button {
 .movement-tab-card,
 .work-details-panel {
   margin-top: 44px;
+}
+
+.guide-article {
+  max-width: 720px;
+  padding-top: 42px;
+}
+
+.guide-article-lead {
+  margin: 0 0 12px;
+  color: rgb(38 34 29);
+  font-size: 21px;
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+.guide-article h2 {
+  margin: 36px 0 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 27px;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.guide-article p:not(.guide-article-lead) {
+  margin: 14px 0 0;
+  color: rgb(72 65 56);
+  font-size: 18px;
+  line-height: 1.7;
 }
 
 .work-overview-grid {

@@ -1,23 +1,39 @@
 import type { CatalogAssetKey } from '@/assets/catalog-assets'
 
-export type WorkMovement = {
-  number: string
+export const genres = ['Symphony', 'Concerto', 'Keyboard', 'Chamber', 'Solo', 'Choral', 'Opera', 'Ballet'] as const
+
+export type Genre = (typeof genres)[number]
+
+export type Movement = {
   title: string
-  character: string
+  /** A short gloss: the concerto a movement belongs to, the part of a ballet, what to listen for. */
+  note?: string
 }
 
 export type Work = {
+  /** URL slug, e.g. `beethoven-symphony-5`. */
   id: string
   title: string
   composerId: string
+  /** Catalogue or opus number, e.g. "Op. 67", "BWV 1007", "K. 626". */
+  catalogue?: string
+  key?: string
+  /** Popular name, e.g. "Moonlight". Searchable. */
+  nickname?: string
   description: string
   asset: CatalogAssetKey
-  year: string
-  period: string
-  duration: string
+  /** When it was written, for display: "1804–08", "c. 1720". */
+  composed: string
+  /** A single year to sort and compare by. */
+  year: number
+  durationMinutes: number
+  genre: Genre
+  /** A plain description of the form, e.g. "Symphony in four movements". */
   form: string
-  premiere: string
+  premiere?: string
   instrumentation: string
   overview: string
-  movements: WorkMovement[]
+  /** The larger set this piece belongs to; its movements are then the set's. */
+  partOf?: string
+  movements: Movement[]
 }

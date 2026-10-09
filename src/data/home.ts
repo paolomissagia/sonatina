@@ -14,10 +14,10 @@ const pickLabels: Record<CatalogSection, string> = {
 }
 
 const editorPickSources: EditorPickSource[] = [
-  { section: 'works', id: '1' },
-  { section: 'composers', id: '2' },
-  { section: 'guides', id: '1' },
-  { section: 'works', id: '5' },
+  { section: 'works', id: 'beethoven-symphony-5' },
+  { section: 'composers', id: 'mozart' },
+  { section: 'guides', id: 'where-to-start' },
+  { section: 'works', id: 'debussy-clair-de-lune' },
 ]
 
 export const editorPicks: EditorPick[] = editorPickSources.flatMap(({ section, id }) => {

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { assetCredits, catalogAssets } from '@/assets/catalog-assets'
-import { getRecommendedComposers } from '@/data/composers'
+import { formatLifespan, getRecommendedComposers } from '@/data/composers'
 import type { Composer } from '@/models/composer'
 import { getWorksByComposer } from '@/data/works'
 import { DetailHero } from '@/components/detail-hero'
@@ -22,9 +22,10 @@ export function ComposerDetailPage({ composer }: ComposerDetailPageProps) {
   const essentialWorks = composerWorks.slice(0, 4)
   const recommendedComposers = getRecommendedComposers(composer)
   const facts = [
+    { label: 'Born', value: `${composer.born.year}, ${composer.born.place}` },
+    { label: 'Died', value: `${composer.died.year}, ${composer.died.place}` },
     { label: 'Nationality', value: composer.nationality },
     { label: 'Period', value: composer.period },
-    { label: 'Lived', value: composer.years },
     { label: 'Known for', value: composer.knownFor.join(', ') },
   ]
 
@@ -42,7 +43,7 @@ export function ComposerDetailPage({ composer }: ComposerDetailPageProps) {
         imageCredit={assetCredits[composer.asset]}
         imageSrc={catalogAssets[composer.asset]}
         quote={composer.quote}
-        subtitle={composer.years}
+        subtitle={formatLifespan(composer)}
         title={composer.name}
       />
 
@@ -57,7 +58,7 @@ export function ComposerDetailPage({ composer }: ComposerDetailPageProps) {
         <>
           <div className="composer-content-grid">
             <section className="composer-overview">
-              <h2>About {composer.name.split(' ').at(-1)}</h2>
+              <h2>About {composer.shortName}</h2>
               <p>{composer.overview}</p>
             </section>
 
@@ -77,7 +78,7 @@ export function ComposerDetailPage({ composer }: ComposerDetailPageProps) {
                     <Link className="essential-work-row" to={`/works/${work.id}`} key={work.id}>
                       <span>›</span>
                       <strong>{work.title}</strong>
-                      <small>{work.year}</small>
+                      <small>{work.composed}</small>
                     </Link>
                   ))}
                 </div>
@@ -93,7 +94,7 @@ export function ComposerDetailPage({ composer }: ComposerDetailPageProps) {
                 <RecommendationCard
                   imageSrc={catalogAssets[recommendedComposer.asset]}
                   key={recommendedComposer.id}
-                  meta={recommendedComposer.years}
+                  meta={formatLifespan(recommendedComposer)}
                   subtitle={recommendedComposer.period}
                   title={recommendedComposer.name}
                   to={`/composers/${recommendedComposer.id}`}
@@ -111,7 +112,7 @@ export function ComposerDetailPage({ composer }: ComposerDetailPageProps) {
               <RecommendationCard
                 imageSrc={catalogAssets[work.asset]}
                 key={work.id}
-                meta={work.year}
+                meta={work.composed}
                 subtitle={work.form}
                 title={work.title}
                 to={`/works/${work.id}`}

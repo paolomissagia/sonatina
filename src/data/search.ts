@@ -16,7 +16,7 @@ const searchableItems: SearchResult[] = searchCategories.flatMap((category) =>
 
 function matchesQuery(result: SearchResult, terms: string[]) {
   const haystack =
-    `${result.title} ${result.subtitle} ${result.detail} ${result.meta ?? ''} ${catalogPageMeta[result.category].title}`.toLowerCase()
+    `${result.title} ${result.subtitle} ${result.detail} ${result.meta ?? ''} ${result.keywords ?? ''} ${catalogPageMeta[result.category].title}`.toLowerCase()
 
   return terms.every((term) => haystack.includes(term))
 }

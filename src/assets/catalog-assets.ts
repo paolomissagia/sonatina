@@ -10,6 +10,7 @@ import workBeethoven5 from '@/assets/catalog/work-beethoven-5.webp'
 import workBrandenburg from '@/assets/catalog/work-brandenburg.webp'
 import workCelloSuite from '@/assets/catalog/work-cello-suite.webp'
 import workClairDeLune from '@/assets/catalog/work-clair-de-lune.webp'
+import workClaraSchumannTrio from '@/assets/catalog/work-clara-schumann-trio.webp'
 import workFidelio from '@/assets/catalog/work-fidelio.webp'
 import workFourSeasons from '@/assets/catalog/work-four-seasons.webp'
 import workGoldberg from '@/assets/catalog/work-goldberg.webp'
@@ -44,6 +45,7 @@ export const catalogAssets = {
   workBrandenburg,
   workCelloSuite,
   workClairDeLune,
+  workClaraSchumannTrio,
   workFidelio,
   workFourSeasons,
   workGoldberg,
@@ -166,6 +168,12 @@ export const assetCredits: Record<CatalogAssetKey, ImageCredit> = {
     artist: 'Jean-Antoine Watteau',
     year: '1717',
     source: commons('L%27Embarquement_pour_Cyth%C3%A8re,_by_Antoine_Watteau,_from_C2RMF_retouched.jpg'),
+  },
+  workClaraSchumannTrio: {
+    title: 'Joseph Joachim and Clara Schumann in concert',
+    artist: 'Adolph Menzel',
+    year: '1854',
+    source: commons('Adolph_von_Menzel_-_Joseph_Joachim_%2B_Clara_Schumann_(Zeichnung_1854).jpg'),
   },
   workFidelio: {
     title: 'Theater an der Wien, where Fidelio premiered',

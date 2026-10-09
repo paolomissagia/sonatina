@@ -16,14 +16,25 @@ describe('searchCatalog', () => {
   it('finds works by their composer’s name', () => {
     expect(titles('beethoven')).toEqual([
       'Symphony No. 5',
-      'Piano Sonata No. 14',
+      'Piano Sonata No. 14, “Moonlight”',
       'Fidelio',
       'Ludwig van Beethoven',
     ])
   })
 
+  it('finds works by catalogue number, key and nickname', () => {
+    expect(titles('op. 67')).toEqual(['Symphony No. 5'])
+    expect(titles('BWV 988')).toEqual(['Goldberg Variations'])
+    expect(titles('moonlight')).toContain('Piano Sonata No. 14, “Moonlight”')
+    expect(titles('minor op. 17')).toEqual(['Piano Trio'])
+  })
+
   it('requires every term to match', () => {
-    expect(titles('beethoven sonata')).toEqual(['Piano Sonata No. 14', 'Ludwig van Beethoven'])
+    expect(titles('beethoven sonata')).toEqual(['Piano Sonata No. 14, “Moonlight”', 'Ludwig van Beethoven'])
+  })
+
+  it('handles accented names', () => {
+    expect(titles('dvořák')).toContain('Antonín Dvořák')
   })
 
   it('tags each result with its section', () => {

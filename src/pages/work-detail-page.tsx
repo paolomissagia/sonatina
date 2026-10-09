@@ -2,9 +2,10 @@ import { useState } from 'react'
 import { assetCredits, catalogAssets } from '@/assets/catalog-assets'
 import { findComposer, getComposerName } from '@/data/composers'
 import type { Work } from '@/models/work'
-import { getRecommendedWorks } from '@/data/works'
+import { formatDuration, formatKeyAndCatalogue, getRecommendedWorks, getWorkPeriod } from '@/data/works'
 import { DetailHero } from '@/components/detail-hero'
 import { DetailTabs } from '@/components/detail-tabs'
+import { MovementList } from '@/components/movement-list'
 import { RecommendationCard } from '@/components/recommendation-card'
 import { RecommendationSection } from '@/components/recommendation-section'
 
@@ -15,18 +16,31 @@ type WorkDetailPageProps = {
 const tabs = ['Overview', 'Movements', 'Details'] as const
 type WorkTab = (typeof tabs)[number]
 
+function getMovementsTitle(work: Work) {
+  if (work.partOf) {
+    return `From ${work.partOf}`
+  }
+
+  return work.genre === 'Opera' || work.genre === 'Ballet' ? 'Structure' : 'Movements'
+}
+
 export function WorkDetailPage({ work }: WorkDetailPageProps) {
   const [activeTab, setActiveTab] = useState<WorkTab>('Overview')
   const composer = findComposer(work.composerId)
   const composerName = getComposerName(work.composerId)
   const recommendedWorks = getRecommendedWorks(work)
+  const keyAndCatalogue = formatKeyAndCatalogue(work)
+  const movementsTitle = getMovementsTitle(work)
   const workDetails = [
     { label: 'Composer', value: composerName },
-    { label: 'Year', value: work.year },
-    { label: 'Premiere', value: work.premiere },
-    { label: 'Duration', value: work.duration },
+    ...(work.catalogue ? [{ label: 'Catalogue', value: work.catalogue }] : []),
+    ...(work.key ? [{ label: 'Key', value: work.key }] : []),
+    ...(work.nickname ? [{ label: 'Also known as', value: work.nickname }] : []),
+    { label: 'Composed', value: work.composed },
+    ...(work.premiere ? [{ label: 'Premiere', value: work.premiere }] : []),
+    { label: 'Duration', value: `About ${formatDuration(work.durationMinutes)}` },
     { label: 'Form', value: work.form },
-    { label: 'Period', value: work.period },
+    { label: 'Period', value: getWorkPeriod(work) ?? '' },
     { label: 'Instrumentation', value: work.instrumentation },
   ]
 
@@ -44,9 +58,9 @@ export function WorkDetailPage({ work }: WorkDetailPageProps) {
         imageSrc={catalogAssets[work.asset]}
         meta={
           <>
-            <span>{work.year}</span>
-            <span>{work.duration}</span>
-            <span>{work.form}</span>
+            {keyAndCatalogue ? <span>{keyAndCatalogue}</span> : null}
+            <span>{work.composed}</span>
+            <span>{formatDuration(work.durationMinutes)}</span>
           </>
         }
         subtitle={composerName}
@@ -68,18 +82,7 @@ export function WorkDetailPage({ work }: WorkDetailPageProps) {
               <p>{work.overview}</p>
             </section>
 
-            <section className="movement-card">
-              <h2>Movements</h2>
-              <div className="movement-list">
-                {work.movements.map((movement) => (
-                  <div className="movement-row" key={`${work.id}-${movement.number}`}>
-                    <span>{movement.number}</span>
-                    <strong>{movement.title}</strong>
-                    <small>{movement.character}</small>
-                  </div>
-                ))}
-              </div>
-            </section>
+            <MovementList movements={work.movements} title={movementsTitle} />
           </div>
 
           {recommendedWorks.length > 0 ? (
@@ -88,7 +91,7 @@ export function WorkDetailPage({ work }: WorkDetailPageProps) {
                 <RecommendationCard
                   imageSrc={catalogAssets[relatedWork.asset]}
                   key={relatedWork.id}
-                  meta={relatedWork.year}
+                  meta={relatedWork.composed}
                   subtitle={getComposerName(relatedWork.composerId)}
                   title={relatedWork.title}
                   to={`/works/${relatedWork.id}`}
@@ -100,18 +103,7 @@ export function WorkDetailPage({ work }: WorkDetailPageProps) {
       ) : null}
 
       {activeTab === 'Movements' ? (
-        <section className="movement-card movement-tab-card">
-          <h2>Movements</h2>
-          <div className="movement-list">
-            {work.movements.map((movement) => (
-              <div className="movement-row" key={`${work.id}-${movement.number}`}>
-                <span>{movement.number}</span>
-                <strong>{movement.title}</strong>
-                <small>{movement.character}</small>
-              </div>
-            ))}
-          </div>
-        </section>
+        <MovementList className="movement-tab-card" movements={work.movements} title={movementsTitle} />
       ) : null}
 
       {activeTab === 'Details' ? (

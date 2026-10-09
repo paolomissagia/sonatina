@@ -1,10 +1,10 @@
-import { composers, getComposerName } from './composers'
-import { guides } from './guides'
 import type { CatalogItem, CatalogSection } from '@/models/catalog'
 import type { Composer } from '@/models/composer'
 import type { Guide } from '@/models/guide'
-import type { Work } from '@/models/work'
-import { works } from './works'
+import { genres, type Genre, type Work } from '@/models/work'
+import { composers, formatLifespan, getComposerName } from './composers'
+import { getReadTime, guides } from './guides'
+import { getWorkPeriod, works } from './works'
 
 export type CatalogPageMeta = {
   title: string
@@ -39,9 +39,9 @@ function workToCatalogItem(work: Work): CatalogItem {
     subtitle: getComposerName(work.composerId),
     detail: work.description,
     asset: work.asset,
-    form: work.form,
-    meta: work.year,
-    period: work.period,
+    genre: work.genre,
+    meta: work.composed,
+    keywords: [work.catalogue, work.key, work.nickname, work.genre, getWorkPeriod(work)].filter(Boolean).join(' '),
   }
 }
 
@@ -52,7 +52,8 @@ function composerToCatalogItem(composer: Composer): CatalogItem {
     subtitle: composer.period,
     detail: composer.bio,
     asset: composer.asset,
-    meta: composer.years,
+    meta: formatLifespan(composer),
+    keywords: [composer.nationality, ...composer.knownFor].join(' '),
   }
 }
 
@@ -63,42 +64,31 @@ function guideToCatalogItem(guide: Guide): CatalogItem {
     subtitle: guide.type,
     detail: guide.description,
     asset: guide.asset,
-    meta: guide.readTime,
+    meta: getReadTime(guide),
+    keywords: guide.category,
   }
 }
 
+const genreLabels: Record<Genre, string> = {
+  Symphony: 'Symphonies',
+  Concerto: 'Concertos',
+  Keyboard: 'Piano & keyboard',
+  Chamber: 'Chamber',
+  Solo: 'Solo',
+  Choral: 'Choral',
+  Opera: 'Opera',
+  Ballet: 'Ballet',
+}
+
+/** Works-page filters, linked as `/works?genre=<value>`. */
 export const workFilters = [
   { label: 'All', value: '' },
-  { label: 'Opera', value: 'Opera' },
-  { label: 'Piano', value: 'Piano' },
-  { label: 'Symphonies', value: 'Symphony' },
-  { label: 'Chamber Music', value: 'Chamber Music' },
-  { label: 'Concertos', value: 'Concerto' },
+  ...genres.map((genre) => ({ label: genreLabels[genre], value: genre.toLowerCase() })),
 ]
 
 /** Whether a work belongs under a works-page filter. An empty filter matches everything. */
-export function matchesWorkFilter(item: CatalogItem, activeType: string) {
-  if (!activeType || !item.form) {
-    return true
-  }
-
-  if (activeType === 'Piano') {
-    return ['Piano miniature', 'Sonata', 'Variations'].includes(item.form)
-  }
-
-  if (activeType === 'Chamber Music') {
-    return ['Suite', 'Serenade'].includes(item.form)
-  }
-
-  if (activeType === 'Symphony') {
-    return item.form === 'Symphony'
-  }
-
-  if (activeType === 'Concerto') {
-    return ['Concerto', 'Concertos'].includes(item.form)
-  }
-
-  return item.form === activeType
+export function matchesWorkFilter(item: CatalogItem, filter: string) {
+  return !filter || item.genre?.toLowerCase() === filter
 }
 
 export function getCatalogItems(section: CatalogSection): CatalogItem[] {

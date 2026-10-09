@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router'
 import type { ImageCredit } from '@/assets/catalog-assets'
+import type { Quote } from '@/models/composer'
 import { ImageCreditLink } from './image-credit-link'
 import type { FactListItem } from './fact-list'
 import { FactList } from './fact-list'
@@ -19,7 +20,7 @@ type DetailHeroProps = {
   imageCredit?: ImageCredit
   imageSrc: string
   meta?: ReactNode
-  quote?: string
+  quote?: Quote
   subtitle?: string
   title: string
 }
@@ -53,7 +54,12 @@ export function DetailHero({
 
         <h1>{title}</h1>
         {subtitle ? <p className="detail-visual-subtitle">{subtitle}</p> : null}
-        {quote ? <blockquote>“{quote}”</blockquote> : null}
+        {quote ? (
+          <figure className="detail-visual-quote">
+            <blockquote>“{quote.text}”</blockquote>
+            <figcaption>{quote.source}</figcaption>
+          </figure>
+        ) : null}
         {description ? <p className="detail-visual-description">{description}</p> : null}
         {meta ? <div className="detail-visual-meta">{meta}</div> : null}
         {facts ? <FactList items={facts} title={factsTitle} /> : null}

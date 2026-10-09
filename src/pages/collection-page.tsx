@@ -18,9 +18,9 @@ export function CollectionPage({ view }: CollectionPageProps) {
 
   const page = catalogPageMeta[view]
   const items = getCatalogItems(view)
-  const activeType = view === 'works' ? searchParams.get('type') ?? '' : ''
+  const activeGenre = view === 'works' ? searchParams.get('genre') ?? '' : ''
   const visibleItems = view === 'works'
-    ? items.filter((item) => matchesWorkFilter(item, activeType))
+    ? items.filter((item) => matchesWorkFilter(item, activeGenre))
     : items
 
   return (
@@ -32,12 +32,12 @@ export function CollectionPage({ view }: CollectionPageProps) {
       </div>
 
       {view === 'works' ? (
-        <div className="collection-filter-list" aria-label="Work type filters">
+        <div className="collection-filter-list" aria-label="Filter works by genre">
           {workFilters.map((filter) => (
             <Link
-              className={activeType === filter.value ? 'active' : undefined}
+              className={activeGenre === filter.value ? 'active' : undefined}
               key={filter.label}
-              to={filter.value ? `/works?type=${encodeURIComponent(filter.value)}` : '/works'}
+              to={filter.value ? `/works?genre=${filter.value}` : '/works'}
             >
               {filter.label}
             </Link>
