@@ -67,6 +67,40 @@ function guideToCatalogItem(guide: Guide): CatalogItem {
   }
 }
 
+export const workFilters = [
+  { label: 'All', value: '' },
+  { label: 'Opera', value: 'Opera' },
+  { label: 'Piano', value: 'Piano' },
+  { label: 'Symphonies', value: 'Symphony' },
+  { label: 'Chamber Music', value: 'Chamber Music' },
+  { label: 'Concertos', value: 'Concerto' },
+]
+
+/** Whether a work belongs under a works-page filter. An empty filter matches everything. */
+export function matchesWorkFilter(item: CatalogItem, activeType: string) {
+  if (!activeType || !item.form) {
+    return true
+  }
+
+  if (activeType === 'Piano') {
+    return ['Piano miniature', 'Sonata', 'Variations'].includes(item.form)
+  }
+
+  if (activeType === 'Chamber Music') {
+    return ['Suite', 'Serenade'].includes(item.form)
+  }
+
+  if (activeType === 'Symphony') {
+    return item.form === 'Symphony'
+  }
+
+  if (activeType === 'Concerto') {
+    return ['Concerto', 'Concertos'].includes(item.form)
+  }
+
+  return item.form === activeType
+}
+
 export function getCatalogItems(section: CatalogSection): CatalogItem[] {
   if (section === 'works') {
     return catalogTables.works.map(workToCatalogItem)

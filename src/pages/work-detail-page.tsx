@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { catalogAssets } from '@/assets/catalog-assets'
-import { composers, getComposerName } from '@/data/composers'
+import { findComposer, getComposerName } from '@/data/composers'
 import type { Work } from '@/models/work'
-import { works } from '@/data/works'
+import { getRecommendedWorks } from '@/data/works'
 import { DetailHero } from '@/components/detail-hero'
 import { DetailTabs } from '@/components/detail-tabs'
 import { RecommendationCard } from '@/components/recommendation-card'
@@ -15,35 +15,9 @@ type WorkDetailPageProps = {
 const tabs = ['Overview', 'Movements', 'Details'] as const
 type WorkTab = (typeof tabs)[number]
 
-function getComposer(work: Work) {
-  return composers.find((composer) => composer.id === work.composerId)
-}
-
-function getRecommendedWorks(work: Work) {
-  const sameComposer = works.filter(
-    (candidate) => candidate.composerId === work.composerId && candidate.id !== work.id,
-  )
-
-  const samePeriod = works.filter(
-    (candidate) =>
-      candidate.period === work.period &&
-      candidate.id !== work.id &&
-      candidate.composerId !== work.composerId,
-  )
-
-  const otherWorks = works.filter(
-    (candidate) =>
-      candidate.id !== work.id &&
-      candidate.composerId !== work.composerId &&
-      candidate.period !== work.period,
-  )
-
-  return [...sameComposer, ...samePeriod, ...otherWorks].slice(0, 4)
-}
-
 export function WorkDetailPage({ work }: WorkDetailPageProps) {
   const [activeTab, setActiveTab] = useState<WorkTab>('Overview')
-  const composer = getComposer(work)
+  const composer = findComposer(work.composerId)
   const composerName = getComposerName(work.composerId)
   const recommendedWorks = getRecommendedWorks(work)
   const workDetails = [

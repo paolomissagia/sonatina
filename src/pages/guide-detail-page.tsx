@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { catalogAssets } from '@/assets/catalog-assets'
-import { guides } from '@/data/guides'
+import { getRecommendedGuides } from '@/data/guides'
 import type { Guide } from '@/models/guide'
 import { DetailHero } from '@/components/detail-hero'
 import { DetailTabs } from '@/components/detail-tabs'
@@ -13,17 +13,6 @@ type GuideDetailPageProps = {
 
 const tabs = ['Overview', 'Sections', 'Details'] as const
 type GuideTab = (typeof tabs)[number]
-
-function getRecommendedGuides(guide: Guide) {
-  const sameCategory = guides.filter(
-    (candidate) => candidate.category === guide.category && candidate.id !== guide.id,
-  )
-  const otherGuides = guides.filter(
-    (candidate) => candidate.category !== guide.category && candidate.id !== guide.id,
-  )
-
-  return [...sameCategory, ...otherGuides].slice(0, 4)
-}
 
 export function GuideDetailPage({ guide }: GuideDetailPageProps) {
   const [activeTab, setActiveTab] = useState<GuideTab>('Overview')
