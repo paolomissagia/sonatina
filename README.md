@@ -1,10 +1,31 @@
-# React + TypeScript + Vite
+# Sonatina
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A friendly guide to classical music: browse works, composers, and listening guides, with curated picks and cross-linked recommendations.
 
-## Docker
+## Stack
 
-Run the development server with Docker Compose:
+- React 19 + TypeScript, built with Vite 8
+- React Router 8 (declarative `BrowserRouter` routes in `src/App.tsx`)
+- Hand-written CSS in `src/App.css`; Tailwind 4 + shadcn are installed and wired into `src/index.css` for new UI
+- pnpm (version pinned via `packageManager` in `package.json`), Node 24+
+
+## Getting started
+
+```sh
+corepack enable   # once, so the pinned pnpm version is used
+pnpm install
+pnpm dev          # http://localhost:5173
+```
+
+Other scripts:
+
+| Command        | What it does                         |
+| -------------- | ------------------------------------ |
+| `pnpm build`   | Type-check (`tsc -b`) and build to `dist/` |
+| `pnpm preview` | Serve the production build locally   |
+| `pnpm lint`    | Run ESLint                           |
+
+### Docker
 
 ```sh
 docker compose up --build
@@ -12,74 +33,20 @@ docker compose up --build
 
 Then open http://localhost:5173. Source changes are mounted into the container and served by Vite's dev server.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Project layout
 
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+src/
+  App.tsx           App shell and routes
+  pages/            One component per route
+  components/       Shared UI (cards, detail hero, tabs, sidebar, …)
+  models/           Domain types (Work, Composer, Guide, …)
+  data/             Static catalog content and lookup helpers
+  assets/           WebP artwork; catalog-assets.ts maps asset keys to imports
 ```
+
+Catalog content lives in `src/data/*.ts`. Records reference artwork by key (see `CatalogAssetKey`), and works reference composers by `composerId`.
+
+### Adding artwork
+
+Add images as WebP (max ~1600px wide, quality ~78), then register the import in `src/assets/catalog-assets.ts`.
