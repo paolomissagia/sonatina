@@ -8,7 +8,7 @@ type ImageCreditLinkProps = {
 export function ImageCreditLink({ credit }: ImageCreditLinkProps) {
   return (
     <a className="image-credit" href={credit.source} target="_blank" rel="noreferrer">
-      {credit.title ? <span className="image-credit-title">{credit.title} — </span> : 'Portrait: '}
+      {credit.title ? <span className="image-credit-title">{credit.title} - </span> : 'Portrait: '}
       {credit.artist}, {credit.year}
     </a>
   )
