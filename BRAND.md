@@ -32,23 +32,23 @@ Taglines: *Classical music belongs to everyone.* · *Discover the world of class
 
 The palette is warm paper and ink with a single gilt accent, like a concert programme. Every colour in the CSS is one of these tokens, defined in `src/index.css` as `R G B` triplets so it can take an alpha: `rgb(var(--ink) / 0.5)`. Never add a raw colour.
 
-| Token | Light | Dark | Use |
-| --- | --- | --- | --- |
-| `--ivory` | `#fffdf8` | `#201c17` | Cards, sidebar, surfaces; text on Ink buttons |
-| `--parchment` | `#f8f5ef` | `#16130f` | Page background, detail heroes |
-| `--linen` | `#efebe2` | `#2e2922` | Active navigation, hover fills |
-| `--rule` | `#e2ddd3` | `#3c362d` | Borders and dividers |
-| `--rule-strong` | `#ccc3b3` | `#584f42` | Hover borders |
-| `--ink` | `#1d1b18` | `#f4efe6` | Text, primary buttons |
-| `--ink-soft` | `#433c34` | `#d6cec1` | Body copy |
-| `--umber` | `#675f54` | `#b3a998` | Secondary text, captions |
-| `--gilt` | `#8f6228` | `#c9924a` | Accent: italic emphasis, links, markers. AA on Ivory and Parchment |
-| `--gilt-light` | `#b18c52` | `#aa8046` | Decorative only (arrows, numerals); not for text |
-| `--shadow` | `#342719` | `#000000` | Soft shadows at 7–14% opacity |
+| Token | Hex | Use |
+| --- | --- | --- |
+| `--ivory` | `#fffdf8` | Cards, sidebar, surfaces; text on Ink buttons |
+| `--parchment` | `#f8f5ef` | Page background, detail heroes |
+| `--linen` | `#efebe2` | Active navigation, hover fills |
+| `--rule` | `#e2ddd3` | Borders and dividers |
+| `--rule-strong` | `#ccc3b3` | Hover borders |
+| `--ink` | `#1d1b18` | Text, primary buttons |
+| `--ink-soft` | `#433c34` | Body copy |
+| `--umber` | `#675f54` | Secondary text, captions |
+| `--gilt` | `#8f6228` | Accent: italic emphasis, links, markers. AA on Ivory and Parchment |
+| `--gilt-light` | `#b18c52` | Decorative only (arrows, numerals); not for text |
+| `--shadow` | `#342719` | Soft shadows at 7–14% opacity |
 
-Colours drawn over images (`--scrim`, `--on-image`, `--on-image-soft`) stay the same in both themes.
+Colours drawn over images use `--scrim`, `--on-image` and `--on-image-soft`.
 
-**Dark mode, "the hall after dark"**, follows the visitor's system setting. Images are never dimmed or tinted.
+**One identity, no theme switching.** Sonatina is always warm paper and ink; we don't offer a dark mode, so the brand looks the same everywhere.
 
 ## Type
 
@@ -76,5 +76,5 @@ Colours drawn over images (`--scrim`, `--on-image`, `--on-image-soft`) stay the 
 
 ## Logo
 
-- Wordmark: "Sonatina" in a high-contrast serif, with the S-and-treble-clef monogram. It is an inline SVG (`src/components/logo.tsx`) drawn in `currentColor`, so it follows the theme.
-- Favicon: the monogram in Ivory on an Ink tile with rounded corners (`public/favicon.svg`, plus a 192 px PNG for touch icons). It reads in light and dark browser chrome alike.
+- Wordmark: "Sonatina" in a high-contrast serif, with the S-and-treble-clef monogram. It is an inline SVG (`src/components/logo.tsx`) drawn in `currentColor`.
+- Favicon: the monogram in Ivory on an Ink tile with rounded corners (`public/favicon.svg`, plus a 192 px PNG for touch icons). It reads on light and dark browser tabs alike.

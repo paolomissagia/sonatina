@@ -8,7 +8,7 @@ Live at https://sonatina.vercel.app (deploys from `main`). Brand and voice: [BRA
 
 - React 19 + TypeScript, built with Vite 8
 - React Router 8 (declarative `BrowserRouter` routes in `src/App.tsx`)
-- Plain CSS: `src/reset.css` (base reset), `src/index.css` (brand tokens, light and dark), `src/App.css` (components)
+- Plain CSS: `src/reset.css` (base reset), `src/index.css` (brand tokens), `src/App.css` (components)
 - EB Garamond and Geist, self-hosted via Fontsource
 - Vitest for unit tests, oxlint for linting
 - npm, Node 24+
