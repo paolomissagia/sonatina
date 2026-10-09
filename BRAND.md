@@ -2,8 +2,6 @@
 
 **Personality: a warm, knowledgeable concert-hall guide.** Think of someone writing good programme notes: they know the music deeply and want you to enjoy it, not to pass a test. The look is quiet and elegant; the words are welcoming, accurate and plain.
 
-> Draft. Sections marked **Proposed** describe where we want to go, not what ships today.
-
 ## Name
 
 - Always **Sonatina**, capital S. Never "SONATINA" or "sonatina" in running text.
@@ -26,36 +24,36 @@ Taglines: *Classical music belongs to everyone.* · *Discover the world of class
 
 - **Names keep their diacritics:** Antonín Dvořák, Köthen, Théâtre des Champs-Élysées.
 - **Dates:** spans use an en dash: 1685–1750, c. 1720.
-- **Catalogue numbers:** Op. 67, BWV 1007, K. 626, with a non-breaking space between the prefix and the number.
+- **Catalogue numbers:** Op. 67, BWV 1007, K. 626.
 - **Quotes:** only quotes with a known source. If a quote is commonly misattributed, leave it out.
 - **Periods:** Baroque, Classical, Romantic, Modern. Use one label per work and composer; cross-period figures get a note in their overview, not a combined label.
 
 ## Colour
 
-The palette is warm paper and ink with a single gilt accent, like a concert programme.
+The palette is warm paper and ink with a single gilt accent, like a concert programme. Every colour in the CSS is one of these tokens, defined in `src/index.css` as `R G B` triplets so it can take an alpha: `rgb(var(--ink) / 0.5)`. Never add a raw colour.
 
-| Token | Hex | Use |
-| --- | --- | --- |
-| Ivory | `#fffdf8` | Cards, sidebar, surfaces; text on dark buttons |
-| Parchment | `#f8f5ef` | Page background, detail heroes |
-| Linen | `#efebe2` | Active navigation, hover fills |
-| Rule | `#e2ddd3` | Borders and dividers |
-| Ink | `#1d1b18` | Text, primary buttons |
-| Umber | `#675f54` | Secondary text, captions |
-| Gilt | `#8f6228` | Accent: italic emphasis words, links, markers. Passes AA on Ivory |
-| Gilt light | `#b18c52` | Decorative only (arrows, numerals); not for body text |
-| Shadow | `#342719` | Soft warm shadows at 7–14% opacity, never grey or black |
+| Token | Light | Dark | Use |
+| --- | --- | --- | --- |
+| `--ivory` | `#fffdf8` | `#201c17` | Cards, sidebar, surfaces; text on Ink buttons |
+| `--parchment` | `#f8f5ef` | `#16130f` | Page background, detail heroes |
+| `--linen` | `#efebe2` | `#2e2922` | Active navigation, hover fills |
+| `--rule` | `#e2ddd3` | `#3c362d` | Borders and dividers |
+| `--rule-strong` | `#ccc3b3` | `#584f42` | Hover borders |
+| `--ink` | `#1d1b18` | `#f4efe6` | Text, primary buttons |
+| `--ink-soft` | `#433c34` | `#d6cec1` | Body copy |
+| `--umber` | `#675f54` | `#b3a998` | Secondary text, captions |
+| `--gilt` | `#8f6228` | `#c9924a` | Accent: italic emphasis, links, markers. AA on Ivory and Parchment |
+| `--gilt-light` | `#b18c52` | `#aa8046` | Decorative only (arrows, numerals); not for text |
+| `--shadow` | `#342719` | `#000000` | Soft shadows at 7–14% opacity |
 
-**Proposed:** turn these into `:root` tokens in `src/index.css`, and fold the ~80 near-duplicate colours in `App.css` into them.
+Colours drawn over images (`--scrim`, `--on-image`, `--on-image-soft`) stay the same in both themes.
 
-**Proposed dark mode, "the hall after dark":** background `#16130f`, surfaces `#201c17`, text `#f4efe6`, secondary text `#b3a998`, gilt `#c9924a`. Images stay as they are.
+**Dark mode, "the hall after dark"**, follows the visitor's system setting. Images are never dimmed or tinted.
 
 ## Type
 
-- **Headings:** a classical serif, set large with tight tracking. The emphasised word is italic and gilt: "Discover the world of *classical music.*"
-- **Body and UI:** Geist (variable, self-hosted via `@fontsource-variable/geist`), heavy weights (600–780) for labels.
-
-**Proposed:** headings currently use Georgia, which renders differently on every OS and doesn't match the wordmark. Replace it with a self-hosted serif closer to the wordmark (for example Cormorant Garamond or EB Garamond).
+- **Headings:** EB Garamond (`--font-display`, self-hosted via `@fontsource-variable/eb-garamond`), set large with tight tracking. It shares its letterforms with the wordmark. The emphasised word is italic and gilt: "Discover the world of *classical music.*"
+- **Body and UI:** Geist (`--font-body`, via `@fontsource-variable/geist`), heavy weights (600–780) for labels.
 
 ## Imagery
 
@@ -72,11 +70,11 @@ The palette is warm paper and ink with a single gilt accent, like a concert prog
 
 - **Italic gilt emphasis** on the key word of a headline.
 - **Image heroes that fade into parchment**, with the copy on the left and the picture on the right.
-- **Roman-numeral movement lists**: I. Allegro con brio · *Intensity*.
+- **Roman-numeral movement lists**: I. Allegro con brio · *The four-note motif*.
 - **Breadcrumbs** with a `›` separator.
 - **Soft cards**: 8 px radius, a 1 px Rule border, warm shadow.
 
 ## Logo
 
-- Wordmark: "Sonatina" in a high-contrast serif, with the S-and-treble-clef monogram.
-- **Proposed:** redraw it as SVG. The current PNG has its background baked in, so it can't sit on dark surfaces. The favicon needs a light-on-dark or gilt version of the monogram to read at 16 px.
+- Wordmark: "Sonatina" in a high-contrast serif, with the S-and-treble-clef monogram. It is an inline SVG (`src/components/logo.tsx`) drawn in `currentColor`, so it follows the theme.
+- Favicon: the monogram in Ivory on an Ink tile with rounded corners (`public/favicon.svg`, plus a 192 px PNG for touch icons). It reads in light and dark browser chrome alike.

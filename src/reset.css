@@ -397,7 +397,7 @@
   }
 
   html {
-    font-family: 'Geist Variable', sans-serif;
+    font-family: var(--font-body);
   }
 
   body {

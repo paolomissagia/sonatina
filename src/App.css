@@ -6,8 +6,8 @@ body {
   margin: 0;
   overflow: hidden;
   background:
-    radial-gradient(circle at top left, rgb(245 241 234), transparent 34rem),
-    linear-gradient(135deg, rgb(255 254 251), rgb(247 244 238));
+    radial-gradient(circle at top left, rgb(var(--parchment)), transparent 34rem),
+    linear-gradient(135deg, rgb(var(--ivory)), rgb(var(--parchment)));
 }
 
 button,
@@ -27,15 +27,15 @@ button {
   height: 100svh;
   display: grid;
   grid-template-columns: 240px minmax(0, 1fr);
-  color: rgb(38 34 30);
+  color: rgb(var(--ink));
   overflow: hidden;
 }
 
 .sidebar {
   height: 100svh;
   padding: 18px 24px 28px;
-  border-right: 1px solid rgb(226 221 211);
-  background: rgb(255 253 248 / 0.86);
+  border-right: 1px solid rgb(var(--rule));
+  background: rgb(var(--ivory) / 0.86);
   backdrop-filter: blur(18px);
   display: flex;
   flex-direction: column;
@@ -62,12 +62,11 @@ button {
   overflow: hidden;
 }
 
-.brand img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  mix-blend-mode: multiply;
+.brand svg {
+  width: 130px;
+  height: auto;
+  margin-left: 24px;
+  color: rgb(var(--ink));
 }
 
 .sidebar-group {
@@ -81,7 +80,7 @@ button {
   padding: 0 12px;
   border: 0;
   border-radius: 8px;
-  color: rgb(88 82 74);
+  color: rgb(var(--umber));
   background: transparent;
   display: flex;
   align-items: center;
@@ -97,12 +96,12 @@ button {
 
 .sidebar-link:hover,
 .sidebar-link.active {
-  color: rgb(28 25 22);
-  background: rgb(239 235 226);
+  color: rgb(var(--ink));
+  background: rgb(var(--linen));
 }
 
 .sidebar-link.active {
-  box-shadow: inset 0 0 0 1px rgb(230 224 213);
+  box-shadow: inset 0 0 0 1px rgb(var(--rule));
 }
 
 .workspace {
@@ -137,14 +136,14 @@ button {
   height: 38px;
   border: 0;
   border-radius: 999px;
-  color: rgb(62 57 51);
+  color: rgb(var(--ink-soft));
   background: transparent;
   display: inline-grid;
   place-items: center;
 }
 
 .icon-button:hover {
-  background: rgb(239 235 226);
+  background: rgb(var(--linen));
 }
 
 .sidebar-close,
@@ -155,17 +154,17 @@ button {
 .search-field {
   height: 46px;
   padding: 0 18px;
-  border: 1px solid rgb(233 228 218);
+  border: 1px solid rgb(var(--rule));
   border-radius: 999px;
-  background: rgb(255 255 255 / 0.74);
-  box-shadow: 0 12px 28px rgb(64 45 22 / 0.07);
+  background: rgb(var(--ivory) / 0.74);
+  box-shadow: 0 12px 28px rgb(var(--shadow) / 0.07);
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
 .search-field svg {
-  color: rgb(137 130 119);
+  color: rgb(var(--umber));
   flex: 0 0 auto;
 }
 
@@ -174,12 +173,12 @@ button {
   width: 100%;
   border: 0;
   outline: 0;
-  color: rgb(43 38 33);
+  color: rgb(var(--ink));
   background: transparent;
 }
 
 .search-field input::placeholder {
-  color: rgb(124 116 105);
+  color: rgb(var(--umber));
 }
 
 .content {
@@ -197,11 +196,11 @@ button {
 .home-hero {
   position: relative;
   min-height: 430px;
-  border: 1px solid rgb(222 216 204);
+  border: 1px solid rgb(var(--rule));
   border-radius: 8px;
   overflow: hidden;
-  background: rgb(247 243 236);
-  box-shadow: 0 18px 48px rgb(52 39 25 / 0.12);
+  background: rgb(var(--parchment));
+  box-shadow: 0 18px 48px rgb(var(--shadow) / 0.12);
 }
 
 .home-hero::before {
@@ -210,8 +209,8 @@ button {
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(90deg, rgb(255 253 248 / 0.98), rgb(255 253 248 / 0.78) 38%, rgb(255 253 248 / 0.2) 64%),
-    linear-gradient(180deg, rgb(255 253 248 / 0.1), rgb(255 253 248 / 0.82));
+    linear-gradient(90deg, rgb(var(--ivory) / 0.98), rgb(var(--ivory) / 0.78) 38%, rgb(var(--ivory) / 0.2) 64%),
+    linear-gradient(180deg, rgb(var(--ivory) / 0.1), rgb(var(--ivory) / 0.82));
 }
 
 .home-hero img {
@@ -232,8 +231,8 @@ button {
 
 .home-hero-copy h1 {
   margin: 0;
-  color: rgb(37 32 27);
-  font-family: Georgia, 'Times New Roman', serif;
+  color: rgb(var(--ink));
+  font-family: var(--font-display);
   font-size: clamp(50px, 7vw, 76px);
   line-height: 0.96;
   letter-spacing: -0.04em;
@@ -246,14 +245,14 @@ button {
 }
 
 .home-hero-copy h1 em {
-  color: rgb(143 98 40);
+  color: rgb(var(--gilt));
   font-style: italic;
 }
 
 .home-hero-copy p {
   max-width: 410px;
   margin: 24px 0 32px;
-  color: rgb(71 63 55);
+  color: rgb(var(--ink-soft));
   font-size: 18px;
   font-weight: 650;
   line-height: 1.55;
@@ -279,9 +278,9 @@ button {
 .primary-action {
   padding: 0 28px;
   border-radius: 999px;
-  color: rgb(255 253 248);
-  background: rgb(25 23 20);
-  box-shadow: 0 12px 24px rgb(52 39 25 / 0.18);
+  color: rgb(var(--ivory));
+  background: rgb(var(--ink));
+  box-shadow: 0 12px 24px rgb(var(--shadow) / 0.18);
 }
 
 .home-section {
@@ -299,14 +298,14 @@ button {
 
 .home-section-heading h2 {
   margin: 0;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-display);
   font-size: 25px;
   line-height: 1.15;
   letter-spacing: -0.025em;
 }
 
 .home-section-heading a {
-  color: rgb(67 60 52);
+  color: rgb(var(--ink-soft));
   font-weight: 760;
   text-decoration: none;
 }
@@ -322,20 +321,20 @@ button {
   position: relative;
   min-height: 150px;
   padding: 20px;
-  border: 1px solid rgb(218 211 199);
+  border: 1px solid rgb(var(--on-image-soft));
   border-radius: 8px;
   overflow: hidden;
-  color: rgb(255 253 248);
-  background: rgb(20 18 16);
+  color: rgb(var(--on-image));
+  background: rgb(var(--scrim));
   text-decoration: none;
-  box-shadow: 0 10px 26px rgb(52 39 25 / 0.1);
+  box-shadow: 0 10px 26px rgb(var(--scrim) / 0.1);
 }
 
 .home-category-card::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 8%, rgb(0 0 0 / 0.74));
+  background: linear-gradient(180deg, transparent 8%, rgb(var(--scrim) / 0.74));
 }
 
 .home-category-card img {
@@ -367,7 +366,7 @@ button {
 
 .home-category-card p {
   margin: 8px 0 0;
-  color: rgb(229 223 214);
+  color: rgb(var(--on-image-soft));
   font-size: 13px;
   font-weight: 680;
   line-height: 1.35;
@@ -375,13 +374,13 @@ button {
 
 .editor-pick-card {
   min-width: 0;
-  border: 1px solid rgb(226 221 211);
+  border: 1px solid rgb(var(--rule));
   border-radius: 8px;
   overflow: hidden;
   color: inherit;
-  background: rgb(255 253 248 / 0.78);
+  background: rgb(var(--ivory) / 0.78);
   text-decoration: none;
-  box-shadow: 0 12px 30px rgb(52 39 25 / 0.08);
+  box-shadow: 0 12px 30px rgb(var(--shadow) / 0.08);
   transition:
     border-color 160ms ease,
     box-shadow 160ms ease,
@@ -389,15 +388,15 @@ button {
 }
 
 .editor-pick-card:hover {
-  border-color: rgb(204 195 179);
-  box-shadow: 0 16px 36px rgb(52 39 25 / 0.12);
+  border-color: rgb(var(--rule-strong));
+  box-shadow: 0 16px 36px rgb(var(--shadow) / 0.12);
   transform: translateY(-1px);
 }
 
 .editor-pick-image {
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: rgb(22 20 18);
+  background: rgb(var(--scrim));
 }
 
 .editor-pick-image img {
@@ -414,7 +413,7 @@ button {
 }
 
 .editor-pick-copy small {
-  color: rgb(117 107 95);
+  color: rgb(var(--umber));
   font-size: 11px;
   font-weight: 820;
   letter-spacing: 0.08em;
@@ -430,7 +429,7 @@ button {
 
 .editor-pick-copy p {
   margin: 0;
-  color: rgb(97 88 78);
+  color: rgb(var(--umber));
   line-height: 1.35;
 }
 
@@ -440,7 +439,7 @@ button {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: rgb(97 88 78);
+  color: rgb(var(--umber));
   font-size: 13px;
   font-weight: 720;
 }
@@ -469,7 +468,7 @@ button {
 
 .section-heading button {
   border: 0;
-  color: rgb(67 60 52);
+  color: rgb(var(--ink-soft));
   background: transparent;
   font-weight: 700;
 }
@@ -490,7 +489,7 @@ button {
 
 .about-header > p:first-child {
   margin: 0 0 28px;
-  color: rgb(69 62 55);
+  color: rgb(var(--ink-soft));
   font-size: 19px;
   font-weight: 780;
   letter-spacing: -0.02em;
@@ -499,8 +498,8 @@ button {
 .about-header h1 {
   max-width: 700px;
   margin: 0;
-  color: rgb(32 29 25);
-  font-family: Georgia, 'Times New Roman', serif;
+  color: rgb(var(--ink));
+  font-family: var(--font-display);
   font-size: clamp(56px, 6vw, 76px);
   font-weight: 500;
   line-height: 0.98;
@@ -508,14 +507,14 @@ button {
 }
 
 .about-header h1 em {
-  color: rgb(164 106 37);
+  color: rgb(var(--gilt));
   font-style: italic;
 }
 
 .about-header > p:last-child {
   max-width: 660px;
   margin: 26px 0 0;
-  color: rgb(91 82 72);
+  color: rgb(var(--umber));
   font-size: 20px;
   font-weight: 650;
   line-height: 1.45;
@@ -523,10 +522,10 @@ button {
 
 .about-principles {
   overflow: hidden;
-  border: 1px solid rgb(226 221 211);
+  border: 1px solid rgb(var(--rule));
   border-radius: 8px;
-  background: rgb(255 253 248 / 0.74);
-  box-shadow: 0 18px 48px rgb(52 39 25 / 0.08);
+  background: rgb(var(--ivory) / 0.74);
+  box-shadow: 0 18px 48px rgb(var(--shadow) / 0.08);
 }
 
 .about-principle {
@@ -537,7 +536,7 @@ button {
 }
 
 .about-principle + .about-principle {
-  border-top: 1px solid rgb(226 221 211);
+  border-top: 1px solid rgb(var(--rule));
 }
 
 .about-principle-icon {
@@ -546,14 +545,14 @@ button {
   border-radius: 50%;
   display: grid;
   place-items: center;
-  color: rgb(166 110 45);
-  background: rgb(243 236 225);
+  color: rgb(var(--gilt));
+  background: rgb(var(--linen));
 }
 
 .about-principle h2 {
   margin: 0 0 6px;
-  color: rgb(38 34 29);
-  font-family: Georgia, 'Times New Roman', serif;
+  color: rgb(var(--ink));
+  font-family: var(--font-display);
   font-size: 28px;
   font-weight: 650;
   line-height: 1.05;
@@ -563,7 +562,7 @@ button {
 .about-principle p {
   max-width: 500px;
   margin: 0;
-  color: rgb(86 78 69);
+  color: rgb(var(--umber));
   font-size: 17px;
   font-weight: 650;
   line-height: 1.45;
@@ -575,8 +574,8 @@ button {
 
 .about-mission h2 {
   margin: 0 0 12px;
-  color: rgb(38 34 29);
-  font-family: Georgia, 'Times New Roman', serif;
+  color: rgb(var(--ink));
+  font-family: var(--font-display);
   font-size: 30px;
   font-weight: 650;
   letter-spacing: -0.03em;
@@ -585,7 +584,7 @@ button {
 .about-mission p {
   max-width: 560px;
   margin: 0;
-  color: rgb(82 74 65);
+  color: rgb(var(--umber));
   font-size: 18px;
   font-weight: 650;
   line-height: 1.55;
@@ -611,21 +610,21 @@ button {
   object-fit: cover;
   object-position: center 42%;
   border-radius: 8px 8px 0 0;
-  box-shadow: 0 18px 48px rgb(52 39 25 / 0.1);
+  box-shadow: 0 18px 48px rgb(var(--shadow) / 0.1);
 }
 
 .about-quote figcaption {
   position: relative;
   margin-top: -72px;
   padding: 94px 0 0;
-  background: linear-gradient(180deg, rgb(255 253 248 / 0.96), rgb(255 253 248));
+  background: linear-gradient(180deg, rgb(var(--ivory) / 0.96), rgb(var(--ivory)));
 }
 
 .about-quote blockquote {
   max-width: 650px;
   margin: 0;
-  color: rgb(60 52 45);
-  font-family: Georgia, 'Times New Roman', serif;
+  color: rgb(var(--ink-soft));
+  font-family: var(--font-display);
   font-size: clamp(30px, 3.4vw, 42px);
   font-style: italic;
   line-height: 1.25;
@@ -635,7 +634,7 @@ button {
 .about-quote cite {
   display: block;
   margin-top: 24px;
-  color: rgb(112 101 88);
+  color: rgb(var(--umber));
   font-size: 17px;
   font-style: normal;
   font-weight: 650;
@@ -652,7 +651,7 @@ button {
 
 .page-intro p {
   margin: 0;
-  color: rgb(103 95 84);
+  color: rgb(var(--umber));
   font-size: 18px;
   line-height: 1.5;
 }
@@ -667,22 +666,22 @@ button {
 .collection-filter-list a {
   min-height: 40px;
   padding: 0 16px;
-  border: 1px solid rgb(231 226 217);
+  border: 1px solid rgb(var(--rule));
   border-radius: 999px;
   display: inline-flex;
   align-items: center;
-  color: rgb(85 77 68);
-  background: rgb(248 245 239);
-  box-shadow: 0 8px 24px rgb(52 39 25 / 0.05);
+  color: rgb(var(--umber));
+  background: rgb(var(--parchment));
+  box-shadow: 0 8px 24px rgb(var(--shadow) / 0.05);
   font-size: 14px;
   font-weight: 760;
   text-decoration: none;
 }
 
 .collection-filter-list a.active {
-  border-color: rgb(29 27 24);
-  color: rgb(255 253 248);
-  background: rgb(29 27 24);
+  border-color: rgb(var(--ink));
+  color: rgb(var(--ivory));
+  background: rgb(var(--ink));
 }
 
 .collection-grid {
@@ -696,10 +695,10 @@ button {
   text-align: left;
   min-width: 0;
   padding: 12px;
-  border: 1px solid rgb(226 221 211);
+  border: 1px solid rgb(var(--rule));
   border-radius: 8px;
-  background: rgb(255 253 248 / 0.7);
-  box-shadow: 0 10px 28px rgb(52 39 25 / 0.08);
+  background: rgb(var(--ivory) / 0.7);
+  box-shadow: 0 10px 28px rgb(var(--shadow) / 0.08);
   color: inherit;
   text-decoration: none;
   transition:
@@ -709,23 +708,23 @@ button {
 }
 
 .collection-card:hover {
-  border-color: rgb(204 195 179);
-  box-shadow: 0 16px 36px rgb(52 39 25 / 0.12);
+  border-color: rgb(var(--rule-strong));
+  box-shadow: 0 16px 36px rgb(var(--shadow) / 0.12);
   transform: translateY(-1px);
 }
 
 .collection-card:focus-visible,
 .search-result-row:focus-visible {
-  outline: 2px solid rgb(130 94 48);
+  outline: 2px solid rgb(var(--gilt));
   outline-offset: 2px;
 }
 
 .collection-card-image {
   aspect-ratio: 16 / 9;
-  border: 1px solid rgb(35 31 27);
+  border: 1px solid rgb(var(--scrim));
   border-radius: 6px;
   overflow: hidden;
-  background: rgb(20 20 20);
+  background: rgb(var(--scrim));
 }
 
 .collection-card-image img {
@@ -751,13 +750,13 @@ button {
 
 .collection-card-copy p {
   margin: 0;
-  color: rgb(103 95 84);
+  color: rgb(var(--umber));
   line-height: 1.4;
 }
 
 .collection-card-copy span {
   flex: 0 0 auto;
-  color: rgb(130 94 48);
+  color: rgb(var(--gilt));
   font-size: 13px;
   font-weight: 750;
 }
@@ -775,8 +774,8 @@ button {
 
 .guides-header h1 {
   margin: 0;
-  color: rgb(35 31 27);
-  font-family: Georgia, 'Times New Roman', serif;
+  color: rgb(var(--ink));
+  font-family: var(--font-display);
   font-size: clamp(54px, 5.6vw, 74px);
   font-weight: 600;
   line-height: 1;
@@ -786,7 +785,7 @@ button {
 .guides-header p {
   max-width: 620px;
   margin: 24px 0 0;
-  color: rgb(91 82 72);
+  color: rgb(var(--umber));
   font-size: 21px;
   font-weight: 650;
   line-height: 1.55;
@@ -802,11 +801,11 @@ button {
 .guide-filter-list button {
   min-height: 44px;
   padding: 0 20px;
-  border: 1px solid rgb(231 226 217);
+  border: 1px solid rgb(var(--rule));
   border-radius: 999px;
-  color: rgb(85 77 68);
-  background: rgb(248 245 239);
-  box-shadow: 0 8px 24px rgb(52 39 25 / 0.05);
+  color: rgb(var(--umber));
+  background: rgb(var(--parchment));
+  box-shadow: 0 8px 24px rgb(var(--shadow) / 0.05);
   font: inherit;
   font-size: 15px;
   font-weight: 760;
@@ -819,14 +818,14 @@ button {
 }
 
 .guide-filter-list button:hover {
-  border-color: rgb(207 198 183);
+  border-color: rgb(var(--rule-strong));
   transform: translateY(-1px);
 }
 
 .guide-filter-list button.active {
-  border-color: rgb(29 27 24);
-  color: rgb(255 253 248);
-  background: rgb(29 27 24);
+  border-color: rgb(var(--ink));
+  color: rgb(var(--ivory));
+  background: rgb(var(--ink));
 }
 
 .guide-list {
@@ -836,15 +835,15 @@ button {
 
 .guide-row {
   min-height: 178px;
-  border: 1px solid rgb(226 221 211);
+  border: 1px solid rgb(var(--rule));
   border-radius: 8px;
   display: grid;
   grid-template-columns: 250px minmax(0, 1fr);
   overflow: hidden;
   color: inherit;
-  background: rgb(255 253 248 / 0.78);
+  background: rgb(var(--ivory) / 0.78);
   text-decoration: none;
-  box-shadow: 0 14px 36px rgb(52 39 25 / 0.07);
+  box-shadow: 0 14px 36px rgb(var(--shadow) / 0.07);
   transition:
     border-color 160ms ease,
     box-shadow 160ms ease,
@@ -852,20 +851,20 @@ button {
 }
 
 .guide-row:hover {
-  border-color: rgb(199 190 176);
-  box-shadow: 0 18px 42px rgb(52 39 25 / 0.11);
+  border-color: rgb(var(--rule-strong));
+  box-shadow: 0 18px 42px rgb(var(--shadow) / 0.11);
   transform: translateY(-2px);
 }
 
 .guide-row:focus-visible {
-  outline: 3px solid rgb(174 113 42 / 0.32);
+  outline: 3px solid rgb(var(--gilt) / 0.32);
   outline-offset: 4px;
 }
 
 .guide-row-image {
   min-height: 178px;
   overflow: hidden;
-  background: rgb(30 27 24);
+  background: rgb(var(--scrim));
 }
 
 .guide-row-image img {
@@ -889,7 +888,7 @@ button {
 
 .guide-row-copy span {
   margin-bottom: 12px;
-  color: rgb(164 106 37);
+  color: rgb(var(--gilt));
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -898,7 +897,7 @@ button {
 
 .guide-row-copy h2 {
   margin: 0;
-  color: rgb(38 34 29);
+  color: rgb(var(--ink));
   font-size: 24px;
   line-height: 1.18;
   letter-spacing: -0.025em;
@@ -907,7 +906,7 @@ button {
 .guide-row-copy p {
   max-width: 620px;
   margin: 10px 0 0;
-  color: rgb(91 82 72);
+  color: rgb(var(--umber));
   font-size: 17px;
   font-weight: 650;
   line-height: 1.45;
@@ -916,7 +915,7 @@ button {
 .guide-row-copy small {
   margin-top: auto;
   padding-top: 24px;
-  color: rgb(105 96 85);
+  color: rgb(var(--umber));
   font-size: 15px;
   font-weight: 700;
 }
@@ -927,7 +926,7 @@ button {
 
 .search-tabs {
   margin: 22px 0 34px;
-  border-bottom: 1px solid rgb(226 221 211);
+  border-bottom: 1px solid rgb(var(--rule));
   display: flex;
   gap: 34px;
   overflow-x: auto;
@@ -937,14 +936,14 @@ button {
   position: relative;
   padding: 0 0 16px;
   border: 0;
-  color: rgb(105 96 85);
+  color: rgb(var(--umber));
   background: transparent;
   font-weight: 720;
   white-space: nowrap;
 }
 
 .search-tabs button.active {
-  color: rgb(31 28 24);
+  color: rgb(var(--ink));
 }
 
 .search-tabs button.active::after {
@@ -954,12 +953,12 @@ button {
   bottom: -1px;
   height: 3px;
   border-radius: 999px;
-  background: rgb(31 28 24);
+  background: rgb(var(--ink));
 }
 
 .search-result-section {
   padding-bottom: 34px;
-  border-bottom: 1px solid rgb(230 224 213);
+  border-bottom: 1px solid rgb(var(--rule));
   margin-bottom: 34px;
 }
 
@@ -981,7 +980,7 @@ button {
 
 .search-result-section-heading button {
   border: 0;
-  color: rgb(67 60 52);
+  color: rgb(var(--ink-soft));
   background: transparent;
   font-weight: 700;
 }
@@ -995,9 +994,9 @@ button {
   width: 100%;
   min-height: 92px;
   padding: 10px 12px;
-  border: 1px solid rgb(226 221 211);
+  border: 1px solid rgb(var(--rule));
   border-radius: 8px;
-  background: rgb(255 253 248 / 0.74);
+  background: rgb(var(--ivory) / 0.74);
   display: grid;
   grid-template-columns: 84px minmax(0, 1fr) auto 24px;
   align-items: center;
@@ -1011,15 +1010,15 @@ button {
 }
 
 .search-result-row:hover {
-  border-color: rgb(204 195 179);
-  box-shadow: 0 12px 28px rgb(52 39 25 / 0.09);
+  border-color: rgb(var(--rule-strong));
+  box-shadow: 0 12px 28px rgb(var(--shadow) / 0.09);
 }
 
 .search-result-image {
   aspect-ratio: 1;
   border-radius: 6px;
   overflow: hidden;
-  background: rgb(21 20 19);
+  background: rgb(var(--scrim));
 }
 
 .search-result-image img {
@@ -1043,12 +1042,12 @@ button {
 .search-result-copy small {
   display: block;
   margin: 0;
-  color: rgb(103 95 84);
+  color: rgb(var(--umber));
   line-height: 1.35;
 }
 
 .search-result-meta {
-  color: rgb(72 65 56);
+  color: rgb(var(--ink-soft));
   display: flex;
   align-items: center;
   gap: 22px;
@@ -1056,26 +1055,26 @@ button {
 }
 
 .search-result-meta span {
-  color: rgb(184 132 43);
+  color: rgb(var(--gilt-light));
   font-weight: 720;
 }
 
 .search-result-meta strong {
-  color: rgb(72 65 56);
+  color: rgb(var(--ink-soft));
   font-weight: 760;
 }
 
 .search-result-arrow {
-  color: rgb(123 113 101);
+  color: rgb(var(--umber));
   font-size: 28px;
   line-height: 1;
 }
 
 .empty-results {
   padding: 36px;
-  border: 1px solid rgb(226 221 211);
+  border: 1px solid rgb(var(--rule));
   border-radius: 8px;
-  background: rgb(255 253 248 / 0.72);
+  background: rgb(var(--ivory) / 0.72);
 }
 
 .empty-results h3 {
@@ -1085,7 +1084,7 @@ button {
 
 .empty-results p {
   margin: 0;
-  color: rgb(103 95 84);
+  color: rgb(var(--umber));
 }
 
 .search-empty-state {
@@ -1094,14 +1093,14 @@ button {
 
 .search-empty-state h2 {
   margin: 0;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-display);
   font-size: 32px;
   letter-spacing: -0.025em;
 }
 
 .search-empty-state p {
   margin: 10px 0 0;
-  color: rgb(103 95 84);
+  color: rgb(var(--umber));
   font-size: 17px;
   line-height: 1.5;
 }
@@ -1117,7 +1116,7 @@ button {
 
 .search-route-header h1 {
   margin: 0;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-display);
   font-size: clamp(42px, 5vw, 64px);
   line-height: 1;
   letter-spacing: -0.04em;
@@ -1125,7 +1124,7 @@ button {
 
 .search-route-header p {
   margin: 12px 0 0;
-  color: rgb(103 95 84);
+  color: rgb(var(--umber));
   font-size: 18px;
   line-height: 1.5;
 }
@@ -1137,11 +1136,11 @@ button {
 .detail-visual-hero {
   position: relative;
   min-height: 620px;
-  border: 1px solid rgb(222 216 204);
+  border: 1px solid rgb(var(--rule));
   border-radius: 8px;
   overflow: hidden;
-  background: rgb(248 245 239);
-  box-shadow: 0 18px 48px rgb(52 39 25 / 0.12);
+  background: rgb(var(--parchment));
+  box-shadow: 0 18px 48px rgb(var(--shadow) / 0.12);
 }
 
 .detail-visual-hero::after {
@@ -1150,8 +1149,8 @@ button {
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(90deg, rgb(255 253 248 / 0.98), rgb(255 253 248 / 0.94) 42%, rgb(255 253 248 / 0.34) 66%, transparent 86%),
-    linear-gradient(0deg, rgb(255 253 248 / 0.92), transparent 34%);
+    linear-gradient(90deg, rgb(var(--ivory) / 0.98), rgb(var(--ivory) / 0.94) 42%, rgb(var(--ivory) / 0.34) 66%, transparent 86%),
+    linear-gradient(0deg, rgb(var(--ivory) / 0.92), transparent 34%);
 }
 
 .detail-visual-hero > img {
@@ -1170,15 +1169,15 @@ button {
   z-index: 2;
   padding: 4px 9px;
   border-radius: 999px;
-  background: rgb(29 27 24 / 0.55);
-  color: rgb(255 253 248 / 0.88);
+  background: rgb(var(--scrim) / 0.55);
+  color: rgb(var(--on-image) / 0.88);
   font-size: 12px;
   font-weight: 600;
   text-decoration: none;
 }
 
 .image-credit:hover {
-  background: rgb(29 27 24 / 0.75);
+  background: rgb(var(--scrim) / 0.75);
 }
 
 .detail-visual-hero-copy {
@@ -1194,7 +1193,7 @@ button {
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
-  color: rgb(96 87 77);
+  color: rgb(var(--umber));
   font-size: 14px;
   font-weight: 760;
 }
@@ -1211,14 +1210,14 @@ button {
 }
 
 .detail-visual-breadcrumb strong {
-  color: rgb(40 35 30);
+  color: rgb(var(--ink));
 }
 
 .detail-visual-hero h1 {
   max-width: 560px;
   margin: 0;
-  color: rgb(37 32 27);
-  font-family: Georgia, 'Times New Roman', serif;
+  color: rgb(var(--ink));
+  font-family: var(--font-display);
   font-size: clamp(40px, 4.1vw, 58px);
   font-weight: 500;
   line-height: 1;
@@ -1227,7 +1226,7 @@ button {
 
 .detail-visual-subtitle {
   margin: 12px 0 28px;
-  color: rgb(81 72 63);
+  color: rgb(var(--umber));
   font-size: 22px;
   font-weight: 780;
 }
@@ -1239,15 +1238,15 @@ button {
 
 .detail-visual-quote figcaption {
   margin-top: 10px;
-  color: rgb(118 107 94);
+  color: rgb(var(--umber));
   font-size: 13px;
   font-weight: 700;
 }
 
 .detail-visual-hero blockquote {
   margin: 0;
-  color: rgb(83 75 67);
-  font-family: Georgia, 'Times New Roman', serif;
+  color: rgb(var(--umber));
+  font-family: var(--font-display);
   font-size: 23px;
   font-style: italic;
   font-weight: 700;
@@ -1257,7 +1256,7 @@ button {
 .detail-visual-description {
   max-width: 430px;
   margin: 0;
-  color: rgb(88 79 69);
+  color: rgb(var(--umber));
   font-size: 19px;
   font-weight: 650;
   line-height: 1.45;
@@ -1268,7 +1267,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  color: rgb(94 85 75);
+  color: rgb(var(--umber));
   font-size: 17px;
   font-weight: 780;
 }
@@ -1276,7 +1275,7 @@ button {
 .detail-visual-meta span + span::before {
   content: '·';
   margin-right: 12px;
-  color: rgb(166 110 45);
+  color: rgb(var(--gilt));
 }
 
 .fact-list h2 {
@@ -1299,14 +1298,14 @@ button {
 }
 
 .fact-list dt {
-  color: rgb(100 91 80);
+  color: rgb(var(--umber));
   font-size: 16px;
   font-weight: 760;
 }
 
 .fact-list dd {
   margin: 0;
-  color: rgb(44 39 34);
+  color: rgb(var(--ink));
   font-size: 16px;
   font-weight: 780;
   line-height: 1.45;
@@ -1315,7 +1314,7 @@ button {
 .detail-tabs-list {
   margin: 0;
   padding-top: 26px;
-  border-bottom: 1px solid rgb(226 221 211);
+  border-bottom: 1px solid rgb(var(--rule));
   display: flex;
   gap: 34px;
   overflow-x: auto;
@@ -1331,7 +1330,7 @@ button {
   position: relative;
   padding: 0 0 16px;
   border: 0;
-  color: rgb(105 96 85);
+  color: rgb(var(--umber));
   background: transparent;
   font: inherit;
   font-weight: 760;
@@ -1340,7 +1339,7 @@ button {
 }
 
 .detail-tabs-list button.active {
-  color: rgb(31 28 24);
+  color: rgb(var(--ink));
 }
 
 .detail-tabs-list button.active::after {
@@ -1350,7 +1349,7 @@ button {
   bottom: -1px;
   height: 3px;
   border-radius: 999px;
-  background: rgb(31 28 24);
+  background: rgb(var(--ink));
 }
 
 .work-page {
@@ -1370,7 +1369,7 @@ button {
 
 .guide-article-lead {
   margin: 0 0 12px;
-  color: rgb(38 34 29);
+  color: rgb(var(--ink));
   font-size: 21px;
   font-weight: 650;
   line-height: 1.55;
@@ -1378,7 +1377,7 @@ button {
 
 .guide-article h2 {
   margin: 36px 0 0;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-display);
   font-size: 27px;
   line-height: 1.2;
   letter-spacing: -0.025em;
@@ -1386,7 +1385,7 @@ button {
 
 .guide-article p:not(.guide-article-lead) {
   margin: 14px 0 0;
-  color: rgb(72 65 56);
+  color: rgb(var(--ink-soft));
   font-size: 18px;
   line-height: 1.7;
 }
@@ -1402,8 +1401,8 @@ button {
 .movement-card h2,
 .recommendation-section-heading h2 {
   margin: 0;
-  color: rgb(38 34 29);
-  font-family: Georgia, 'Times New Roman', serif;
+  color: rgb(var(--ink));
+  font-family: var(--font-display);
   font-size: 29px;
   font-weight: 650;
   line-height: 1.1;
@@ -1413,7 +1412,7 @@ button {
 .work-listen p {
   max-width: 660px;
   margin: 24px 0 0;
-  color: rgb(67 60 52);
+  color: rgb(var(--ink-soft));
   font-size: 19px;
   font-weight: 650;
   line-height: 1.7;
@@ -1422,10 +1421,10 @@ button {
 .movement-card {
   align-self: start;
   padding: 26px 30px;
-  border: 1px solid rgb(226 221 211);
+  border: 1px solid rgb(var(--rule));
   border-radius: 8px;
-  background: rgb(255 253 248 / 0.78);
-  box-shadow: 0 16px 42px rgb(52 39 25 / 0.08);
+  background: rgb(var(--ivory) / 0.78);
+  box-shadow: 0 16px 42px rgb(var(--shadow) / 0.08);
 }
 
 .movement-tab-card,
@@ -1435,16 +1434,16 @@ button {
 
 .work-details-panel {
   padding: 30px;
-  border: 1px solid rgb(226 221 211);
+  border: 1px solid rgb(var(--rule));
   border-radius: 8px;
-  background: rgb(255 253 248 / 0.78);
-  box-shadow: 0 16px 42px rgb(52 39 25 / 0.08);
+  background: rgb(var(--ivory) / 0.78);
+  box-shadow: 0 16px 42px rgb(var(--shadow) / 0.08);
 }
 
 .work-details-panel h2 {
   margin: 0 0 20px;
-  color: rgb(38 34 29);
-  font-family: Georgia, 'Times New Roman', serif;
+  color: rgb(var(--ink));
+  font-family: var(--font-display);
   font-size: 29px;
   font-weight: 650;
   line-height: 1.1;
@@ -1458,7 +1457,7 @@ button {
 
 .work-details-panel div {
   min-height: 50px;
-  border-top: 1px solid rgb(232 227 218);
+  border-top: 1px solid rgb(var(--rule));
   display: grid;
   grid-template-columns: 170px minmax(0, 1fr);
   align-items: center;
@@ -1466,14 +1465,14 @@ button {
 }
 
 .work-details-panel dt {
-  color: rgb(100 91 80);
+  color: rgb(var(--umber));
   font-size: 15px;
   font-weight: 760;
 }
 
 .work-details-panel dd {
   margin: 0;
-  color: rgb(44 39 34);
+  color: rgb(var(--ink));
   font-size: 16px;
   font-weight: 760;
   line-height: 1.45;
@@ -1486,7 +1485,7 @@ button {
 
 .movement-row {
   min-height: 48px;
-  border-top: 1px solid rgb(232 227 218);
+  border-top: 1px solid rgb(var(--rule));
   display: grid;
   grid-template-columns: 36px minmax(0, 1fr) auto;
   align-items: center;
@@ -1495,13 +1494,13 @@ button {
 
 .movement-row span,
 .movement-row small {
-  color: rgb(118 107 94);
+  color: rgb(var(--umber));
   font-size: 14px;
   font-weight: 760;
 }
 
 .movement-row strong {
-  color: rgb(45 40 35);
+  color: rgb(var(--ink));
   font-size: 16px;
 }
 
@@ -1521,13 +1520,13 @@ button {
 
 .recommendation-card {
   overflow: hidden;
-  border: 1px solid rgb(226 221 211);
+  border: 1px solid rgb(var(--rule));
   border-radius: 8px;
   display: block;
   color: inherit;
-  background: rgb(255 253 248 / 0.78);
+  background: rgb(var(--ivory) / 0.78);
   text-decoration: none;
-  box-shadow: 0 14px 36px rgb(52 39 25 / 0.08);
+  box-shadow: 0 14px 36px rgb(var(--shadow) / 0.08);
   transition:
     border-color 160ms ease,
     box-shadow 160ms ease,
@@ -1535,20 +1534,20 @@ button {
 }
 
 .recommendation-card:hover {
-  border-color: rgb(199 190 176);
-  box-shadow: 0 18px 42px rgb(52 39 25 / 0.11);
+  border-color: rgb(var(--rule-strong));
+  box-shadow: 0 18px 42px rgb(var(--shadow) / 0.11);
   transform: translateY(-2px);
 }
 
 .recommendation-card:focus-visible {
-  outline: 3px solid rgb(174 113 42 / 0.32);
+  outline: 3px solid rgb(var(--gilt) / 0.32);
   outline-offset: 4px;
 }
 
 .recommendation-card-image {
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: rgb(30 27 24);
+  background: rgb(var(--scrim));
 }
 
 .recommendation-card-image img {
@@ -1572,7 +1571,7 @@ button {
 }
 
 .recommendation-card strong {
-  color: rgb(42 37 32);
+  color: rgb(var(--ink));
   font-size: 18px;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -1580,7 +1579,7 @@ button {
 
 .recommendation-card small {
   margin-top: 8px;
-  color: rgb(98 88 78);
+  color: rgb(var(--umber));
   font-size: 15px;
   font-weight: 650;
 }
@@ -1588,7 +1587,7 @@ button {
 .recommendation-card span {
   display: block;
   margin-top: 12px;
-  color: rgb(118 107 94);
+  color: rgb(var(--umber));
   font-size: 14px;
   font-weight: 760;
 }
@@ -1608,7 +1607,7 @@ button {
 .composer-overview h2,
 .essential-works h2 {
   margin: 0;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--font-display);
   font-size: 27px;
   line-height: 1.2;
   letter-spacing: -0.025em;
@@ -1617,7 +1616,7 @@ button {
 .composer-overview p {
   max-width: 620px;
   margin: 22px 0 0;
-  color: rgb(72 65 56);
+  color: rgb(var(--ink-soft));
   font-size: 19px;
   font-weight: 620;
   line-height: 1.7;
@@ -1635,23 +1634,23 @@ button {
   padding: 0;
   border: 0;
   background: none;
-  color: rgb(96 87 77);
+  color: rgb(var(--umber));
   font-weight: 780;
 }
 
 .essential-works-empty {
   margin: 0;
   padding: 24px 0;
-  color: rgb(103 95 84);
+  color: rgb(var(--umber));
   font-size: 17px;
 }
 
 .essential-works-list {
-  border: 1px solid rgb(229 223 213);
+  border: 1px solid rgb(var(--rule));
   border-radius: 8px;
   overflow: hidden;
-  background: rgb(255 253 248 / 0.72);
-  box-shadow: 0 12px 30px rgb(52 39 25 / 0.07);
+  background: rgb(var(--ivory) / 0.72);
+  box-shadow: 0 12px 30px rgb(var(--shadow) / 0.07);
 }
 
 .essential-work-row {
@@ -1666,11 +1665,11 @@ button {
 }
 
 .essential-work-row + .essential-work-row {
-  border-top: 1px solid rgb(233 228 218);
+  border-top: 1px solid rgb(var(--rule));
 }
 
 .essential-work-row span {
-  color: rgb(177 140 82);
+  color: rgb(var(--gilt-light));
   font-size: 24px;
   line-height: 1;
 }
@@ -1682,7 +1681,7 @@ button {
 }
 
 .essential-work-row small {
-  color: rgb(89 80 70);
+  color: rgb(var(--umber));
   font-size: 14px;
   font-weight: 760;
 }
@@ -1700,7 +1699,7 @@ button {
     box-sizing: border-box;
     transform: translateX(-100%);
     transition: transform 180ms ease;
-    box-shadow: 18px 0 42px rgb(52 39 25 / 0.16);
+    box-shadow: 18px 0 42px rgb(var(--shadow) / 0.16);
   }
 
   .sidebar.open {
@@ -1721,7 +1720,7 @@ button {
     height: 100%;
     border: 0;
     border-radius: 0;
-    background: rgb(20 17 13 / 0.28);
+    background: rgb(var(--scrim) / 0.28);
     cursor: default;
   }
 
@@ -1766,8 +1765,8 @@ button {
 
   .detail-visual-hero::after {
     background:
-      linear-gradient(180deg, rgb(255 253 248 / 0.98), rgb(255 253 248 / 0.9) 58%, rgb(255 253 248 / 0.28)),
-      linear-gradient(0deg, rgb(255 253 248 / 0.9), transparent 34%);
+      linear-gradient(180deg, rgb(var(--ivory) / 0.98), rgb(var(--ivory) / 0.9) 58%, rgb(var(--ivory) / 0.28)),
+      linear-gradient(0deg, rgb(var(--ivory) / 0.9), transparent 34%);
   }
 
   .detail-visual-hero > img {
@@ -1830,8 +1829,8 @@ button {
 
   .home-hero::before {
     background:
-      linear-gradient(180deg, rgb(255 253 248 / 0.98), rgb(255 253 248 / 0.92) 58%, rgb(255 253 248 / 0.54)),
-      linear-gradient(0deg, rgb(255 253 248 / 0.72), transparent 38%);
+      linear-gradient(180deg, rgb(var(--ivory) / 0.98), rgb(var(--ivory) / 0.92) 58%, rgb(var(--ivory) / 0.54)),
+      linear-gradient(0deg, rgb(var(--ivory) / 0.72), transparent 38%);
   }
 
   .home-hero img {

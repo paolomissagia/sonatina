@@ -1,7 +1,7 @@
 import { Search, X } from 'lucide-react'
 import { NavLink } from 'react-router'
-import wordmark from '@/assets/sonatina-wordmark.webp'
 import { aboutItem, navItems } from '@/data/navigation'
+import { Logo } from './logo'
 import { SidebarLink } from './sidebar-link'
 
 type AppSidebarProps = {
@@ -15,7 +15,7 @@ export function AppSidebar({ isOpen, onClose, onNavigate }: AppSidebarProps) {
     <aside className={isOpen ? 'sidebar open' : 'sidebar'} aria-label="Primary">
       <div className="sidebar-header">
         <div className="brand">
-          <img src={wordmark} alt="Sonatina" />
+          <Logo />
         </div>
         <button className="icon-button sidebar-close" type="button" aria-label="Close menu" onClick={onClose}>
           <X size={18} />

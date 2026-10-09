@@ -1,9 +1,56 @@
+@import '@fontsource-variable/eb-garamond';
+@import '@fontsource-variable/eb-garamond/wght-italic.css';
 @import '@fontsource-variable/geist';
 @import './reset.css';
 
+/*
+  Brand colour tokens (see BRAND.md). Each is an "R G B" triplet so it can take an
+  alpha: rgb(var(--ink)) or rgb(var(--ink) / 0.5).
+*/
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --border: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  color-scheme: light;
+
+  --font-display: 'EB Garamond Variable', Georgia, serif;
+  --font-body: 'Geist Variable', sans-serif;
+
+  --ivory: 255 253 248;
+  --parchment: 248 245 239;
+  --linen: 239 235 226;
+  --rule: 226 221 211;
+  --rule-strong: 204 195 179;
+  --ink: 29 27 24;
+  --ink-soft: 67 60 52;
+  --umber: 103 95 84;
+  --gilt: 143 98 40;
+  --gilt-light: 177 140 82;
+  --shadow: 52 39 25;
+
+  /* Over images: the same in both themes. */
+  --scrim: 20 18 16;
+  --on-image: 255 253 248;
+  --on-image-soft: 229 223 214;
+
+  --background: rgb(var(--parchment));
+  --foreground: rgb(var(--ink));
+  --border: rgb(var(--rule));
+  --ring: rgb(var(--gilt));
+}
+
+/* The hall after dark. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    --ivory: 32 28 23;
+    --parchment: 22 19 15;
+    --linen: 46 41 34;
+    --rule: 60 54 45;
+    --rule-strong: 88 79 66;
+    --ink: 244 239 230;
+    --ink-soft: 214 206 193;
+    --umber: 179 169 152;
+    --gilt: 201 146 74;
+    --gilt-light: 170 128 70;
+    --shadow: 0 0 0;
+  }
 }
