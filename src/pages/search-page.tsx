@@ -1,13 +1,15 @@
 import { Search } from 'lucide-react'
-import { useState } from 'react'
+import { useSearchParams } from 'react-router'
 import { SearchResultsPage } from '@/components/search-results-page'
 
 export function SearchPage() {
-  const [query, setQuery] = useState('')
+  const [searchParams, setSearchParams] = useSearchParams()
+  const query = searchParams.get('q') ?? ''
   const hasQuery = query.trim().length > 0
 
   return (
     <section className="search-route-page">
+      <title>{hasQuery ? `Search: ${query.trim()} · Sonatina` : 'Search · Sonatina'}</title>
       <div className="search-route-header">
         <h1>Search</h1>
         <p>Find works, composers, and guides from one place.</p>
@@ -19,12 +21,16 @@ export function SearchPage() {
           autoFocus
           placeholder="Search works, composers, guides..."
           value={query}
-          onChange={(event) => setQuery(event.target.value)}
+          type="search"
+          aria-label="Search Sonatina"
+          onChange={(event) =>
+            setSearchParams(event.target.value ? { q: event.target.value } : {}, { replace: true })
+          }
         />
       </label>
 
       {hasQuery ? (
-        <SearchResultsPage query={query} onNavigate={() => setQuery('')} />
+        <SearchResultsPage query={query} />
       ) : (
         <div className="search-empty-state">
           <h2>Start typing to search Sonatina</h2>

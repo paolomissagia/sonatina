@@ -37,6 +37,7 @@ export function GuideDetailPage({ guide }: GuideDetailPageProps) {
 
   return (
     <article className="guide-detail-page">
+      <title>{`${guide.title} · Sonatina`}</title>
       <DetailHero
         breadcrumb={[
           { label: 'Guides', to: '/guides' },

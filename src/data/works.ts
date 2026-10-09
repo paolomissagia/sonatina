@@ -258,3 +258,7 @@ export function findWork(id: string | undefined) {
 
   return works.find((work) => work.id === id)
 }
+
+export function getWorksByComposer(composerId: string) {
+  return works.filter((work) => work.composerId === composerId)
+}

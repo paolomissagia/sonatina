@@ -58,6 +58,7 @@ export function WorkDetailPage({ work }: WorkDetailPageProps) {
 
   return (
     <article className="work-page">
+      <title>{`${work.title} · ${composerName} · Sonatina`}</title>
       <DetailHero
         breadcrumb={[
           { label: 'Works', to: '/works' },

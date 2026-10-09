@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Navigate, Route, Routes, useParams } from 'react-router'
+import { useEffect, useRef, useState } from 'react'
+import { Route, Routes, useLocation, useParams } from 'react-router'
 import { AppSidebar } from '@/components/app-sidebar'
 import { TopBar } from '@/components/top-bar'
 import { findComposer } from '@/data/composers'
@@ -10,6 +10,7 @@ import { CollectionPage } from '@/pages/collection-page'
 import { ComposerDetailPage } from '@/pages/composer-detail-page'
 import { GuideDetailPage } from '@/pages/guide-detail-page'
 import { HomePage } from '@/pages/home-page'
+import { NotFoundPage } from '@/pages/not-found-page'
 import { SearchPage } from '@/pages/search-page'
 import { WorkDetailPage } from '@/pages/work-detail-page'
 import './App.css'
@@ -19,10 +20,10 @@ function RoutedComposerDetailPage() {
   const composer = findComposer(id)
 
   if (!composer) {
-    return <Navigate to="/composers" replace />
+    return <NotFoundPage />
   }
 
-  return <ComposerDetailPage composer={composer} />
+  return <ComposerDetailPage composer={composer} key={composer.id} />
 }
 
 function RoutedWorkDetailPage() {
@@ -30,10 +31,10 @@ function RoutedWorkDetailPage() {
   const work = findWork(id)
 
   if (!work) {
-    return <Navigate to="/works" replace />
+    return <NotFoundPage />
   }
 
-  return <WorkDetailPage work={work} />
+  return <WorkDetailPage work={work} key={work.id} />
 }
 
 function RoutedGuideDetailPage() {
@@ -41,17 +42,39 @@ function RoutedGuideDetailPage() {
   const guide = findGuide(id)
 
   if (!guide) {
-    return <Navigate to="/guides" replace />
+    return <NotFoundPage />
   }
 
-  return <GuideDetailPage guide={guide} />
+  return <GuideDetailPage guide={guide} key={guide.id} />
 }
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  const workspaceRef = useRef<HTMLDivElement>(null)
+  const { pathname } = useLocation()
   const handleNavigate = () => {
     setIsSidebarOpen(false)
   }
+
+  // The workspace, not the window, is the scroll container, so reset it on navigation.
+  useEffect(() => {
+    workspaceRef.current?.scrollTo({ top: 0 })
+  }, [pathname])
+
+  useEffect(() => {
+    if (!isSidebarOpen) {
+      return
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsSidebarOpen(false)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [isSidebarOpen])
 
   return (
     <div className="app-shell">
@@ -69,7 +92,7 @@ function App() {
         />
       ) : null}
 
-      <div className="workspace">
+      <div className="workspace" ref={workspaceRef}>
         <TopBar
           isMenuOpen={isSidebarOpen}
           onMenuClick={() => setIsSidebarOpen(true)}
@@ -86,7 +109,7 @@ function App() {
             <Route path="/guides/:id" element={<RoutedGuideDetailPage />} />
             <Route path="/search" element={<SearchPage />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>
       </div>

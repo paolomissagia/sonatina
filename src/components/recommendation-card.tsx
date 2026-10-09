@@ -18,7 +18,7 @@ export function RecommendationCard({
   return (
     <Link className="recommendation-card" to={to}>
       <div className="recommendation-card-image">
-        <img src={imageSrc} alt="" />
+        <img src={imageSrc} alt="" loading="lazy" decoding="async" />
       </div>
       <div className="recommendation-card-copy">
         <strong>{title}</strong>

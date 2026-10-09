@@ -22,6 +22,7 @@ const principles = [
 export function AboutPage() {
   return (
     <section className="about-page">
+      <title>About · Sonatina</title>
       <div className="about-header">
         <p>About Sonatina</p>
         <h1>

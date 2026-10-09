@@ -1,4 +1,5 @@
 import type { CatalogAssetKey } from '@/assets/catalog-assets'
+import type { CatalogSection } from './catalog'
 
 export type HomeExploreCategory = {
   title: string
@@ -8,6 +9,7 @@ export type HomeExploreCategory = {
 }
 
 export type EditorPick = {
+  section: CatalogSection
   type: string
   title: string
   subtitle: string
