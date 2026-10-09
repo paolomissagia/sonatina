@@ -30,25 +30,36 @@ Taglines: *Classical music belongs to everyone.* · *Discover the world of class
 
 ## Colour
 
-The palette is warm paper and ink with a single gilt accent, like a concert programme. Every colour in the CSS is one of these tokens, defined in `src/index.css` as `R G B` triplets so it can take an alpha: `rgb(var(--ink) / 0.5)`. Never add a raw colour.
+The palette is "concert hall": warm, toasted paper and brown-black ink for reading, framed by a dark sidebar and home hero, as if the house lights were down. Every colour in the CSS is one of these tokens, defined in `src/index.css` as `R G B` triplets so it can take an alpha: `rgb(var(--ink) / 0.5)`. Never add a raw colour.
 
 | Token | Hex | Use |
 | --- | --- | --- |
-| `--ivory` | `#fffdf8` | Cards, sidebar, surfaces; text on Ink buttons |
-| `--parchment` | `#f8f5ef` | Page background, detail heroes |
-| `--linen` | `#efebe2` | Active navigation, hover fills |
-| `--rule` | `#e2ddd3` | Borders and dividers |
-| `--rule-strong` | `#ccc3b3` | Hover borders |
-| `--ink` | `#1d1b18` | Text, primary buttons |
-| `--ink-soft` | `#433c34` | Body copy |
-| `--umber` | `#675f54` | Secondary text, captions |
-| `--gilt` | `#8f6228` | Accent: italic emphasis, links, markers. AA on Ivory and Parchment |
-| `--gilt-light` | `#b18c52` | Decorative only (arrows, numerals); not for text |
-| `--shadow` | `#342719` | Soft shadows at 7–14% opacity |
+| `--ivory` | `#f6efe2` | Cards and surfaces; text on Ink buttons |
+| `--parchment` | `#ebe1cf` | Page background, detail heroes |
+| `--linen` | `#e0d3bc` | Hover fills, quiet panels |
+| `--rule` | `#d5c7ae` | Borders and dividers |
+| `--rule-strong` | `#bba98a` | Hover borders |
+| `--ink` | `#2a2017` | Text, primary buttons |
+| `--ink-soft` | `#463a2d` | Body copy |
+| `--umber` | `#6b5c48` | Secondary text, captions |
+| `--gilt` | `#85561a` | Accent on paper: italic emphasis, links, markers. AA on Ivory and Parchment |
+| `--gilt-light` | `#a57b42` | Decorative only (arrows, numerals); not for text |
+| `--shadow` | `#3b2a17` | Soft shadows at 7–20% opacity |
+
+The frame (the sidebar and the home hero):
+
+| Token | Hex | Use |
+| --- | --- | --- |
+| `--frame` | `#241b13` | Sidebar |
+| `--frame-deep` | `#1d1610` | Home hero and its overlay |
+| `--frame-rule` | `#3a2e22` | Borders on the frame |
+| `--frame-ink` | `#f3e9d6` | Logo, headline and active links on the frame |
+| `--frame-muted` | `#cdbfa6` | Links and copy on the frame |
+| `--frame-gilt` | `#d8a75e` | Accent on the frame: headline emphasis, active marker, hero button |
 
 Colours drawn over images use `--scrim`, `--on-image` and `--on-image-soft`.
 
-**One identity, no theme switching.** Sonatina is always warm paper and ink; we don't offer a dark mode, so the brand looks the same everywhere.
+**One identity, no theme switching.** Sonatina is always the concert hall; we don't offer a dark mode, so the brand looks the same everywhere.
 
 ## Type
 
@@ -69,7 +80,8 @@ Colours drawn over images use `--scrim`, `--on-image` and `--on-image-soft`.
 ## Signature elements
 
 - **Italic gilt emphasis** on the key word of a headline.
-- **Image heroes that fade into parchment**, with the copy on the left and the picture on the right.
+- **The dark frame**: an ink sidebar and a home hero where the painting glows through a deep overlay and the headline's emphasis is gilt.
+- **Image heroes that fade into parchment** on detail pages, with the copy on the left and the picture on the right.
 - **Roman-numeral movement lists**: I. Allegro con brio · *The four-note motif*.
 - **Breadcrumbs** with a `›` separator.
 - **Soft cards**: 8 px radius, a 1 px Rule border, warm shadow.

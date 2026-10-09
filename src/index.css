@@ -13,17 +13,25 @@
   --font-display: 'EB Garamond Variable', Georgia, serif;
   --font-body: 'Geist Variable', sans-serif;
 
-  --ivory: 255 253 248;
-  --parchment: 248 245 239;
-  --linen: 239 235 226;
-  --rule: 226 221 211;
-  --rule-strong: 204 195 179;
-  --ink: 29 27 24;
-  --ink-soft: 67 60 52;
-  --umber: 103 95 84;
-  --gilt: 143 98 40;
-  --gilt-light: 177 140 82;
-  --shadow: 52 39 25;
+  --ivory: 246 239 226;
+  --parchment: 235 225 207;
+  --linen: 224 211 188;
+  --rule: 213 199 174;
+  --rule-strong: 187 169 138;
+  --ink: 42 32 23;
+  --ink-soft: 70 58 45;
+  --umber: 107 92 72;
+  --gilt: 133 86 26;
+  --gilt-light: 165 123 66;
+  --shadow: 59 42 23;
+
+  /* The frame: the sidebar and the home hero, like a concert hall with the house lights down. */
+  --frame: 36 27 19;
+  --frame-deep: 29 22 16;
+  --frame-rule: 58 46 34;
+  --frame-ink: 243 233 214;
+  --frame-muted: 205 191 166;
+  --frame-gilt: 216 167 94;
 
   /* Over images: the same in both themes. */
   --scrim: 20 18 16;
