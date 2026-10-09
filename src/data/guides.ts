@@ -7,7 +7,7 @@ export const guides: Guide[] = [
     type: 'Listening guide',
     category: 'Getting started',
     description: 'A beginner’s path through a handful of vivid, approachable works.',
-    asset: 'concertAtSanssouci',
+    asset: 'genreOrchestral',
     audience: 'New listeners',
     overview:
       'You don’t need to know anything to enjoy classical music. Start with a few vivid, approachable pieces, notice what you like, and let that lead you to the next one.',

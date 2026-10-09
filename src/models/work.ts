@@ -1,5 +1,3 @@
-import type { CatalogAssetKey } from '@/assets/catalog-assets'
-
 export const genres = ['Symphony', 'Concerto', 'Orchestral', 'Piano', 'Chamber', 'Choral', 'Opera', 'Ballet'] as const
 
 export type Genre = (typeof genres)[number]
@@ -21,8 +19,6 @@ export type Work = {
   /** Popular name, e.g. "Moonlight". Searchable. */
   nickname?: string
   description: string
-  /** Its own image, when a strong public-domain one exists; otherwise the genre cover is used. */
-  asset?: CatalogAssetKey
   /** When it was written, for display: "1804–08", "c. 1720". */
   composed: string
   /** A single year to sort and compare by. */

@@ -6,7 +6,7 @@ import { exploreCategories } from './explore-categories'
 import { findGuide, getReadTime, guides } from './guides'
 import { editorPicks } from './home'
 import { genres } from '@/models/work'
-import { findWork, formatDuration, formatKeyAndCatalogue, genreCovers, getWorkPeriod, works } from './works'
+import { findWork, formatDuration, formatKeyAndCatalogue, genreCovers, getWorkAsset, getWorkPeriod, works } from './works'
 
 const sections = ['works', 'composers', 'guides'] as const
 const slug = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
@@ -31,10 +31,15 @@ describe('catalog data', () => {
     })
   }
 
-  it('gives every composer their own portrait, and never reuses a work image', () => {
+  it('gives every composer their own portrait', () => {
     expect(new Set(composers.map((composer) => composer.asset)).size).toBe(composers.length)
-    const ownImages = works.flatMap((work) => (work.asset ? [work.asset] : []))
-    expect(new Set(ownImages).size).toBe(ownImages.length)
+  })
+
+  it('shows every work with its genre cover, and a different cover for each genre', () => {
+    for (const work of works) {
+      expect(getWorkAsset(work), work.title).toBe(genreCovers[work.genre])
+    }
+    expect(new Set(Object.values(genreCovers)).size).toBe(genres.length)
   })
 
   it('has a credited cover for every genre', () => {

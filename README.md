@@ -54,10 +54,10 @@ Catalog content lives in `src/data/*.ts`. Records reference artwork by key (see 
 
 ### Adding artwork
 
-All imagery is public domain (see [BRAND.md](BRAND.md#imagery)). Every work falls back to its genre's cover (`genreCovers` in `src/data/works.ts`), so a new work needs no image at all. When a strong public-domain image exists (an autograph, a first edition, the premiere venue), add it with:
+All imagery is public domain (see [BRAND.md](BRAND.md#imagery)). Works don't have their own images: each shows its category's cover (`genreCovers` in `src/data/works.ts`), so adding a work needs no art. Composer portraits and category covers are added with:
 
 ```sh
-node scripts/add-image.mjs "File:<Commons file name>" src/assets/catalog/work-<slug>.webp [--crop l,t,w,h] [--portrait] [--quality n]
+node scripts/add-image.mjs "File:<Commons file name>" src/assets/catalog/composer-<slug>.webp --portrait [--crop l,t,w,h] [--quality n]
 ```
 
-The script refuses anything that isn't public domain or CC0, writes the WebP, and prints the credit entry. Register the import and the credit in `src/assets/catalog-assets.ts`, then set `asset` on the work. Use `--portrait` for composer portraits (a square crop centred on the face). Tests fail if an image has no credit or a work image is reused.
+The script refuses anything that isn't public domain or CC0, writes the WebP, and prints the credit entry. Register the import and the credit in `src/assets/catalog-assets.ts`. `--portrait` makes a square crop centred on the face; for a portrait where the face sits off-centre, pass `--crop` first. Tests fail if an image has no credit.

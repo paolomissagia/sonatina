@@ -72,8 +72,21 @@ Colours drawn over images use `--scrim`, `--on-image` and `--on-image-soft`.
   - Crop to a square head-and-shoulders frame, with the face about 40% from the top, so 16:9 cards don't cut it off.
   - Every image carries a short credit (title, artist, year) shown as a pill on the image, linking to its source. Public-domain images need no attribution, so we don't name the archive.
   - Keep the original paintings and photographs; don't colourise or sepia-tone them.
-- **Works:** prefer the artefact itself: an autograph manuscript, a first-edition title page, the premiere venue or production. Otherwise use a period painting with a real link to the piece (Canaletto's Venice for *The Four Seasons*, Watteau's fêtes galantes for *Clair de lune*).
-- **Scenes** (concerts, halls, instruments): 18th–19th-century paintings and prints, such as Menzel, Renoir, Degas and Klimt.
+- **Works:** one cover per category, never per work, so the catalogue reads as one collection. Every cover is a warm 18th–19th-century oil painting of that kind of music being made:
+
+  | Category | Cover |
+  | --- | --- |
+  | Symphonies | Degas, *The Orchestra at the Opera* (c. 1870) |
+  | Concertos | Menzel, *Flute Concert of Frederick the Great at Sanssouci* (1850–52) |
+  | Orchestral | Manet, *Music in the Tuileries* (1862) |
+  | Piano | Renoir, *Young Girls at the Piano* (1892) |
+  | Chamber | Winternitz, *The String Quartet* (1899) |
+  | Choral | Webster, *A Village Choir* (1847) |
+  | Opera | Renoir, *La Loge* (1874) |
+  | Ballet | Degas, *The Dance Foyer at the Opera* (1872) |
+
+  No manuscripts, posters, prints or photographs as work images: mixing media is what makes a grid look inconsistent.
+- **Scenes** (home hero, About): paintings in the same vein, such as Klimt and Menzel.
 - **Everything is public domain and credited.** No AI-generated imagery anywhere on the site.
 - **Format:** WebP, at most about 1600 px wide (portraits 1200 px square), quality about 75–80.
 
