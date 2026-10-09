@@ -1,23 +1,22 @@
-import chamberSonata from '@/assets/catalog/chamber-sonata.png'
-import chamberMusicCategory from '@/assets/home/chamber-music.png'
-import composerAvatar from '@/assets/catalog/composer-avatar.png'
-import composerBaroque from '@/assets/catalog/composer-baroque.png'
-import composerBeethoven from '@/assets/catalog/composer-beethoven.png'
-import composerDebussy from '@/assets/catalog/composer-debussy.png'
-import composerRomantic from '@/assets/catalog/composer-romantic.png'
-import composerStravinsky from '@/assets/catalog/composer-stravinsky.png'
-import operaCurtain from '@/assets/home/opera-curtain.png'
-import pianoKeys from '@/assets/home/piano-keys.png'
-import pianoConcerto from '@/assets/catalog/piano-concerto.png'
-import symphony from '@/assets/catalog/symphony.png'
-import symphonyOrchestra from '@/assets/home/symphony-orchestra.png'
-import violinConcerto from '@/assets/catalog/violin-concerto.png'
-import aboutConcertHall from '@/assets/about-concert-hall.png'
-import heroArtwork from '@/assets/classical-dashboard-hero.png'
-import workConcerto from '@/assets/catalog/work-concerto.png'
-import workSacred from '@/assets/catalog/work-sacred.png'
-import workSerenade from '@/assets/catalog/work-serenade.png'
-import workSuite from '@/assets/catalog/work-suite.png'
+import chamberSonata from '@/assets/catalog/chamber-sonata.webp'
+import chamberMusicCategory from '@/assets/home/chamber-music.webp'
+import composerAvatar from '@/assets/catalog/composer-avatar.webp'
+import composerBaroque from '@/assets/catalog/composer-baroque.webp'
+import composerBeethoven from '@/assets/catalog/composer-beethoven.webp'
+import composerDebussy from '@/assets/catalog/composer-debussy.webp'
+import composerRomantic from '@/assets/catalog/composer-romantic.webp'
+import composerStravinsky from '@/assets/catalog/composer-stravinsky.webp'
+import operaCurtain from '@/assets/home/opera-curtain.webp'
+import pianoKeys from '@/assets/home/piano-keys.webp'
+import pianoConcerto from '@/assets/catalog/piano-concerto.webp'
+import symphony from '@/assets/catalog/symphony.webp'
+import symphonyOrchestra from '@/assets/home/symphony-orchestra.webp'
+import violinConcerto from '@/assets/catalog/violin-concerto.webp'
+import aboutConcertHall from '@/assets/about-concert-hall.webp'
+import workConcerto from '@/assets/catalog/work-concerto.webp'
+import workSacred from '@/assets/catalog/work-sacred.webp'
+import workSerenade from '@/assets/catalog/work-serenade.webp'
+import workSuite from '@/assets/catalog/work-suite.webp'
 
 export const catalogAssets = {
   aboutConcertHall,
@@ -29,7 +28,6 @@ export const catalogAssets = {
   composerDebussy,
   composerRomantic,
   composerStravinsky,
-  heroArtwork,
   operaCurtain,
   pianoKeys,
   pianoConcerto,
