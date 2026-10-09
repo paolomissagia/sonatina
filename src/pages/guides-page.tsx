@@ -18,6 +18,7 @@ export function GuidesPage() {
 
   return (
     <section className="guides-page">
+      <title>Guides · Sonatina</title>
       <header className="guides-header">
         <h1>Guides</h1>
         <p>In-depth guides to help you explore, understand, and enjoy classical music.</p>
@@ -40,7 +41,7 @@ export function GuidesPage() {
         {visibleGuides.map((guide) => (
           <Link className="guide-row" to={`/guides/${guide.id}`} key={guide.id}>
             <div className="guide-row-image">
-              <img src={catalogAssets[guide.asset]} alt="" />
+              <img src={catalogAssets[guide.asset]} alt="" loading="lazy" decoding="async" />
             </div>
             <div className="guide-row-copy">
               <span>{guide.category}</span>

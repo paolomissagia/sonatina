@@ -10,10 +10,10 @@ type SearchResult = CatalogItem & {
 }
 
 const categoryOrder: CatalogSection[] = ['works', 'composers', 'guides']
+const previewLimit = 3
 
 type SearchResultsPageProps = {
   query: string
-  onNavigate: () => void
 }
 
 const searchableItems: SearchResult[] = categoryOrder.flatMap((category) =>
@@ -40,17 +40,11 @@ function matchesQuery(result: SearchResult, query: string) {
   return terms.every((term) => haystack.includes(term))
 }
 
-function SearchResultRow({
-  onNavigate,
-  result,
-}: {
-  result: SearchResult
-  onNavigate: () => void
-}) {
+function SearchResultRow({ result }: { result: SearchResult }) {
   return (
-    <Link className="search-result-row" to={`/${result.category}/${result.id}`} onClick={onNavigate}>
+    <Link className="search-result-row" to={`/${result.category}/${result.id}`}>
       <div className="search-result-image">
-        <img src={catalogAssets[result.asset]} alt="" />
+        <img src={catalogAssets[result.asset]} alt="" loading="lazy" decoding="async" />
       </div>
       <div className="search-result-copy">
         <h3>{result.title}</h3>
@@ -65,7 +59,7 @@ function SearchResultRow({
   )
 }
 
-export function SearchResultsPage({ onNavigate, query }: SearchResultsPageProps) {
+export function SearchResultsPage({ query }: SearchResultsPageProps) {
   const [activeCategory, setActiveCategory] = useState<CatalogSection | 'all'>('all')
   const trimmedQuery = query.trim()
   const results = searchableItems.filter((result) => matchesQuery(result, trimmedQuery))
@@ -78,6 +72,7 @@ export function SearchResultsPage({ onNavigate, query }: SearchResultsPageProps)
       ? groupedResults
       : groupedResults.filter((group) => group.category === activeCategory)
   const totalResults = results.length
+  const visibleResultCount = visibleGroups.reduce((count, group) => count + group.results.length, 0)
 
   return (
     <section className="search-page">
@@ -103,35 +98,34 @@ export function SearchResultsPage({ onNavigate, query }: SearchResultsPageProps)
         ))}
       </div>
 
-      {totalResults === 0 ? (
+      {visibleResultCount === 0 ? (
         <div className="empty-results">
           <h3>No results found</h3>
           <p>Try searching for a composer, work, or guide.</p>
         </div>
       ) : (
-        visibleGroups.map(({ category, results: categoryResults }) =>
-          categoryResults.length > 0 ? (
+        visibleGroups.map(({ category, results: categoryResults }) => {
+          const isPreview = activeCategory === 'all' && categoryResults.length > previewLimit
+          const shownResults = isPreview ? categoryResults.slice(0, previewLimit) : categoryResults
+
+          return categoryResults.length > 0 ? (
             <section className="search-result-section" key={category}>
               <div className="search-result-section-heading">
                 <h3>{catalogPageMeta[category].title}</h3>
-                {categoryResults.length > 2 ? (
+                {isPreview ? (
                   <button type="button" onClick={() => setActiveCategory(category)}>
                     View all ({categoryResults.length})
                   </button>
                 ) : null}
               </div>
               <div className="search-result-list">
-                {categoryResults.slice(0, 3).map((result) => (
-                  <SearchResultRow
-                    onNavigate={onNavigate}
-                    result={result}
-                    key={`${result.category}-${result.id}`}
-                  />
+                {shownResults.map((result) => (
+                  <SearchResultRow result={result} key={`${result.category}-${result.id}`} />
                 ))}
               </div>
             </section>
-          ) : null,
-        )
+          ) : null
+        })
       )}
     </section>
   )

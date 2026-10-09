@@ -1,36 +1,43 @@
+import type { CatalogAssetKey } from '@/assets/catalog-assets'
+import type { CatalogSection } from '@/models/catalog'
 import type { EditorPick } from '@/models/home'
+import { findCatalogItem } from './catalog'
 
-export const editorPicks: EditorPick[] = [
-  {
-    type: 'Work',
-    title: 'Symphony No. 5',
-    subtitle: 'Ludwig van Beethoven',
-    meta: '1808',
-    asset: 'symphony',
-    to: '/works/1',
-  },
-  {
-    type: 'Composer',
-    title: 'Wolfgang Amadeus Mozart',
-    subtitle: 'Classical',
-    meta: '1756-1791',
-    asset: 'composerAvatar',
-    to: '/composers/2',
-  },
-  {
-    type: 'Guide',
-    title: 'Where to start with symphonies',
-    subtitle: 'Listening guide',
-    meta: '8 min read',
-    asset: 'violinConcerto',
-    to: '/guides/1',
-  },
-  {
-    type: 'Work',
-    title: 'Clair de lune',
-    subtitle: 'Claude Debussy',
-    meta: '1905',
-    asset: 'pianoConcerto',
-    to: '/works/5',
-  },
+type EditorPickSource = {
+  section: CatalogSection
+  id: string
+  asset?: CatalogAssetKey
+}
+
+const pickLabels: Record<CatalogSection, string> = {
+  works: 'Work',
+  composers: 'Composer',
+  guides: 'Guide',
+}
+
+const editorPickSources: EditorPickSource[] = [
+  { section: 'works', id: '1' },
+  { section: 'composers', id: '2' },
+  { section: 'guides', id: '1', asset: 'violinConcerto' },
+  { section: 'works', id: '5', asset: 'pianoConcerto' },
 ]
+
+export const editorPicks: EditorPick[] = editorPickSources.flatMap(({ section, id, asset }) => {
+  const item = findCatalogItem(section, id)
+
+  if (!item) {
+    return []
+  }
+
+  return [
+    {
+      section,
+      type: pickLabels[section],
+      title: item.title,
+      subtitle: item.subtitle,
+      meta: item.meta ?? '',
+      asset: asset ?? item.asset,
+      to: `/${section}/${item.id}`,
+    },
+  ]
+})

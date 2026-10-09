@@ -1,4 +1,4 @@
-import { Clock3 } from 'lucide-react'
+import { CalendarDays, Clock3 } from 'lucide-react'
 import { Link } from 'react-router'
 import { catalogAssets } from '@/assets/catalog-assets'
 import { exploreCategories } from '@/data/explore-categories'
@@ -7,6 +7,7 @@ import { editorPicks } from '@/data/home'
 export function HomePage() {
   return (
     <div className="home-page">
+      <title>Sonatina · Discover classical music</title>
       <section className="home-hero">
         <img src={catalogAssets.pianoConcerto} alt="" />
         <div className="home-hero-copy">
@@ -31,7 +32,7 @@ export function HomePage() {
         <div className="home-explore-grid">
           {exploreCategories.map((category) => (
             <Link className="home-category-card" to={category.to} key={category.title}>
-              <img src={catalogAssets[category.asset]} alt="" />
+              <img src={catalogAssets[category.asset]} alt="" loading="lazy" decoding="async" />
               <span>{category.title}</span>
               <p>{category.description}</p>
             </Link>
@@ -47,7 +48,7 @@ export function HomePage() {
           {editorPicks.map((pick) => (
             <Link className="editor-pick-card" to={pick.to} key={`${pick.type}-${pick.title}`}>
               <div className="editor-pick-image">
-                <img src={catalogAssets[pick.asset]} alt="" />
+                <img src={catalogAssets[pick.asset]} alt="" loading="lazy" decoding="async" />
               </div>
               <div className="editor-pick-copy">
                 <small>{pick.type}</small>
@@ -55,7 +56,7 @@ export function HomePage() {
                 <p>{pick.subtitle}</p>
                 <div className="editor-pick-meta">
                   <span>
-                    <Clock3 size={14} />
+                    {pick.section === 'guides' ? <Clock3 size={14} /> : <CalendarDays size={14} />}
                     {pick.meta}
                   </span>
                 </div>

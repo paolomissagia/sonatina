@@ -58,6 +58,7 @@ export function CollectionPage({ view }: CollectionPageProps) {
 
   return (
     <section className="collection-page">
+      <title>{`${page.title} · Sonatina`}</title>
       <div className="page-intro">
         <SectionHeading title={page.title} />
         <p>{page.description}</p>

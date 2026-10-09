@@ -11,7 +11,7 @@ export function CollectionCard({ item, view }: CollectionCardProps) {
   return (
     <Link className="collection-card" to={`/${view}/${item.id}`}>
       <div className="collection-card-image">
-        <img src={catalogAssets[item.asset]} alt="" />
+        <img src={catalogAssets[item.asset]} alt="" loading="lazy" decoding="async" />
       </div>
       <div className="collection-card-copy">
         <div>
