@@ -1,43 +1,15 @@
 import { catalogAssets } from '@/assets/catalog-assets'
 import { useState } from 'react'
 import { Link } from 'react-router'
-import { catalogPageMeta, getCatalogItems } from '@/data/catalog'
-import type { CatalogItem, CatalogSection } from '@/models/catalog'
+import { catalogPageMeta } from '@/data/catalog'
+import { searchCatalog, searchCategories, type SearchResult } from '@/data/search'
+import type { CatalogSection } from '@/models/catalog'
 import { SectionHeading } from './section-heading'
 
-type SearchResult = CatalogItem & {
-  category: CatalogSection
-}
-
-const categoryOrder: CatalogSection[] = ['works', 'composers', 'guides']
 const previewLimit = 3
 
 type SearchResultsPageProps = {
   query: string
-}
-
-const searchableItems: SearchResult[] = categoryOrder.flatMap((category) =>
-  getCatalogItems(category).map((item) => ({
-    ...item,
-    category,
-  })),
-)
-
-function matchesQuery(result: SearchResult, query: string) {
-  const terms = query
-    .trim()
-    .toLowerCase()
-    .split(/\s+/)
-    .filter(Boolean)
-
-  if (terms.length === 0) {
-    return false
-  }
-
-  const haystack =
-    `${result.title} ${result.subtitle} ${result.detail} ${result.meta ?? ''} ${catalogPageMeta[result.category].title}`.toLowerCase()
-
-  return terms.every((term) => haystack.includes(term))
 }
 
 function SearchResultRow({ result }: { result: SearchResult }) {
@@ -62,8 +34,8 @@ function SearchResultRow({ result }: { result: SearchResult }) {
 export function SearchResultsPage({ query }: SearchResultsPageProps) {
   const [activeCategory, setActiveCategory] = useState<CatalogSection | 'all'>('all')
   const trimmedQuery = query.trim()
-  const results = searchableItems.filter((result) => matchesQuery(result, trimmedQuery))
-  const groupedResults = categoryOrder.map((category) => ({
+  const results = searchCatalog(trimmedQuery)
+  const groupedResults = searchCategories.map((category) => ({
     category,
     results: results.filter((result) => result.category === category),
   }))

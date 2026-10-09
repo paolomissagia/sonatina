@@ -259,6 +259,29 @@ export function findWork(id: string | undefined) {
   return works.find((work) => work.id === id)
 }
 
+/** Up to four other works: same composer first, then same period, then the rest. */
+export function getRecommendedWorks(work: Work) {
+  const sameComposer = works.filter(
+    (candidate) => candidate.composerId === work.composerId && candidate.id !== work.id,
+  )
+
+  const samePeriod = works.filter(
+    (candidate) =>
+      candidate.period === work.period &&
+      candidate.id !== work.id &&
+      candidate.composerId !== work.composerId,
+  )
+
+  const otherWorks = works.filter(
+    (candidate) =>
+      candidate.id !== work.id &&
+      candidate.composerId !== work.composerId &&
+      candidate.period !== work.period,
+  )
+
+  return [...sameComposer, ...samePeriod, ...otherWorks].slice(0, 4)
+}
+
 export function getWorksByComposer(composerId: string) {
   return works.filter((work) => work.composerId === composerId)
 }

@@ -118,3 +118,15 @@ export function findComposer(id: string | undefined) {
 export function getComposerName(composerId: string) {
   return findComposer(composerId)?.name ?? 'Unknown composer'
 }
+
+/** Up to four other composers, those from the same period first. */
+export function getRecommendedComposers(composer: Composer) {
+  const samePeriod = composers.filter(
+    (candidate) => candidate.period === composer.period && candidate.id !== composer.id,
+  )
+  const otherComposers = composers.filter(
+    (candidate) => candidate.period !== composer.period && candidate.id !== composer.id,
+  )
+
+  return [...samePeriod, ...otherComposers].slice(0, 4)
+}

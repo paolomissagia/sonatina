@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
 import { catalogAssets } from '@/assets/catalog-assets'
-import { composers } from '@/data/composers'
+import { getRecommendedComposers } from '@/data/composers'
 import type { Composer } from '@/models/composer'
 import { getWorksByComposer } from '@/data/works'
 import { DetailHero } from '@/components/detail-hero'
@@ -15,17 +15,6 @@ type ComposerDetailPageProps = {
 
 const tabs = ['Overview', 'Works'] as const
 type ComposerTab = (typeof tabs)[number]
-
-function getRecommendedComposers(composer: Composer) {
-  const samePeriod = composers.filter(
-    (candidate) => candidate.period === composer.period && candidate.id !== composer.id,
-  )
-  const otherComposers = composers.filter(
-    (candidate) => candidate.period !== composer.period && candidate.id !== composer.id,
-  )
-
-  return [...samePeriod, ...otherComposers].slice(0, 4)
-}
 
 export function ComposerDetailPage({ composer }: ComposerDetailPageProps) {
   const [activeTab, setActiveTab] = useState<ComposerTab>('Overview')

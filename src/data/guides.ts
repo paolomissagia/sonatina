@@ -88,3 +88,15 @@ export function findGuide(id: string | undefined) {
 
   return guides.find((guide) => guide.id === id)
 }
+
+/** Up to four other guides, those in the same category first. */
+export function getRecommendedGuides(guide: Guide) {
+  const sameCategory = guides.filter(
+    (candidate) => candidate.category === guide.category && candidate.id !== guide.id,
+  )
+  const otherGuides = guides.filter(
+    (candidate) => candidate.category !== guide.category && candidate.id !== guide.id,
+  )
+
+  return [...sameCategory, ...otherGuides].slice(0, 4)
+}
