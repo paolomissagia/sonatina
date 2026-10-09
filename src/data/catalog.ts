@@ -72,9 +72,11 @@ function guideToCatalogItem(guide: Guide): CatalogItem {
 const genreLabels: Record<Genre, string> = {
   Symphony: 'Symphonies',
   Concerto: 'Concertos',
+  Orchestral: 'Orchestral',
   Keyboard: 'Piano & keyboard',
   Chamber: 'Chamber',
   Solo: 'Solo',
+  Song: 'Song',
   Choral: 'Choral',
   Opera: 'Opera',
   Ballet: 'Ballet',

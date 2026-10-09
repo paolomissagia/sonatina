@@ -21,6 +21,10 @@ function getMovementsTitle(work: Work) {
     return `From ${work.partOf}`
   }
 
+  if (work.genre === 'Song') {
+    return 'Songs'
+  }
+
   return work.genre === 'Opera' || work.genre === 'Ballet' ? 'Structure' : 'Movements'
 }
 

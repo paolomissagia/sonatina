@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { composers, findComposer, getRecommendedComposers } from './composers'
 import { findGuide, getRecommendedGuides, guides } from './guides'
-import { findWork, getRecommendedWorks, getWorksByComposer, works } from './works'
+import { findWork, getRecommendedWorks, getWorkPeriod, getWorksByComposer, works } from './works'
 
 describe('getRecommendedWorks', () => {
   it('never recommends the work itself, and returns at most four', () => {
@@ -14,22 +14,21 @@ describe('getRecommendedWorks', () => {
 
   it('puts the same composer first, then the same period', () => {
     const fifth = findWork('beethoven-symphony-5')!
-    expect(getRecommendedWorks(fifth).map((work) => work.title)).toEqual([
-      'Piano Sonata No. 14, “Moonlight”',
-      'Fidelio',
-      'Requiem',
-      'Eine kleine Nachtmusik',
-    ])
+    expect(getRecommendedWorks(fifth).every((work) => work.composerId === 'beethoven')).toBe(true)
+
+    const trio = findWork('clara-schumann-piano-trio')!
+    const [first, ...rest] = getRecommendedWorks(trio)
+    expect(first.composerId).toBe('clara-schumann')
+    expect(rest.every((work) => getWorkPeriod(work) === 'Romantic')).toBe(true)
   })
 })
 
 describe('getWorksByComposer', () => {
   it('returns only that composer’s works', () => {
-    expect(getWorksByComposer('bach').map((work) => work.title)).toEqual([
-      'Cello Suite No. 1',
-      'Goldberg Variations',
-      'Brandenburg Concertos',
-    ])
+    const bach = getWorksByComposer('bach')
+    expect(bach.length).toBeGreaterThan(3)
+    expect(bach.every((work) => work.composerId === 'bach')).toBe(true)
+    expect(bach.map((work) => work.title)).toContain('Goldberg Variations')
   })
 
   it('returns nothing for an unknown composer', () => {

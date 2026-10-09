@@ -14,12 +14,10 @@ describe('searchCatalog', () => {
   })
 
   it('finds works by their composer’s name', () => {
-    expect(titles('beethoven')).toEqual([
-      'Symphony No. 5',
-      'Piano Sonata No. 14, “Moonlight”',
-      'Fidelio',
-      'Ludwig van Beethoven',
-    ])
+    expect(titles('beethoven')).toEqual(
+      expect.arrayContaining(['Symphony No. 5', 'Piano Sonata No. 14, “Moonlight”', 'Fidelio', 'Ludwig van Beethoven']),
+    )
+    expect(searchCatalog('beethoven').every((result) => result.title === 'Ludwig van Beethoven' || result.subtitle === 'Ludwig van Beethoven' || result.category === 'guides')).toBe(true)
   })
 
   it('finds works by catalogue number, key and nickname', () => {

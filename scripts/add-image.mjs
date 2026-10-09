@@ -57,8 +57,11 @@ if (crop) {
   })
 }
 
+// A portrait is the largest square the source allows, up to 1200 px, so it is never stretched.
+const cropped = crop ? { width: Math.round(crop[2] * width), height: Math.round(crop[3] * height) } : { width, height }
+const side = Math.min(1200, cropped.width, cropped.height)
 image = flags.includes('--portrait')
-  ? image.resize(1200, 1200, { fit: 'cover', position: sharp.strategy.attention, withoutEnlargement: true })
+  ? image.resize(side, side, { fit: 'cover', position: sharp.strategy.attention })
   : image.resize({ width: 1600, withoutEnlargement: true })
 
 const result = await image.webp({ quality }).toBuffer({ resolveWithObject: true })
