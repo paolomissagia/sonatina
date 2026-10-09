@@ -24,7 +24,7 @@ Taglines: *Classical music belongs to everyone.* · *Discover the world of class
 
 - **Names keep their diacritics:** Antonín Dvořák, Köthen, Théâtre des Champs-Élysées.
 - **Dates:** spans use an en dash: 1685–1750, c. 1720.
-- **No em dashes** (—) anywhere. Use a hyphen with spaces ( - ) or rewrite the sentence.
+- **No em dashes** (the long dash) anywhere. Use a hyphen with spaces ( - ) or rewrite the sentence.
 - **Catalogue numbers:** Op. 67, BWV 1007, K. 626.
 - **Quotes:** only quotes with a known source. If a quote is commonly misattributed, leave it out.
 - **Periods:** Baroque, Classical, Romantic, Modern. Use one label per work and composer; cross-period figures get a note in their overview, not a combined label.
