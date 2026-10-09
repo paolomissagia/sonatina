@@ -6,24 +6,25 @@ A friendly guide to classical music: browse works, composers, and listening guid
 
 - React 19 + TypeScript, built with Vite 8
 - React Router 8 (declarative `BrowserRouter` routes in `src/App.tsx`)
-- Hand-written CSS in `src/App.css`; Tailwind 4 + shadcn are installed and wired into `src/index.css` for new UI
-- pnpm (version pinned via `packageManager` in `package.json`), Node 24+
+- Plain CSS: `src/reset.css` (base reset), `src/index.css` (tokens), `src/App.css` (components)
+- Vitest for unit tests, oxlint for linting
+- npm, Node 24+
 
 ## Getting started
 
 ```sh
-corepack enable   # once, so the pinned pnpm version is used
-pnpm install
-pnpm dev          # http://localhost:5173
+npm install
+npm run dev    # http://localhost:5173
+npm test       # unit tests
 ```
 
 Other scripts:
 
-| Command        | What it does                         |
-| -------------- | ------------------------------------ |
-| `pnpm build`   | Type-check (`tsc -b`) and build to `dist/` |
-| `pnpm preview` | Serve the production build locally   |
-| `pnpm lint`    | Run ESLint                           |
+| Command           | What it does                               |
+| ----------------- | ------------------------------------------ |
+| `npm run build`   | Type-check (`tsc -b`) and build to `dist/` |
+| `npm run preview` | Serve the production build locally         |
+| `npm run lint`    | Run oxlint                                 |
 
 ### Docker
 
@@ -41,7 +42,8 @@ src/
   pages/            One component per route
   components/       Shared UI (cards, detail hero, tabs, sidebar, …)
   models/           Domain types (Work, Composer, Guide, …)
-  data/             Static catalog content and lookup helpers
+  data/             Static catalog content, plus lookup, search, filter and
+                    recommendation helpers (tested in *.test.ts alongside)
   assets/           WebP artwork; catalog-assets.ts maps asset keys to imports
 ```
 
