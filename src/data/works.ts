@@ -1,5 +1,6 @@
+import type { CatalogAssetKey } from '@/assets/catalog-assets'
 import type { Period } from '@/models/composer'
-import type { Work } from '@/models/work'
+import type { Genre, Work } from '@/models/work'
 import { findComposer } from './composers'
 
 export const works: Work[] = [
@@ -343,6 +344,22 @@ export const works: Work[] = [
     ],
   },
 ]
+
+/** One cover per genre, used for any work without an image of its own. */
+export const genreCovers: Record<Genre, CatalogAssetKey> = {
+  Symphony: 'categorySymphony',
+  Concerto: 'genreConcerto',
+  Keyboard: 'categoryPiano',
+  Chamber: 'categoryChamber',
+  Solo: 'genreSolo',
+  Choral: 'genreChoral',
+  Opera: 'categoryOpera',
+  Ballet: 'genreBallet',
+}
+
+export function getWorkAsset(work: Work): CatalogAssetKey {
+  return work.asset ?? genreCovers[work.genre]
+}
 
 export function findWork(id: string | undefined) {
   if (!id) {

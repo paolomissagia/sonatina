@@ -1,7 +1,7 @@
 import { assetCredits, catalogAssets } from '@/assets/catalog-assets'
 import { getComposerName } from '@/data/composers'
 import { getReadTime, getRecommendedGuides } from '@/data/guides'
-import { findWork } from '@/data/works'
+import { findWork, getWorkAsset } from '@/data/works'
 import type { Guide } from '@/models/guide'
 import type { Work } from '@/models/work'
 import { DetailHero } from '@/components/detail-hero'
@@ -63,7 +63,7 @@ export function GuideDetailPage({ guide }: GuideDetailPageProps) {
         <RecommendationSection title="Works in this guide">
           {guideWorks.map((work) => (
             <RecommendationCard
-              imageSrc={catalogAssets[work.asset]}
+              imageSrc={catalogAssets[getWorkAsset(work)]}
               key={work.id}
               meta={work.composed}
               subtitle={getComposerName(work.composerId)}

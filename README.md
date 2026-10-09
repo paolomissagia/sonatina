@@ -54,4 +54,10 @@ Catalog content lives in `src/data/*.ts`. Records reference artwork by key (see 
 
 ### Adding artwork
 
-All imagery is public domain (see [BRAND.md](BRAND.md#imagery)). Add images as WebP (max ~1600px wide, quality ~75), register the import in `src/assets/catalog-assets.ts`, and add its credit (title, artist, year, Wikimedia Commons source) to `assetCredits` there. Tests fail if an image has no credit.
+All imagery is public domain (see [BRAND.md](BRAND.md#imagery)). Every work falls back to its genre's cover (`genreCovers` in `src/data/works.ts`), so a new work needs no image at all. When a strong public-domain image exists (an autograph, a first edition, the premiere venue), add it with:
+
+```sh
+node scripts/add-image.mjs "File:<Commons file name>" src/assets/catalog/work-<slug>.webp [--crop l,t,w,h] [--portrait] [--quality n]
+```
+
+The script refuses anything that isn't public domain or CC0, writes the WebP, and prints the credit entry. Register the import and the credit in `src/assets/catalog-assets.ts`, then set `asset` on the work. Use `--portrait` for composer portraits (a square crop centred on the face). Tests fail if an image has no credit or a work image is reused.

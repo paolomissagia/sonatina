@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { assetCredits, catalogAssets } from '@/assets/catalog-assets'
 import { findComposer, getComposerName } from '@/data/composers'
 import type { Work } from '@/models/work'
-import { formatDuration, formatKeyAndCatalogue, getRecommendedWorks, getWorkPeriod } from '@/data/works'
+import { formatDuration, formatKeyAndCatalogue, getRecommendedWorks, getWorkAsset, getWorkPeriod } from '@/data/works'
 import { DetailHero } from '@/components/detail-hero'
 import { DetailTabs } from '@/components/detail-tabs'
 import { MovementList } from '@/components/movement-list'
@@ -54,8 +54,8 @@ export function WorkDetailPage({ work }: WorkDetailPageProps) {
           { label: work.title },
         ]}
         description={work.description}
-        imageCredit={assetCredits[work.asset]}
-        imageSrc={catalogAssets[work.asset]}
+        imageCredit={assetCredits[getWorkAsset(work)]}
+        imageSrc={catalogAssets[getWorkAsset(work)]}
         meta={
           <>
             {keyAndCatalogue ? <span>{keyAndCatalogue}</span> : null}
@@ -89,7 +89,7 @@ export function WorkDetailPage({ work }: WorkDetailPageProps) {
             <RecommendationSection title="Recommended works">
               {recommendedWorks.map((relatedWork) => (
                 <RecommendationCard
-                  imageSrc={catalogAssets[relatedWork.asset]}
+                  imageSrc={catalogAssets[getWorkAsset(relatedWork)]}
                   key={relatedWork.id}
                   meta={relatedWork.composed}
                   subtitle={getComposerName(relatedWork.composerId)}

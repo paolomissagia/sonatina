@@ -4,7 +4,7 @@ import type { Guide } from '@/models/guide'
 import { genres, type Genre, type Work } from '@/models/work'
 import { composers, formatLifespan, getComposerName } from './composers'
 import { getReadTime, guides } from './guides'
-import { getWorkPeriod, works } from './works'
+import { getWorkAsset, getWorkPeriod, works } from './works'
 
 export type CatalogPageMeta = {
   title: string
@@ -38,7 +38,7 @@ function workToCatalogItem(work: Work): CatalogItem {
     title: work.title,
     subtitle: getComposerName(work.composerId),
     detail: work.description,
-    asset: work.asset,
+    asset: getWorkAsset(work),
     genre: work.genre,
     meta: work.composed,
     keywords: [work.catalogue, work.key, work.nickname, work.genre, getWorkPeriod(work)].filter(Boolean).join(' '),

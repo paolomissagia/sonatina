@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 import { assetCredits, catalogAssets } from '@/assets/catalog-assets'
 import { formatLifespan, getRecommendedComposers } from '@/data/composers'
 import type { Composer } from '@/models/composer'
-import { getWorksByComposer } from '@/data/works'
+import { getWorkAsset, getWorksByComposer } from '@/data/works'
 import { DetailHero } from '@/components/detail-hero'
 import { DetailTabs } from '@/components/detail-tabs'
 import { RecommendationCard } from '@/components/recommendation-card'
@@ -110,7 +110,7 @@ export function ComposerDetailPage({ composer }: ComposerDetailPageProps) {
           <RecommendationSection title={`Works by ${composer.name}`}>
             {composerWorks.map((work) => (
               <RecommendationCard
-                imageSrc={catalogAssets[work.asset]}
+                imageSrc={catalogAssets[getWorkAsset(work)]}
                 key={work.id}
                 meta={work.composed}
                 subtitle={work.form}

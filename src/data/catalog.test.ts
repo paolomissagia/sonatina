@@ -5,7 +5,8 @@ import { composers, findComposer, formatLifespan } from './composers'
 import { exploreCategories } from './explore-categories'
 import { findGuide, getReadTime, guides } from './guides'
 import { editorPicks } from './home'
-import { findWork, formatDuration, formatKeyAndCatalogue, getWorkPeriod, works } from './works'
+import { genres } from '@/models/work'
+import { findWork, formatDuration, formatKeyAndCatalogue, genreCovers, getWorkPeriod, works } from './works'
 
 const sections = ['works', 'composers', 'guides'] as const
 const slug = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
@@ -30,9 +31,16 @@ describe('catalog data', () => {
     })
   }
 
-  it('gives every composer and every work its own image', () => {
+  it('gives every composer their own portrait, and never reuses a work image', () => {
     expect(new Set(composers.map((composer) => composer.asset)).size).toBe(composers.length)
-    expect(new Set(works.map((work) => work.asset)).size).toBe(works.length)
+    const ownImages = works.flatMap((work) => (work.asset ? [work.asset] : []))
+    expect(new Set(ownImages).size).toBe(ownImages.length)
+  })
+
+  it('has a credited cover for every genre', () => {
+    for (const genre of genres) {
+      expect(assetCredits[genreCovers[genre]], genre).toBeDefined()
+    }
   })
 
   it('credits every image to its public-domain source', () => {

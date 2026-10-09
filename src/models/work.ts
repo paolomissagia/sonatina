@@ -21,7 +21,8 @@ export type Work = {
   /** Popular name, e.g. "Moonlight". Searchable. */
   nickname?: string
   description: string
-  asset: CatalogAssetKey
+  /** Its own image, when a strong public-domain one exists; otherwise the genre cover is used. */
+  asset?: CatalogAssetKey
   /** When it was written, for display: "1804–08", "c. 1720". */
   composed: string
   /** A single year to sort and compare by. */

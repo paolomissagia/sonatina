@@ -25,6 +25,10 @@ import categoryOpera from '@/assets/home/category-opera.webp'
 import categoryPiano from '@/assets/home/category-piano.webp'
 import categorySymphony from '@/assets/home/category-symphony.webp'
 import concertAtSanssouci from '@/assets/home/concert-at-sanssouci.webp'
+import genreBallet from '@/assets/home/genre-ballet.webp'
+import genreChoral from '@/assets/home/genre-choral.webp'
+import genreConcerto from '@/assets/home/genre-concerto.webp'
+import genreSolo from '@/assets/home/genre-solo.webp'
 
 export const catalogAssets = {
   burgtheaterAuditorium,
@@ -41,6 +45,10 @@ export const catalogAssets = {
   composerStravinsky,
   composerVivaldi,
   concertAtSanssouci,
+  genreBallet,
+  genreChoral,
+  genreConcerto,
+  genreSolo,
   workBeethoven5,
   workBrandenburg,
   workCelloSuite,
@@ -144,6 +152,30 @@ export const assetCredits: Record<CatalogAssetKey, ImageCredit> = {
     artist: 'Adolph Menzel',
     year: '1850–52',
     source: commons('Adolph_Menzel_-_Fl%C3%B6tenkonzert_Friedrichs_des_Gro%C3%9Fen_in_Sanssouci_-_Google_Art_Project.jpg'),
+  },
+  genreBallet: {
+    title: 'The Dance Class',
+    artist: 'Edgar Degas',
+    year: '1875',
+    source: commons('Edgar_Degas_-_La_Classe_de_danse.jpg'),
+  },
+  genreChoral: {
+    title: 'Singing Angels, from the Ghent Altarpiece',
+    artist: 'Jan van Eyck',
+    year: '1432',
+    source: commons('Ghent_Altarpiece_B_-_Angels.jpg'),
+  },
+  genreConcerto: {
+    title: 'Paganini in concert',
+    artist: 'Richard James Lane',
+    year: '1831',
+    source: commons('Nicolo_Paganini_by_Richard_James_Lane.jpg'),
+  },
+  genreSolo: {
+    title: 'A Woman Playing the Theorbo-Lute and a Cavalier',
+    artist: 'Gerard ter Borch',
+    year: 'c. 1658',
+    source: commons('A_Woman_Playing_the_Theorbo-Lute_and_a_Cavalier_MET_DP145907.jpg'),
   },
   workBeethoven5: {
     title: 'Theater an der Wien, where the symphony premiered',
