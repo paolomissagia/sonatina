@@ -91,6 +91,12 @@ Colours drawn over images use `--scrim`, `--on-image` and `--on-image-soft`.
 - **Everything is public domain and credited.** No AI-generated imagery anywhere on the site.
 - **Format:** WebP, at most about 1600 px wide (portraits 1200 px square), quality about 75–80.
 
+## Recordings
+
+- Played from Wikimedia Commons, never hosted. Only recordings their performers released freely (Musopen sessions, CC0, CC BY, CC BY-SA).
+- Credit the performer next to the Listen button; add the licence and its link whenever it is Creative Commons.
+- A work without a suitable recording has no player rather than a poor one.
+
 ## Signature elements
 
 - **Italic gilt emphasis** on the key word of a headline.
@@ -99,6 +105,7 @@ Colours drawn over images use `--scrim`, `--on-image` and `--on-image-soft`.
 - **Roman-numeral movement lists**: I. Allegro con brio · *The four-note motif*.
 - **Breadcrumbs** with a `›` separator.
 - **Soft cards**: 8 px radius, a 1 px Rule border, warm shadow.
+- **The player bar**: part of the dark frame, pinned to the bottom, with a gilt play button.
 
 ## Logo
 

@@ -2,6 +2,7 @@ import type { CatalogAssetKey } from '@/assets/catalog-assets'
 import type { Period } from '@/models/composer'
 import type { Genre, Work } from '@/models/work'
 import { findComposer } from './composers'
+import { recordings } from './recordings'
 
 export const works: Work[] = [
   {
@@ -1467,6 +1468,11 @@ export const genreCovers: Record<Genre, CatalogAssetKey> = {
   Choral: 'genreChoral',
   Opera: 'categoryOpera',
   Ballet: 'genreBallet',
+}
+
+/** A freely licensed recording of the work, when we have one. */
+export function getRecording(work: Work) {
+  return recordings[work.id]
 }
 
 export function getWorkAsset(work: Work): CatalogAssetKey {

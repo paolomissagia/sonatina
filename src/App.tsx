@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Route, Routes, useLocation, useParams } from 'react-router'
 import { AppSidebar } from '@/components/app-sidebar'
+import { PlayerBar } from '@/components/player-bar'
 import { TopBar } from '@/components/top-bar'
 import { findComposer } from '@/data/composers'
 import { findGuide } from '@/data/guides'
@@ -112,6 +113,7 @@ function App() {
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>
+        <PlayerBar />
       </div>
     </div>
   )

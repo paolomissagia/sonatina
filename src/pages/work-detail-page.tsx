@@ -1,8 +1,10 @@
+import { Pause, Play } from 'lucide-react'
 import { useState } from 'react'
 import { assetCredits, catalogAssets } from '@/assets/catalog-assets'
 import { findComposer, getComposerName } from '@/data/composers'
 import type { Work } from '@/models/work'
-import { formatDuration, formatKeyAndCatalogue, getRecommendedWorks, getWorkAsset, getWorkPeriod } from '@/data/works'
+import { formatDuration, formatKeyAndCatalogue, getRecommendedWorks, getRecording, getWorkAsset, getWorkPeriod } from '@/data/works'
+import { usePlayer } from '@/player/player-context'
 import { DetailHero } from '@/components/detail-hero'
 import { DetailTabs } from '@/components/detail-tabs'
 import { MovementList } from '@/components/movement-list'
@@ -35,6 +37,48 @@ export function WorkDetailPage({ work }: WorkDetailPageProps) {
   const recommendedWorks = getRecommendedWorks(work)
   const keyAndCatalogue = formatKeyAndCatalogue(work)
   const movementsTitle = getMovementsTitle(work)
+  const player = usePlayer()
+  const recording = getRecording(work)
+  const isCurrent = player.work?.id === work.id
+  const currentTrack = isCurrent ? player.recording?.tracks[player.index] : undefined
+  const playable = new Set(recording?.tracks.map((track) => track.movement))
+
+  const playMovement = (movement: number) => {
+    if (!recording) {
+      return
+    }
+
+    if (currentTrack?.movement === movement) {
+      player.toggle()
+      return
+    }
+
+    player.play(work, recording, recording.tracks.findIndex((track) => track.movement === movement))
+  }
+
+  const playWork = () => {
+    if (!recording) {
+      return
+    }
+
+    if (isCurrent) {
+      player.toggle()
+    } else {
+      player.play(work, recording)
+    }
+  }
+
+  const movementList = (className?: string) => (
+    <MovementList
+      activeMovement={currentTrack?.movement}
+      className={className}
+      movements={work.movements}
+      playable={playable}
+      playing={isCurrent && player.playing}
+      title={movementsTitle}
+      onPlay={recording ? playMovement : undefined}
+    />
+  )
   const workDetails = [
     { label: 'Composer', value: composerName },
     ...(work.catalogue ? [{ label: 'Catalogue', value: work.catalogue }] : []),
@@ -57,6 +101,29 @@ export function WorkDetailPage({ work }: WorkDetailPageProps) {
           ...(composer ? [{ label: composerName, to: `/composers/${composer.id}` }] : []),
           { label: work.title },
         ]}
+        actions={
+          recording ? (
+            <>
+              <button className="primary-action listen-action" type="button" onClick={playWork}>
+                {isCurrent && player.playing ? <Pause size={17} /> : <Play size={17} />}
+                {isCurrent && player.playing ? 'Pause' : isCurrent ? 'Resume' : 'Listen'}
+              </button>
+              <p className="listen-credit">
+                Recording: {recording.performer}
+                {recording.licenseUrl ? (
+                  <>
+                    {' · '}
+                    <a href={recording.licenseUrl} target="_blank" rel="noreferrer">
+                      {recording.license}
+                    </a>
+                  </>
+                ) : (
+                  ` · ${recording.license}`
+                )}
+              </p>
+            </>
+          ) : undefined
+        }
         description={work.description}
         imageCredit={assetCredits[getWorkAsset(work)]}
         imageSrc={catalogAssets[getWorkAsset(work)]}
@@ -86,7 +153,7 @@ export function WorkDetailPage({ work }: WorkDetailPageProps) {
               <p>{work.overview}</p>
             </section>
 
-            <MovementList movements={work.movements} title={movementsTitle} />
+            {movementList()}
           </div>
 
           {recommendedWorks.length > 0 ? (
@@ -107,7 +174,7 @@ export function WorkDetailPage({ work }: WorkDetailPageProps) {
       ) : null}
 
       {activeTab === 'Movements' ? (
-        <MovementList className="movement-tab-card" movements={work.movements} title={movementsTitle} />
+        movementList('movement-tab-card')
       ) : null}
 
       {activeTab === 'Details' ? (

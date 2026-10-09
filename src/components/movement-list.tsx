@@ -1,3 +1,4 @@
+import { Pause, Play } from 'lucide-react'
 import type { Movement } from '@/models/work'
 
 function toRoman(n: number) {
@@ -16,20 +17,48 @@ type MovementListProps = {
   className?: string
   movements: Movement[]
   title: string
+  /** Movements that have a recording; their rows become play buttons. */
+  playable?: Set<number>
+  /** The movement now playing, if it belongs to this work. */
+  activeMovement?: number
+  playing?: boolean
+  onPlay?: (movement: number) => void
 }
 
-export function MovementList({ className, movements, title }: MovementListProps) {
+export function MovementList({ activeMovement, className, movements, onPlay, playable, playing, title }: MovementListProps) {
   return (
     <section className={className ? `movement-card ${className}` : 'movement-card'}>
       <h2>{title}</h2>
       <ol className="movement-list">
-        {movements.map((movement, index) => (
-          <li className="movement-row" key={`${index}-${movement.title}`}>
-            <span>{toRoman(index + 1)}.</span>
-            <strong>{movement.title}</strong>
-            {movement.note ? <small>{movement.note}</small> : null}
-          </li>
-        ))}
+        {movements.map((movement, index) => {
+          const numeral = `${toRoman(index + 1)}.`
+          const active = activeMovement === index
+          const content = (
+            <>
+              <span>{numeral}</span>
+              <strong>{movement.title}</strong>
+              {movement.note ? <small>{movement.note}</small> : null}
+            </>
+          )
+
+          return (
+            <li className={active ? 'movement-row active' : 'movement-row'} key={`${index}-${movement.title}`}>
+              {onPlay && playable?.has(index) ? (
+                <button
+                  className="movement-play"
+                  type="button"
+                  aria-label={`${active && playing ? 'Pause' : 'Play'} ${numeral} ${movement.title}`}
+                  onClick={() => onPlay(index)}
+                >
+                  <i aria-hidden="true">{active && playing ? <Pause size={13} /> : <Play size={13} />}</i>
+                  {content}
+                </button>
+              ) : (
+                content
+              )}
+            </li>
+          )
+        })}
       </ol>
     </section>
   )

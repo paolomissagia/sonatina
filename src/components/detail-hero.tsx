@@ -14,6 +14,7 @@ type DetailHeroBreadcrumb = {
 type DetailHeroProps = {
   breadcrumb: DetailHeroBreadcrumb[]
   description?: string
+  actions?: ReactNode
   facts?: FactListItem[]
   factsTitle?: string
   imageAlt?: string
@@ -26,6 +27,7 @@ type DetailHeroProps = {
 }
 
 export function DetailHero({
+  actions,
   breadcrumb,
   description,
   facts,
@@ -62,6 +64,7 @@ export function DetailHero({
         ) : null}
         {description ? <p className="detail-visual-description">{description}</p> : null}
         {meta ? <div className="detail-visual-meta">{meta}</div> : null}
+        {actions ? <div className="detail-visual-actions">{actions}</div> : null}
         {facts ? <FactList items={facts} title={factsTitle} /> : null}
       </div>
     </section>
