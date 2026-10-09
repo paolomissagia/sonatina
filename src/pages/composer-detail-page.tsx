@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
-import { catalogAssets } from '@/assets/catalog-assets'
+import { assetCredits, catalogAssets } from '@/assets/catalog-assets'
 import { getRecommendedComposers } from '@/data/composers'
 import type { Composer } from '@/models/composer'
 import { getWorksByComposer } from '@/data/works'
@@ -39,10 +39,7 @@ export function ComposerDetailPage({ composer }: ComposerDetailPageProps) {
         facts={facts}
         factsTitle="Quick facts"
         imageAlt={`Portrait of ${composer.name}`}
-        imageCredit={{
-          label: `Portrait: ${composer.portrait.artist}, ${composer.portrait.year} · Wikimedia Commons`,
-          href: composer.portrait.source,
-        }}
+        imageCredit={assetCredits[composer.asset]}
         imageSrc={catalogAssets[composer.asset]}
         quote={composer.quote}
         subtitle={composer.years}

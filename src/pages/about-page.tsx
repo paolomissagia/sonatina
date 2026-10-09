@@ -1,5 +1,6 @@
 import { BookOpen, Music2, UsersRound } from 'lucide-react'
-import { catalogAssets } from '@/assets/catalog-assets'
+import { assetCredits, catalogAssets } from '@/assets/catalog-assets'
+import { ImageCreditLink } from '@/components/image-credit-link'
 
 const principles = [
   {
@@ -61,7 +62,10 @@ export function AboutPage() {
       </div>
 
       <figure className="about-quote">
-        <img src={catalogAssets.aboutConcertHall} alt="" />
+        <div className="about-quote-image">
+          <img src={catalogAssets.concertAtSanssouci} alt="" />
+          <ImageCreditLink credit={assetCredits.concertAtSanssouci} />
+        </div>
         <figcaption>
           <blockquote>
             “Music expresses that which cannot be put into words and that which cannot

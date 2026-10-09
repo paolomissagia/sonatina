@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { catalogAssets } from '@/assets/catalog-assets'
+import { assetCredits, catalogAssets } from '@/assets/catalog-assets'
 import { findCatalogItem, getCatalogItems, matchesWorkFilter, workFilters } from './catalog'
 import { composers, findComposer } from './composers'
 import { exploreCategories } from './explore-categories'
@@ -45,12 +45,16 @@ describe('catalog data', () => {
     }
   })
 
-  it('gives every composer their own credited portrait', () => {
+  it('gives every composer and every work its own image', () => {
     expect(new Set(composers.map((composer) => composer.asset)).size).toBe(composers.length)
+    expect(new Set(works.map((work) => work.asset)).size).toBe(works.length)
+  })
 
-    for (const composer of composers) {
-      expect(composer.portrait.artist, composer.name).not.toBe('')
-      expect(composer.portrait.source, composer.name).toMatch(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/)
+  it('credits every image to its public-domain source', () => {
+    for (const [key, credit] of Object.entries(assetCredits)) {
+      expect(credit.artist, key).not.toBe('')
+      expect(credit.year, key).not.toBe('')
+      expect(credit.source, key).toMatch(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/)
     }
   })
 

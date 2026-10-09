@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { catalogAssets } from '@/assets/catalog-assets'
+import { assetCredits, catalogAssets } from '@/assets/catalog-assets'
 import { findComposer, getComposerName } from '@/data/composers'
 import type { Work } from '@/models/work'
 import { getRecommendedWorks } from '@/data/works'
@@ -40,6 +40,7 @@ export function WorkDetailPage({ work }: WorkDetailPageProps) {
           { label: work.title },
         ]}
         description={work.description}
+        imageCredit={assetCredits[work.asset]}
         imageSrc={catalogAssets[work.asset]}
         meta={
           <>

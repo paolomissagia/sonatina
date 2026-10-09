@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react'
 import { Link } from 'react-router'
+import type { ImageCredit } from '@/assets/catalog-assets'
+import { ImageCreditLink } from './image-credit-link'
 import type { FactListItem } from './fact-list'
 import { FactList } from './fact-list'
 
@@ -8,18 +10,13 @@ type DetailHeroBreadcrumb = {
   to?: string
 }
 
-type DetailHeroImageCredit = {
-  label: string
-  href: string
-}
-
 type DetailHeroProps = {
   breadcrumb: DetailHeroBreadcrumb[]
   description?: string
   facts?: FactListItem[]
   factsTitle?: string
   imageAlt?: string
-  imageCredit?: DetailHeroImageCredit
+  imageCredit?: ImageCredit
   imageSrc: string
   meta?: ReactNode
   quote?: string
@@ -43,11 +40,7 @@ export function DetailHero({
   return (
     <section className="detail-visual-hero">
       <img src={imageSrc} alt={imageAlt} />
-      {imageCredit ? (
-        <a className="detail-visual-credit" href={imageCredit.href} target="_blank" rel="noreferrer">
-          {imageCredit.label}
-        </a>
-      ) : null}
+      {imageCredit ? <ImageCreditLink credit={imageCredit} /> : null}
       <div className="detail-visual-hero-copy">
         <nav className="detail-visual-breadcrumb" aria-label="Breadcrumb">
           {breadcrumb.map((item, index) => (

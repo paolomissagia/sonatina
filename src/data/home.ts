@@ -1,4 +1,3 @@
-import type { CatalogAssetKey } from '@/assets/catalog-assets'
 import type { CatalogSection } from '@/models/catalog'
 import type { EditorPick } from '@/models/home'
 import { findCatalogItem } from './catalog'
@@ -6,7 +5,6 @@ import { findCatalogItem } from './catalog'
 type EditorPickSource = {
   section: CatalogSection
   id: string
-  asset?: CatalogAssetKey
 }
 
 const pickLabels: Record<CatalogSection, string> = {
@@ -18,11 +16,11 @@ const pickLabels: Record<CatalogSection, string> = {
 const editorPickSources: EditorPickSource[] = [
   { section: 'works', id: '1' },
   { section: 'composers', id: '2' },
-  { section: 'guides', id: '1', asset: 'violinConcerto' },
-  { section: 'works', id: '5', asset: 'pianoConcerto' },
+  { section: 'guides', id: '1' },
+  { section: 'works', id: '5' },
 ]
 
-export const editorPicks: EditorPick[] = editorPickSources.flatMap(({ section, id, asset }) => {
+export const editorPicks: EditorPick[] = editorPickSources.flatMap(({ section, id }) => {
   const item = findCatalogItem(section, id)
 
   if (!item) {
@@ -36,7 +34,7 @@ export const editorPicks: EditorPick[] = editorPickSources.flatMap(({ section, i
       title: item.title,
       subtitle: item.subtitle,
       meta: item.meta ?? '',
-      asset: asset ?? item.asset,
+      asset: item.asset,
       to: `/${section}/${item.id}`,
     },
   ]

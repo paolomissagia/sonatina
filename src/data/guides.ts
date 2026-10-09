@@ -7,7 +7,7 @@ export const guides: Guide[] = [
     type: 'Listening guide',
     category: 'Getting started',
     description: 'A beginner’s guide with essential works to listen to first.',
-    asset: 'symphonyOrchestra',
+    asset: 'concertAtSanssouci',
     readTime: '5 min read',
     audience: 'New listeners',
     overview:
@@ -20,7 +20,7 @@ export const guides: Guide[] = [
     type: 'Listening guide',
     category: 'Genres',
     description: 'Everything you need to know before watching your first opera.',
-    asset: 'operaCurtain',
+    asset: 'categoryOpera',
     readTime: '6 min read',
     audience: 'First opera viewers',
     overview:
@@ -33,7 +33,7 @@ export const guides: Guide[] = [
     type: 'Reference',
     category: 'Genres',
     description: 'Understanding the different types of classical compositions.',
-    asset: 'chamberSonata',
+    asset: 'categoryChamber',
     readTime: '4 min read',
     audience: 'Curious beginners',
     overview:
@@ -72,7 +72,7 @@ export const guides: Guide[] = [
     type: 'Listening guide',
     category: 'Listening',
     description: 'Simple ways to notice melody, texture, form, and color as you listen.',
-    asset: 'pianoKeys',
+    asset: 'categoryPiano',
     readTime: '5 min read',
     audience: 'Active listeners',
     overview:

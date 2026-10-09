@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { catalogAssets } from '@/assets/catalog-assets'
+import { assetCredits, catalogAssets } from '@/assets/catalog-assets'
 import { getRecommendedGuides } from '@/data/guides'
 import type { Guide } from '@/models/guide'
 import { DetailHero } from '@/components/detail-hero'
@@ -35,6 +35,7 @@ export function GuideDetailPage({ guide }: GuideDetailPageProps) {
         description={guide.description}
         facts={guideDetails}
         factsTitle="Guide details"
+        imageCredit={assetCredits[guide.asset]}
         imageSrc={catalogAssets[guide.asset]}
         meta={
           <>

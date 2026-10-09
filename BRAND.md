@@ -61,9 +61,11 @@ The palette is warm paper and ink with a single gilt accent, like a concert prog
 
 - **Composers:** public-domain historical portraits only, from Wikimedia Commons or museum collections. Never AI-generated likenesses of real people.
   - Crop to a square head-and-shoulders frame, with the face about 40% from the top, so 16:9 cards don't cut it off.
-  - Every portrait carries a credit: artist, year and a source link.
+  - Every image carries a credit (title, artist, year and a source link), shown as a pill on the image.
   - Keep the original paintings and photographs; don't colourise or sepia-tone them.
-- **Scenes** (instruments, halls, stages): warm, low-light, golden tones, shallow depth of field. No identifiable people.
+- **Works:** prefer the artefact itself: an autograph manuscript, a first-edition title page, the premiere venue or production. Otherwise use a period painting with a real link to the piece (Canaletto's Venice for *The Four Seasons*, Watteau's fêtes galantes for *Clair de lune*).
+- **Scenes** (concerts, halls, instruments): 18th–19th-century paintings and prints, such as Menzel, Renoir, Degas and Klimt.
+- **Everything is public domain and credited.** No AI-generated imagery anywhere on the site.
 - **Format:** WebP, at most about 1600 px wide (portraits 1200 px square), quality about 75–80.
 
 ## Signature elements

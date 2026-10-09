@@ -1,6 +1,7 @@
 import { CalendarDays, Clock3 } from 'lucide-react'
 import { Link } from 'react-router'
-import { catalogAssets } from '@/assets/catalog-assets'
+import { assetCredits, catalogAssets } from '@/assets/catalog-assets'
+import { ImageCreditLink } from '@/components/image-credit-link'
 import { exploreCategories } from '@/data/explore-categories'
 import { editorPicks } from '@/data/home'
 
@@ -9,7 +10,8 @@ export function HomePage() {
     <div className="home-page">
       <title>Sonatina · Discover classical music</title>
       <section className="home-hero">
-        <img src={catalogAssets.pianoConcerto} alt="" />
+        <img src={catalogAssets.burgtheaterAuditorium} alt="" />
+        <ImageCreditLink credit={assetCredits.burgtheaterAuditorium} />
         <div className="home-hero-copy">
           <h1>
             Discover

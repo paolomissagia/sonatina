@@ -53,4 +53,4 @@ Catalog content lives in `src/data/*.ts`. Records reference artwork by key (see 
 
 ### Adding artwork
 
-Add images as WebP (max ~1600px wide, quality ~78), then register the import in `src/assets/catalog-assets.ts`.
+All imagery is public domain (see [BRAND.md](BRAND.md#imagery)). Add images as WebP (max ~1600px wide, quality ~75), register the import in `src/assets/catalog-assets.ts`, and add its credit (title, artist, year, Wikimedia Commons source) to `assetCredits` there. Tests fail if an image has no credit.
