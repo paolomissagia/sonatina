@@ -1,11 +1,11 @@
-import type { Guide } from '@/models/guide'
+import type { Article } from '@/models/article'
 
-export const guides: Guide[] = [
+export const articles: Article[] = [
   {
     id: 'where-to-start',
     title: 'Where should I start with classical music?',
-    type: 'Listening guide',
-    category: 'Getting started',
+    type: 'Guide',
+    category: 'Guides',
     description: 'A beginner’s path through a handful of vivid, approachable works.',
     asset: 'genreOrchestral',
     audience: 'New listeners',
@@ -67,8 +67,8 @@ export const guides: Guide[] = [
   {
     id: 'your-first-opera',
     title: 'Where to start with opera',
-    type: 'Listening guide',
-    category: 'Getting started',
+    type: 'Guide',
+    category: 'Guides',
     description: 'What opera is, which tunes to try first, and how to choose your first whole opera.',
     asset: 'categoryOpera',
     audience: 'New listeners',
@@ -128,8 +128,8 @@ export const guides: Guide[] = [
   {
     id: 'where-to-start-with-ballet',
     title: 'Where to start with ballet',
-    type: 'Listening guide',
-    category: 'Getting started',
+    type: 'Guide',
+    category: 'Guides',
     description: 'Stories told in dance, and the scores that bring them to life.',
     asset: 'genreBallet',
     audience: 'New listeners',
@@ -236,7 +236,7 @@ export const guides: Guide[] = [
   {
     id: 'the-baroque-period',
     title: 'The Baroque period',
-    type: 'Period guide',
+    type: 'Period overview',
     category: 'Periods',
     description: 'Opera, the concerto and the fugue, from about 1600 to 1750.',
     asset: 'concertAtSanssouci',
@@ -288,7 +288,7 @@ export const guides: Guide[] = [
   {
     id: 'the-classical-period',
     title: 'The Classical period',
-    type: 'Period guide',
+    type: 'Period overview',
     category: 'Periods',
     description: 'Clarity, balance and the sonata, from about 1750 to 1820.',
     asset: 'composerHaydn',
@@ -341,7 +341,7 @@ export const guides: Guide[] = [
   {
     id: 'the-romantic-period',
     title: 'The Romantic period',
-    type: 'Period guide',
+    type: 'Period overview',
     category: 'Periods',
     description: 'The era of emotion, expression, and grandeur, from about 1820 to 1900.',
     asset: 'composerClaraSchumann',
@@ -395,7 +395,7 @@ export const guides: Guide[] = [
   {
     id: 'into-the-twentieth-century',
     title: 'Into the twentieth century',
-    type: 'Period guide',
+    type: 'Period overview',
     category: 'Periods',
     description: 'Colour, rhythm and new sounds, from Debussy to Stravinsky.',
     asset: 'composerStravinsky',
@@ -442,8 +442,8 @@ export const guides: Guide[] = [
   {
     id: 'piano-music-where-to-start',
     title: 'Piano music: where to start',
-    type: 'Listening guide',
-    category: 'Genres',
+    type: 'Guide',
+    category: 'Guides',
     description: 'Eight pieces that show everything the piano can do.',
     asset: 'categoryPiano',
     audience: 'New listeners',
@@ -495,7 +495,7 @@ export const guides: Guide[] = [
   {
     id: 'what-makes-bach-sound-like-bach',
     title: 'What makes Bach sound like Bach?',
-    type: 'Composer guide',
+    type: 'Composer profile',
     category: 'Composers',
     description: 'Counterpoint, dance, and the architecture behind the music.',
     asset: 'composerBach',
@@ -543,9 +543,60 @@ export const guides: Guide[] = [
     ],
   },
   {
+    id: 'schubert-last-piano-works',
+    title: 'Schubert’s last year at the piano',
+    type: 'Composer profile',
+    category: 'Composers',
+    description: 'The impromptus, the Moments musicaux and the last three sonatas.',
+    asset: 'composerSchubert',
+    audience: 'Piano lovers',
+    overview:
+      'Schubert died in Vienna in November 1828, aged 31. In his last two years, already seriously ill, he wrote some of the most personal piano music ever composed: music that rarely shows off, but sings, hesitates and dreams. Much of it was barely known until long after his death.',
+    sections: [
+      {
+        title: 'A composer of songs at the piano',
+        body: [
+          'Schubert wrote more than six hundred songs, and his piano music sings in the same way: long melodies over a gently moving accompaniment, and sudden shifts of harmony that change the light. He rarely wrote to dazzle. He was not a touring virtuoso, and much of this music was played among friends rather than in concert halls.',
+        ],
+      },
+      {
+        title: 'The Impromptus',
+        body: [
+          'In 1827 Schubert wrote two sets of four impromptus, short pieces that sound almost improvised. Start with the third piece of the first set, in G-flat major: a single, endless melody floating over rippling notes. In the second set, the third impromptu is a set of variations on a tune from his music for the play Rosamunde.',
+        ],
+      },
+      {
+        title: 'Moments musicaux',
+        body: [
+          'The six Moments musicaux are even smaller, intimate pieces lasting a few minutes each. The third, in F minor, was the first to be published, on its own, under the title Air russe, and it remains one of Schubert’s best-loved tunes.',
+        ],
+      },
+      {
+        title: 'The last three sonatas',
+        body: [
+          'In September 1828, two months before his death, Schubert finished three large piano sonatas. They were not published until ten years later and were long thought too long and too loose in form. Today they are seen as among the greatest of all piano sonatas.',
+          'The A major Sonata, D. 959, has a slow movement that breaks without warning into a storm. The B-flat major Sonata, D. 960, opens with a calm, hymn-like melody interrupted by a distant trill deep in the bass, like thunder on the horizon.',
+        ],
+      },
+      {
+        title: 'Hearing Schnabel',
+        body: [
+          'In the early twentieth century, the Austrian pianist Artur Schnabel was one of the first to champion these sonatas in concert. His recordings of the Moments musicaux in 1937 and of the B-flat Sonata in 1939 helped bring them back to the centre of the repertoire, and you can hear both here.',
+        ],
+      },
+    ],
+    workIds: [
+      'schubert-impromptus',
+      'schubert-impromptus-d935',
+      'schubert-moments-musicaux',
+      'schubert-piano-sonata-20',
+      'schubert-piano-sonata-21',
+    ],
+  },
+  {
     id: 'golden-age-of-opera-singing',
     title: 'The golden age of opera singing',
-    type: 'Listening guide',
+    type: 'Listening notes',
     category: 'Listening',
     description: 'Caruso, Melba, Gigli and the first recording stars.',
     asset: 'burgtheaterAuditorium',
@@ -595,9 +646,9 @@ export const guides: Guide[] = [
   {
     id: 'hear-the-composers-themselves',
     title: 'Hear the composers themselves',
-    type: 'Listening guide',
+    type: 'Listening notes',
     category: 'Listening',
-    description: 'Brahms, Rachmaninoff, Stravinsky and Ravel performing their own music.',
+    description: 'Brahms, Elgar, Rachmaninoff, Stravinsky and Ravel performing their own music.',
     asset: 'composerRachmaninoff',
     audience: 'Curious listeners',
     overview:
@@ -610,9 +661,21 @@ export const guides: Guide[] = [
         ],
       },
       {
+        title: 'Elgar conducts his Cello Concerto',
+        body: [
+          'Elgar was one of the first composers to take the gramophone seriously. In December 1919, only weeks after the troubled premiere of his Cello Concerto, he conducted it for the recording horn with Beatrice Harrison as soloist. The concerto had to be cut to fit on four sides, but this is the music as its composer first shaped it.',
+        ],
+      },
+      {
         title: 'Rachmaninoff at the piano',
         body: [
-          'Rachmaninoff was as famous a pianist as he was a composer. Hear him play his Prelude in C-sharp minor, and his Rhapsody on a Theme of Paganini with the Philadelphia Orchestra under Leopold Stokowski, recorded in 1934, weeks after the premiere.',
+          'Rachmaninoff was as famous a pianist as he was a composer. Hear him play his Prelude in C-sharp minor, which audiences demanded at almost every concert he gave, and his Prelude in G minor. With the Philadelphia Orchestra he recorded his Rhapsody on a Theme of Paganini in 1934, weeks after the premiere, and his Third Piano Concerto in 1939 and 1940, three decades after he first played it.',
+        ],
+      },
+      {
+        title: 'Rachmaninoff plays the music he loved',
+        body: [
+          'Rachmaninoff also recorded other composers, and these are among the most admired piano records ever made. His 1930 recording of Chopin’s Second Sonata, with its Funeral March, is famous for its drama. Listen too to his Chopin “Minute” Waltz, Mozart’s Rondo alla turca and Liszt’s Second Hungarian Rhapsody, where he added a dazzling cadenza of his own.',
         ],
       },
       {
@@ -636,8 +699,12 @@ export const guides: Guide[] = [
     ],
     workIds: [
       'brahms-hungarian-dances',
+      'elgar-cello-concerto',
+      'rachmaninoff-piano-concerto-3',
       'rachmaninoff-prelude-c-sharp-minor',
       'rachmaninoff-rhapsody-on-a-theme-of-paganini',
+      'chopin-piano-sonata-2',
+      'liszt-hungarian-rhapsody-2',
       'stravinsky-rite-of-spring',
       'ravel-bolero',
     ],
@@ -645,8 +712,8 @@ export const guides: Guide[] = [
   {
     id: 'how-to-listen-actively',
     title: 'How to listen actively',
-    type: 'Listening guide',
-    category: 'Listening',
+    type: 'Guide',
+    category: 'Guides',
     description: 'Simple ways to notice melody, texture, form, and colour as you listen.',
     asset: 'categorySymphony',
     audience: 'Active listeners',
@@ -695,30 +762,30 @@ export const guides: Guide[] = [
   },
 ]
 
-export function findGuide(id: string | undefined) {
+export function findArticle(id: string | undefined) {
   if (!id) {
     return undefined
   }
 
-  return guides.find((guide) => guide.id === id)
+  return articles.find((article) => article.id === id)
 }
 
 /** Reading time at about 200 words a minute, e.g. "3 min read". */
-export function getReadTime(guide: Guide) {
-  const text = [guide.overview, ...guide.sections.flatMap((section) => [section.title, ...section.body])].join(' ')
+export function getReadTime(article: Article) {
+  const text = [article.overview, ...article.sections.flatMap((section) => [section.title, ...section.body])].join(' ')
   const words = text.split(/\s+/).filter(Boolean).length
 
   return `${Math.max(1, Math.ceil(words / 200))} min read`
 }
 
-/** Up to four other guides, those in the same category first. */
-export function getRecommendedGuides(guide: Guide) {
-  const sameCategory = guides.filter(
-    (candidate) => candidate.category === guide.category && candidate.id !== guide.id,
+/** Up to four other articles, those in the same category first. */
+export function getRecommendedArticles(article: Article) {
+  const sameCategory = articles.filter(
+    (candidate) => candidate.category === article.category && candidate.id !== article.id,
   )
-  const otherGuides = guides.filter(
-    (candidate) => candidate.category !== guide.category && candidate.id !== guide.id,
+  const otherArticles = articles.filter(
+    (candidate) => candidate.category !== article.category && candidate.id !== article.id,
   )
 
-  return [...sameCategory, ...otherGuides].slice(0, 4)
+  return [...sameCategory, ...otherArticles].slice(0, 4)
 }
