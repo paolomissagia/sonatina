@@ -39,7 +39,7 @@ export const countries: Country[] = [
     name: 'Germany',
     nationalities: ['German', 'German-British'],
     overview:
-      'From Bach in Leipzig to Brahms, German composers shaped the fugue, the symphony and the art of counterpoint. Handel, born in Halle, took the tradition to London and spent most of his life there.',
+      'From Bach in Leipzig to Wagner at Bayreuth, German composers shaped the fugue, the symphony and music drama. Handel, born in Halle, took the tradition to London and spent most of his life there.',
   },
   {
     id: 'hungary',

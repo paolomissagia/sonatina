@@ -355,6 +355,20 @@ export const composers: Composer[] = [
     overview:
       'Mahler was best known in his lifetime as a conductor, directing the Vienna Court Opera and later the New York Philharmonic, and he composed mainly in the summers. His symphonies set out to “embrace everything”, from funeral marches to folk tunes and choirs.',
   },
+  {
+    id: 'wagner',
+    name: 'Richard Wagner',
+    shortName: 'Wagner',
+    period: 'Romantic',
+    born: { year: 1813, place: 'Leipzig' },
+    died: { year: 1883, place: 'Venice' },
+    nationality: 'German',
+    bio: 'Music drama on an epic scale, and harmony that changed music.',
+    asset: 'composerWagner',
+    knownFor: ['Music drama', 'Leitmotif', 'The Ring cycle'],
+    overview:
+      'Wagner reimagined opera as music drama, uniting music, poetry and staging. His four-opera Ring cycle, woven from recurring themes called leitmotifs, took him more than twenty-five years, and the harmony of Tristan und Isolde pointed music towards the twentieth century. He built his own festival theatre at Bayreuth, which still stages only his works.',
+  },
 ]
 
 export function findComposer(id: string | undefined) {

@@ -7,6 +7,7 @@ import composerMonteverdi from '@/assets/catalog/composer-monteverdi.webp'
 import composerLiszt from '@/assets/catalog/composer-liszt.webp'
 import composerRachmaninoff from '@/assets/catalog/composer-rachmaninoff.webp'
 import composerMahler from '@/assets/catalog/composer-mahler.webp'
+import composerWagner from '@/assets/catalog/composer-wagner.webp'
 import composerMozart from '@/assets/catalog/composer-mozart.webp'
 import composerStravinsky from '@/assets/catalog/composer-stravinsky.webp'
 import composerVivaldi from '@/assets/catalog/composer-vivaldi.webp'
@@ -46,6 +47,7 @@ export const catalogAssets = {
   composerLiszt,
   composerRachmaninoff,
   composerMahler,
+  composerWagner,
   composerMozart,
   composerStravinsky,
   composerVivaldi,
@@ -153,6 +155,11 @@ export const assetCredits: Record<CatalogAssetKey, ImageCredit> = {
     artist: 'Moritz Nähr',
     year: '1907',
     source: commons('Photo_of_Gustav_Mahler_by_Moritz_N%C3%A4hr_07.jpg'),
+  },
+  composerWagner: {
+    artist: 'Franz Hanfstaengl',
+    year: '1871',
+    source: commons('RichardWagner.jpg'),
   },
   composerMozart: {
     artist: 'Barbara Krafft',

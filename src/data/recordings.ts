@@ -1003,4 +1003,56 @@ export const recordings: Record<string, Recording> = {
       { title: 'Der Abschied', movement: 5, src: 'https://archive.org/download/MAHLERDasLiedVonDerErde-NEWTRANSFER/06.%20VI.%20Der%20Abshied.mp3', page: 'https://archive.org/details/MAHLERDasLiedVonDerErde-NEWTRANSFER' },
     ],
   },
+  'wagner-tristan-und-isolde': {
+    performer: 'Albert Coates, Leo Blech, Walter Widdop, Göte Ljungberg (1926–27)',
+    tracks: [
+      { title: 'Prelude (part 1)', movement: 0, performer: 'BBC Symphony Orchestra, Adrian Boult (1933)', src: 'https://archive.org/download/78_prelude-tristan-and-isolda-part-1_the-bbc-symphony-orchestra-wagner-adrian-b_gbia7003353a/PRELUDE-%22TRISTAN%20AND%20ISOLD%20-%20THE%20B.B.C.%20SYMPHONY%20ORCHESTRA.mp3', page: 'https://archive.org/details/78_prelude-tristan-and-isolda-part-1_the-bbc-symphony-orchestra-wagner-adrian-b_gbia7003353a' },
+      { title: 'Prelude (conclusion)', movement: 0, performer: 'BBC Symphony Orchestra, Adrian Boult (1933)', src: 'https://archive.org/download/78_prelude-tristan-and-isolda-conclusion_the-bbc-symphony-orchestra-wagner-adri_gbia7003353b/PRELUDE-%22TRISTAN%20AND%20ISOLD%20-%20THE%20B.B.C.%20SYMPHONY%20ORCHESTRA.mp3', page: 'https://archive.org/details/78_prelude-tristan-and-isolda-conclusion_the-bbc-symphony-orchestra-wagner-adri_gbia7003353b' },
+      { title: 'Isolde! Tristan! Geliebter!', movement: 1, performer: 'Frida Leider, Lauritz Melchior, Berlin State Opera Orchestra (1930)', src: 'https://archive.org/download/78_isolde-tristan-geliebter-isolde-tristan-beloved_frida-leider-lauritz-melchior-and-t_gbia0545824a/ISOLDE%21%20TRISTAN%21%20GELIEBTER%21%20%28ISOLDE%21%20TRISTA.mp3', page: 'https://archive.org/details/78_isolde-tristan-geliebter-isolde-tristan-beloved_frida-leider-lauritz-melchior-and-t_gbia0545824a' },
+      { title: 'Act III Prelude', movement: 2, src: 'https://archive.org/download/tristan-Isolde3/01%20Prelude.mp3', page: 'https://archive.org/details/tristan-Isolde3' },
+      { title: 'Kurwenal! He! Sag, Kurwenal!', movement: 2, src: 'https://archive.org/download/tristan-Isolde3/02%20Kurwenal%20He%21%20Sag%27%20Kurwenal.mp3', page: 'https://archive.org/details/tristan-Isolde3' },
+      { title: 'Wo du bist', movement: 2, src: 'https://archive.org/download/tristan-Isolde3/03%20Wo%20du%20bist.mp3', page: 'https://archive.org/details/tristan-Isolde3' },
+      { title: 'Bist du nun tot?', movement: 2, src: 'https://archive.org/download/tristan-Isolde3/04%20Bist%20du%20nun%20todt.mp3', page: 'https://archive.org/details/tristan-Isolde3' },
+      { title: 'Und Kurwenal, wie, du sähst sie nicht?', movement: 2, src: 'https://archive.org/download/tristan-Isolde3/05%20Und%20Kurwenal%2C%20wie%2C%20du%20s%C3%A4h%27st%20Sie%20nicht.mp3', page: 'https://archive.org/details/tristan-Isolde3' },
+      { title: 'O, diese Sonne!', movement: 2, src: 'https://archive.org/download/tristan-Isolde3/06%20O%2C%20diese%20Sonne%21.mp3', page: 'https://archive.org/details/tristan-Isolde3' },
+      { title: 'Die Wunde? Wo?', movement: 2, src: 'https://archive.org/download/tristan-Isolde3/07%20Die%20Wunde%2C%20wo.mp3', page: 'https://archive.org/details/tristan-Isolde3' },
+      { title: 'Kurwenal! Hör! Ein zweites Schiff!', movement: 2, src: 'https://archive.org/download/tristan-Isolde3/08%20Kurwenal%21%20h%C3%B6r%21%20Ein%20zweites%20Schiff%21.mp3', page: 'https://archive.org/details/tristan-Isolde3' },
+      { title: 'Tot denn alles!', movement: 2, src: 'https://archive.org/download/tristan-Isolde3/09%20Todt%20den%20alles.mp3', page: 'https://archive.org/details/tristan-Isolde3' },
+      { title: 'Mild und leise (Liebestod)', movement: 2, src: 'https://archive.org/download/tristan-Isolde3/10%20Mild%20und%20leise%20wie%20Er%20l%C3%A4chelt.mp3', page: 'https://archive.org/details/tristan-Isolde3' },
+    ],
+  },
+  'wagner-die-walkure': {
+    performer: 'Historical recordings, 1913–38',
+    tracks: [
+      { title: 'Ein Schwert verhieß mir der Vater', movement: 0, performer: 'Max Lorenz (1928)', src: 'https://archive.org/download/max-lorenz-richard-wagner-die-walkure-ein-schwert-verhiess-his-masters-voice-db-4547/MaxLorenz%2CRichardWagner%2CDieWalk%C3%BCre%2CEinSchwertVerhiess%2CHisMaster%27sVoiceDB4547%20.mp3', page: 'https://archive.org/details/max-lorenz-richard-wagner-die-walkure-ein-schwert-verhiess-his-masters-voice-db-4547' },
+      { title: 'Todesverkündigung', movement: 1, performer: 'Lauritz Melchior, Marta Fuchs, Bruno Seidler-Winkler (1938)', src: 'https://archive.org/download/lauritz-melchior-et-marta-fuchs-richatrd-wagner-die-walkure-todverkundigung-his-/LauritzMelchiorEtMartaFuchs%2CRichat%29rdWagner%2CDieWalkure%2CTodverk%C3%BCndigung%2CHisMaster%27sVoiceDB726EtDB3727%2CDirectionBrunoSeidler-Winkler%20enregistr%C3%A9%20%C3%A0%20Berlin%20en%201938.mp3', page: 'https://archive.org/details/lauritz-melchior-et-marta-fuchs-richatrd-wagner-die-walkure-todverkundigung-his-' },
+      { title: 'Ride of the Valkyries', movement: 2, performer: 'American Symphony Orchestra (Edison, 1921)', src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/2/29/Richard_Wagner_-_Ride_of_the_Valkyries.ogg/Richard_Wagner_-_Ride_of_the_Valkyries.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Richard_Wagner_-_Ride_of_the_Valkyries.ogg' },
+      { title: 'Wotan’s Farewell', movement: 2, performer: 'Walter Soomer (Berlin, 1913)', src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a6/Die_Walkure_-_Wotan%27s_Farewell_act_3.ogg/Die_Walkure_-_Wotan%27s_Farewell_act_3.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Die_Walkure_-_Wotan%27s_Farewell_act_3.ogg' },
+      { title: 'Magic Fire Music', movement: 2, performer: 'Walter Soomer (Berlin, 1913)', src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/4/48/Die_Walkure_-_Magic_Fire_Music%2C_act_3.ogg/Die_Walkure_-_Magic_Fire_Music%2C_act_3.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Die_Walkure_-_Magic_Fire_Music,_act_3.ogg' },
+    ],
+  },
+  'wagner-lohengrin': {
+    performer: 'Historical recordings, 1912–27',
+    tracks: [
+      { title: 'Prelude (part 1)', movement: 0, performer: 'London Symphony Orchestra, Siegfried Wagner (1927)', src: 'https://archive.org/download/02-ej-143-siegfried-wagner/01%20EJ%20143%20Siegfried%20Wagner.mp3', page: 'https://archive.org/details/02-ej-143-siegfried-wagner' },
+      { title: 'Prelude (part 2)', movement: 0, performer: 'London Symphony Orchestra, Siegfried Wagner (1927)', src: 'https://archive.org/download/02-ej-143-siegfried-wagner/02%20EJ%20143%20Siegfried%20Wagner.mp3', page: 'https://archive.org/details/02-ej-143-siegfried-wagner' },
+      { title: 'Act III Prelude', movement: 2, performer: 'Berlin State Opera Orchestra (1927)', src: 'https://archive.org/download/78_lohengrin-prelude-to-act-3_berlin-orchestra-of-the-state-opera-house/E_10634_W_2-20328-2.mp3', page: 'https://archive.org/details/78_lohengrin-prelude-to-act-3_berlin-orchestra-of-the-state-opera-house' },
+      { title: 'In fernem Land', movement: 2, performer: 'Hermann Jadlowker (1912)', src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/9/92/In_fernem_Land_-_Hermann_Jadlowker.ogg/In_fernem_Land_-_Hermann_Jadlowker.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:In_fernem_Land_-_Hermann_Jadlowker.ogg' },
+    ],
+  },
+  'wagner-parsifal': {
+    performer: 'Karl Muck, Bayreuth Festival Orchestra (1927)',
+    tracks: [
+      { title: 'Prelude', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/0/01/Parsifal_Act_I_-_Prelude.ogg/Parsifal_Act_I_-_Prelude.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Parsifal_Act_I_-_Prelude.ogg' },
+      { title: 'Transformation Music', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/5/52/Parsifal_Act_I_-_Transformation_Music.ogg/Parsifal_Act_I_-_Transformation_Music.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Parsifal_Act_I_-_Transformation_Music.ogg' },
+      { title: 'Flower Maidens', movement: 1, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b4/Parsifal_Act_II-_Flower_Maiden_Scene.ogg/Parsifal_Act_II-_Flower_Maiden_Scene.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Parsifal_Act_II-_Flower_Maiden_Scene.ogg' },
+      { title: 'Act III Prelude', movement: 2, performer: 'Karl Muck, Berlin State Opera Orchestra (1928)', src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/1/10/Parsifal_Act_III-_Prelude.ogg/Parsifal_Act_III-_Prelude.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Parsifal_Act_III-_Prelude.ogg' },
+    ],
+  },
+  'wagner-siegfried-idyll': {
+    performer: 'New York Philharmonic, Artur Rodziński (1946)',
+    tracks: [
+      { title: 'Siegfried Idyll', movement: 0, src: 'https://archive.org/download/siegfried-idyll/Siegfried%20Idyll.mp3', page: 'https://archive.org/details/siegfried-idyll' },
+    ],
+  },
 }

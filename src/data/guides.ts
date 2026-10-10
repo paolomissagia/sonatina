@@ -300,6 +300,7 @@ export const guides: Guide[] = [
         title: 'Music that tells a story',
         body: [
           'Romantic composers loved music inspired by poems, plays and paintings. Mendelssohn wrote his A Midsummer Night’s Dream overture at seventeen; Liszt invented the symphonic poem; Schubert’s song cycle Winterreise follows a lonely wanderer through twenty-four songs.',
+          'Wagner went furthest of all. He called his operas music dramas, and wove them from leitmotifs, short themes tied to a character or an idea that return and transform as the story unfolds. Tristan und Isolde stretched harmony so far that it changed how composers wrote for the next century.',
         ],
       },
       {
@@ -320,6 +321,7 @@ export const guides: Guide[] = [
       'mahler-symphony-2',
       'mendelssohn-midsummer-nights-dream',
       'schubert-winterreise',
+      'wagner-tristan-und-isolde',
       'chopin-nocturne-op-9-no-2',
       'liszt-hungarian-rhapsody-2',
       'grieg-peer-gynt',
