@@ -46,6 +46,9 @@ export function AppSidebar({ isOpen, onClose, onNavigate }: AppSidebarProps) {
           item={aboutItem}
           onNavigate={onNavigate}
         />
+        <a className="sidebar-credit" href="https://www.paolomissagia.com">
+          Made by Paolo Missagia
+        </a>
       </div>
     </aside>
   )

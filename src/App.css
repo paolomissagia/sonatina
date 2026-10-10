@@ -130,6 +130,19 @@ button {
   gap: 5px;
 }
 
+.sidebar-credit {
+  margin-top: 8px;
+  padding: 12px 12px 0;
+  border-top: 1px solid rgb(var(--frame-rule));
+  color: rgb(var(--frame-muted));
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.sidebar-credit:hover {
+  color: rgb(var(--frame-ink));
+}
+
 .topbar {
   flex: 0 0 auto;
   height: 0;
