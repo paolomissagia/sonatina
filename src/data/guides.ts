@@ -40,9 +40,9 @@ export const guides: Guide[] = [
         ],
       },
       {
-        title: 'Go to the theatre',
+        title: 'Opera and ballet',
         body: [
-          'Ballet and opera add a story. Tchaikovsky’s The Nutcracker is full of short, colourful dances, which makes it an easy way in even without the staging. When you are ready for opera, the guide to your first opera suggests where to begin.',
+          'Opera and ballet add a story, and each has its own way in. When you are ready, the guides to starting with opera and starting with ballet suggest where to begin.',
         ],
       },
       {
@@ -66,51 +66,118 @@ export const guides: Guide[] = [
   },
   {
     id: 'your-first-opera',
-    title: 'How to listen to your first opera',
+    title: 'Where to start with opera',
     type: 'Listening guide',
-    category: 'Genres',
-    description: 'What to know before your first opera, and which one to choose.',
+    category: 'Getting started',
+    description: 'What opera is, which tunes to try first, and how to choose your first whole opera.',
     asset: 'categoryOpera',
-    audience: 'First opera viewers',
+    audience: 'New listeners',
     overview:
-      'Opera is drama told through music. It becomes much easier to enjoy when you know the story in advance, listen for how the voices carry it, and accept that emotion matters more than realism. People sing while they die, and that is the point.',
+      'Opera is drama told through music: singers act, the orchestra carries the emotion, and the story moves at the speed of feeling. It can look intimidating, but most operas are built on simple stories of love, jealousy and revenge, and their greatest arias are among the most beautiful melodies ever written.',
     sections: [
       {
-        title: 'Read the synopsis',
+        title: 'What opera is',
         body: [
-          'Knowing the plot frees you to listen. Most opera houses show surtitles, a translation above the stage, but reading the story beforehand means you can watch the singers instead of the text.',
-          'Puccini’s La bohème, for example, follows a poet and a seamstress who fall in love in a freezing Paris attic one Christmas Eve. That is all you need to follow the first act.',
+          'An opera is a play in which almost everything is sung. Arias are the moments when a character stops to tell us how they feel; recitative moves the plot along in a sung, speech-like style; ensembles let several characters sing at once, each with their own thoughts.',
+          'Some operas link the music with spoken dialogue instead. Mozart’s The Magic Flute and Bizet’s Carmen were both written this way, which makes the story easy to follow.',
         ],
       },
       {
-        title: 'Listen for the voices',
+        title: 'Start with the tunes',
         body: [
-          'Voices are cast like characters. Sopranos and tenors are often the young lovers, while lower voices play fathers, villains or comic roles. Arias are the moments when the action pauses and a character sings about how they feel; ensembles let several characters react at once.',
-          'Some operas link the music with spoken dialogue instead of sung recitative. Mozart’s The Magic Flute and Beethoven’s Fidelio both work this way, which makes the story very easy to follow.',
+          'You almost certainly know some opera already. Try La donna è mobile from Verdi’s Rigoletto, the Toreador Song from Carmen, O mio babbino caro from Puccini’s Gianni Schicchi and Nessun dorma from Turandot. Each lasts only a few minutes, and each can lead you to a whole opera.',
         ],
       },
       {
-        title: 'Know the big moments',
+        title: 'Choose your first whole opera',
         body: [
-          'Every famous opera has a few moments people wait for. In La bohème it is the love duet that closes Act I. In Tosca, the heroine’s prayer “Vissi d’arte” in Act II and the tenor’s farewell “E lucevan le stelle” in Act III. In Aida, the Triumphal March. In The Magic Flute, the Queen of the Night’s second aria, which climbs to a top F.',
-          'Listen to those moments first, then go back and hear how the rest of the act builds towards them.',
+          'Pick something with a clear story and a manageable length. Gianni Schicchi is a one-act comedy of under an hour, and Purcell’s Dido and Aeneas lasts about an hour. Puccini’s La bohème runs under two hours and is full of melody.',
+          'If you would rather laugh, Rossini’s The Barber of Seville and Mozart’s The Marriage of Figaro are among the funniest operas ever written.',
         ],
       },
       {
-        title: 'Follow the staging',
+        title: 'Read the story first',
         body: [
-          'Opera was written to be seen. Sets, costumes and lighting carry as much of the meaning as the words. If you are watching a recording, choose a filmed production rather than an audio-only one for your first time.',
+          'Knowing the plot frees you to listen. Most opera houses show surtitles, a translation above the stage, but reading the story beforehand means you can watch the singers rather than the text.',
+          'Opera was written to be seen, so for your first time a filmed production is even better than a recording. Sets, costumes and acting carry as much of the meaning as the words.',
         ],
       },
       {
-        title: 'Choose an accessible first opera',
+        title: 'Comedy, tragedy and music drama',
         body: [
-          'Pick something with a clear story and a manageable length. La bohème runs under two hours and is full of melody. The Magic Flute is a fairy tale with comedy and spoken scenes. Fidelio builds to one of the most uplifting finales in the repertoire, with the prisoners stepping out into the light.',
-          'Many of the recordings here are historical, sung by legends like Enrico Caruso and Beniamino Gigli. The guide to the golden age of opera singing explains how to listen to them.',
+          'Italian opera divides roughly into comedy, opera buffa, and serious drama, opera seria. Mozart and Rossini were masters of comedy; Verdi and Puccini of tragedy. Wagner went further still, turning opera into vast music dramas: try the Ride of the Valkyries before attempting a whole evening.',
+        ],
+      },
+      {
+        title: 'Listening to old recordings',
+        body: [
+          'Many of the opera recordings here are historical, sung by legends such as Enrico Caruso. The guide to the golden age of opera singing explains how to listen past the crackle to the voices that made them famous.',
         ],
       },
     ],
-    workIds: ['puccini-la-boheme', 'mozart-magic-flute', 'puccini-tosca', 'verdi-aida', 'beethoven-fidelio', 'verdi-la-traviata'],
+    workIds: [
+      'verdi-rigoletto',
+      'bizet-carmen',
+      'puccini-gianni-schicchi',
+      'puccini-turandot',
+      'puccini-la-boheme',
+      'mozart-marriage-of-figaro',
+      'rossini-barber-of-seville',
+      'purcell-dido-and-aeneas',
+    ],
+  },
+  {
+    id: 'where-to-start-with-ballet',
+    title: 'Where to start with ballet',
+    type: 'Listening guide',
+    category: 'Getting started',
+    description: 'Stories told in dance, and the scores that bring them to life.',
+    asset: 'genreBallet',
+    audience: 'New listeners',
+    overview:
+      'Ballet tells stories through dance and music, without a single word. Its music had to be clear, rhythmic and full of character for the dancers, which makes ballet scores some of the most immediately enjoyable music in the repertoire, even heard without the stage.',
+    sections: [
+      {
+        title: 'Music made for dancing',
+        body: [
+          'A ballet score is built from short numbers: waltzes, character dances, solos and the pas de deux, a duet for the two leading dancers. Each number has a clear mood and a steady pulse, so you can follow it easily even with your eyes closed.',
+        ],
+      },
+      {
+        title: 'Start with Tchaikovsky',
+        body: [
+          'Tchaikovsky wrote the three most famous ballets of all: Swan Lake, The Sleeping Beauty and The Nutcracker. The Nutcracker’s Dance of the Sugar Plum Fairy, with the tinkling celesta, and the haunting swan theme of Swan Lake are perfect first listens.',
+        ],
+      },
+      {
+        title: 'The Romantic ballet',
+        body: [
+          'Earlier in the nineteenth century, Paris was the capital of ballet. Adam’s Giselle, with its ghostly second act, and Delibes’s comic Coppélia, about a doll who seems to come alive, are still at the heart of the repertoire.',
+        ],
+      },
+      {
+        title: 'Ballet turns modern',
+        body: [
+          'In the early twentieth century, Serge Diaghilev’s Ballets Russes in Paris commissioned daring new scores. Stravinsky wrote three of them: The Firebird, Petrushka and The Rite of Spring, whose premiere in 1913 caused an uproar. Later, Prokofiev turned Romeo and Juliet into a full-length ballet.',
+        ],
+      },
+      {
+        title: 'Watch it if you can',
+        body: [
+          'Ballet was made to be seen. Once you know the music, find a filmed performance: the steps, costumes and storytelling transform it. Many ballets also exist as concert suites, shorter selections of the best numbers for orchestra alone.',
+        ],
+      },
+    ],
+    workIds: [
+      'tchaikovsky-nutcracker',
+      'tchaikovsky-swan-lake',
+      'tchaikovsky-sleeping-beauty',
+      'adam-giselle',
+      'delibes-coppelia',
+      'stravinsky-firebird',
+      'stravinsky-petrushka',
+      'prokofiev-romeo-and-juliet',
+    ],
   },
   {
     id: 'symphony-concerto-sonata',

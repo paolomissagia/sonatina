@@ -56,6 +56,7 @@ describe('getRecommendedGuides', () => {
   })
 
   it('puts guides from the same category first', () => {
-    expect(getRecommendedGuides(findGuide('your-first-opera')!)[0].category).toBe('Genres')
+    const guide = findGuide('your-first-opera')!
+    expect(getRecommendedGuides(guide)[0].category).toBe(guide.category)
   })
 })
