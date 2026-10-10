@@ -1,6 +1,6 @@
 import { Search, X } from 'lucide-react'
 import { NavLink } from 'react-router'
-import { aboutItem, navItems, radioItem } from '@/data/navigation'
+import { aboutItem, navItems } from '@/data/navigation'
 import { useStartRadio } from '@/player/use-start-radio'
 import { Logo } from './logo'
 import { SidebarLink } from './sidebar-link'
@@ -30,19 +30,18 @@ export function AppSidebar({ isOpen, onClose, onNavigate }: AppSidebarProps) {
           <SidebarLink
             item={item}
             key={item.label}
-            onNavigate={onNavigate}
+            onNavigate={() => {
+              // Opening Radio starts the Everything station on the click itself.
+              if (item.id === 'radio') {
+                startRadio()
+              }
+              onNavigate()
+            }}
           />
         ))}
       </nav>
 
       <div className="sidebar-footer">
-        <SidebarLink
-          item={radioItem}
-          onNavigate={() => {
-            startRadio()
-            onNavigate()
-          }}
-        />
         <NavLink
           className={({ isActive }) => (isActive ? 'sidebar-link active' : 'sidebar-link')}
           to="/search"
