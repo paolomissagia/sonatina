@@ -759,6 +759,14 @@ export const recordings: Record<string, Recording> = {
       { title: 'Allegro marziale animato', movement: 3, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/8/84/Liszt_Piano_Concerto_1_-_mvt_4.ogg/Liszt_Piano_Concerto_1_-_mvt_4.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Liszt_Piano_Concerto_1_-_mvt_4.ogg' },
     ],
   },
+  'paganini-caprice-24': {
+    performer: 'Maria Ciobanu, violin (2012)',
+    license: 'CC BY-SA 4.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by-sa/4.0/',
+    tracks: [
+      { title: 'Caprice No. 24', movement: 0, src: 'https://resource.culturalia.ro/public/2000/01/01/_Z:/B-SRR/2021/Februarie/Andra/DVD_FM-686_06.mp3', page: 'https://www.europeana.eu/item/937/Culturalia_955013f9_1e13_4391_8a34_adb0cb873039' },
+    ],
+  },
   'rachmaninoff-piano-concerto-2': {
     performer: 'Musopen',
     tracks: [

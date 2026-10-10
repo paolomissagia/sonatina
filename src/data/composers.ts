@@ -328,6 +328,20 @@ export const composers: Composer[] = [
       'Liszt was the most celebrated pianist of the nineteenth century, so famous that his concerts caused “Lisztomania”. He gave up touring at 35, invented the symphonic poem, and championed the music of Wagner, Berlioz and many younger composers.',
   },
   {
+    id: 'paganini',
+    name: 'Niccolò Paganini',
+    shortName: 'Paganini',
+    period: 'Romantic',
+    born: { year: 1782, place: 'Genoa' },
+    died: { year: 1840, place: 'Nice' },
+    nationality: 'Italian',
+    bio: 'The violinist so dazzling that people said he had sold his soul.',
+    asset: 'composerPaganini',
+    knownFor: ['Violin music', 'Virtuosity', 'Caprices'],
+    overview:
+      'Paganini was the most famous violinist of his age. His playing was so astonishing that rumours spread of a pact with the devil, and he kept his scores close so no one could copy his tricks. His 24 Caprices for solo violin, published in 1820, inspired Liszt, Schumann, Brahms and Rachmaninoff to write music of their own.',
+  },
+  {
     id: 'rachmaninoff',
     name: 'Sergei Rachmaninoff',
     shortName: 'Rachmaninoff',

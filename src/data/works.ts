@@ -1248,6 +1248,23 @@ export const works: Work[] = [
     movements: [{ title: 'Moderato' }, { title: 'Adagio sostenuto' }, { title: 'Allegro scherzando' }],
   },
   {
+    id: 'paganini-caprice-24',
+    title: 'Caprice No. 24 in A minor, Op. 1',
+    composerId: 'paganini',
+    catalogue: 'Op. 1',
+    key: 'A minor',
+    description: 'A theme that later composers could not leave alone.',
+    composed: '1802–17',
+    year: 1817,
+    durationMinutes: 5,
+    genre: 'Chamber',
+    form: 'Theme, eleven variations and finale',
+    instrumentation: 'Solo violin',
+    overview:
+      'The last of Paganini’s 24 Caprices for solo violin is a short theme followed by eleven variations, each built on a different feat of technique: racing arpeggios, octaves, left-hand pizzicato. Its theme became one of the most borrowed in music, by Liszt, Brahms and Rachmaninoff among others.',
+    movements: [{ title: 'Tema con variazioni' }],
+  },
+  {
     id: 'rachmaninoff-prelude-c-sharp-minor',
     title: 'Prelude in C-sharp minor, Op. 3, No. 2',
     composerId: 'rachmaninoff',
