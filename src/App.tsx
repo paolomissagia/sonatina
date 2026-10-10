@@ -12,6 +12,7 @@ import { ComposerDetailPage } from '@/pages/composer-detail-page'
 import { GuideDetailPage } from '@/pages/guide-detail-page'
 import { HomePage } from '@/pages/home-page'
 import { NotFoundPage } from '@/pages/not-found-page'
+import { loadRecordings } from '@/player/use-recording'
 import { SearchPage } from '@/pages/search-page'
 import { WorkDetailPage } from '@/pages/work-detail-page'
 import './App.css'
@@ -56,6 +57,17 @@ function App() {
   const handleNavigate = () => {
     setIsSidebarOpen(false)
   }
+
+  // Warm the recordings table once the page is idle, so Listen appears instantly on work pages.
+  useEffect(() => {
+    const warm = () => void loadRecordings()
+    if ('requestIdleCallback' in window) {
+      const id = window.requestIdleCallback(warm)
+      return () => window.cancelIdleCallback(id)
+    }
+    const timer = setTimeout(warm, 1500)
+    return () => clearTimeout(timer)
+  }, [])
 
   // The workspace, not the window, is the scroll container, so reset it on navigation.
   useEffect(() => {

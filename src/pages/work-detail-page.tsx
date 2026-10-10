@@ -3,8 +3,9 @@ import { useState } from 'react'
 import { assetCredits, catalogAssets } from '@/assets/catalog-assets'
 import { findComposer, getComposerName } from '@/data/composers'
 import type { Work } from '@/models/work'
-import { formatDuration, formatKeyAndCatalogue, getRecommendedWorks, getRecording, getWorkAsset, getWorkPeriod } from '@/data/works'
+import { formatDuration, formatKeyAndCatalogue, getRecommendedWorks, getWorkAsset, getWorkPeriod } from '@/data/works'
 import { usePlayer } from '@/player/player-context'
+import { useRecording } from '@/player/use-recording'
 import { DetailHero } from '@/components/detail-hero'
 import { DetailTabs } from '@/components/detail-tabs'
 import { MovementList } from '@/components/movement-list'
@@ -38,7 +39,7 @@ export function WorkDetailPage({ work }: WorkDetailPageProps) {
   const keyAndCatalogue = formatKeyAndCatalogue(work)
   const movementsTitle = getMovementsTitle(work)
   const player = usePlayer()
-  const recording = getRecording(work)
+  const recording = useRecording(work.id)
   const isCurrent = player.work?.id === work.id
   const currentTrack = isCurrent ? player.recording?.tracks[player.index] : undefined
   const playable = new Set(recording?.tracks.map((track) => track.movement))
