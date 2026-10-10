@@ -299,7 +299,7 @@ export const guides: Guide[] = [
       {
         title: 'Music that tells a story',
         body: [
-          'Romantic composers loved music inspired by poems, plays and paintings. Mendelssohn wrote his A Midsummer Night’s Dream overture at seventeen; Liszt invented the symphonic poem; Schubert’s song cycle Winterreise follows a lonely wanderer through twenty-four songs.',
+          'Romantic composers loved music inspired by poems, plays and paintings. Mendelssohn wrote his A Midsummer Night’s Dream overture at seventeen, and Liszt invented the symphonic poem, an orchestral piece that tells a story.',
           'Wagner went furthest of all. He called his operas music dramas, and wove them from leitmotifs, short themes tied to a character or an idea that return and transform as the story unfolds. Tristan und Isolde stretched harmony so far that it changed how composers wrote for the next century.',
         ],
       },
@@ -320,7 +320,6 @@ export const guides: Guide[] = [
       'dvorak-symphony-9',
       'mahler-symphony-2',
       'mendelssohn-midsummer-nights-dream',
-      'schubert-winterreise',
       'wagner-tristan-und-isolde',
       'chopin-nocturne-op-9-no-2',
       'liszt-hungarian-rhapsody-2',
@@ -361,7 +360,7 @@ export const guides: Guide[] = [
       {
         title: 'Late Romantics in a new century',
         body: [
-          'Not everyone broke with the past. Mahler’s Fifth Symphony and Das Lied von der Erde stretch Romantic music to its limits, and Rachmaninoff went on writing lush, melodic music into the 1930s, as his Rhapsody on a Theme of Paganini shows.',
+          'Not everyone broke with the past. Mahler’s Fifth Symphony stretches Romantic music to its limits, and Rachmaninoff went on writing lush, melodic music into the 1930s, as his Rhapsody on a Theme of Paganini shows.',
         ],
       },
     ],

@@ -46,7 +46,6 @@ import categorySymphony from '@/assets/home/category-symphony.webp'
 import concertAtSanssouci from '@/assets/home/concert-at-sanssouci.webp'
 import genreBallet from '@/assets/home/genre-ballet.webp'
 import genreChoral from '@/assets/home/genre-choral.webp'
-import genreSong from '@/assets/home/genre-song.webp'
 
 export const catalogAssets = {
   burgtheaterAuditorium,
@@ -85,7 +84,6 @@ export const catalogAssets = {
   concertAtSanssouci,
   genreBallet,
   genreChoral,
-  genreSong,
   composerHandel,
   composerHaydn,
   composerSchubert,
@@ -300,12 +298,6 @@ export const assetCredits: Record<CatalogAssetKey, ImageCredit> = {
     artist: 'Thomas Webster',
     year: '1847',
     source: commons('Thomas_Webster_-_A_Village_Choir.jpg'),
-  },
-  genreSong: {
-    title: 'A Schubertiade',
-    artist: 'Julius Schmid',
-    year: '1897',
-    source: commons('Julius_Schmid_Schubertiade.jpg'),
   },
   composerHandel: {
     artist: 'Attributed to Balthasar Denner',

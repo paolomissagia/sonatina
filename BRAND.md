@@ -83,7 +83,6 @@ Colours drawn over images use `--scrim`, `--on-image` and `--on-image-soft`.
   | Piano | Renoir, *Young Girls at the Piano* (1892) |
   | Chamber | Winternitz, *The String Quartet* (1899) |
   | Choral | Webster, *A Village Choir* (1847) |
-  | Song | Schmid, *A Schubertiade* (1897) |
   | Opera | Renoir, *La Loge* (1874) |
   | Ballet | Degas, *The Dance Foyer at the Opera* (1872) |
 

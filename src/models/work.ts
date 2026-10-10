@@ -1,4 +1,4 @@
-export const genres = ['Symphony', 'Concerto', 'Orchestral', 'Piano', 'Chamber', 'Choral', 'Song', 'Opera', 'Ballet'] as const
+export const genres = ['Symphony', 'Concerto', 'Orchestral', 'Piano', 'Chamber', 'Choral', 'Opera', 'Ballet'] as const
 
 export type Genre = (typeof genres)[number]
 

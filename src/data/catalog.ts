@@ -76,7 +76,6 @@ const genreLabels: Record<Genre, string> = {
   Piano: 'Piano',
   Chamber: 'Chamber',
   Choral: 'Choral',
-  Song: 'Song',
   Opera: 'Opera',
   Ballet: 'Ballet',
 }

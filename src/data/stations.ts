@@ -74,9 +74,9 @@ export const stations: Station[] = [
   {
     id: 'voices',
     name: 'Voices',
-    description: 'Choirs, masses and song',
+    description: 'Choirs, masses and oratorios',
     asset: 'genreChoral',
-    matches: inGenres('Choral', 'Song'),
+    matches: inGenres('Choral'),
   },
 ]
 
