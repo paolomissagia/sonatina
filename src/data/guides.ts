@@ -386,7 +386,7 @@ export const guides: Guide[] = [
       'mahler-symphony-2',
       'grieg-piano-concerto',
       'wagner-tristan-und-isolde',
-      'chopin-nocturne-op-9-no-2',
+      'chopin-nocturnes',
       'liszt-hungarian-rhapsody-2',
       'prokofiev-peter-and-the-wolf',
       'clara-schumann-piano-concerto',
@@ -482,7 +482,7 @@ export const guides: Guide[] = [
       },
     ],
     workIds: [
-      'chopin-nocturne-op-9-no-2',
+      'chopin-nocturnes',
       'debussy-clair-de-lune',
       'liszt-liebestraum-3',
       'beethoven-moonlight-sonata',

@@ -78,15 +78,6 @@ export const recordings: Record<string, Recording> = {
       { title: 'Gigue', movement: 5, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/2/29/IMSLP173152-PMLP164349-Bach_BWV1007_CelloSuite1_06_darjac.ogg/IMSLP173152-PMLP164349-Bach_BWV1007_CelloSuite1_06_darjac.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:IMSLP173152-PMLP164349-Bach_BWV1007_CelloSuite1_06_darjac.ogg' },
     ],
   },
-  'chopin-nocturne-op-9-no-2': {
-    performer: 'Musopen',
-    license: 'Public domain',
-    tracks: [
-      { title: 'Nocturne No. 1 in B-flat minor', movement: 0, performer: 'Olga Gurevich', src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/6/63/Chopin_-_Nocturne_No._1_in_B-flat_minor%2C_Op._9_No._1_%28Olga_Gurevich%29.flac/Chopin_-_Nocturne_No._1_in_B-flat_minor%2C_Op._9_No._1_%28Olga_Gurevich%29.flac.mp3', page: 'https://commons.wikimedia.org/wiki/File:Chopin_-_Nocturne_No._1_in_B-flat_minor,_Op._9_No._1_(Olga_Gurevich).flac' },
-      { title: 'Nocturne No. 2 in E-flat major', movement: 1, performer: 'Frank Lévy', src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/8/89/Chopin_-_Nocturne_No._2_in_E-flat_major%2C_Op._9_No._2_%28Frank_Levy%29.flac/Chopin_-_Nocturne_No._2_in_E-flat_major%2C_Op._9_No._2_%28Frank_Levy%29.flac.mp3', page: 'https://commons.wikimedia.org/wiki/File:Chopin_-_Nocturne_No._2_in_E-flat_major,_Op._9_No._2_(Frank_Levy).flac' },
-      { title: 'Nocturne No. 3 in B major', movement: 2, performer: 'Xuan He', src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/f/fb/Chopin_-_Nocturne_No._3_in_B_major%2C_Op._9_No._3_%28Xuan_He%29.flac/Chopin_-_Nocturne_No._3_in_B_major%2C_Op._9_No._3_%28Xuan_He%29.flac.mp3', page: 'https://commons.wikimedia.org/wiki/File:Chopin_-_Nocturne_No._3_in_B_major,_Op._9_No._3_(Xuan_He).flac' },
-    ],
-  },
   'debussy-clair-de-lune': {
     performer: 'Laurens Goedhart, piano',
     license: 'CC BY 3.0',
@@ -1670,6 +1661,63 @@ export const recordings: Record<string, Recording> = {
     licenseUrl: 'https://creativecommons.org/licenses/by-nc-sa/3.0/',
     tracks: [
       { title: 'Overture and Bacchanale', movement: 0, src: 'https://archive.org/download/arturo-toscanini-nbc-the-last-concert-4-april-1954/4-april-1954-wagner-nbc-toscanini-track-4-tannhauser-drm-32-bit-192khz-2012.mp3', page: 'https://archive.org/details/arturo-toscanini-nbc-the-last-concert-4-april-1954' },
+    ],
+  },
+  'chopin-nocturnes': {
+    performer: 'Arthur Rubinstein and others',
+    tracks: [
+      { title: 'No. 1 in B-flat minor', movement: 0, performer: 'Arthur Rubinstein', src: 'https://archive.org/download/ChopinNocturneNo.1InBFlatMinorOp.9No.1PianoArthurRubinstein_837/01NocturneForPianoNo.1InBFlatMinormurmuresDeLaSeine1Op.9_1B.54_1.mp3', page: 'https://archive.org/details/ChopinNocturneNo.1InBFlatMinorOp.9No.1PianoArthurRubinstein_837' },
+      { title: 'No. 2 in E-flat major', movement: 1, performer: 'Arthur Rubinstein', src: 'https://archive.org/download/ChopinNocturneNo.2InEFlatMajorOp.9No.2PianoArthurRubinstein_869/02NocturneForPianoNo.2InEFlatMajormurmuresDeLaSeine2Op.9_2B.54_2.mp3', page: 'https://archive.org/details/ChopinNocturneNo.2InEFlatMajorOp.9No.2PianoArthurRubinstein_869' },
+      { title: 'No. 3 in B major', movement: 2, performer: 'Arthur Rubinstein', src: 'https://archive.org/download/ChopinnocturneNo.3InBMajorOp.9No.3PianoArthurRubinstein/03NocturneForPianoNo.3InBMajormurmuresDeLaSeine3Op.9_3B.54_3.mp3', page: 'https://archive.org/details/ChopinnocturneNo.3InBMajorOp.9No.3PianoArthurRubinstein' },
+      { title: 'No. 4 in F major', movement: 3, performer: 'Arthur Rubinstein', src: 'https://archive.org/download/ChopinnocturneInFMajorOp.15No.1PianoArthurRubinstein/04NocturneForPianoNo.4InFMajorlesZphyrs1Op.15_1B.55_1.mp3', page: 'https://archive.org/details/ChopinnocturneInFMajorOp.15No.1PianoArthurRubinstein' },
+      { title: 'No. 5 in F-sharp major', movement: 4, performer: 'Arthur Rubinstein', src: 'https://archive.org/download/ChopinnocturneInF-sharpMajorOp.15No.2PianoArthurRubinstein/05NocturneForPianoNo.5InFSharpMajorlesZphyrs2Op.15_2B.55_2.mp3', page: 'https://archive.org/details/ChopinnocturneInF-sharpMajorOp.15No.2PianoArthurRubinstein' },
+      { title: 'No. 6 in G minor', movement: 5, performer: 'Arthur Rubinstein', src: 'https://archive.org/download/ChopinnocturneInGMinorOp.15No.3PianoArthurRubinstein/06NocturneForPianoNo.6InGMinorlesZphyrs3Op.15_3B.79.mp3', page: 'https://archive.org/details/ChopinnocturneInGMinorOp.15No.3PianoArthurRubinstein' },
+      { title: 'No. 7 in C-sharp minor', movement: 6, performer: 'Arthur Rubinstein', src: 'https://archive.org/download/07NocturneForPianoNo.7InCSharpMinorLesPlaintives1Op.271B.91/07%20Nocturne%20for%20piano%20No.%20%207%20in%20C%20sharp%20minor%20%28%27Les%20plaintives%201%27%29%20Op.%2027_1%2C%20B.%2091.mp3', page: 'https://archive.org/details/07NocturneForPianoNo.7InCSharpMinorLesPlaintives1Op.271B.91' },
+      { title: 'No. 8 in D-flat major', movement: 7, performer: 'Arthur Rubinstein', src: 'https://archive.org/download/08NocturneForPianoNo.8InDFlatMajorLesPlaintives2Op.272B.96/08%20Nocturne%20for%20piano%20No.%20%208%20in%20D%20flat%20major%20%28%27Les%20plaintives%202%27%29%20Op.%2027_2%2C%20B.%2096.mp3', page: 'https://archive.org/details/08NocturneForPianoNo.8InDFlatMajorLesPlaintives2Op.272B.96' },
+      { title: 'No. 9', movement: 8, performer: 'Frank Lévy', src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/3/33/Chopin_-_Nocturne_No._9_in_B_major%2C_Op._32_No._1_%28Frank_Levy%29.flac/Chopin_-_Nocturne_No._9_in_B_major%2C_Op._32_No._1_%28Frank_Levy%29.flac.mp3', page: 'https://commons.wikimedia.org/wiki/File:Chopin_-_Nocturne_No._9_in_B_major,_Op._32_No._1_(Frank_Levy).flac' },
+      { title: 'No. 12', movement: 11, performer: 'Mark Hambourg', src: 'https://archive.org/download/78_nocturne-in-g-major_mark-hambourg-chopin_gbia3042885a/NOCTURNE%20IN%20G%20MAJOR%20-%20MARK%20HAMBOURG%20-%20Chopin.mp3', page: 'https://archive.org/details/78_nocturne-in-g-major_mark-hambourg-chopin_gbia3042885a' },
+      { title: 'No. 19', movement: 18, performer: 'Victor Schiøler (1938)', src: 'https://archive.org/download/78_nocturne-no-19-in-e-minor-op-72-no-1_victor-schiler-chopin_gbia7003709b/NOCTURNE%20NO.%2019%20IN%20E%20MINOR%20Op.%2072%2C%20No.%201%20-%20VICTOR%20SCHI%C3%96LER.mp3', page: 'https://archive.org/details/78_nocturne-no-19-in-e-minor-op-72-no-1_victor-schiler-chopin_gbia7003709b' },
+      { title: 'No. 20', movement: 19, performer: 'Frank Lévy', src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/f/fc/Chopin_-_Nocturne_No._20_in_C-sharp_minor%2C_B._49_%28Frank_Levy%29.flac/Chopin_-_Nocturne_No._20_in_C-sharp_minor%2C_B._49_%28Frank_Levy%29.flac.mp3', page: 'https://commons.wikimedia.org/wiki/File:Chopin_-_Nocturne_No._20_in_C-sharp_minor,_B._49_(Frank_Levy).flac' },
+    ],
+  },
+  'schubert-piano-sonata-21': {
+    performer: 'Artur Schnabel, piano (1939)',
+    tracks: [
+      { title: 'Molto moderato', movement: 0, src: 'https://archive.org/download/lp_sonata-in-b-flat-major-op-posthumous-alle_franz-schubert-artur-schnabel/disc1/01.01.%20Sonata%20In%20B%20Flat%20Major%20Op.%20Posthumous%3A%201st%20Movement%3A%20Molto%20Moderato.mp3', page: 'https://archive.org/details/lp_sonata-in-b-flat-major-op-posthumous-alle_franz-schubert-artur-schnabel' },
+      { title: 'Andante sostenuto', movement: 1, src: 'https://archive.org/download/lp_sonata-in-b-flat-major-op-posthumous-alle_franz-schubert-artur-schnabel/disc1/01.02.%20Sonata%20In%20B%20Flat%20Major%20Op.%20Posthumous%3A%202nd%20Movement%3A%20Andante%20Sostenuto.mp3', page: 'https://archive.org/details/lp_sonata-in-b-flat-major-op-posthumous-alle_franz-schubert-artur-schnabel' },
+      { title: 'Scherzo: Allegro vivace con delicatezza', movement: 2, src: 'https://archive.org/download/lp_sonata-in-b-flat-major-op-posthumous-alle_franz-schubert-artur-schnabel/disc1/02.01.%20Sonata%20In%20B%20Flat%20Major%20Op.%20Posthumous%3A%203rd%20Movement%3A%20Scherzo%3A%20Allegro%20Vivace%20Con%20Delicatezza%20And%20Trio.mp3', page: 'https://archive.org/details/lp_sonata-in-b-flat-major-op-posthumous-alle_franz-schubert-artur-schnabel' },
+      { title: 'Allegro ma non troppo', movement: 3, src: 'https://archive.org/download/lp_sonata-in-b-flat-major-op-posthumous-alle_franz-schubert-artur-schnabel/disc1/02.02.%20Sonata%20In%20B%20Flat%20Major%20Op.%20Posthumous%3A%204th%20Movement%3A%20Allegro%20Ma%20Non%20Troppo.mp3', page: 'https://archive.org/details/lp_sonata-in-b-flat-major-op-posthumous-alle_franz-schubert-artur-schnabel' },
+    ],
+  },
+  'schubert-piano-sonata-20': {
+    performer: 'Paul Pitman, piano (2012)',
+    tracks: [
+      { title: 'Allegro', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/3/30/Schubert_-_Piano_Sonata_No._20_in_A_major%2C_D959_-_I._Allegro_%28Paul_Pitman%29.flac/Schubert_-_Piano_Sonata_No._20_in_A_major%2C_D959_-_I._Allegro_%28Paul_Pitman%29.flac.mp3', page: 'https://commons.wikimedia.org/wiki/File:Schubert_-_Piano_Sonata_No._20_in_A_major,_D959_-_I._Allegro_(Paul_Pitman).flac' },
+      { title: 'Andantino', movement: 1, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a4/Schubert_-_Piano_Sonata_No._20_in_A_major%2C_D959_-_II._Andantino_%28Paul_Pitman%29.flac/Schubert_-_Piano_Sonata_No._20_in_A_major%2C_D959_-_II._Andantino_%28Paul_Pitman%29.flac.mp3', page: 'https://commons.wikimedia.org/wiki/File:Schubert_-_Piano_Sonata_No._20_in_A_major,_D959_-_II._Andantino_(Paul_Pitman).flac' },
+      { title: 'Scherzo: Allegro vivace', movement: 2, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/1/17/Schubert_-_Piano_Sonata_No._20_in_A_major%2C_D959_-_III._Scherzo_%28Allegro_vivace%29_%28Paul_Pitman%29.flac/Schubert_-_Piano_Sonata_No._20_in_A_major%2C_D959_-_III._Scherzo_%28Allegro_vivace%29_%28Paul_Pitman%29.flac.mp3', page: 'https://commons.wikimedia.org/wiki/File:Schubert_-_Piano_Sonata_No._20_in_A_major,_D959_-_III._Scherzo_(Allegro_vivace)_(Paul_Pitman).flac' },
+      { title: 'Rondo: Allegretto', movement: 3, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f9/Schubert_-_Piano_Sonata_No._20_in_A_major%2C_D959_-_IV._Rondo._Allegretto_%28Paul_Pitman%29.flac/Schubert_-_Piano_Sonata_No._20_in_A_major%2C_D959_-_IV._Rondo._Allegretto_%28Paul_Pitman%29.flac.mp3', page: 'https://commons.wikimedia.org/wiki/File:Schubert_-_Piano_Sonata_No._20_in_A_major,_D959_-_IV._Rondo._Allegretto_(Paul_Pitman).flac' },
+    ],
+  },
+  'schubert-impromptus-d935': {
+    performer: 'Edwin Fischer, piano',
+    tracks: [
+      { title: 'No. 1 (part 1)', movement: 0, src: 'https://archive.org/download/78_impromptu-in-f-minor-f-moll-op-142-no-1-part-1_edwin-fischer-schubert_gbia7013544a/IMPROMPTU%20IN%20F%20MINOR%20%28F%20MOLL%29%2C%20OP.%20142%2C%20NO%20-%20EDWIN%20FISCHER.mp3', page: 'https://archive.org/details/78_impromptu-in-f-minor-f-moll-op-142-no-1-part-1_edwin-fischer-schubert_gbia7013544a' },
+      { title: 'No. 1 (conclusion)', movement: 0, src: 'https://archive.org/download/78_impromptu-in-f-minor-f-moll-op-142-no-1-conclusion_edwin-fischer-schubert_gbia7013544b/IMPROMPTU%20IN%20F%20MINOR%20%28F%20MOLL%29%2C%20OP.%20142%2C%20NO%20-%20EDWIN%20FISCHER.mp3', page: 'https://archive.org/details/78_impromptu-in-f-minor-f-moll-op-142-no-1-conclusion_edwin-fischer-schubert_gbia7013544b' },
+      { title: 'No. 2', movement: 1, src: 'https://archive.org/download/78_impromptu-in-a-flat-major-as-dur-op-142-no-2_edwin-fischer-schubert_gbia7004695a/IMPROMPTU%20IN%20A%20FLAT%20MAJOR%20%28AS%20DUR%29%2C%20OP.%2014%20-%20EDWIN%20FISCHER.mp3', page: 'https://archive.org/details/78_impromptu-in-a-flat-major-as-dur-op-142-no-2_edwin-fischer-schubert_gbia7004695a' },
+      { title: 'No. 3 (part 1)', movement: 2, src: 'https://archive.org/download/78_impromptu-in-b-flat-major-b-dur-op-142-no-3-part-1_edwin-fischer-schubert_gbia7013545a/IMPROMPTU%20IN%20B%20FLAT%20MAJOR%20%28B%20DUR%29%2C%20OP.%20142%20-%20EDWIN%20FISCHER.mp3', page: 'https://archive.org/details/78_impromptu-in-b-flat-major-b-dur-op-142-no-3-part-1_edwin-fischer-schubert_gbia7013545a' },
+      { title: 'No. 3 (conclusion)', movement: 2, src: 'https://archive.org/download/78_impromptu-in-b-flat-major-b-dur-op-142-no-3-conclusion_edwin-fischer-schube_gbia7013545b/IMPROMPTU%20IN%20B%20FLAT%20MAJOR%20%28B%20DUR%29%2C%20OP.%20142%20-%20EDWIN%20FISCHER.mp3', page: 'https://archive.org/details/78_impromptu-in-b-flat-major-b-dur-op-142-no-3-conclusion_edwin-fischer-schube_gbia7013545b' },
+      { title: 'No. 4', movement: 3, src: 'https://archive.org/download/78_impromptu-in-f-minor-f-moll-op-142-no-4_edwin-fischer-schubert_gbia7004473b/IMPROMPTU%20IN%20F%20MINOR%20%28F%20MOLL%29%2C%20OP.%20142%2C%20NO%20-%20EDWIN%20FISCHER.mp3', page: 'https://archive.org/details/78_impromptu-in-f-minor-f-moll-op-142-no-4_edwin-fischer-schubert_gbia7004473b' },
+    ],
+  },
+  'schubert-moments-musicaux': {
+    performer: 'Artur Schnabel, piano (1937)',
+    tracks: [
+      { title: 'No. 1 in C major', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/7/73/Schubert%3B_Moments_musicaux%2C_no._1_In_C_Major.ogg/Schubert%3B_Moments_musicaux%2C_no._1_In_C_Major.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Schubert;_Moments_musicaux,_no._1_In_C_Major.ogg' },
+      { title: 'No. 2 in A-flat major', movement: 1, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/7/78/Schubert%3B_Moments_musicaux%2C_no._2_In_A_Flat_Major.ogg/Schubert%3B_Moments_musicaux%2C_no._2_In_A_Flat_Major.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Schubert;_Moments_musicaux,_no._2_In_A_Flat_Major.ogg' },
+      { title: 'No. 3 in F minor', movement: 2, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/2/28/Schubert%3B_Moments_musicaux%2C_no._3_In_F_Minor.ogg/Schubert%3B_Moments_musicaux%2C_no._3_In_F_Minor.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Schubert;_Moments_musicaux,_no._3_In_F_Minor.ogg' },
+      { title: 'No. 4 in C-sharp minor', movement: 3, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/7/7e/Schubert%3B_Moments_musicaux%2C_no._4_In_C_Sharp_Minor.ogg/Schubert%3B_Moments_musicaux%2C_no._4_In_C_Sharp_Minor.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Schubert;_Moments_musicaux,_no._4_In_C_Sharp_Minor.ogg' },
+      { title: 'No. 5 in F minor', movement: 4, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/c/cc/Schubert%3B_Moments_musicaux%2C_no._5_In_F_Minor.ogg/Schubert%3B_Moments_musicaux%2C_no._5_In_F_Minor.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Schubert;_Moments_musicaux,_no._5_In_F_Minor.ogg' },
+      { title: 'No. 6 in A-flat major', movement: 5, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/2/21/Schubert%3B_Moments_musicaux%2C_no._6_In_A_Flat_Major.ogg/Schubert%3B_Moments_musicaux%2C_no._6_In_A_Flat_Major.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Schubert;_Moments_musicaux,_no._6_In_A_Flat_Major.ogg' },
     ],
   },
 }
