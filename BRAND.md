@@ -98,7 +98,7 @@ Colours drawn over images use `--scrim`, `--on-image` and `--on-image-soft`.
 - Credit the performer next to the Listen button, and the licence with its link when it is Creative Commons.
 - Historical recordings are welcome: Caruso, Gigli, Stravinsky conducting his own Rite. Their age is part of the charm.
 - A work without a suitable recording has no player rather than a poor one.
-- **Radio:** stations by period (Baroque, Classical, Romantic, Modern) and by kind (Opera, Piano, Orchestra, Voices), plus Everything. Each plays one random movement at a time and keeps going while you browse. The Radio link sits with Search at the foot of the sidebar; Discover, Works, Composers and Guides stay at the top.
+- **Radio:** stations by period (Baroque, Classical, Romantic, Modern) and by kind (Opera, Piano, Orchestra, Voices), plus Everything. Each plays one random movement at a time and keeps going while you browse. Opening Radio from the sidebar or the home page starts Everything straight away, unless something is already playing; choosing another station is optional. The Radio link sits with Search at the foot of the sidebar; Discover, Works, Composers and Guides stay at the top.
 
 ## Signature elements
 

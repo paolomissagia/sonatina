@@ -1,6 +1,7 @@
 import { Search, X } from 'lucide-react'
 import { NavLink } from 'react-router'
 import { aboutItem, navItems, radioItem } from '@/data/navigation'
+import { useStartRadio } from '@/player/use-start-radio'
 import { Logo } from './logo'
 import { SidebarLink } from './sidebar-link'
 
@@ -11,6 +12,8 @@ type AppSidebarProps = {
 }
 
 export function AppSidebar({ isOpen, onClose, onNavigate }: AppSidebarProps) {
+  const startRadio = useStartRadio()
+
   return (
     <aside className={isOpen ? 'sidebar open' : 'sidebar'} aria-label="Primary">
       <div className="sidebar-header">
@@ -35,7 +38,10 @@ export function AppSidebar({ isOpen, onClose, onNavigate }: AppSidebarProps) {
       <div className="sidebar-footer">
         <SidebarLink
           item={radioItem}
-          onNavigate={onNavigate}
+          onNavigate={() => {
+            startRadio()
+            onNavigate()
+          }}
         />
         <NavLink
           className={({ isActive }) => (isActive ? 'sidebar-link active' : 'sidebar-link')}
