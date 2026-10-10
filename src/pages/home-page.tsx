@@ -14,7 +14,7 @@ export function HomePage() {
       <title>Sonatina · Discover classical music</title>
       <section className="home-hero">
         <img src={catalogAssets.burgtheaterAuditorium} alt="" />
-        <ImageCreditLink credit={assetCredits.burgtheaterAuditorium} />
+        <ImageCreditLink credit={assetCredits.burgtheaterAuditorium} imageSrc={catalogAssets.burgtheaterAuditorium} />
         <div className="home-hero-copy">
           <h1>
             Discover

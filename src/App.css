@@ -1202,9 +1202,104 @@ button {
   border-radius: 999px;
   background: rgb(var(--scrim) / 0.55);
   color: rgb(var(--on-image) / 0.88);
+  border: 0;
+  font-family: inherit;
   font-size: 12px;
   font-weight: 600;
   text-decoration: none;
+  cursor: zoom-in;
+}
+
+.image-credit:focus-visible {
+  outline: 2px solid rgb(var(--on-image));
+  outline-offset: 2px;
+}
+
+/* Image viewer: the full artwork over a dark scrim, with its credit underneath. */
+.image-viewer {
+  /* The reset zeroes margins; auto restores the browser's centring of modal dialogs. */
+  margin: auto;
+  max-width: min(94vw, 1400px);
+  max-height: 94vh;
+  padding: 0;
+  border: 0;
+  overflow: visible;
+  color: rgb(var(--frame-ink));
+  background: transparent;
+}
+
+.image-viewer::backdrop {
+  background: rgb(var(--scrim) / 0.88);
+}
+
+.image-viewer figure {
+  margin: 0;
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+}
+
+.image-viewer img {
+  display: block;
+  max-width: min(94vw, 1400px);
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 24px 60px rgb(var(--scrim) / 0.5);
+  background: rgb(var(--frame-deep));
+}
+
+.image-viewer figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 4px 16px;
+  color: rgb(var(--frame-muted));
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.image-viewer figcaption strong {
+  color: rgb(var(--frame-ink));
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.image-viewer figcaption a {
+  color: rgb(var(--frame-gilt));
+  text-decoration: none;
+}
+
+.image-viewer figcaption a:hover {
+  text-decoration: underline;
+}
+
+.image-viewer-close {
+  position: fixed;
+  top: max(16px, env(safe-area-inset-top, 0px));
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  color: rgb(var(--frame-ink));
+  background: rgb(var(--frame-ink) / 0.12);
+  cursor: pointer;
+}
+
+.image-viewer-close:hover {
+  background: rgb(var(--frame-ink) / 0.22);
+}
+
+.image-viewer-close:focus-visible,
+.image-viewer figcaption a:focus-visible {
+  outline: 2px solid rgb(var(--frame-gilt));
+  outline-offset: 2px;
 }
 
 .image-credit:hover {

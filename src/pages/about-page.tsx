@@ -64,7 +64,7 @@ export function AboutPage() {
       <figure className="about-quote">
         <div className="about-quote-image">
           <img src={catalogAssets.concertAtSanssouci} alt="" />
-          <ImageCreditLink credit={assetCredits.concertAtSanssouci} />
+          <ImageCreditLink credit={assetCredits.concertAtSanssouci} imageSrc={catalogAssets.concertAtSanssouci} />
         </div>
         <figcaption>
           <blockquote>

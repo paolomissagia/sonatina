@@ -71,7 +71,7 @@ Colours drawn over images use `--scrim`, `--on-image` and `--on-image-soft`.
 
 - **Composers:** public-domain historical portraits only, from Wikimedia Commons or museum collections. Never AI-generated likenesses of real people.
   - Crop to a square head-and-shoulders frame, with the face about 40% from the top, so 16:9 cards don't cut it off.
-  - Every image carries a short credit (title, artist, year) shown as a pill on the image, linking to its source. Public-domain images need no attribution, so we don't name the archive.
+  - Every image carries a short credit (title, artist, year) shown as a pill on the image. Clicking it opens the full, uncropped artwork in a viewer, with the source one link away. Public-domain images need no attribution, so we don't name the archive.
   - Keep the original paintings and photographs; don't colourise or sepia-tone them.
 - **Works:** one cover per category, never per work, so the catalogue reads as one collection. Every cover is a warm 18th–19th-century oil painting of that kind of music being made:
 

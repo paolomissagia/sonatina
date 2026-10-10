@@ -43,7 +43,7 @@ export function DetailHero({
   return (
     <section className="detail-visual-hero">
       <img src={imageSrc} alt={imageAlt} />
-      {imageCredit ? <ImageCreditLink credit={imageCredit} /> : null}
+      {imageCredit ? <ImageCreditLink credit={imageCredit} imageSrc={imageSrc} /> : null}
       <div className="detail-visual-hero-copy">
         <nav className="detail-visual-breadcrumb" aria-label="Breadcrumb">
           {breadcrumb.map((item, index) => (
