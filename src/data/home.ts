@@ -1,6 +1,8 @@
 import type { CatalogSection } from '@/models/catalog'
 import type { EditorPick } from '@/models/home'
 import { findCatalogItem } from './catalog'
+import { findComposer } from './composers'
+import { findWork } from './works'
 
 type EditorPickSource = {
   section: CatalogSection
@@ -38,7 +40,8 @@ export const editorPicks: EditorPick[] = editorPickSources.flatMap(({ section, i
       subtitle: item.subtitle,
       meta: recording ?? item.meta ?? '',
       recording: Boolean(recording),
-      asset: item.asset,
+      // A recording is about its performer, so show the composer rather than the genre painting.
+      asset: (recording && findComposer(findWork(id)?.composerId)?.asset) || item.asset,
       to: `/${section}/${item.id}`,
     },
   ]

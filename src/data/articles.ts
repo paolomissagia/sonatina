@@ -649,7 +649,7 @@ export const articles: Article[] = [
     type: 'Listening notes',
     category: 'Listening',
     description: 'Brahms, Elgar, Rachmaninoff, Stravinsky and Ravel performing their own music.',
-    asset: 'composerRachmaninoff',
+    asset: 'composerBrahms',
     audience: 'Curious listeners',
     overview:
       'For most of history we can only imagine how composers wanted their music to sound. From the late nineteenth century, a few of them were recorded playing or conducting it. These recordings are rare documents, and several are in the catalogue.',
