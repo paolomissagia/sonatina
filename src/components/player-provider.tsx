@@ -3,7 +3,7 @@ import { catalogAssets } from '@/assets/catalog-assets'
 import { getComposerName } from '@/data/composers'
 import { getWorkAsset } from '@/data/works'
 import { findStation, type Station } from '@/data/stations'
-import type { Recording } from '@/models/recording'
+import type { Recording, RecordingTrack } from '@/models/recording'
 import type { Work } from '@/models/work'
 import { PlayerContext, type Repeat } from '@/player/player-context'
 import { pickRadioSegment, radioMemory, type RadioSegment } from '@/player/radio'
@@ -27,6 +27,12 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
   const [muted, setMuted] = useState(false)
   const recentRef = useRef<string[]>([])
   const failuresRef = useRef(0)
+  // The audio events read the playing track from a ref: they can fire before React re-renders.
+  const trackRef = useRef<RecordingTrack | null>(null)
+  // A track that is part of a longer file: where to seek once the file loads, and which
+  // track's end has already been handled, so a late time update can't skip the next one.
+  const pendingSeekRef = useRef<number | null>(null)
+  const endedTrackRef = useRef<RecordingTrack | null>(null)
 
   // Start a track imperatively, inside the click that asked for it, so browsers allow playback.
   const start = useCallback((next: Queue, trackIndex: number) => {
@@ -37,12 +43,26 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
       return
     }
 
-    audio.src = track.src
+    const offset = track.start ?? 0
+    const sameFile = audio.readyState > 0 && audio.currentSrc === new URL(track.src).href
+    if (sameFile) {
+      // The next part of the same file: carry on without reloading, unless it starts elsewhere.
+      if (Math.abs(audio.currentTime - offset) > 1) {
+        audio.currentTime = offset
+      }
+      setDuration((track.end ?? audio.duration) - offset)
+    } else {
+      audio.src = track.src
+      pendingSeekRef.current = offset > 0 ? offset : null
+      setDuration(0)
+    }
+
+    trackRef.current = track
+    endedTrackRef.current = null
     void audio.play().catch(() => setPlaying(false))
     setQueue(next)
     setIndex(trackIndex)
     setTime(0)
-    setDuration(0)
     setError(false)
   }, [])
 
@@ -122,15 +142,16 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
 
   const toggleMute = useCallback(() => setMuted((on) => !on), [])
 
-  // Repeat track is the audio element's own loop.
+  // Repeat track is the audio element's own loop, unless the track is part of a longer file.
+  const partOfFile = queue?.recording.tracks[index]?.start !== undefined || queue?.recording.tracks[index]?.end !== undefined
   useEffect(() => {
     const audio = audioRef.current
     if (audio) {
-      audio.loop = repeat === 'track'
+      audio.loop = repeat === 'track' && !partOfFile
       audio.volume = volume
       audio.muted = muted
     }
-  }, [repeat, volume, muted])
+  }, [repeat, partOfFile, volume, muted])
 
   const previous = useCallback(() => {
     const audio = audioRef.current
@@ -140,16 +161,18 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
     }
 
     // Like a CD player: back to the start of the track, unless it has only just begun.
-    if (audio.currentTime > 3 || index === queue.first) {
-      audio.currentTime = 0
+    const offset = trackRef.current?.start ?? 0
+    if (audio.currentTime - offset > 3 || index === queue.first) {
+      audio.currentTime = offset
     } else {
       start(queue, index - 1)
     }
   }, [queue, index, start])
 
+  // Seconds from the start of the track, which may be partway into the file.
   const seek = useCallback((seconds: number) => {
     if (audioRef.current) {
-      audioRef.current.currentTime = seconds
+      audioRef.current.currentTime = (trackRef.current?.start ?? 0) + seconds
     }
   }, [])
 
@@ -162,6 +185,8 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
       audio.load()
     }
 
+    trackRef.current = null
+    pendingSeekRef.current = null
     setQueue(null)
     setStation(null)
     setPlaying(false)
@@ -183,8 +208,49 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
     } else if (station) {
       tune(station)
     } else {
+      // A track that ends partway through its file would otherwise play on into the next.
+      audioRef.current?.pause()
       setPlaying(false)
     }
+  }
+
+  // The end of a track that stops partway through its file, or the end of the file itself.
+  // Repeating such a track goes back to its own start rather than the file's.
+  const finishTrack = (audio: HTMLAudioElement) => {
+    const track = trackRef.current
+    if (!track || endedTrackRef.current === track) {
+      return
+    }
+
+    if (repeat === 'track') {
+      audio.currentTime = track.start ?? 0
+      void audio.play().catch(() => setPlaying(false))
+      return
+    }
+
+    endedTrackRef.current = track
+    handleEnded()
+  }
+
+  const handleTimeUpdate = (audio: HTMLAudioElement) => {
+    const track = trackRef.current
+    const offset = track?.start ?? 0
+    if (track?.end !== undefined && audio.currentTime >= track.end) {
+      finishTrack(audio)
+    }
+    setTime(Math.max(0, audio.currentTime - offset))
+  }
+
+  const handleLoadedMetadata = (audio: HTMLAudioElement) => {
+    if (pendingSeekRef.current !== null) {
+      audio.currentTime = pendingSeekRef.current
+      pendingSeekRef.current = null
+    }
+  }
+
+  const handleDurationChange = (audio: HTMLAudioElement) => {
+    const track = trackRef.current
+    setDuration((track?.end ?? audio.duration) - (track?.start ?? 0))
   }
 
   const handleError = () => {
@@ -274,9 +340,10 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
           setPlaying(true)
         }}
         onPause={() => setPlaying(false)}
-        onTimeUpdate={(event) => setTime(event.currentTarget.currentTime)}
-        onDurationChange={(event) => setDuration(event.currentTarget.duration)}
-        onEnded={handleEnded}
+        onTimeUpdate={(event) => handleTimeUpdate(event.currentTarget)}
+        onLoadedMetadata={(event) => handleLoadedMetadata(event.currentTarget)}
+        onDurationChange={(event) => handleDurationChange(event.currentTarget)}
+        onEnded={(event) => finishTrack(event.currentTarget)}
         onError={handleError}
       />
     </PlayerContext.Provider>

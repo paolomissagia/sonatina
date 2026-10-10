@@ -71,7 +71,7 @@ The script refuses anything that isn't public domain or CC0, writes the WebP, an
 
 ### Adding recordings
 
-Works have a player. Recordings stream straight from **Wikimedia Commons** or the **Internet Archive** (we never host audio) and live in `src/data/recordings.ts`, keyed by work id, with each track mapped to one of the work's movements. Long stage works (operas, ballets) map their arias or excerpts onto the right act. Keep a movement's tracks next to each other: the radio plays one movement at a time.
+Works have a player. Recordings stream straight from the approved sources (we never host audio) and live in `src/data/recordings.ts`, keyed by work id, with each track mapped to one of the work's movements. Long stage works (operas, ballets) map their arias or excerpts onto the right act. Keep a movement's tracks next to each other: the radio plays one movement at a time. When one file holds a whole work, list a track per movement with the same `src` and give each its `start` and `end` in seconds; the player seeks within the file and plays straight on from one movement to the next.
 
 The table loads in its own chunk on demand, and the player lives at the app root, so playback carries on while you browse. Only the current track ever loads; never prefetch audio.
 
