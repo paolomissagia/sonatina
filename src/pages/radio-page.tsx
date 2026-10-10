@@ -3,6 +3,8 @@ import { catalogAssets } from '@/assets/catalog-assets'
 import { SectionHeading } from '@/components/section-heading'
 import { getStations, type Station } from '@/data/stations'
 import { usePlayer } from '@/player/player-context'
+import { PageMeta } from '@/components/page-meta'
+import { radioMeta } from '@/data/page-meta'
 
 export function RadioPage() {
   const player = usePlayer()
@@ -40,9 +42,9 @@ export function RadioPage() {
 
   return (
     <section className="radio-page">
-      <title>Radio · Sonatina</title>
+      <PageMeta {...radioMeta} />
       <div className="page-intro">
-        <SectionHeading title="Radio" />
+        <SectionHeading title="Radio" level="h1" />
         <p>
           Pick a station and let the catalogue play. Each one plays a movement at a time, chosen at random, so you
           can keep it on while you browse.

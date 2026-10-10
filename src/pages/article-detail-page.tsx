@@ -7,6 +7,8 @@ import type { Work } from '@/models/work'
 import { DetailHero } from '@/components/detail-hero'
 import { RecommendationCard } from '@/components/recommendation-card'
 import { RecommendationSection } from '@/components/recommendation-section'
+import { PageMeta } from '@/components/page-meta'
+import { articleMeta } from '@/data/page-meta'
 
 type ArticleDetailPageProps = {
   article: Article
@@ -25,7 +27,7 @@ export function ArticleDetailPage({ article }: ArticleDetailPageProps) {
 
   return (
     <article className="article-detail-page">
-      <title>{`${article.title} · Sonatina`}</title>
+      <PageMeta {...articleMeta(article)} />
       <DetailHero
         breadcrumb={[
           { label: 'Articles', to: '/articles' },

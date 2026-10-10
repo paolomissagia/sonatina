@@ -1,6 +1,8 @@
 import { Search } from 'lucide-react'
 import { useSearchParams } from 'react-router'
 import { SearchResultsPage } from '@/components/search-results-page'
+import { PageMeta } from '@/components/page-meta'
+import { searchMeta } from '@/data/page-meta'
 
 export function SearchPage() {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -9,7 +11,7 @@ export function SearchPage() {
 
   return (
     <section className="search-route-page">
-      <title>{hasQuery ? `Search: ${query.trim()} · Sonatina` : 'Search · Sonatina'}</title>
+      <PageMeta {...searchMeta} title={hasQuery ? `Search: ${query.trim()} · Sonatina` : searchMeta.title} />
       <div className="search-route-header">
         <h1>Search</h1>
         <p>Find works, composers, and articles from one place.</p>

@@ -1,6 +1,8 @@
 import { BookOpen, Music2, UsersRound } from 'lucide-react'
 import { assetCredits, catalogAssets } from '@/assets/catalog-assets'
 import { ImageCreditLink } from '@/components/image-credit-link'
+import { PageMeta } from '@/components/page-meta'
+import { aboutMeta } from '@/data/page-meta'
 
 const principles = [
   {
@@ -23,7 +25,7 @@ const principles = [
 export function AboutPage() {
   return (
     <section className="about-page">
-      <title>About · Sonatina</title>
+      <PageMeta {...aboutMeta} />
       <div className="about-header">
         <p>About Sonatina</p>
         <h1>

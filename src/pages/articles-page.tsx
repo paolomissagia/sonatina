@@ -3,6 +3,8 @@ import { Link } from 'react-router'
 import { catalogAssets } from '@/assets/catalog-assets'
 import { getReadTime, articles } from '@/data/articles'
 import { articleCategories } from '@/models/article'
+import { PageMeta } from '@/components/page-meta'
+import { listingMeta } from '@/data/page-meta'
 
 const articleFilters = ['All', ...articleCategories]
 
@@ -19,7 +21,7 @@ export function ArticlesPage() {
 
   return (
     <section className="articles-page">
-      <title>Articles · Sonatina</title>
+      <PageMeta {...listingMeta('articles')} />
       <header className="articles-header">
         <h1>Articles</h1>
         <p>In-depth articles to help you explore, understand, and enjoy classical music.</p>

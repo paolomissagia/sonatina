@@ -9,6 +9,8 @@ import { DetailHero } from '@/components/detail-hero'
 import { DetailTabs } from '@/components/detail-tabs'
 import { RecommendationCard } from '@/components/recommendation-card'
 import { RecommendationSection } from '@/components/recommendation-section'
+import { PageMeta } from '@/components/page-meta'
+import { composerMeta } from '@/data/page-meta'
 
 type ComposerDetailPageProps = {
   composer: Composer
@@ -33,7 +35,7 @@ export function ComposerDetailPage({ composer }: ComposerDetailPageProps) {
 
   return (
     <article className="composer-page">
-      <title>{`${composer.name} · Sonatina`}</title>
+      <PageMeta {...composerMeta(composer)} />
       <DetailHero
         breadcrumb={[
           { label: 'Composers', to: '/composers' },

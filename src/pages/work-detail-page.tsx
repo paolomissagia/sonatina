@@ -11,6 +11,8 @@ import { DetailTabs } from '@/components/detail-tabs'
 import { MovementList } from '@/components/movement-list'
 import { RecommendationCard } from '@/components/recommendation-card'
 import { RecommendationSection } from '@/components/recommendation-section'
+import { PageMeta } from '@/components/page-meta'
+import { workMeta } from '@/data/page-meta'
 
 type WorkDetailPageProps = {
   work: Work
@@ -95,7 +97,7 @@ export function WorkDetailPage({ work }: WorkDetailPageProps) {
 
   return (
     <article className="work-page">
-      <title>{`${work.title} · ${composerName} · Sonatina`}</title>
+      <PageMeta {...workMeta(work)} />
       <DetailHero
         breadcrumb={[
           { label: 'Works', to: '/works' },

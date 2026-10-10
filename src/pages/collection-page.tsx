@@ -7,6 +7,8 @@ import type { CatalogSection } from '@/models/catalog'
 import { CollectionCard } from '@/components/collection-card'
 import { SectionHeading } from '@/components/section-heading'
 import { ArticlesPage } from './articles-page'
+import { PageMeta } from '@/components/page-meta'
+import { listingMeta } from '@/data/page-meta'
 
 type CollectionPageProps = {
   view: CatalogSection
@@ -35,9 +37,9 @@ export function CollectionPage({ view }: CollectionPageProps) {
 
   return (
     <section className="collection-page">
-      <title>{`${page.title} · Sonatina`}</title>
+      <PageMeta {...listingMeta(view)} />
       <div className="page-intro">
-        <SectionHeading title={page.title} />
+        <SectionHeading title={page.title} level="h1" />
         <p>{page.description}</p>
       </div>
 

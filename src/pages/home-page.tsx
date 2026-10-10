@@ -4,11 +4,13 @@ import { assetCredits, catalogAssets } from '@/assets/catalog-assets'
 import { ImageCreditLink } from '@/components/image-credit-link'
 import { exploreCategories } from '@/data/explore-categories'
 import { editorPicks } from '@/data/home'
+import { PageMeta } from '@/components/page-meta'
+import { homeMeta } from '@/data/page-meta'
 
 export function HomePage() {
   return (
     <div className="home-page">
-      <title>Sonatina · Discover classical music</title>
+      <PageMeta {...homeMeta} />
       <section className="home-hero">
         <img src={catalogAssets.burgtheaterAuditorium} alt="" />
         <ImageCreditLink credit={assetCredits.burgtheaterAuditorium} imageSrc={catalogAssets.burgtheaterAuditorium} />

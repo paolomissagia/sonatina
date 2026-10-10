@@ -25,7 +25,7 @@ Other scripts:
 
 | Command           | What it does                               |
 | ----------------- | ------------------------------------------ |
-| `npm run build`   | Type-check (`tsc -b`) and build to `dist/` |
+| `npm run build`   | Type-check (`tsc -b`), build to `dist/` and prerender every page |
 | `npm run preview` | Serve the production build locally         |
 | `npm run lint`    | Run oxlint                                 |
 
@@ -37,11 +37,18 @@ docker compose up --build
 
 Then open http://localhost:5173. Source changes are mounted into the container and served by Vite's dev server.
 
+## Search engines and link previews
+
+`npm run build` prerenders every page to static HTML (`scripts/prerender.mjs`, using `src/entry-server.tsx`), so search engines and link previews see real content without running JavaScript. It also writes `404.html`, `sitemap.xml` and `robots.txt`. Vercel serves the pages at clean URLs, and unknown addresses get a real 404 (`vercel.json`).
+
+Each page declares its title, description, canonical link, share image and structured data with `<PageMeta>`, from the helpers in `src/data/page-meta.ts`. React moves those tags into the head while you browse; the build does the same for the static files. The site's address is `siteUrl` in that file: change it there when the site moves to its own domain.
+
 ## Project layout
 
 ```
 src/
   App.tsx           App shell and routes
+  entry-server.tsx  Renders a page to HTML for the prerender
   pages/            One component per route
   components/       Shared UI (cards, detail hero, tabs, sidebar, …)
   models/           Domain types (Work, Composer, Article, …)

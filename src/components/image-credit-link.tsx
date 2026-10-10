@@ -52,8 +52,9 @@ export function ImageCreditLink({ credit, imageSrc }: ImageCreditLinkProps) {
         {credit.artist}, {credit.year}
       </button>
 
-      {/* Rendered at the document root so the hero's image styles don't reach the viewer. */}
-      {createPortal(
+      {/* Rendered at the document root so the hero's image styles don't reach the viewer.
+          There is no document while the page is prerendered; the viewer only opens on click. */}
+      {typeof document !== 'undefined' && createPortal(
         <dialog
           className="image-viewer"
           ref={dialogRef}

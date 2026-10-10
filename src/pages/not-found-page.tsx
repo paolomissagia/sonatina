@@ -1,9 +1,11 @@
 import { Link } from 'react-router'
+import { PageMeta } from '@/components/page-meta'
+import { notFoundMeta } from '@/data/page-meta'
 
 export function NotFoundPage() {
   return (
     <section className="search-route-page">
-      <title>Page not found · Sonatina</title>
+      <PageMeta {...notFoundMeta} />
       <div className="search-route-header">
         <h1>Page not found</h1>
       </div>
