@@ -36,6 +36,25 @@ describe('recordings', () => {
     }
   })
 
+  it('keep the parts of a shared file in order, without overlaps', () => {
+    for (const [workId, recording] of entries) {
+      for (const [i, track] of recording.tracks.entries()) {
+        const label = `${workId}: ${track.title}`
+        if (track.start !== undefined) {
+          expect(track.start, label).toBeGreaterThanOrEqual(0)
+        }
+        if (track.end !== undefined) {
+          expect(track.end, label).toBeGreaterThan(track.start ?? 0)
+        }
+
+        const previous = recording.tracks[i - 1]
+        if (previous?.src === track.src && (previous.end !== undefined || track.start !== undefined)) {
+          expect(track.start ?? 0, label).toBeGreaterThanOrEqual(previous.end ?? Infinity)
+        }
+      }
+    }
+  })
+
   it('credit a performer, and link Creative Commons licences', () => {
     for (const [workId, recording] of entries) {
       expect(recording.performer, workId).not.toBe('')
