@@ -1,6 +1,6 @@
 import { Search, X } from 'lucide-react'
 import { NavLink } from 'react-router'
-import { aboutItem, navItems } from '@/data/navigation'
+import { aboutItem, navItems, radioItem } from '@/data/navigation'
 import { Logo } from './logo'
 import { SidebarLink } from './sidebar-link'
 
@@ -33,6 +33,10 @@ export function AppSidebar({ isOpen, onClose, onNavigate }: AppSidebarProps) {
       </nav>
 
       <div className="sidebar-footer">
+        <SidebarLink
+          item={radioItem}
+          onNavigate={onNavigate}
+        />
         <NavLink
           className={({ isActive }) => (isActive ? 'sidebar-link active' : 'sidebar-link')}
           to="/search"
