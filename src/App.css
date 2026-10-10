@@ -1581,10 +1581,11 @@ button {
 }
 
 .movement-row {
+  --movement-columns: 36px minmax(0, 1fr) 22px;
   min-height: 48px;
   border-top: 1px solid rgb(var(--rule));
   display: grid;
-  grid-template-columns: 36px minmax(0, 1fr) auto;
+  grid-template-columns: var(--movement-columns);
   align-items: center;
   gap: 14px;
 }
@@ -1595,7 +1596,7 @@ button {
   width: 100%;
   padding: 0;
   display: grid;
-  grid-template-columns: 22px 36px minmax(0, 1fr) auto;
+  grid-template-columns: var(--movement-columns);
   align-items: center;
   gap: 14px;
   border: 0;
@@ -2093,7 +2094,7 @@ button {
   }
 
   .movement-row {
-    grid-template-columns: 30px minmax(0, 1fr);
+    --movement-columns: 30px minmax(0, 1fr) 22px;
     align-items: start;
     padding: 12px 0;
   }

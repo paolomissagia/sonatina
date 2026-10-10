@@ -17,7 +17,7 @@ type MovementListProps = {
   className?: string
   movements: Movement[]
   title: string
-  /** Movements that have a recording; their rows become play buttons. */
+  /** Movements that have a recording; their rows become play buttons, with the icon at the end so numerals stay aligned. */
   playable?: Set<number>
   /** The movement now playing, if it belongs to this work. */
   activeMovement?: number
@@ -49,8 +49,8 @@ export function MovementList({ activeMovement, className, movements, onPlay, pla
                   aria-label={`${active && playing ? 'Pause' : 'Play'} ${numeral} ${movement.title}`}
                   onClick={() => onPlay(index)}
                 >
-                  <i aria-hidden="true">{active && playing ? <Pause size={13} /> : <Play size={13} />}</i>
                   {content}
+                  <i aria-hidden="true">{active && playing ? <Pause size={13} /> : <Play size={13} />}</i>
                 </button>
               ) : (
                 content
