@@ -11,7 +11,6 @@ import composerHaydn from '@/assets/catalog/composer-haydn.webp'
 import composerSchubert from '@/assets/catalog/composer-schubert.webp'
 import composerChopin from '@/assets/catalog/composer-chopin.webp'
 import composerMendelssohn from '@/assets/catalog/composer-mendelssohn.webp'
-import composerFannyHensel from '@/assets/catalog/composer-fanny-hensel.webp'
 import composerBrahms from '@/assets/catalog/composer-brahms.webp'
 import composerTchaikovsky from '@/assets/catalog/composer-tchaikovsky.webp'
 import composerVerdi from '@/assets/catalog/composer-verdi.webp'
@@ -50,7 +49,6 @@ export const catalogAssets = {
   composerSchubert,
   composerChopin,
   composerMendelssohn,
-  composerFannyHensel,
   composerBrahms,
   composerTchaikovsky,
   composerVerdi,
@@ -185,11 +183,6 @@ export const assetCredits: Record<CatalogAssetKey, ImageCredit> = {
     artist: 'Eduard Magnus',
     year: '1833',
     source: commons('Felix_Mendelssohn_Bartholdy_by_Eduard_Magnus_(1833).jpg'),
-  },
-  composerFannyHensel: {
-    artist: 'Moritz Daniel Oppenheim',
-    year: '1842',
-    source: commons('Fanny_Hensel_1842.jpg'),
   },
   composerBrahms: {
     artist: 'C. Brasch, Berlin',

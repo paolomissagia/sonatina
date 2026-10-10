@@ -212,20 +212,6 @@ export const composers: Composer[] = [
       'A prodigy who wrote his Octet at sixteen, Mendelssohn became conductor of the Leipzig Gewandhaus Orchestra and founded the city’s conservatory. His 1829 performance of Bach’s St Matthew Passion sparked a revival of Bach’s music.',
   },
   {
-    id: 'fanny-hensel',
-    name: 'Fanny Hensel',
-    shortName: 'Fanny Hensel',
-    period: 'Romantic',
-    born: { year: 1805, place: 'Hamburg' },
-    died: { year: 1847, place: 'Berlin' },
-    nationality: 'German',
-    bio: 'Songs, piano pieces, and chamber music from a Berlin salon.',
-    asset: 'composerFannyHensel',
-    knownFor: ['Songs', 'Piano music', 'Chamber music'],
-    overview:
-      'Fanny Hensel, born Fanny Mendelssohn, was as gifted as her brother Felix but was discouraged by her family from a public career. She wrote more than 460 works, led a celebrated series of Sunday concerts at her Berlin home, and began publishing under her own name shortly before her death.',
-  },
-  {
     id: 'brahms',
     name: 'Johannes Brahms',
     shortName: 'Brahms',
