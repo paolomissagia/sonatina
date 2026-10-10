@@ -2907,6 +2907,28 @@ export const works: Work[] = [
     ],
   },
   {
+    id: 'schubert-piano-sonata-19',
+    title: 'Piano Sonata No. 19',
+    composerId: 'schubert',
+    catalogue: 'D. 958',
+    key: 'C minor',
+    description: 'The stormiest of the last three sonatas, in Beethoven’s shadow.',
+    composed: '1828',
+    year: 1828,
+    durationMinutes: 32,
+    genre: 'Piano',
+    form: 'Piano sonata in four movements',
+    instrumentation: 'Piano',
+    overview:
+      'The first of Schubert’s three last sonatas opens with a fierce C minor theme that echoes Beethoven, who had died the year before. It ends with a restless tarantella, a fast dance that races on for page after page.',
+    movements: [
+      { title: 'Allegro' },
+      { title: 'Adagio' },
+      { title: 'Menuetto: Allegro' },
+      { title: 'Allegro' },
+    ],
+  },
+  {
     id: 'schubert-piano-sonata-20',
     title: 'Piano Sonata No. 20',
     composerId: 'schubert',

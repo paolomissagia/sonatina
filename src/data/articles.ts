@@ -544,53 +544,53 @@ export const articles: Article[] = [
   },
   {
     id: 'schubert-last-piano-works',
-    title: 'Schubert’s last year at the piano',
+    title: 'Schubert’s last three sonatas',
     type: 'Composer profile',
     category: 'Composers',
-    description: 'The impromptus, the Moments musicaux and the last three sonatas.',
+    description: 'Three sonatas finished in September 1828, two months before Schubert died.',
     asset: 'composerSchubert',
     audience: 'Piano lovers',
     overview:
-      'Schubert died in Vienna in November 1828, aged 31. In his last two years, already seriously ill, he wrote some of the most personal piano music ever composed: music that rarely shows off, but sings, hesitates and dreams. Much of it was barely known until long after his death.',
+      'In September 1828, already seriously ill, Schubert finished three large piano sonatas, D. 958, D. 959 and D. 960. Two months later he was dead, aged 31. The sonatas were not published until ten years later and were long thought too long and too loose in form. Today they are counted among the greatest piano music ever written.',
     sections: [
       {
-        title: 'A composer of songs at the piano',
+        title: 'Written in Beethoven’s shadow',
         body: [
-          'Schubert wrote more than six hundred songs, and his piano music sings in the same way: long melodies over a gently moving accompaniment, and sudden shifts of harmony that change the light. He rarely wrote to dazzle. He was not a touring virtuoso, and much of this music was played among friends rather than in concert halls.',
+          'Beethoven had died in Vienna the year before, and Schubert, who revered him, had been a torchbearer at his funeral. The three sonatas answer Beethoven’s example in Schubert’s own voice: long, singing melodies, sudden shifts of harmony that change the light, and a sense of space rather than argument.',
         ],
       },
       {
-        title: 'The Impromptus',
+        title: 'C minor, D. 958',
         body: [
-          'In 1827 Schubert wrote two sets of four impromptus, short pieces that sound almost improvised. Start with the third piece of the first set, in G-flat major: a single, endless melody floating over rippling notes. In the second set, the third impromptu is a set of variations on a tune from his music for the play Rosamunde.',
+          'The first sonata is the most dramatic. It opens with a fierce theme that recalls Beethoven, and ends with a restless tarantella, a fast dance that races on for page after page, as if unable to stop.',
         ],
       },
       {
-        title: 'Moments musicaux',
+        title: 'A major, D. 959',
         body: [
-          'The six Moments musicaux are even smaller, intimate pieces lasting a few minutes each. The third, in F minor, was the first to be published, on its own, under the title Air russe, and it remains one of Schubert’s best-loved tunes.',
+          'The second sonata is warm and expansive, but its slow movement is one of the strangest things Schubert wrote: a bleak, rocking song that suddenly breaks into a violent, almost improvised storm, before returning, shaken, to its opening melody.',
         ],
       },
       {
-        title: 'The last three sonatas',
+        title: 'B-flat major, D. 960',
         body: [
-          'In September 1828, two months before his death, Schubert finished three large piano sonatas. They were not published until ten years later and were long thought too long and too loose in form. Today they are seen as among the greatest of all piano sonatas.',
-          'The A major Sonata, D. 959, has a slow movement that breaks without warning into a storm. The B-flat major Sonata, D. 960, opens with a calm, hymn-like melody interrupted by a distant trill deep in the bass, like thunder on the horizon.',
+          'The last sonata opens with a calm, hymn-like melody, interrupted by a distant trill deep in the bass, like thunder on the horizon. Its slow movement, in a remote key, is music of rare stillness. If you listen to only one, start here.',
         ],
       },
       {
         title: 'Hearing Schnabel',
         body: [
-          'In the early twentieth century, the Austrian pianist Artur Schnabel was one of the first to champion these sonatas in concert. His recordings of the Moments musicaux in 1937 and of the B-flat Sonata in 1939 helped bring them back to the centre of the repertoire, and you can hear both here.',
+          'In the early twentieth century, the Austrian pianist Artur Schnabel was one of the first to champion these sonatas in concert. His 1939 recording of the B-flat Sonata helped bring them back to the centre of the repertoire, and you can hear it here.',
+          'If you want to go further, the late Impromptus and Moments musicaux, written in the same final years, share the sonatas’ intimacy on a smaller scale.',
         ],
       },
     ],
     workIds: [
-      'schubert-impromptus',
-      'schubert-impromptus-d935',
-      'schubert-moments-musicaux',
+      'schubert-piano-sonata-19',
       'schubert-piano-sonata-20',
       'schubert-piano-sonata-21',
+      'schubert-impromptus-d935',
+      'schubert-moments-musicaux',
     ],
   },
   {

@@ -1689,6 +1689,15 @@ export const recordings: Record<string, Recording> = {
       { title: 'Allegro ma non troppo', movement: 3, src: 'https://archive.org/download/lp_sonata-in-b-flat-major-op-posthumous-alle_franz-schubert-artur-schnabel/disc1/02.02.%20Sonata%20In%20B%20Flat%20Major%20Op.%20Posthumous%3A%204th%20Movement%3A%20Allegro%20Ma%20Non%20Troppo.mp3', page: 'https://archive.org/details/lp_sonata-in-b-flat-major-op-posthumous-alle_franz-schubert-artur-schnabel' },
     ],
   },
+  'schubert-piano-sonata-19': {
+    performer: 'Paul Pitman, piano (2012)',
+    tracks: [
+      { title: 'Allegro', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/4/4e/Schubert_-_Piano_Sonata_No._19_in_C_minor%2C_D958_-_I._Allegro_%28Paul_Pitman%29.flac/Schubert_-_Piano_Sonata_No._19_in_C_minor%2C_D958_-_I._Allegro_%28Paul_Pitman%29.flac.mp3', page: 'https://commons.wikimedia.org/wiki/File:Schubert_-_Piano_Sonata_No._19_in_C_minor,_D958_-_I._Allegro_(Paul_Pitman).flac' },
+      { title: 'Adagio', movement: 1, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/7/70/Schubert_-_Piano_Sonata_No._19_in_C_minor%2C_D958_-_II._Adagio_%28Paul_Pitman%29.flac/Schubert_-_Piano_Sonata_No._19_in_C_minor%2C_D958_-_II._Adagio_%28Paul_Pitman%29.flac.mp3', page: 'https://commons.wikimedia.org/wiki/File:Schubert_-_Piano_Sonata_No._19_in_C_minor,_D958_-_II._Adagio_(Paul_Pitman).flac' },
+      { title: 'Menuetto: Allegro', movement: 2, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b9/Schubert_-_Piano_Sonata_No._19_in_C_minor%2C_D958_-_III._Menuetto._Allegro_%28Paul_Pitman%29.flac/Schubert_-_Piano_Sonata_No._19_in_C_minor%2C_D958_-_III._Menuetto._Allegro_%28Paul_Pitman%29.flac.mp3', page: 'https://commons.wikimedia.org/wiki/File:Schubert_-_Piano_Sonata_No._19_in_C_minor,_D958_-_III._Menuetto._Allegro_(Paul_Pitman).flac' },
+      { title: 'Allegro', movement: 3, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/8/87/Schubert_-_Piano_Sonata_No._19_in_C_minor%2C_D958_-_IV._Allegro_%28Paul_Pitman%29.flac/Schubert_-_Piano_Sonata_No._19_in_C_minor%2C_D958_-_IV._Allegro_%28Paul_Pitman%29.flac.mp3', page: 'https://commons.wikimedia.org/wiki/File:Schubert_-_Piano_Sonata_No._19_in_C_minor,_D958_-_IV._Allegro_(Paul_Pitman).flac' },
+    ],
+  },
   'schubert-piano-sonata-20': {
     performer: 'Paul Pitman, piano (2012)',
     tracks: [
