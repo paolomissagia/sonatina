@@ -4,8 +4,6 @@ export type Genre = (typeof genres)[number]
 
 export type Movement = {
   title: string
-  /** A short gloss: the concerto a movement belongs to, the part of a ballet, what to listen for. */
-  note?: string
 }
 
 export type Work = {

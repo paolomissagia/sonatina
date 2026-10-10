@@ -37,7 +37,6 @@ export function MovementList({ activeMovement, className, movements, onPlay, pla
             <>
               <span>{numeral}</span>
               <strong>{movement.title}</strong>
-              {movement.note ? <small>{movement.note}</small> : null}
             </>
           )
 

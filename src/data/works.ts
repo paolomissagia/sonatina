@@ -22,10 +22,10 @@ export const works: Work[] = [
     overview:
       'Beethoven’s Fifth is one of the most recognisable works ever written. Its four-note opening (short-short-short-long) returns in every movement, and the symphony travels from the stormy C minor of the start to a blazing C major finale that follows the scherzo without a break.',
     movements: [
-      { title: 'Allegro con brio', note: 'The four-note motif' },
-      { title: 'Andante con moto', note: 'Variations' },
-      { title: 'Scherzo: Allegro', note: 'Leads straight into the finale' },
-      { title: 'Allegro', note: 'C major triumph' },
+      { title: 'Allegro con brio' },
+      { title: 'Andante con moto' },
+      { title: 'Scherzo: Allegro' },
+      { title: 'Allegro' },
     ],
   },
   {
@@ -45,18 +45,18 @@ export const works: Work[] = [
     overview:
       'Vivaldi published these concertos with a sonnet for each season, and the music follows the poems closely: birdsong and a spring storm, the heat and hail of summer, an autumn harvest and hunt, teeth chattering in the winter cold. Each concerto runs fast, slow, fast.',
     movements: [
-      { title: 'Allegro', note: 'Spring' },
-      { title: 'Largo e pianissimo sempre', note: 'Spring' },
-      { title: 'Allegro pastorale', note: 'Spring' },
-      { title: 'Allegro non molto', note: 'Summer' },
-      { title: 'Adagio e piano – Presto e forte', note: 'Summer' },
-      { title: 'Presto', note: 'Summer' },
-      { title: 'Allegro', note: 'Autumn' },
-      { title: 'Adagio molto', note: 'Autumn' },
-      { title: 'Allegro', note: 'Autumn' },
-      { title: 'Allegro non molto', note: 'Winter' },
-      { title: 'Largo', note: 'Winter' },
-      { title: 'Allegro', note: 'Winter' },
+      { title: 'Spring: Allegro' },
+      { title: 'Spring: Largo e pianissimo sempre' },
+      { title: 'Spring: Allegro pastorale' },
+      { title: 'Summer: Allegro non molto' },
+      { title: 'Summer: Adagio e piano – Presto e forte' },
+      { title: 'Summer: Presto' },
+      { title: 'Autumn: Allegro' },
+      { title: 'Autumn: Adagio molto' },
+      { title: 'Autumn: Allegro' },
+      { title: 'Winter: Allegro non molto' },
+      { title: 'Winter: Largo' },
+      { title: 'Winter: Allegro' },
     ],
   },
   {
@@ -76,20 +76,20 @@ export const works: Work[] = [
     overview:
       'Mozart was writing the Requiem on an anonymous commission when he died in December 1791. His pupil Franz Xaver Süssmayr completed it from Mozart’s drafts; the Lacrimosa breaks off in Mozart’s hand after eight bars. The mix of ceremony, terror and tenderness, and the mystery around it, have made it one of the most performed choral works.',
     movements: [
-      { title: 'Requiem aeternam', note: 'Introitus' },
-      { title: 'Kyrie', note: 'Double fugue' },
-      { title: 'Dies irae', note: 'Sequence' },
-      { title: 'Tuba mirum', note: 'Sequence' },
-      { title: 'Rex tremendae', note: 'Sequence' },
-      { title: 'Recordare', note: 'Sequence' },
-      { title: 'Confutatis', note: 'Sequence' },
-      { title: 'Lacrimosa', note: 'Sequence' },
-      { title: 'Domine Jesu', note: 'Offertory' },
-      { title: 'Hostias', note: 'Offertory' },
-      { title: 'Sanctus', note: 'Süssmayr' },
-      { title: 'Benedictus', note: 'Süssmayr' },
-      { title: 'Agnus Dei', note: 'Süssmayr' },
-      { title: 'Lux aeterna', note: 'Communion' },
+      { title: 'Requiem aeternam' },
+      { title: 'Kyrie' },
+      { title: 'Dies irae' },
+      { title: 'Tuba mirum' },
+      { title: 'Rex tremendae' },
+      { title: 'Recordare' },
+      { title: 'Confutatis' },
+      { title: 'Lacrimosa' },
+      { title: 'Domine Jesu' },
+      { title: 'Hostias' },
+      { title: 'Sanctus' },
+      { title: 'Benedictus' },
+      { title: 'Agnus Dei' },
+      { title: 'Lux aeterna' },
     ],
   },
   {
@@ -108,12 +108,12 @@ export const works: Work[] = [
     overview:
       'The first of Bach’s six cello suites turns a single instrument into a complete world of dance, line and resonance. No autograph survives; the suites come down to us in copies, including one by Anna Magdalena Bach, and became concert staples only after Pablo Casals championed them in the twentieth century.',
     movements: [
-      { title: 'Prélude', note: 'Flowing arpeggios' },
-      { title: 'Allemande', note: 'Dance' },
-      { title: 'Courante', note: 'Dance' },
-      { title: 'Sarabande', note: 'Slow dance' },
-      { title: 'Menuet I & II', note: 'Dance' },
-      { title: 'Gigue', note: 'Dance' },
+      { title: 'Prélude' },
+      { title: 'Allemande' },
+      { title: 'Courante' },
+      { title: 'Sarabande' },
+      { title: 'Menuet I & II' },
+      { title: 'Gigue' },
     ],
   },
   {
@@ -136,7 +136,7 @@ export const works: Work[] = [
     movements: [
       { title: 'Prélude' },
       { title: 'Menuet' },
-      { title: 'Clair de lune', note: 'This piece' },
+      { title: 'Clair de lune' },
       { title: 'Passepied' },
     ],
   },
@@ -159,9 +159,9 @@ export const works: Work[] = [
       'Dvořák wrote the New World Symphony during his years running the National Conservatory in New York. It combines sweeping Romantic form with melodies shaped by what he heard in America, and the cor anglais tune of the Largo later became the song “Goin’ Home”.',
     movements: [
       { title: 'Adagio – Allegro molto' },
-      { title: 'Largo', note: 'The cor anglais melody' },
+      { title: 'Largo' },
       { title: 'Scherzo: Molto vivace' },
-      { title: 'Allegro con fuoco', note: 'Themes return' },
+      { title: 'Allegro con fuoco' },
     ],
   },
   {
@@ -182,9 +182,9 @@ export const works: Work[] = [
     overview:
       'Beethoven called it a sonata “quasi una fantasia”, like a fantasy, and dedicated it to his pupil Countess Giulietta Guicciardi. The nickname came later, from the critic Ludwig Rellstab. It turns the usual order around, opening with a slow, hushed movement and ending with a stormy finale.',
     movements: [
-      { title: 'Adagio sostenuto', note: 'Hushed' },
-      { title: 'Allegretto', note: 'Graceful' },
-      { title: 'Presto agitato', note: 'Stormy' },
+      { title: 'Adagio sostenuto' },
+      { title: 'Allegretto' },
+      { title: 'Presto agitato' },
     ],
   },
   {
@@ -204,8 +204,8 @@ export const works: Work[] = [
       'Leonore disguises herself as a young man, Fidelio, to rescue her husband Florestan from a political prison. Beethoven reworked the opera twice over nine years and wrote four overtures for it. The prisoners’ chorus and the final scene of liberation are among his most moving music.',
     movements: [
       { title: 'Overture' },
-      { title: 'Act I', note: 'The prison courtyard' },
-      { title: 'Act II', note: 'The dungeon, then liberation' },
+      { title: 'Act I' },
+      { title: 'Act II' },
     ],
   },
   {
@@ -226,8 +226,8 @@ export const works: Work[] = [
       'The Goldberg Variations transform a graceful aria into a vast architecture of invention. Every variation is built over the aria’s bass line; every third one is a canon, and the thirtieth is a quodlibet that weaves in folk songs before the aria returns.',
     movements: [
       { title: 'Aria' },
-      { title: 'Variations 1–30', note: 'A canon every third variation' },
-      { title: 'Aria da capo', note: 'The opening returns' },
+      { title: 'Variations 1–30' },
+      { title: 'Aria da capo' },
     ],
   },
   {
@@ -246,12 +246,12 @@ export const works: Work[] = [
     overview:
       'Bach gathered six concertos into a presentation manuscript for the Margrave of Brandenburg. Each uses a different combination of soloists, from horns and oboes to a trumpet, recorders and a harpsichord with its own dazzling solo, which makes the set a showcase of Baroque instrumental colour.',
     movements: [
-      { title: 'Concerto No. 1 in F major', note: 'Horns and oboes' },
-      { title: 'Concerto No. 2 in F major', note: 'Trumpet, recorder, oboe, violin' },
-      { title: 'Concerto No. 3 in G major', note: 'Strings only' },
-      { title: 'Concerto No. 4 in G major', note: 'Violin and two recorders' },
-      { title: 'Concerto No. 5 in D major', note: 'Harpsichord, flute, violin' },
-      { title: 'Concerto No. 6 in B-flat major', note: 'Lower strings' },
+      { title: 'Concerto No. 1 in F major' },
+      { title: 'Concerto No. 2 in F major' },
+      { title: 'Concerto No. 3 in G major' },
+      { title: 'Concerto No. 4 in G major' },
+      { title: 'Concerto No. 5 in D major' },
+      { title: 'Concerto No. 6 in B-flat major' },
     ],
   },
   {
@@ -273,7 +273,7 @@ export const works: Work[] = [
       { title: 'Allegro' },
       { title: 'Romanze: Andante' },
       { title: 'Menuetto: Allegretto' },
-      { title: 'Rondo: Allegro', note: 'The main tune keeps returning' },
+      { title: 'Rondo: Allegro' },
     ],
   },
   {
@@ -292,20 +292,20 @@ export const works: Work[] = [
     overview:
       'The Rite of Spring imagines a pagan ritual in which a young girl dances herself to death. Its raw rhythms, clashing harmonies and Nijinsky’s choreography caused an uproar at the premiere, and it went on to change twentieth-century music.',
     movements: [
-      { title: 'Introduction', note: 'Part I' },
-      { title: 'The Augurs of Spring', note: 'Part I' },
-      { title: 'Ritual of Abduction', note: 'Part I' },
-      { title: 'Spring Rounds', note: 'Part I' },
-      { title: 'Ritual of the Rival Tribes', note: 'Part I' },
-      { title: 'Procession of the Sage', note: 'Part I' },
-      { title: 'The Sage', note: 'Part I' },
-      { title: 'Dance of the Earth', note: 'Part I' },
-      { title: 'Introduction', note: 'Part II' },
-      { title: 'Mystic Circles of the Young Girls', note: 'Part II' },
-      { title: 'Glorification of the Chosen One', note: 'Part II' },
-      { title: 'Evocation of the Ancestors', note: 'Part II' },
-      { title: 'Ritual Action of the Ancestors', note: 'Part II' },
-      { title: 'Sacrificial Dance', note: 'Part II' },
+      { title: 'Introduction' },
+      { title: 'The Augurs of Spring' },
+      { title: 'Ritual of Abduction' },
+      { title: 'Spring Rounds' },
+      { title: 'Ritual of the Rival Tribes' },
+      { title: 'Procession of the Sage' },
+      { title: 'The Sage' },
+      { title: 'Dance of the Earth' },
+      { title: 'Introduction to Part II' },
+      { title: 'Mystic Circles of the Young Girls' },
+      { title: 'Glorification of the Chosen One' },
+      { title: 'Evocation of the Ancestors' },
+      { title: 'Ritual Action of the Ancestors' },
+      { title: 'Sacrificial Dance' },
     ],
   },
   {
@@ -327,8 +327,8 @@ export const works: Work[] = [
     movements: [
       { title: 'Allegro moderato' },
       { title: 'Scherzo: Tempo di menuetto' },
-      { title: 'Andante', note: 'Song-like' },
-      { title: 'Allegretto', note: 'Ends with a fugato' },
+      { title: 'Andante' },
+      { title: 'Allegretto' },
     ],
   },
   {
@@ -347,8 +347,8 @@ export const works: Work[] = [
     overview:
       'Bach’s setting of the Passion from Matthew’s Gospel alternates the Evangelist’s narration with reflective arias, congregational chorales and vast double choruses. It was largely forgotten after his death until Felix Mendelssohn revived it in Berlin in 1829.',
     movements: [
-      { title: 'Part One', note: 'From the anointing at Bethany to the arrest' },
-      { title: 'Part Two', note: 'From the trial to the burial' },
+      { title: 'Part One' },
+      { title: 'Part Two' },
     ],
   },
   {
@@ -367,8 +367,8 @@ export const works: Work[] = [
     overview:
       'Bach assembled his only complete setting of the Latin Mass near the end of his life, reworking music from across his career. It was probably never performed complete in his lifetime, and it stands as a summary of everything he could do with choir and orchestra.',
     movements: [
-      { title: 'Missa', note: 'Kyrie and Gloria' },
-      { title: 'Symbolum Nicenum', note: 'Credo' },
+      { title: 'Missa' },
+      { title: 'Symbolum Nicenum' },
       { title: 'Sanctus' },
       { title: 'Osanna, Benedictus, Agnus Dei, Dona nobis pacem' },
     ],
@@ -391,7 +391,7 @@ export const works: Work[] = [
     movements: [
       { title: 'Overture' },
       { title: 'Act I' },
-      { title: 'Act II', note: 'The stone guest' },
+      { title: 'Act II' },
     ],
   },
   {
@@ -435,7 +435,7 @@ export const works: Work[] = [
     movements: [
       { title: 'Overture' },
       { title: 'Act I' },
-      { title: 'Act II', note: 'The trials' },
+      { title: 'Act II' },
     ],
   },
   {
@@ -479,9 +479,9 @@ export const works: Work[] = [
       'Beethoven’s last symphony ends with a setting of Schiller’s poem “An die Freude” (Ode to Joy) for soloists and choir, an unprecedented step for a symphony. By the premiere he was profoundly deaf, and had to be turned around to see the audience’s applause.',
     movements: [
       { title: 'Allegro ma non troppo, un poco maestoso' },
-      { title: 'Molto vivace', note: 'Scherzo' },
+      { title: 'Molto vivace' },
       { title: 'Adagio molto e cantabile' },
-      { title: 'Finale', note: 'Ode to Joy' },
+      { title: 'Finale' },
     ],
   },
   {
@@ -503,7 +503,7 @@ export const works: Work[] = [
       'Beethoven’s last piano concerto opens with the soloist bursting in with flourishes before the orchestra has even stated its theme. The slow movement leads straight into the finale. The nickname “Emperor” was not Beethoven’s own.',
     movements: [
       { title: 'Allegro' },
-      { title: 'Adagio un poco mosso', note: 'Leads into the finale' },
+      { title: 'Adagio un poco mosso' },
       { title: 'Rondo: Allegro' },
     ],
   },
@@ -523,7 +523,7 @@ export const works: Work[] = [
     instrumentation: 'Solo piano',
     overview:
       'Für Elise was only published in 1867, by the scholar Ludwig Nohl, from a manuscript that is now lost. Who “Elise” was is still debated. The famous opening tune returns twice between contrasting episodes.',
-    movements: [{ title: 'Poco moto', note: 'The tune returns twice' }],
+    movements: [{ title: 'Poco moto' }],
   },
   {
     id: 'beethoven-string-quartet-14',
@@ -541,10 +541,10 @@ export const works: Work[] = [
     overview:
       'One of Beethoven’s late quartets, written in the last year and a half of his life, Op. 131 runs its seven movements together without a pause, from a slow opening fugue to a fierce finale.',
     movements: [
-      { title: 'Adagio ma non troppo e molto espressivo', note: 'Fugue' },
+      { title: 'Adagio ma non troppo e molto espressivo' },
       { title: 'Allegro molto vivace' },
       { title: 'Allegro moderato' },
-      { title: 'Andante ma non troppo e molto cantabile', note: 'Variations' },
+      { title: 'Andante ma non troppo e molto cantabile' },
       { title: 'Presto' },
       { title: 'Adagio quasi un poco andante' },
       { title: 'Allegro' },
@@ -577,7 +577,7 @@ export const works: Work[] = [
       { title: 'Qui tollis peccata mundi' },
       { title: 'Qui sedes ad dexteram Patris' },
       { title: 'Quoniam tu solus sanctus' },
-      { title: 'Cum Sancto Spiritu', note: 'Fugue' },
+      { title: 'Cum Sancto Spiritu' },
     ],
   },
   {
@@ -598,7 +598,7 @@ export const works: Work[] = [
       'Clara Wieck began this concerto at thirteen and played the premiere at sixteen. Its three movements run together, and the slow movement is an intimate duet for the piano and a solo cello, with the orchestra silent.',
     movements: [
       { title: 'Allegro maestoso' },
-      { title: 'Romanze: Andante non troppo con grazia', note: 'Piano and solo cello' },
+      { title: 'Romanze: Andante non troppo con grazia' },
       { title: 'Finale: Allegro non troppo' },
     ],
   },
@@ -619,7 +619,7 @@ export const works: Work[] = [
     movements: [
       { title: 'Andante molto' },
       { title: 'Allegretto' },
-      { title: 'Leidenschaftlich schnell', note: 'Passionately fast' },
+      { title: 'Leidenschaftlich schnell' },
     ],
   },
   {
@@ -638,7 +638,7 @@ export const works: Work[] = [
     instrumentation: 'Orchestra, with prominent flute and harps',
     overview:
       'Inspired by Stéphane Mallarmé’s poem, the Prelude opens with an unaccompanied flute and drifts through shifting, unresolved harmonies. It is often called the starting point of modern music, and later became a famous ballet for Nijinsky.',
-    movements: [{ title: 'Très modéré', note: 'Opens with solo flute' }],
+    movements: [{ title: 'Très modéré' }],
   },
   {
     id: 'debussy-la-mer',
@@ -656,9 +656,9 @@ export const works: Work[] = [
     overview:
       'Debussy called La mer “three symphonic sketches”, and wrote much of it far from the sea. At his request, the cover of the first edition reproduced Hokusai’s print The Great Wave off Kanagawa.',
     movements: [
-      { title: 'De l’aube à midi sur la mer', note: 'From dawn to noon on the sea' },
-      { title: 'Jeux de vagues', note: 'Play of the waves' },
-      { title: 'Dialogue du vent et de la mer', note: 'Dialogue of the wind and the sea' },
+      { title: 'De l’aube à midi sur la mer' },
+      { title: 'Jeux de vagues' },
+      { title: 'Dialogue du vent et de la mer' },
     ],
   },
   {
@@ -681,7 +681,7 @@ export const works: Work[] = [
       { title: 'The Firebird and her dance' },
       { title: 'Round dance of the princesses' },
       { title: 'Infernal dance of King Kashchei' },
-      { title: 'Berceuse', note: 'Lullaby' },
+      { title: 'Berceuse' },
       { title: 'Finale' },
     ],
   },
@@ -703,7 +703,7 @@ export const works: Work[] = [
       'Dvořák wrote his Cello Concerto at the end of his time in America. Hearing that his sister-in-law Josefina, his first love, was gravely ill, he quoted one of her favourite songs in the slow movement, and after her death he rewrote the ending in her memory.',
     movements: [
       { title: 'Allegro' },
-      { title: 'Adagio ma non troppo', note: 'Quotes Josefina’s song' },
+      { title: 'Adagio ma non troppo' },
       { title: 'Finale: Allegro moderato' },
     ],
   },
@@ -722,14 +722,14 @@ export const works: Work[] = [
     overview:
       'Commissioned by the publisher Simrock on Brahms’s recommendation, the first set of Slavonic Dances made Dvořák famous across Europe. They use the rhythms of Czech folk dances such as the furiant, but the melodies are his own.',
     movements: [
-      { title: 'No. 1 in C major', note: 'Furiant' },
-      { title: 'No. 2 in E minor', note: 'Dumka' },
-      { title: 'No. 3 in A-flat major', note: 'Polka' },
-      { title: 'No. 4 in F major', note: 'Sousedská' },
-      { title: 'No. 5 in A major', note: 'Skočná' },
-      { title: 'No. 6 in D major', note: 'Sousedská' },
-      { title: 'No. 7 in C minor', note: 'Skočná' },
-      { title: 'No. 8 in G minor', note: 'Furiant' },
+      { title: 'No. 1 in C major' },
+      { title: 'No. 2 in E minor' },
+      { title: 'No. 3 in A-flat major' },
+      { title: 'No. 4 in F major' },
+      { title: 'No. 5 in A major' },
+      { title: 'No. 6 in D major' },
+      { title: 'No. 7 in C minor' },
+      { title: 'No. 8 in G minor' },
     ],
   },
   {
@@ -748,9 +748,9 @@ export const works: Work[] = [
     overview:
       'Handel composed Messiah in about three weeks in 1741, setting a text compiled from the Bible by Charles Jennens. It moves from prophecy and the Nativity to the Passion and Resurrection, and the Hallelujah chorus closes Part Two.',
     movements: [
-      { title: 'Part One', note: 'Prophecy and the Nativity' },
-      { title: 'Part Two', note: 'The Passion; ends with Hallelujah' },
-      { title: 'Part Three', note: 'The Resurrection' },
+      { title: 'Part One' },
+      { title: 'Part Two' },
+      { title: 'Part Three' },
     ],
   },
   {
@@ -769,9 +769,9 @@ export const works: Work[] = [
     overview:
       'Handel’s Water Music was first played by about fifty musicians on a barge following King George I up the Thames. According to a report of the time, the king liked it so much that he had it played three times.',
     movements: [
-      { title: 'Suite No. 1 in F major', note: 'With horns' },
-      { title: 'Suite No. 2 in D major', note: 'With trumpets and horns' },
-      { title: 'Suite No. 3 in G major', note: 'With flute and recorder' },
+      { title: 'Suite No. 1 in F major' },
+      { title: 'Suite No. 2 in D major' },
+      { title: 'Suite No. 3 in G major' },
     ],
   },
   {
@@ -793,7 +793,7 @@ export const works: Work[] = [
       'Written for Haydn’s first visit to London, the Surprise Symphony gets its name from the slow movement, where a quiet, simple tune is suddenly interrupted by a loud chord from the whole orchestra, timpani included.',
     movements: [
       { title: 'Adagio – Vivace assai' },
-      { title: 'Andante', note: 'The surprise' },
+      { title: 'Andante' },
       { title: 'Menuetto: Allegro molto' },
       { title: 'Finale: Allegro molto' },
     ],
@@ -815,10 +815,10 @@ export const works: Work[] = [
     overview:
       'Inspired by hearing Handel’s oratorios in London, Haydn set the story of creation from Genesis and Milton’s Paradise Lost. It opens with an orchestral “Representation of Chaos”, and the blazing C major chord on the words “and there was light” caused a sensation.',
     movements: [
-      { title: 'The Representation of Chaos', note: 'Part One' },
-      { title: 'Days one to four', note: 'Part One' },
-      { title: 'Days five and six', note: 'Part Two' },
-      { title: 'Adam and Eve in Eden', note: 'Part Three' },
+      { title: 'The Representation of Chaos' },
+      { title: 'Days one to four' },
+      { title: 'Days five and six' },
+      { title: 'Adam and Eve in Eden' },
     ],
   },
   {
@@ -839,7 +839,7 @@ export const works: Work[] = [
       'The slow movement is a set of variations on Haydn’s own hymn “Gott erhalte Franz den Kaiser”, written for the Austrian emperor. Each instrument takes the melody in turn; the tune later became the German national anthem.',
     movements: [
       { title: 'Allegro' },
-      { title: 'Poco adagio, cantabile', note: 'Variations on the Emperor’s Hymn' },
+      { title: 'Poco adagio, cantabile' },
       { title: 'Menuetto: Allegro' },
       { title: 'Finale: Presto' },
     ],
@@ -883,7 +883,7 @@ export const works: Work[] = [
       { title: 'Allegro vivace' },
       { title: 'Andante' },
       { title: 'Scherzo: Presto' },
-      { title: 'Andantino – Allegretto', note: 'Variations on The Trout' },
+      { title: 'Andantino – Allegretto' },
       { title: 'Allegro giusto' },
     ],
   },
@@ -926,7 +926,7 @@ export const works: Work[] = [
       { title: 'Das Wirtshaus' },
       { title: 'Mut' },
       { title: 'Die Nebensonnen' },
-      { title: 'Der Leiermann', note: 'The hurdy-gurdy man' },
+      { title: 'Der Leiermann' },
     ],
   },
   {
@@ -947,7 +947,7 @@ export const works: Work[] = [
     partOf: 'Three Nocturnes, Op. 9',
     movements: [
       { title: 'Nocturne No. 1 in B-flat minor' },
-      { title: 'Nocturne No. 2 in E-flat major', note: 'This piece' },
+      { title: 'Nocturne No. 2 in E-flat major' },
       { title: 'Nocturne No. 3 in B major' },
     ],
   },
@@ -967,8 +967,8 @@ export const works: Work[] = [
     overview:
       'Chopin created the ballade as a piano form: a single long movement that unfolds like a story, with two contrasting themes that return transformed. The first ballade ends with one of the most demanding codas in the piano repertoire.',
     movements: [
-      { title: 'Largo – Moderato', note: 'Two themes' },
-      { title: 'Presto con fuoco', note: 'Coda' },
+      { title: 'Largo – Moderato' },
+      { title: 'Presto con fuoco' },
     ],
   },
   {
@@ -1031,7 +1031,7 @@ export const works: Work[] = [
     overview:
       'Mendelssohn wrote the overture at seventeen. Sixteen years later the King of Prussia asked him for music for a staging of the play, and he added a set of pieces including the Scherzo, the Nocturne and the famous Wedding March.',
     movements: [
-      { title: 'Overture', note: 'Op. 21' },
+      { title: 'Overture' },
       { title: 'Scherzo' },
       { title: 'Nocturne' },
       { title: 'Wedding March' },
@@ -1057,7 +1057,7 @@ export const works: Work[] = [
       { title: 'Allegro non troppo' },
       { title: 'Andante moderato' },
       { title: 'Allegro giocoso' },
-      { title: 'Allegro energico e passionato', note: 'Passacaglia' },
+      { title: 'Allegro energico e passionato' },
     ],
   },
   {
@@ -1081,7 +1081,7 @@ export const works: Work[] = [
       { title: 'Denn alles Fleisch, es ist wie Gras' },
       { title: 'Herr, lehre doch mich' },
       { title: 'Wie lieblich sind deine Wohnungen' },
-      { title: 'Ihr habt nun Traurigkeit', note: 'Soprano solo' },
+      { title: 'Ihr habt nun Traurigkeit' },
       { title: 'Denn wir haben hie keine bleibende Statt' },
       { title: 'Selig sind die Toten' },
     ],
@@ -1101,8 +1101,8 @@ export const works: Work[] = [
     overview:
       'Brahms arranged these dances from Hungarian and Roma tunes he heard as a young man touring with the violinist Ede Reményi. Written for piano duet, they sold widely, and No. 5 is one of the best-known pieces of classical music.',
     movements: [
-      { title: 'Books 1 and 2', note: 'Nos. 1–10, 1869' },
-      { title: 'Books 3 and 4', note: 'Nos. 11–21, 1880' },
+      { title: 'Books 1 and 2' },
+      { title: 'Books 3 and 4' },
     ],
   },
   {
@@ -1121,10 +1121,10 @@ export const works: Work[] = [
     overview:
       'Prince Siegfried falls in love with Odette, a princess turned into a swan by a sorcerer’s curse. The first production was not a success; the 1895 revival in Saint Petersburg, choreographed by Marius Petipa and Lev Ivanov, made it the most famous ballet of all.',
     movements: [
-      { title: 'Act I', note: 'The palace' },
-      { title: 'Act II', note: 'The lake' },
-      { title: 'Act III', note: 'The ball' },
-      { title: 'Act IV', note: 'The lake' },
+      { title: 'Act I' },
+      { title: 'Act II' },
+      { title: 'Act III' },
+      { title: 'Act IV' },
     ],
   },
   {
@@ -1143,11 +1143,11 @@ export const works: Work[] = [
     overview:
       'Based on a story by E. T. A. Hoffmann, The Nutcracker follows a girl’s Christmas Eve dream of a battle with the Mouse King and a journey to the Land of Sweets. The Dance of the Sugar Plum Fairy features the celesta, a new instrument Tchaikovsky had discovered in Paris.',
     movements: [
-      { title: 'Act I', note: 'The party and the battle' },
-      { title: 'Waltz of the Snowflakes', note: 'Act I' },
-      { title: 'Act II', note: 'The Land of Sweets' },
-      { title: 'Dance of the Sugar Plum Fairy', note: 'Act II' },
-      { title: 'Waltz of the Flowers', note: 'Act II' },
+      { title: 'Act I' },
+      { title: 'Waltz of the Snowflakes' },
+      { title: 'Act II' },
+      { title: 'Dance of the Sugar Plum Fairy' },
+      { title: 'Waltz of the Flowers' },
     ],
   },
   {
@@ -1169,8 +1169,8 @@ export const works: Work[] = [
       'Tchaikovsky conducted the premiere nine days before his death. Instead of a triumphant finale, the symphony ends with a slow, despairing Adagio that fades into silence.',
     movements: [
       { title: 'Adagio – Allegro non troppo' },
-      { title: 'Allegro con grazia', note: 'A waltz in 5/4' },
-      { title: 'Allegro molto vivace', note: 'March' },
+      { title: 'Allegro con grazia' },
+      { title: 'Allegro molto vivace' },
       { title: 'Finale: Adagio lamentoso' },
     ],
   },
@@ -1212,9 +1212,9 @@ export const works: Work[] = [
       'Based on Alexandre Dumas’s La Dame aux camélias, La traviata tells of Violetta, a Parisian courtesan who gives up the man she loves for the sake of his family’s name. Its contemporary subject was daring for 1853, and it is now one of the most performed operas in the world.',
     movements: [
       { title: 'Prelude' },
-      { title: 'Act I', note: 'Violetta’s party' },
-      { title: 'Act II', note: 'The country house; Flora’s party' },
-      { title: 'Act III', note: 'Violetta’s room' },
+      { title: 'Act I' },
+      { title: 'Act II' },
+      { title: 'Act III' },
     ],
   },
   {
@@ -1232,10 +1232,10 @@ export const works: Work[] = [
     overview:
       'Set in ancient Egypt, Aida is the story of an Ethiopian princess enslaved in Egypt, torn between her love for the Egyptian general Radamès and loyalty to her father and her country. The Triumphal March in Act II is one of opera’s grandest spectacles.',
     movements: [
-      { title: 'Act I', note: 'Memphis' },
-      { title: 'Act II', note: 'The triumph' },
-      { title: 'Act III', note: 'The banks of the Nile' },
-      { title: 'Act IV', note: 'The tomb' },
+      { title: 'Act I' },
+      { title: 'Act II' },
+      { title: 'Act III' },
+      { title: 'Act IV' },
     ],
   },
   {
@@ -1255,12 +1255,12 @@ export const works: Work[] = [
       'Verdi wrote his Requiem in memory of the novelist Alessandro Manzoni and conducted the first performance on the first anniversary of his death. Its thunderous Dies irae is one of the most dramatic pages in choral music.',
     movements: [
       { title: 'Requiem and Kyrie' },
-      { title: 'Dies irae', note: 'Sequence' },
+      { title: 'Dies irae' },
       { title: 'Offertorio' },
       { title: 'Sanctus' },
       { title: 'Agnus Dei' },
       { title: 'Lux aeterna' },
-      { title: 'Libera me', note: 'Soprano and choir' },
+      { title: 'Libera me' },
     ],
   },
   {
@@ -1278,10 +1278,10 @@ export const works: Work[] = [
     overview:
       'Puccini’s portrait of young artists in the Latin Quarter of Paris follows the love of the poet Rodolfo and the seamstress Mimì through a hard winter. Its mix of comedy and heartbreak has made it one of the most performed operas of all.',
     movements: [
-      { title: 'Act I', note: 'The garret' },
-      { title: 'Act II', note: 'Café Momus' },
-      { title: 'Act III', note: 'The city gate' },
-      { title: 'Act IV', note: 'The garret' },
+      { title: 'Act I' },
+      { title: 'Act II' },
+      { title: 'Act III' },
+      { title: 'Act IV' },
     ],
   },
   {
@@ -1299,9 +1299,9 @@ export const works: Work[] = [
     overview:
       'Set in Rome in 1800, Tosca is a thriller about the singer Floria Tosca, her lover the painter Cavaradossi and the ruthless police chief Scarpia. Each act takes place in a real Roman building.',
     movements: [
-      { title: 'Act I', note: 'Sant’Andrea della Valle' },
-      { title: 'Act II', note: 'Palazzo Farnese' },
-      { title: 'Act III', note: 'Castel Sant’Angelo' },
+      { title: 'Act I' },
+      { title: 'Act II' },
+      { title: 'Act III' },
     ],
   },
   {
@@ -1319,9 +1319,9 @@ export const works: Work[] = [
     overview:
       'Cio-Cio-San, a young woman in Nagasaki, waits faithfully for the American naval officer who married her and sailed away. The premiere at La Scala was a fiasco; Puccini revised the opera within weeks, and the new version triumphed in Brescia that May.',
     movements: [
-      { title: 'Act I', note: 'The wedding' },
-      { title: 'Act II', note: 'Waiting' },
-      { title: 'Act III', note: 'The return' },
+      { title: 'Act I' },
+      { title: 'Act II' },
+      { title: 'Act III' },
     ],
   },
   {
@@ -1396,11 +1396,11 @@ export const works: Work[] = [
     overview:
       'Henrik Ibsen asked Grieg to write music for the first staging of his play about the wandering Peer Gynt. Grieg later drew two concert suites from it, which include Morning Mood and In the Hall of the Mountain King.',
     movements: [
-      { title: 'Morning Mood', note: 'Suite No. 1' },
-      { title: 'Åse’s Death', note: 'Suite No. 1' },
-      { title: 'Anitra’s Dance', note: 'Suite No. 1' },
-      { title: 'In the Hall of the Mountain King', note: 'Suite No. 1' },
-      { title: 'Solveig’s Song', note: 'Suite No. 2' },
+      { title: 'Morning Mood' },
+      { title: 'Åse’s Death' },
+      { title: 'Anitra’s Dance' },
+      { title: 'In the Hall of the Mountain King' },
+      { title: 'Solveig’s Song' },
     ],
   },
 ]
