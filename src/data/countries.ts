@@ -18,7 +18,7 @@ export const countries: Country[] = [
     name: 'Austria',
     nationalities: ['Austrian'],
     overview:
-      'Vienna drew musicians from all over Europe. Haydn, Mozart and Schubert made it the home of the Classical style, Beethoven moved there from Bonn at twenty-one, and a century later Mahler ran its Court Opera.',
+      'Vienna drew musicians from all over Europe. Haydn, Mozart and Schubert made it the home of the Classical style, Beethoven moved there from Bonn at twenty-one, and later in the century Bruckner and Mahler built vast symphonies there.',
   },
   {
     id: 'czechia',
@@ -28,11 +28,25 @@ export const countries: Country[] = [
       'Dvořák brought the dances and folk melodies of Bohemia into the symphony and the concert hall, and carried them as far as New York.',
   },
   {
+    id: 'england',
+    name: 'England',
+    nationalities: ['English'],
+    overview:
+      'Purcell made London one of the great musical cities of the Baroque, writing for church, court and theatre. Two centuries later Elgar gave English music a new confidence, with the Enigma Variations and music that came to sound like the nation itself.',
+  },
+  {
+    id: 'finland',
+    name: 'Finland',
+    nationalities: ['Finnish'],
+    overview:
+      'Sibelius gave Finland a musical voice while it was still part of the Russian Empire, drawing on the epic Kalevala and the northern landscape. Finlandia became a symbol of the nation’s fight for independence.',
+  },
+  {
     id: 'france',
     name: 'France',
     nationalities: ['French'],
     overview:
-      'Around 1900, French composers prized colour, clarity and atmosphere. Debussy and Ravel turned away from German Romanticism and found new sounds for the orchestra and the piano.',
+      'From Berlioz’s colourful orchestra to Bizet’s Carmen and the ballets of Adam and Delibes, French composers prized colour, clarity and theatre. Around 1900 Debussy and Ravel turned away from German Romanticism and found new sounds for the orchestra and the piano.',
   },
   {
     id: 'germany',
@@ -53,7 +67,7 @@ export const countries: Country[] = [
     name: 'Italy',
     nationalities: ['Italian'],
     overview:
-      'Italy gave music opera, the concerto and much of its vocabulary, from allegro to crescendo. Monteverdi and Vivaldi led the Baroque; Verdi and Puccini made Italian opera loved around the world.',
+      'Italy gave music opera, the concerto and much of its vocabulary, from allegro to crescendo. Monteverdi and Vivaldi led the Baroque; Rossini, Verdi and Puccini made Italian opera loved around the world.',
   },
   {
     id: 'norway',
@@ -74,7 +88,7 @@ export const countries: Country[] = [
     name: 'Russia',
     nationalities: ['Russian'],
     overview:
-      'Tchaikovsky brought Russian melody to the ballet and the symphony. Stravinsky and Rachmaninoff carried Russian music into the twentieth century, and both ended their lives far from Russia.',
+      'Tchaikovsky brought Russian melody to the ballet and the symphony. Stravinsky, Rachmaninoff and Prokofiev carried Russian music into the twentieth century: the first two never went back after the revolution, while Prokofiev returned to the Soviet Union.',
   },
 ]
 

@@ -12,13 +12,16 @@ export type Station = {
   matches: (work: Work) => boolean
 }
 
+/** Song cycles live under Chamber, but belong on the Voices station. */
+const songCycles = ['schubert-winterreise', 'robert-schumann-dichterliebe']
+
 const inGenres = (...genres: Genre[]) => (work: Work) => genres.includes(work.genre)
 
 export const stations: Station[] = [
   {
     id: 'everything',
     name: 'Everything',
-    description: 'The whole catalogue, from Monteverdi to Stravinsky',
+    description: 'The whole catalogue, from Monteverdi to Prokofiev',
     asset: 'burgtheaterAuditorium',
     matches: () => true,
   },
@@ -76,7 +79,7 @@ export const stations: Station[] = [
     name: 'Voices',
     description: 'Choirs, masses and song',
     asset: 'genreChoral',
-    matches: (work) => work.genre === 'Choral' || work.id === 'schubert-winterreise',
+    matches: (work) => work.genre === 'Choral' || songCycles.includes(work.id),
   },
 ]
 

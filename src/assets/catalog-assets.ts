@@ -8,6 +8,21 @@ import composerLiszt from '@/assets/catalog/composer-liszt.webp'
 import composerRachmaninoff from '@/assets/catalog/composer-rachmaninoff.webp'
 import composerMahler from '@/assets/catalog/composer-mahler.webp'
 import composerWagner from '@/assets/catalog/composer-wagner.webp'
+import composerBizet from '@/assets/catalog/composer-bizet.webp'
+import composerRobertSchumann from '@/assets/catalog/composer-robert-schumann.webp'
+import composerRossini from '@/assets/catalog/composer-rossini.webp'
+import composerBerlioz from '@/assets/catalog/composer-berlioz.webp'
+import composerBruckner from '@/assets/catalog/composer-bruckner.webp'
+import composerSibelius from '@/assets/catalog/composer-sibelius.webp'
+import composerPurcell from '@/assets/catalog/composer-purcell.webp'
+import composerElgar from '@/assets/catalog/composer-elgar.webp'
+import composerAdam from '@/assets/catalog/composer-adam.webp'
+import composerDelibes from '@/assets/catalog/composer-delibes.webp'
+import composerProkofiev from '@/assets/catalog/composer-prokofiev.webp'
+import composerFaure from '@/assets/catalog/composer-faure.webp'
+import composerSaintSaens from '@/assets/catalog/composer-saint-saens.webp'
+import composerSatie from '@/assets/catalog/composer-satie.webp'
+import composerAllegri from '@/assets/catalog/composer-allegri.webp'
 import composerMozart from '@/assets/catalog/composer-mozart.webp'
 import composerStravinsky from '@/assets/catalog/composer-stravinsky.webp'
 import composerVivaldi from '@/assets/catalog/composer-vivaldi.webp'
@@ -48,6 +63,21 @@ export const catalogAssets = {
   composerRachmaninoff,
   composerMahler,
   composerWagner,
+  composerBizet,
+  composerRobertSchumann,
+  composerRossini,
+  composerBerlioz,
+  composerBruckner,
+  composerSibelius,
+  composerPurcell,
+  composerElgar,
+  composerAdam,
+  composerDelibes,
+  composerProkofiev,
+  composerFaure,
+  composerSaintSaens,
+  composerSatie,
+  composerAllegri,
   composerMozart,
   composerStravinsky,
   composerVivaldi,
@@ -160,6 +190,81 @@ export const assetCredits: Record<CatalogAssetKey, ImageCredit> = {
     artist: 'Franz Hanfstaengl',
     year: '1871',
     source: commons('RichardWagner.jpg'),
+  },
+  composerBizet: {
+    artist: 'Étienne Carjat',
+    year: '1875',
+    source: commons('Georges_bizet.jpg'),
+  },
+  composerRobertSchumann: {
+    artist: 'Josef Kriehuber',
+    year: '1839',
+    source: commons('Robert_Schumann_1839.jpg'),
+  },
+  composerRossini: {
+    artist: 'Étienne Carjat',
+    year: '1865',
+    source: commons('Composer_Rossini_G_1865_by_Carjat_-_Restoration.jpg'),
+  },
+  composerBerlioz: {
+    artist: 'Pierre Petit',
+    year: '1863',
+    source: commons('Berlioz_Petit_BNF_Gallica-crop.jpg'),
+  },
+  composerBruckner: {
+    artist: 'Ferry Bératon',
+    year: '1889',
+    source: commons('Anton_bruckner.jpg'),
+  },
+  composerSibelius: {
+    artist: 'Daniel Nyblin',
+    year: '1913',
+    source: commons('Jean_Sibelius,_1913.jpg'),
+  },
+  composerPurcell: {
+    artist: 'John Closterman',
+    year: 'c. 1695',
+    source: commons('Henry_Purcell_by_John_Closterman.jpg'),
+  },
+  composerElgar: {
+    artist: 'Herbert Lambert',
+    year: '1931',
+    source: commons('Edward_Elgar,_posing_for_the_camera_(1931).jpg'),
+  },
+  composerAdam: {
+    artist: 'Charles Vogt',
+    year: '1850',
+    source: commons('Adolphe_Adam_1850_-_Charles_Vogt_-_Gallica.jpg'),
+  },
+  composerDelibes: {
+    artist: 'Unknown photographer',
+    year: '1875',
+    source: commons('L%C3%A9o_Delibes_01.jpg'),
+  },
+  composerProkofiev: {
+    artist: 'Bain News Service',
+    year: 'c. 1918',
+    source: commons('Prokofieff_(i.e._Prokofiev)_LCCN2014708419_Crop_2_(cropped).jpg'),
+  },
+  composerFaure: {
+    artist: 'John Singer Sargent',
+    year: '1889',
+    source: commons('John_Singer_Sargent_-_Gabriel_Faur%C3%A9.jpg'),
+  },
+  composerSaintSaens: {
+    artist: 'Agence Meurisse',
+    year: '1921',
+    source: commons('Camille_Saint-Saens_b_Meurisse_1921.jpg'),
+  },
+  composerSatie: {
+    artist: 'Suzanne Valadon',
+    year: '1893',
+    source: commons('Suzanne_Valadon_-_Portrait_d%27Erik_Satie.jpg'),
+  },
+  composerAllegri: {
+    artist: 'Anonymous engraving',
+    year: '19th century',
+    source: commons('Gregorio_Allegri_-_btv1b84153428.jpg'),
   },
   composerMozart: {
     artist: 'Barbara Krafft',
