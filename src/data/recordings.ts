@@ -1612,16 +1612,6 @@ export const recordings: Record<string, Recording> = {
       { title: 'Finale: Molto vivace', movement: 3, src: 'https://archive.org/download/ProkofievClassicalSymphony/04.Iv.FinalemoltoVivace.mp3', page: 'https://archive.org/details/ProkofievClassicalSymphony' },
     ],
   },
-  'bizet-larlesienne': {
-    performer: 'Concertgebouw Orchestra, Eduard van Beinum (1943)',
-    tracks: [
-      { title: 'Prélude', movement: 0, src: 'https://archive.org/download/01-bizet-l-arlesienne-suite-no-1-1-prelude_202202/01%20Bizet%20L%27Arlesienne%20Suite%20no%201%20-%201%20Prelude.mp3', page: 'https://archive.org/details/01-bizet-l-arlesienne-suite-no-1-1-prelude_202202' },
-      { title: 'Minuetto', movement: 1, src: 'https://archive.org/download/01-bizet-l-arlesienne-suite-no-1-1-prelude_202202/02%20Bizet%20L%27Arlesienne%20Suite%20no%201%20-%202%20Minuetto.mp3', page: 'https://archive.org/details/01-bizet-l-arlesienne-suite-no-1-1-prelude_202202' },
-      { title: 'Adagietto', movement: 2, src: 'https://archive.org/download/01-bizet-l-arlesienne-suite-no-1-1-prelude_202202/03%20Bizet%20L%27Arlesienne%20Suite%20no%201%20-%203%20Adagietto.mp3', page: 'https://archive.org/details/01-bizet-l-arlesienne-suite-no-1-1-prelude_202202' },
-      { title: 'Carillon', movement: 3, src: 'https://archive.org/download/01-bizet-l-arlesienne-suite-no-1-1-prelude_202202/04%20Bizet%20L%27Arlesienne%20Suite%20no%201%20-%204%20Carillon.mp3', page: 'https://archive.org/details/01-bizet-l-arlesienne-suite-no-1-1-prelude_202202' },
-      { title: 'Farandole', movement: 7, src: 'https://archive.org/download/01-bizet-l-arlesienne-suite-no-1-1-prelude_202202/05%20Bizet%20L%27Arlesienne%20Suite%20no%202%20-%20Farandole.mp3', page: 'https://archive.org/details/01-bizet-l-arlesienne-suite-no-1-1-prelude_202202' },
-    ],
-  },
   'wagner-tannhauser-overture': {
     performer: 'NBC Symphony Orchestra, Arturo Toscanini (1954)',
     license: 'CC BY-NC-SA 3.0',

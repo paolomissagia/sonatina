@@ -16,9 +16,9 @@ describe('getRecommendedWorks', () => {
     const fifth = findWork('beethoven-symphony-5')!
     expect(getRecommendedWorks(fifth).every((work) => work.composerId === 'beethoven')).toBe(true)
 
-    const carmen = findWork('bizet-carmen')!
-    const [first, ...rest] = getRecommendedWorks(carmen)
-    expect(first.composerId).toBe('bizet')
+    const cello = findWork('dvorak-cello-concerto')!
+    const [first, ...rest] = getRecommendedWorks(cello)
+    expect(first.composerId).toBe('dvorak')
     expect(rest.every((work) => getWorkPeriod(work) === 'Romantic')).toBe(true)
   })
 })
