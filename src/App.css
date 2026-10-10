@@ -2316,13 +2316,19 @@ button {
   margin-top: auto;
   padding: 12px 24px;
   display: grid;
-  grid-template-columns: auto minmax(0, 1.2fr) minmax(0, 1.4fr) auto auto;
+  grid-template-columns: auto auto minmax(0, 1.2fr) minmax(0, 1.4fr) auto auto auto;
   align-items: center;
   gap: 20px;
   border-top: 1px solid rgb(var(--frame-rule));
   color: rgb(var(--frame-ink));
   background: rgb(var(--frame) / 0.97);
   box-shadow: 0 -12px 32px rgb(var(--shadow) / 0.18);
+}
+
+.player-modes {
+  display: flex;
+  align-items: center;
+  gap: 2px;
 }
 
 .player-controls {
@@ -2347,7 +2353,7 @@ button {
   background: rgb(var(--frame-ink) / 0.08);
 }
 
-.player-shuffle.active {
+.player-toggle.active {
   color: rgb(var(--frame-gilt));
   background: rgb(var(--frame-gilt) / 0.14);
 }
@@ -2443,6 +2449,22 @@ button {
   accent-color: rgb(var(--frame-gilt));
 }
 
+.player-volume {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.player-volume input {
+  width: 84px;
+  accent-color: rgb(var(--frame-gilt));
+}
+
+.player-volume input:focus-visible {
+  outline: 2px solid rgb(var(--frame-gilt));
+  outline-offset: 2px;
+}
+
 .player-credit {
   max-width: 220px;
   overflow: hidden;
@@ -2461,16 +2483,23 @@ button {
 @media (max-width: 960px) {
   .player-bar {
     grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-auto-flow: dense;
     gap: 8px 14px;
     padding: 10px 16px;
   }
 
-  .player-progress {
-    grid-column: 1 / -1;
+  .player-modes {
+    grid-column: 1;
     grid-row: 2;
   }
 
-  .player-credit {
+  .player-progress {
+    grid-column: 2 / -1;
+    grid-row: 2;
+  }
+
+  .player-credit,
+  .player-volume {
     display: none;
   }
 }

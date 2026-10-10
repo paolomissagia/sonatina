@@ -5,12 +5,30 @@ import { getWorkAsset } from '@/data/works'
 import { findStation, type Station } from '@/data/stations'
 import type { Recording } from '@/models/recording'
 import type { Work } from '@/models/work'
-import { PlayerContext } from '@/player/player-context'
+import { PlayerContext, type Repeat } from '@/player/player-context'
 import { pickRadioSegment, radioMemory, type RadioSegment } from '@/player/radio'
 import { loadRecordings } from '@/player/use-recording'
 
 /** The tracks `first` to `last` of a recording: the whole work, or one movement on the radio. */
 type Queue = RadioSegment
+
+/** A remembered number, or the fallback when storage is empty or unavailable. */
+function readSetting(key: string, fallback: number) {
+  try {
+    const value = Number(localStorage.getItem(key))
+    return localStorage.getItem(key) === null || Number.isNaN(value) ? fallback : value
+  } catch {
+    return fallback
+  }
+}
+
+function writeSetting(key: string, value: number) {
+  try {
+    localStorage.setItem(key, String(value))
+  } catch {
+    // Private windows can refuse storage; the setting just isn't remembered.
+  }
+}
 
 export function PlayerProvider({ children }: { children: ReactNode }) {
   const audioRef = useRef<HTMLAudioElement>(null)
@@ -22,6 +40,9 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
   const [error, setError] = useState(false)
   const [station, setStation] = useState<Station | null>(null)
   const [shuffle, setShuffle] = useState(false)
+  const [repeat, setRepeat] = useState<Repeat>('off')
+  const [volume, setVolumeState] = useState(() => readSetting('sonatina.volume', 1))
+  const [muted, setMuted] = useState(() => readSetting('sonatina.muted', 0) === 1)
   const recentRef = useRef<string[]>([])
   const failuresRef = useRef(0)
 
@@ -102,7 +123,34 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
     }
   }, [shuffle, playRandomPiece, queue, index, station, start, tune])
 
-  const toggleShuffle = useCallback(() => setShuffle((on) => !on), [])
+  const toggleShuffle = useCallback(() => {
+    setShuffle((on) => !on)
+    setRepeat('off')
+  }, [])
+
+  const cycleRepeat = useCallback(() => {
+    setRepeat((current) => (current === 'off' ? 'work' : current === 'work' ? 'track' : 'off'))
+    setShuffle(false)
+  }, [])
+
+  const setVolume = useCallback((next: number) => {
+    setVolumeState(next)
+    setMuted(next === 0)
+  }, [])
+
+  const toggleMute = useCallback(() => setMuted((on) => !on), [])
+
+  // Repeat track is the audio element's own loop; volume and mute are remembered between visits.
+  useEffect(() => {
+    const audio = audioRef.current
+    if (audio) {
+      audio.loop = repeat === 'track'
+      audio.volume = volume
+      audio.muted = muted
+    }
+    writeSetting('sonatina.volume', volume)
+    writeSetting('sonatina.muted', muted ? 1 : 0)
+  }, [repeat, volume, muted])
 
   const previous = useCallback(() => {
     const audio = audioRef.current
@@ -144,7 +192,11 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
     const tracks = queue?.recording.tracks
     // With shuffle on, finish the movement, then move on to a random piece.
     const movementEnds = !queue || !tracks || index >= queue.last || tracks[index + 1].movement !== tracks[index].movement
-    if (shuffle && movementEnds) {
+    if (repeat === 'work' && queue && tracks && index >= queue.last) {
+      // On the radio the queue is one movement; repeating carries on through the whole work.
+      const whole = { ...queue, first: 0, last: tracks.length - 1 }
+      start(whole, index + 1 < tracks.length ? index + 1 : 0)
+    } else if (shuffle && movementEnds) {
       playRandomPiece()
     } else if (queue && index < queue.last) {
       start(queue, index + 1)
@@ -213,16 +265,22 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
       error,
       station,
       shuffle,
+      repeat,
+      volume,
+      muted,
       play,
       tune,
       toggleShuffle,
+      cycleRepeat,
+      setVolume,
+      toggleMute,
       toggle,
       next,
       previous,
       seek,
       close,
     }),
-    [queue, index, playing, time, duration, error, station, shuffle, play, tune, toggleShuffle, toggle, next, previous, seek, close],
+    [queue, index, playing, time, duration, error, station, shuffle, repeat, volume, muted, play, tune, toggleShuffle, cycleRepeat, setVolume, toggleMute, toggle, next, previous, seek, close],
   )
 
   return (

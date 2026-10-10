@@ -1,14 +1,14 @@
-import { Pause, Play, Radio, Shuffle, SkipBack, SkipForward, X } from 'lucide-react'
+import { Pause, Play, Radio, Repeat, Repeat1, Shuffle, SkipBack, SkipForward, Volume2, VolumeX, X } from 'lucide-react'
 import { Link } from 'react-router'
 import { getComposerName } from '@/data/composers'
 import { formatTime, usePlayer } from '@/player/player-context'
-
-const numerals = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV']
+import { toRoman } from '@/player/roman'
 
 /** The "now playing" bar, pinned to the bottom of the page while a recording is loaded. */
 export function PlayerBar() {
   const player = usePlayer()
-  const { work, recording, index, last, playing, time, duration, error, station, shuffle } = player
+  const { work, recording, index, last, playing, time, duration, error, station, shuffle, repeat, volume, muted } = player
+  const repeatLabels = { off: 'Repeat: off', work: 'Repeat: this work', track: 'Repeat: this track' }
 
   if (!work || !recording) {
     return null
@@ -17,7 +17,7 @@ export function PlayerBar() {
   const track = recording.tracks[index]
   const performer = track.performer ?? recording.performer
   const movementCount = work.movements.length
-  const label = movementCount > 1 ? `${numerals[track.movement] ?? track.movement + 1}. ${track.title}` : track.title
+  const label = movementCount > 1 ? `${toRoman(track.movement + 1)}. ${track.title}` : track.title
 
   return (
     <section className="player-bar" aria-label="Now playing">
@@ -42,8 +42,11 @@ export function PlayerBar() {
         >
           <SkipForward size={17} />
         </button>
+      </div>
+
+      <div className="player-modes">
         <button
-          className={shuffle ? 'player-button player-shuffle active' : 'player-button player-shuffle'}
+          className={shuffle ? 'player-button player-toggle active' : 'player-button player-toggle'}
           type="button"
           aria-label="Shuffle"
           aria-pressed={shuffle}
@@ -51,6 +54,15 @@ export function PlayerBar() {
           onClick={player.toggleShuffle}
         >
           <Shuffle size={16} />
+        </button>
+        <button
+          className={repeat === 'off' ? 'player-button player-toggle' : 'player-button player-toggle active'}
+          type="button"
+          aria-label={repeatLabels[repeat]}
+          title={repeatLabels[repeat]}
+          onClick={player.cycleRepeat}
+        >
+          {repeat === 'track' ? <Repeat1 size={16} /> : <Repeat size={16} />}
         </button>
       </div>
 
@@ -82,6 +94,26 @@ export function PlayerBar() {
           onChange={(event) => player.seek(Number(event.target.value))}
         />
         <span>{formatTime(duration)}</span>
+      </div>
+
+      <div className="player-volume">
+        <button
+          className="player-button"
+          type="button"
+          aria-label={muted ? 'Unmute' : 'Mute'}
+          onClick={player.toggleMute}
+        >
+          {muted || volume === 0 ? <VolumeX size={16} /> : <Volume2 size={16} />}
+        </button>
+        <input
+          aria-label="Volume"
+          max={1}
+          min={0}
+          step={0.05}
+          type="range"
+          value={muted ? 0 : volume}
+          onChange={(event) => player.setVolume(Number(event.target.value))}
+        />
       </div>
 
       <a className="player-credit" href={track.page} target="_blank" rel="noreferrer">

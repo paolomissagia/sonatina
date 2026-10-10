@@ -3,6 +3,8 @@ import type { Station } from '@/data/stations'
 import type { Recording } from '@/models/recording'
 import type { Work } from '@/models/work'
 
+export type Repeat = 'off' | 'work' | 'track'
+
 export type PlayerState = {
   work: Work | null
   recording: Recording | null
@@ -15,6 +17,11 @@ export type PlayerState = {
   station: Station | null
   /** When on, skipping and the end of each movement move on to a random piece. */
   shuffle: boolean
+  /** Repeat the whole work, or the current track. Repeat and shuffle exclude each other. */
+  repeat: Repeat
+  /** 0 to 1. Phones ignore it and use their own volume buttons. */
+  volume: number
+  muted: boolean
   /** The last track of the current work, or of the current movement on the radio. */
   last: number
 }
@@ -25,6 +32,10 @@ export type PlayerActions = {
   /** Start a radio station, or move it on to another movement. Call it from a click too. */
   tune: (station: Station) => void
   toggleShuffle: () => void
+  /** Off, then repeat the work, then repeat the track. */
+  cycleRepeat: () => void
+  setVolume: (volume: number) => void
+  toggleMute: () => void
   toggle: () => void
   next: () => void
   previous: () => void
