@@ -48,8 +48,9 @@ export function DetailHero({
         <nav className="detail-visual-breadcrumb" aria-label="Breadcrumb">
           {breadcrumb.map((item, index) => (
             <span className="detail-visual-breadcrumb-item" key={`${item.label}-${index}`}>
-              {index > 0 ? <span aria-hidden="true">›</span> : null}
               {item.to ? <Link to={item.to}>{item.label}</Link> : <strong>{item.label}</strong>}
+              {/* The separator trails its item, so a wrapped line never starts with one. */}
+              {index < breadcrumb.length - 1 ? <span aria-hidden="true">›</span> : null}
             </span>
           ))}
         </nav>

@@ -1218,6 +1218,47 @@ button {
   padding: 44px 64px;
 }
 
+/* Below 1280px the copy column gets too narrow beside the image, so the hero stacks:
+   the picture becomes a banner that fades into the paper, with the copy beneath. */
+@media (max-width: 1279px) {
+  .detail-visual-hero {
+    min-height: 0;
+    display: grid;
+  }
+
+  .detail-visual-hero::after {
+    display: none;
+  }
+
+  .detail-visual-hero > img {
+    position: static;
+    grid-area: 1 / 1;
+    width: 100%;
+    height: auto;
+    max-height: 420px;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center 30%;
+    mask-image: linear-gradient(180deg, rgb(var(--ink)) 62%, transparent);
+  }
+
+  .detail-visual-hero > .image-credit {
+    position: relative;
+    grid-area: 1 / 1;
+    align-self: end;
+    justify-self: end;
+    right: auto;
+    bottom: auto;
+    margin: 0 14px 14px 0;
+  }
+
+  .detail-visual-hero-copy {
+    width: auto;
+    max-width: 760px;
+    padding: 8px 40px 40px;
+  }
+}
+
 .detail-visual-breadcrumb {
   margin-bottom: 26px;
   display: flex;
@@ -1857,28 +1898,6 @@ button {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .detail-visual-hero {
-    height: auto;
-    min-height: 430px;
-  }
-
-  .detail-visual-hero::after {
-    background:
-      linear-gradient(180deg, rgb(var(--ivory) / 0.98), rgb(var(--ivory) / 0.9) 58%, rgb(var(--ivory) / 0.28)),
-      linear-gradient(0deg, rgb(var(--ivory) / 0.9), transparent 34%);
-  }
-
-  .detail-visual-hero > img {
-    width: 100%;
-    opacity: 0.46;
-  }
-
-  .detail-visual-hero-copy {
-    width: auto;
-    max-width: none;
-    padding: 36px 34px 46px;
-  }
-
   .recommendation-grid {
     grid-template-columns: 1fr;
     gap: 28px;
@@ -2024,8 +2043,12 @@ button {
     gap: 12px;
   }
 
+  .detail-visual-hero > img {
+    aspect-ratio: 4 / 3;
+  }
+
   .detail-visual-hero-copy {
-    padding: 30px 24px 60px;
+    padding: 4px 24px 32px;
   }
 
   .detail-visual-breadcrumb {
