@@ -21,7 +21,7 @@ const pickLabels: Record<CatalogSection, string> = {
 const editorPickSources: EditorPickSource[] = [
   { section: 'works', id: 'rachmaninoff-piano-concerto-3', recording: 'Rachmaninoff at the piano, 1939–40' },
   { section: 'works', id: 'elgar-cello-concerto', recording: 'Conducted by Elgar, 1919–20' },
-  { section: 'works', id: 'prokofiev-peter-and-the-wolf', recording: 'Narrated by Eleanor Roosevelt, 1948' },
+  { section: 'works', id: 'stravinsky-rite-of-spring', recording: 'Conducted by Stravinsky, 1929' },
   { section: 'articles', id: 'hear-the-composers-themselves' },
 ]
 

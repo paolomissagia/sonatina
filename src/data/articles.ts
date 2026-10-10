@@ -387,7 +387,6 @@ export const articles: Article[] = [
       'wagner-tristan-und-isolde',
       'chopin-nocturnes',
       'liszt-hungarian-rhapsody-2',
-      'prokofiev-peter-and-the-wolf',
       'clara-schumann-piano-concerto',
     ],
   },
@@ -752,7 +751,6 @@ export const articles: Article[] = [
     ],
     workIds: [
       'beethoven-symphony-5',
-      'prokofiev-peter-and-the-wolf',
       'mahler-symphony-5',
       'stravinsky-rite-of-spring',
       'mozart-eine-kleine-nachtmusik',
