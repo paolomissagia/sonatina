@@ -751,6 +751,57 @@ export const articles: Article[] = [
       'bach-cello-suite-1',
     ],
   },
+  {
+    id: 'paganini-and-the-devil',
+    title: 'Paganini and the devil',
+    type: 'Composer profile',
+    category: 'Composers',
+    description: 'How the greatest violinist of his age was said to have sold his soul, and why the Church refused to bury him.',
+    asset: 'composerPaganini',
+    audience: 'Curious listeners',
+    overview:
+      'Niccolò Paganini played the violin so brilliantly that many of his listeners could not believe it was human. Rumours of a pact with the devil followed him across Europe, and even after his death the Church would not let him rest in peace. The story says as much about the violin, and about the age, as it does about the man.',
+    sections: [
+      {
+        title: 'A violinist like no other',
+        body: [
+          'Paganini was born in Genoa in 1782 and was performing in public as a boy. By his forties he was touring Vienna, Paris and London, playing music nobody else could play: rapid runs in harmonics, chords on all four strings, left-hand pizzicato mixed with bowed notes, whole pieces on the G string alone. His 24 Caprices for solo violin, published in 1820, still test every violinist who takes them on.',
+          'He looked the part, too. Tall and gaunt, pale, with long black hair and black clothes, he moved with an odd, loose-limbed stiffness. Some doctors have since suggested he had a condition such as Marfan or Ehlers-Danlos syndrome, which would explain hands of unusual stretch and flexibility.',
+        ],
+      },
+      {
+        title: 'The pact with the devil',
+        body: [
+          'To many in his audiences, playing like this had to come from somewhere else. Stories spread that he had sold his soul in exchange for his gift. In Vienna, where he caused a sensation in 1828, one listener claimed to have seen the devil beside him on stage, guiding his bow.',
+          'Darker rumours grew from a short spell in prison in 1815, after an affair with a young woman. Retold across Europe, it became a story that he had killed a rival or a lover and taught himself in his cell on a violin with a single string. Some even said the strings of his violin were made from his victim’s gut, and that her cries could be heard when he played.',
+          'Paganini denied the stories in public, but they did him no harm at the box office. A failed investment in a Paris gambling house, the Casino Paganini, at the end of his life did nothing for his reputation either.',
+        ],
+      },
+      {
+        title: 'Refused by the Church',
+        body: [
+          'In the Catholic Europe of the early nineteenth century, how a person died mattered. Dying with the last rites was a sign of a soul at peace with the Church, and burial in consecrated ground could depend on it.',
+          'Paganini died in Nice on 27 May 1840. A priest sent by the bishop came to give him the last rites, and he declined them, apparently believing he was not yet dying. The bishop, well aware of the stories about him, denied him burial in consecrated ground.',
+          'What followed was a strange afterlife. His embalmed body was moved from place to place for years while his son Achille petitioned the Church. Only in 1876, thirty-six years after his death, was Paganini buried in consecrated ground, in Parma. He lies today in the city’s Villetta cemetery.',
+        ],
+      },
+      {
+        title: 'The devil’s instrument',
+        body: [
+          'Paganini did not invent the link between the violin and the devil. For centuries the fiddle was the instrument of taverns, village dances and wandering players, and in European folk tales the devil himself is often a fiddler, playing until his listeners dance themselves to death.',
+          'Musicians drew on the idea long before Paganini. The Italian violinist Giuseppe Tartini told the French writer Jérôme Lalande that he had dreamed the devil played him a sonata of unearthly beauty, and that his Devil’s Trill Sonata was a poor attempt to write it down on waking.',
+          'After Paganini, the image stayed. In Saint-Saëns’s Danse macabre, Death plays a violin with its top string tuned down a semitone, so its first chord sounds wrong on purpose. Liszt wrote Mephisto Waltzes, and in Stravinsky’s The Soldier’s Tale a soldier trades his violin to the devil.',
+        ],
+      },
+      {
+        title: 'What to listen for',
+        body: [
+          'Start with the Caprice No. 24, a short theme and eleven variations, each a different trick of technique. Then hear what other composers made of that same theme: Rachmaninoff built his Rhapsody on a Theme of Paganini from it, and in its eighteenth variation turns the melody upside down into one of his most famous tunes.',
+        ],
+      },
+    ],
+    workIds: ['paganini-caprice-24', 'rachmaninoff-rhapsody-on-a-theme-of-paganini', 'saint-saens-danse-macabre'],
+  },
 ]
 
 export function findArticle(id: string | undefined) {
