@@ -96,9 +96,9 @@ Colours drawn over images use `--scrim`, `--on-image` and `--on-image-soft`.
 
 ## Recordings
 
-- Streamed straight from open archives, never hosted. A source must be openly licensed (public domain, CC0 or Creative Commons), stable, credit the performers and stream directly. Fully copyrighted music is out. Today that means Wikimedia Commons and the Internet Archive, with Romanian Radio's archive approved next; [SOURCES.md](SOURCES.md) has the details.
+- Streamed straight from open archives, never hosted. A source must be openly licensed (public domain, CC0 or Creative Commons), stable, clearly a real performance and stream directly. Fully copyrighted music is out. Today that means Wikimedia Commons, the Internet Archive and Romanian Radio's archive; [SOURCES.md](SOURCES.md) has the details.
 - Real performances only: no MIDI or synthesised renderings.
-- Credit the performer next to the Listen button, and the licence with its link when it is Creative Commons.
+- Credit the performer next to the Listen button ("Unknown pianist" when a trusted collection doesn't name them), and the licence with its link when it is Creative Commons.
 - Historical recordings are welcome: Caruso, Gigli, Stravinsky conducting his own Rite. Their age is part of the charm.
 - A work without a suitable recording has no player rather than a poor one.
 - **Radio:** the main stations lead the page as picture cards: Everything, Classical music, Opera and Ballet. Eras and countries follow as smaller choices. Each station plays one random movement at a time and keeps going while you browse; station descriptions show range through contrast (Everything is "From Classical symphonies to grand opera"), never the first and last composer. Opening the Radio page never starts music on its own: playback begins when you pick a station. The player's Shuffle button makes skipping, and the end of each movement, jump to a random piece. The Radio link sits with Search at the foot of the sidebar.
