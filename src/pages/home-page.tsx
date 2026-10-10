@@ -1,4 +1,4 @@
-import { CalendarDays, Clock3, Radio } from 'lucide-react'
+import { CalendarDays, Clock3, Disc3, Radio } from 'lucide-react'
 import { Link } from 'react-router'
 import { assetCredits, catalogAssets } from '@/assets/catalog-assets'
 import { ImageCreditLink } from '@/components/image-credit-link'
@@ -21,7 +21,7 @@ export function HomePage() {
             <span>the world of</span>
             <em>classical music.</em>
           </h1>
-          <p>Explore works, composers and guides that make classical music easier to approach.</p>
+          <p>Explore works, composers and articles that make classical music easier to approach.</p>
           <div className="home-hero-actions">
             <Link className="primary-action" to="/works">
               Start exploring
@@ -65,7 +65,7 @@ export function HomePage() {
                 <p>{pick.subtitle}</p>
                 <div className="editor-pick-meta">
                   <span>
-                    {pick.section === 'guides' ? <Clock3 size={14} /> : <CalendarDays size={14} />}
+                    {pick.recording ? <Disc3 size={14} /> : pick.section === 'articles' ? <Clock3 size={14} /> : <CalendarDays size={14} />}
                     {pick.meta}
                   </span>
                 </div>

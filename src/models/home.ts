@@ -14,6 +14,8 @@ export type EditorPick = {
   title: string
   subtitle: string
   meta: string
+  /** Picked for its recording: the meta line describes the recording. */
+  recording: boolean
   asset: CatalogAssetKey
   to: string
 }
