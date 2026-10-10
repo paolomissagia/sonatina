@@ -299,6 +299,62 @@ export const composers: Composer[] = [
     overview:
       'Grieg brought Norwegian folk music into the concert hall and became his country’s leading composer. Besides his Piano Concerto and the music for Ibsen’s Peer Gynt, he wrote sixty-six Lyric Pieces for piano.',
   },
+  {
+    id: 'monteverdi',
+    name: 'Claudio Monteverdi',
+    shortName: 'Monteverdi',
+    period: 'Baroque',
+    born: { year: 1567, place: 'Cremona' },
+    died: { year: 1643, place: 'Venice' },
+    nationality: 'Italian',
+    bio: 'Madrigals, early opera, and music for St Mark’s in Venice.',
+    asset: 'composerMonteverdi',
+    knownFor: ['Opera', 'Madrigals', 'Sacred music'],
+    overview:
+      'Monteverdi stands at the turn from the Renaissance to the Baroque. His L’Orfeo is one of the first great operas, and from 1613 he was maestro di cappella at St Mark’s Basilica in Venice, where he wrote some of the century’s grandest sacred music.',
+  },
+  {
+    id: 'liszt',
+    name: 'Franz Liszt',
+    shortName: 'Liszt',
+    period: 'Romantic',
+    born: { year: 1811, place: 'Raiding' },
+    died: { year: 1886, place: 'Bayreuth' },
+    nationality: 'Hungarian',
+    bio: 'Virtuoso piano music, symphonic poems, and a celebrity career.',
+    asset: 'composerLiszt',
+    knownFor: ['Piano music', 'Symphonic poems', 'Virtuosity'],
+    overview:
+      'Liszt was the most celebrated pianist of the nineteenth century, so famous that his concerts caused “Lisztomania”. He gave up touring at 35, invented the symphonic poem, and championed the music of Wagner, Berlioz and many younger composers.',
+  },
+  {
+    id: 'rachmaninoff',
+    name: 'Sergei Rachmaninoff',
+    shortName: 'Rachmaninoff',
+    period: 'Romantic',
+    born: { year: 1873, place: 'Semyonovo' },
+    died: { year: 1943, place: 'Beverly Hills' },
+    nationality: 'Russian',
+    bio: 'Lush piano concertos and preludes from a great virtuoso.',
+    asset: 'composerRachmaninoff',
+    knownFor: ['Piano concertos', 'Preludes', 'Virtuosity'],
+    overview:
+      'Rachmaninoff was one of the greatest pianists who ever lived and the last great composer of the Russian Romantic tradition. After the 1917 revolution he left Russia for good and spent much of his life touring as a pianist.',
+  },
+  {
+    id: 'mahler',
+    name: 'Gustav Mahler',
+    shortName: 'Mahler',
+    period: 'Romantic',
+    born: { year: 1860, place: 'Kaliště' },
+    died: { year: 1911, place: 'Vienna' },
+    nationality: 'Austrian',
+    bio: 'Vast symphonies and orchestral songs.',
+    asset: 'composerMahler',
+    knownFor: ['Symphonies', 'Orchestral songs', 'Conducting'],
+    overview:
+      'Mahler was best known in his lifetime as a conductor, directing the Vienna Court Opera and later the New York Philharmonic, and he composed mainly in the summers. His symphonies set out to “embrace everything”, from funeral marches to folk tunes and choirs.',
+  },
 ]
 
 export function findComposer(id: string | undefined) {

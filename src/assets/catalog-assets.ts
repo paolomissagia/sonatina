@@ -3,6 +3,10 @@ import composerBeethoven from '@/assets/catalog/composer-beethoven.webp'
 import composerClaraSchumann from '@/assets/catalog/composer-clara-schumann.webp'
 import composerDebussy from '@/assets/catalog/composer-debussy.webp'
 import composerDvorak from '@/assets/catalog/composer-dvorak.webp'
+import composerMonteverdi from '@/assets/catalog/composer-monteverdi.webp'
+import composerLiszt from '@/assets/catalog/composer-liszt.webp'
+import composerRachmaninoff from '@/assets/catalog/composer-rachmaninoff.webp'
+import composerMahler from '@/assets/catalog/composer-mahler.webp'
 import composerMozart from '@/assets/catalog/composer-mozart.webp'
 import composerStravinsky from '@/assets/catalog/composer-stravinsky.webp'
 import composerVivaldi from '@/assets/catalog/composer-vivaldi.webp'
@@ -38,6 +42,10 @@ export const catalogAssets = {
   composerClaraSchumann,
   composerDebussy,
   composerDvorak,
+  composerMonteverdi,
+  composerLiszt,
+  composerRachmaninoff,
+  composerMahler,
   composerMozart,
   composerStravinsky,
   composerVivaldi,
@@ -125,6 +133,26 @@ export const assetCredits: Record<CatalogAssetKey, ImageCredit> = {
     artist: 'Unknown photographer',
     year: '1882',
     source: commons('Dvorak.jpg'),
+  },
+  composerMonteverdi: {
+    artist: 'Bernardo Strozzi',
+    year: 'c. 1630',
+    source: commons('Bernardo_Strozzi_-_Claudio_Monteverdi_(c.1630).jpg'),
+  },
+  composerLiszt: {
+    artist: 'Henri Lehmann',
+    year: '1839',
+    source: commons('Liszt_(Lehmann_portrait)_(cropped).jpg'),
+  },
+  composerRachmaninoff: {
+    artist: 'Kubey-Rembrandt Studios',
+    year: '1921',
+    source: commons('Sergei_Rachmaninoff_cph.3a40575.jpg'),
+  },
+  composerMahler: {
+    artist: 'Moritz Nähr',
+    year: '1907',
+    source: commons('Photo_of_Gustav_Mahler_by_Moritz_N%C3%A4hr_07.jpg'),
   },
   composerMozart: {
     artist: 'Barbara Krafft',

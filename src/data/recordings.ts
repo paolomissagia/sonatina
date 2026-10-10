@@ -886,4 +886,120 @@ export const recordings: Record<string, Recording> = {
       { title: 'Cum Sancto Spiritu', movement: 11, src: 'https://archive.org/download/Gloria_201309/GloriaRv589-11.CumSanctoSpiritu.mp3', page: 'https://archive.org/details/Gloria_201309' },
     ],
   },
+  'monteverdi-orfeo': {
+    performer: 'Ferruccio Calusio (1939)',
+    tracks: [
+      { title: 'Toccata', movement: 0, performer: 'Bangkok Baroque Ensemble', src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/3/3d/Orfeo_-_Toccata.ogg/Orfeo_-_Toccata.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Orfeo_-_Toccata.ogg' },
+      { title: 'Prologue', movement: 1, src: 'https://archive.org/download/mia-017-9-monteverdi-l-orfeo-act-ii/MIA014%20Monteverdi%20L%27Orfeo%20Prologue.mp3', page: 'https://archive.org/details/mia-017-9-monteverdi-l-orfeo-act-ii' },
+      { title: 'Act I', movement: 2, src: 'https://archive.org/download/mia-017-9-monteverdi-l-orfeo-act-ii/MIA015-6%20Monteverdi%20L%27Orfeo%20Act%20I.mp3', page: 'https://archive.org/details/mia-017-9-monteverdi-l-orfeo-act-ii' },
+      { title: 'Act II', movement: 3, src: 'https://archive.org/download/mia-017-9-monteverdi-l-orfeo-act-ii/MIA017-9%20Monteverdi%20L%27Orfeo%20Act%20II.mp3', page: 'https://archive.org/details/mia-017-9-monteverdi-l-orfeo-act-ii' },
+      { title: 'Act III', movement: 4, src: 'https://archive.org/download/mia-017-9-monteverdi-l-orfeo-act-ii/MIA020-2%20Monteverdi%20L%27Orfeo%20Act%20III.mp3', page: 'https://archive.org/details/mia-017-9-monteverdi-l-orfeo-act-ii' },
+      { title: 'Act IV', movement: 5, src: 'https://archive.org/download/mia-017-9-monteverdi-l-orfeo-act-ii/MIA022-4%20Monteverdi%20L%27Orfeo%20Act%20IV.mp3', page: 'https://archive.org/details/mia-017-9-monteverdi-l-orfeo-act-ii' },
+      { title: 'Act V', movement: 6, src: 'https://archive.org/download/mia-017-9-monteverdi-l-orfeo-act-ii/MIA024-5%20Monteverdi%20L%27Orfeo%20Act%20V.mp3', page: 'https://archive.org/details/mia-017-9-monteverdi-l-orfeo-act-ii' },
+    ],
+  },
+  'monteverdi-vespers': {
+    performer: 'Helmut Koch, Kammerorchester Berlin (1970)',
+    tracks: [
+      { title: 'Deus in adiutorium', movement: 0, src: 'https://archive.org/download/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche/disc1/01.01.%20Intonazione%3A%20Deus%20in%20adiutorium%3B%20Domine%20ad%20adiuvandum.mp3', page: 'https://archive.org/details/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche' },
+      { title: 'Dixit Dominus', movement: 1, src: 'https://archive.org/download/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche/disc1/01.02.%20Dixit%20Dominus%20%28Psalmus%20109%29.mp3', page: 'https://archive.org/details/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche' },
+      { title: 'Nigra sum', movement: 2, src: 'https://archive.org/download/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche/disc1/01.03.%20Nigra%20sum.mp3', page: 'https://archive.org/details/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche' },
+      { title: 'Laudate pueri', movement: 3, src: 'https://archive.org/download/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche/disc1/02.01.%20Laudate%20pueri%20Dominum%20%28Psalmus%20112%29.mp3', page: 'https://archive.org/details/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche' },
+      { title: 'Pulchra es', movement: 4, src: 'https://archive.org/download/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche/disc1/02.02.%20Pulchra%20es.mp3', page: 'https://archive.org/details/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche' },
+      { title: 'Laetatus sum', movement: 5, src: 'https://archive.org/download/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche/disc1/02.03.%20Laetatus%20sum%20%28Psalmus%20121%29.mp3', page: 'https://archive.org/details/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche' },
+      { title: 'Duo Seraphim', movement: 6, src: 'https://archive.org/download/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche/disc2/03.01.%20Duo%20Seraphim.mp3', page: 'https://archive.org/details/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche' },
+      { title: 'Nisi Dominus', movement: 7, src: 'https://archive.org/download/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche/disc2/03.02.%20Nisi%20Dominus%20%28Psalmus%20126%29.mp3', page: 'https://archive.org/details/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche' },
+      { title: 'Audi coelum', movement: 8, src: 'https://archive.org/download/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche/disc2/03.03.%20Audi%20coelum.mp3', page: 'https://archive.org/details/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche' },
+      { title: 'Lauda Jerusalem', movement: 9, src: 'https://archive.org/download/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche/disc2/04.01.%20Lauda%2C%20Ierusalem%20%28Psalmus%20147%29.mp3', page: 'https://archive.org/details/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche' },
+      { title: 'Sonata sopra Sancta Maria', movement: 10, src: 'https://archive.org/download/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche/disc2/04.02.%20Sonata%20sopra%20Sancta%20Maria%20ora%20pro%20nobis.mp3', page: 'https://archive.org/details/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche' },
+      { title: 'Ave maris stella', movement: 11, src: 'https://archive.org/download/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche/disc2/04.03.%20Hymnus%3A%20Ave%20maris%20stella.mp3', page: 'https://archive.org/details/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche' },
+    ],
+  },
+  'liszt-liebestraum-3': {
+    performer: 'Wilhelm Backhaus (1923)',
+    tracks: [
+      { title: 'Liebestraum No. 3', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f0/PDP-CH_-_Wilhelm_Backhaus_-_Liebestraum_No._3_in_A-flat_major%2C_S.541-3_%28Liszt%29_-_Hmv-d788-05754.flac/PDP-CH_-_Wilhelm_Backhaus_-_Liebestraum_No._3_in_A-flat_major%2C_S.541-3_%28Liszt%29_-_Hmv-d788-05754.flac.mp3', page: 'https://commons.wikimedia.org/wiki/File:PDP-CH_-_Wilhelm_Backhaus_-_Liebestraum_No._3_in_A-flat_major,_S.541-3_(Liszt)_-_Hmv-d788-05754.flac' },
+    ],
+  },
+  'liszt-hungarian-rhapsody-2': {
+    performer: 'Jaan Patterson',
+    license: 'CC0',
+    tracks: [
+      { title: 'Hungarian Rhapsody No. 2', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/3/3b/Jaan_Patterson_-_01_-_Hungarian_Rhapsody_No2_S2442_Franz_Liszt.ogg/Jaan_Patterson_-_01_-_Hungarian_Rhapsody_No2_S2442_Franz_Liszt.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Jaan_Patterson_-_01_-_Hungarian_Rhapsody_No2_S2442_Franz_Liszt.ogg' },
+    ],
+  },
+  'liszt-piano-sonata': {
+    performer: 'Vladimir Horowitz',
+    tracks: [
+      { title: 'Sonata in B minor', movement: 0, src: 'https://archive.org/download/lp_a-vladimir-horowitz-program_vladimir-horowitz-franz-liszt-robert-schum/disc1/01.01.%20Sonata%20In%20B%20Minor.mp3', page: 'https://archive.org/details/lp_a-vladimir-horowitz-program_vladimir-horowitz-franz-liszt-robert-schum' },
+    ],
+  },
+  'liszt-piano-concerto-1': {
+    performer: 'Historical recording',
+    license: 'CC BY-SA 2.5',
+    licenseUrl: 'https://creativecommons.org/licenses/by-sa/2.5/',
+    tracks: [
+      { title: 'Allegro maestoso', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/a/ad/Liszt_Piano_Concerto_1_-_mvt_1.ogg/Liszt_Piano_Concerto_1_-_mvt_1.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Liszt_Piano_Concerto_1_-_mvt_1.ogg' },
+      { title: 'Quasi adagio', movement: 1, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/8/8b/Liszt_Piano_Concerto_1_-_mvt_2.ogg/Liszt_Piano_Concerto_1_-_mvt_2.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Liszt_Piano_Concerto_1_-_mvt_2.ogg' },
+      { title: 'Allegretto vivace', movement: 2, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/5/56/Liszt_Piano_Concerto_1_-_mvt_3.ogg/Liszt_Piano_Concerto_1_-_mvt_3.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Liszt_Piano_Concerto_1_-_mvt_3.ogg' },
+      { title: 'Allegro marziale animato', movement: 3, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/8/84/Liszt_Piano_Concerto_1_-_mvt_4.ogg/Liszt_Piano_Concerto_1_-_mvt_4.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Liszt_Piano_Concerto_1_-_mvt_4.ogg' },
+    ],
+  },
+  'rachmaninoff-piano-concerto-2': {
+    performer: 'Musopen',
+    tracks: [
+      { title: 'Moderato', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/6/63/Sergei_Rachmaninoff_-_piano_concerto_no._2_in_c_minor%2C_op._18_-_i._moderato.ogg/Sergei_Rachmaninoff_-_piano_concerto_no._2_in_c_minor%2C_op._18_-_i._moderato.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Sergei_Rachmaninoff_-_piano_concerto_no._2_in_c_minor,_op._18_-_i._moderato.ogg' },
+      { title: 'Adagio sostenuto', movement: 1, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a5/Sergei_Rachmaninoff_-_piano_concerto_no._2_in_c_minor%2C_op._18_-_ii._adagio_sostenuto.ogg/Sergei_Rachmaninoff_-_piano_concerto_no._2_in_c_minor%2C_op._18_-_ii._adagio_sostenuto.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Sergei_Rachmaninoff_-_piano_concerto_no._2_in_c_minor,_op._18_-_ii._adagio_sostenuto.ogg' },
+      { title: 'Allegro scherzando', movement: 2, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/1/16/Sergei_Rachmaninoff_-_piano_concerto_no._2_in_c_minor%2C_op._18_-_iii._allegro_scherzando.ogg/Sergei_Rachmaninoff_-_piano_concerto_no._2_in_c_minor%2C_op._18_-_iii._allegro_scherzando.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Sergei_Rachmaninoff_-_piano_concerto_no._2_in_c_minor,_op._18_-_iii._allegro_scherzando.ogg' },
+    ],
+  },
+  'rachmaninoff-prelude-c-sharp-minor': {
+    performer: 'Sergei Rachmaninoff, piano',
+    tracks: [
+      { title: 'Prelude in C-sharp minor', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b9/Sergei_Rachmaninoff_performs_Rachmaninoff%27s_Prelude_in_C_sharp_minor%2C_Op._3.ogg/Sergei_Rachmaninoff_performs_Rachmaninoff%27s_Prelude_in_C_sharp_minor%2C_Op._3.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Sergei_Rachmaninoff_performs_Rachmaninoff%27s_Prelude_in_C_sharp_minor,_Op._3.ogg' },
+    ],
+  },
+  'rachmaninoff-rhapsody-on-a-theme-of-paganini': {
+    performer: 'Sergei Rachmaninoff, Philadelphia Orchestra, Leopold Stokowski (1934)',
+    license: 'CC BY-NC-SA 3.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by-nc-sa/3.0/',
+    tracks: [
+      { title: 'Rhapsody on a Theme of Paganini', movement: 0, src: 'https://archive.org/download/RACHMANINOFFRhapsodyOnAThemeByPaganini-Rachmaninoff-NEWTRANSFER/Rachmaninoff-RhapsodyOnAThemeByPaganiniOp.43.mp3', page: 'https://archive.org/details/RACHMANINOFFRhapsodyOnAThemeByPaganini-Rachmaninoff-NEWTRANSFER' },
+    ],
+  },
+  'mahler-symphony-5': {
+    performer: 'Peabody Symphony Orchestra',
+    license: 'CC0',
+    tracks: [
+      { title: 'Trauermarsch', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/bd/Mahler_Symphony_No._5%2C_I._Trauermarsch.ogg/Mahler_Symphony_No._5%2C_I._Trauermarsch.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Mahler_Symphony_No._5,_I._Trauermarsch.ogg' },
+      { title: 'Stürmisch bewegt, mit größter Vehemenz', movement: 1, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a6/Mahler_Symphony_No._5%2C_II._St%C3%BCrmisch_bewegt%2C_mit_gr%C3%B6%C3%9Fter_Vehemenz.ogg/Mahler_Symphony_No._5%2C_II._St%C3%BCrmisch_bewegt%2C_mit_gr%C3%B6%C3%9Fter_Vehemenz.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Mahler_Symphony_No._5,_II._St%C3%BCrmisch_bewegt,_mit_gr%C3%B6%C3%9Fter_Vehemenz.ogg' },
+      { title: 'Scherzo', movement: 2, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/8/8d/Mahler_Symphony_No._5%2C_III._Scherzo.ogg/Mahler_Symphony_No._5%2C_III._Scherzo.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Mahler_Symphony_No._5,_III._Scherzo.ogg' },
+      { title: 'Adagietto', movement: 3, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b2/Mahler_Symphony_No._5%2C_IV._Adagietto.ogg/Mahler_Symphony_No._5%2C_IV._Adagietto.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Mahler_Symphony_No._5,_IV._Adagietto.ogg' },
+      { title: 'Rondo-Finale', movement: 4, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/5/5a/Mahler_Symphony_No._5%2C_V._Rondo_Finale.ogg/Mahler_Symphony_No._5%2C_V._Rondo_Finale.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Mahler_Symphony_No._5,_V._Rondo_Finale.ogg' },
+    ],
+  },
+  'mahler-symphony-2': {
+    performer: 'Barbara Schubert, DuPage Symphony Orchestra',
+    license: 'CC0',
+    tracks: [
+      { title: 'Allegro maestoso', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/2/2f/Mahler_Symphony_no._2%2C_I._Allegro_maestoso.ogg/Mahler_Symphony_no._2%2C_I._Allegro_maestoso.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Mahler_Symphony_no._2,_I._Allegro_maestoso.ogg' },
+      { title: 'Andante moderato', movement: 1, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/a/ab/Mahler_Symphony_no._2%2C_II._Andante_moderato.ogg/Mahler_Symphony_no._2%2C_II._Andante_moderato.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Mahler_Symphony_no._2,_II._Andante_moderato.ogg' },
+      { title: 'Scherzo', movement: 2, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/d/de/Mahler_Symphony_no._2%2C_III._In_ruhig_flie%C3%9Fender_Bewegung.ogg/Mahler_Symphony_no._2%2C_III._In_ruhig_flie%C3%9Fender_Bewegung.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Mahler_Symphony_no._2,_III._In_ruhig_flie%C3%9Fender_Bewegung.ogg' },
+      { title: 'Urlicht', movement: 3, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c4/Mahler_Symphony_no._2%2C_IV._%22Urlicht%22.ogg/Mahler_Symphony_no._2%2C_IV._%22Urlicht%22.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Mahler_Symphony_no._2,_IV._%22Urlicht%22.ogg' },
+      { title: 'Finale', movement: 4, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c9/Mahler_Symphony_no._2%2C_V._Im_Tempo_des_Scherzos.ogg/Mahler_Symphony_no._2%2C_V._Im_Tempo_des_Scherzos.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Mahler_Symphony_no._2,_V._Im_Tempo_des_Scherzos.ogg' },
+    ],
+  },
+  'mahler-das-lied-von-der-erde': {
+    performer: 'Bruno Walter, Vienna Philharmonic, Kerstin Thorborg, Charles Kullman (1936)',
+    license: 'CC BY-NC-SA 3.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by-nc-sa/3.0/',
+    tracks: [
+      { title: 'Das Trinklied vom Jammer der Erde', movement: 0, src: 'https://archive.org/download/MAHLERDasLiedVonDerErde-NEWTRANSFER/01.%20I.%20Das%20Trinklied%20von%20Jammer%20der%20Erde.mp3', page: 'https://archive.org/details/MAHLERDasLiedVonDerErde-NEWTRANSFER' },
+      { title: 'Der Einsame im Herbst', movement: 1, src: 'https://archive.org/download/MAHLERDasLiedVonDerErde-NEWTRANSFER/02.%20II.%20Der%20Einsame%20im%20Herbst.mp3', page: 'https://archive.org/details/MAHLERDasLiedVonDerErde-NEWTRANSFER' },
+      { title: 'Von der Jugend', movement: 2, src: 'https://archive.org/download/MAHLERDasLiedVonDerErde-NEWTRANSFER/03.%20III.%20Von%20der%20Jugend.mp3', page: 'https://archive.org/details/MAHLERDasLiedVonDerErde-NEWTRANSFER' },
+      { title: 'Von der Schönheit', movement: 3, src: 'https://archive.org/download/MAHLERDasLiedVonDerErde-NEWTRANSFER/04.%20IV.%20Von%20der%20Sch%C3%B6nheit.mp3', page: 'https://archive.org/details/MAHLERDasLiedVonDerErde-NEWTRANSFER' },
+      { title: 'Der Trunkene im Frühling', movement: 4, src: 'https://archive.org/download/MAHLERDasLiedVonDerErde-NEWTRANSFER/05.%20V.%20Der%20Trunkene%20in%20Fr%C3%BCling.mp3', page: 'https://archive.org/details/MAHLERDasLiedVonDerErde-NEWTRANSFER' },
+      { title: 'Der Abschied', movement: 5, src: 'https://archive.org/download/MAHLERDasLiedVonDerErde-NEWTRANSFER/06.%20VI.%20Der%20Abshied.mp3', page: 'https://archive.org/details/MAHLERDasLiedVonDerErde-NEWTRANSFER' },
+    ],
+  },
 }
