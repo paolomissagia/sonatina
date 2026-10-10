@@ -1,6 +1,6 @@
 # Sonatina
 
-A friendly guide to classical music: browse works, composers by era and listening guides, play historical recordings of almost every work, or leave the radio on while you read.
+A friendly guide to classical music: browse works, composers by era and articles, play historical recordings of almost every work, or leave the radio on while you read.
 
 Live at https://sonatina.vercel.app (deploys from `main`). Brand and voice: [BRAND.md](BRAND.md).
 
@@ -44,7 +44,7 @@ src/
   App.tsx           App shell and routes
   pages/            One component per route
   components/       Shared UI (cards, detail hero, tabs, sidebar, …)
-  models/           Domain types (Work, Composer, Guide, …)
+  models/           Domain types (Work, Composer, Article, …)
   data/             Static catalog content, plus lookup, search, filter and
                     recommendation helpers (tested in *.test.ts alongside)
   player/           Player context, the lazily loaded recordings table and
@@ -54,10 +54,10 @@ src/
 
 Catalog content lives in `src/data/*.ts`. Records reference artwork by key (see `CatalogAssetKey`), and works reference composers by `composerId`. Movements are listed by name only, with no notes.
 
-- `works.ts`, `composers.ts`, `guides.ts`: the catalogue. A guide's `workIds` must name existing works.
-- `eras.ts`: the Composers filter (`/composers?era=baroque`), built from the four periods. Each era links its period guide and radio station.
+- `works.ts`, `composers.ts`, `articles.ts`: the catalogue. An article's `workIds` must name existing works. Articles live at `/articles`; the old `/guides` links redirect there, and Guides is now an article category.
+- `eras.ts`: the Composers filter (`/composers?era=baroque`), built from the four periods. Each era links its period article and radio station.
 - `recordings.ts`: the player's streams (see below).
-- `stations.ts`: the radio stations. Each is a filter over works by genre or period, never a hand-picked list of work ids; every station needs at least one work with a recording.
+- `stations.ts`: the radio stations, in three groups: main (Everything, Classical music, Opera, Ballet), eras, and countries derived from composers' nationalities (a country needs at least three works). Each is a filter over works, never a hand-picked list of work ids.
 
 ### Adding artwork
 

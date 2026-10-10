@@ -89,6 +89,7 @@ Colours drawn over images use `--scrim`, `--on-image` and `--on-image-soft`.
   No manuscripts, posters, prints or photographs as work images: mixing media is what makes a grid look inconsistent.
 - **Scenes** (home hero, About): paintings in the same vein, such as Klimt and Menzel.
 - **Radio stations** reuse the category covers and scenes; they never get their own art.
+- **Editor's picks** for historic recordings show the composer's portrait, since the recording is about the person, with a line saying what makes it special.
 - **Everything is public domain and credited.** No AI-generated imagery anywhere on the site.
 - **Format:** WebP, at most about 1600 px wide (portraits 1200 px square), quality about 75–80.
 
@@ -98,7 +99,7 @@ Colours drawn over images use `--scrim`, `--on-image` and `--on-image-soft`.
 - Credit the performer next to the Listen button, and the licence with its link when it is Creative Commons.
 - Historical recordings are welcome: Caruso, Gigli, Stravinsky conducting his own Rite. Their age is part of the charm.
 - A work without a suitable recording has no player rather than a poor one.
-- **Radio:** stations by period (Baroque, Classical, Romantic, Modern) and by kind (Opera, Piano, Orchestra, Voices), plus Everything. Each plays one random movement at a time and keeps going while you browse. Station descriptions show range through contrast (Everything is "From Classical symphonies to grand opera"), not the first and last composer, so they never need updating as the catalogue grows. Opening Radio from the sidebar or the home page starts Everything straight away, unless something is already playing; choosing another station is optional. The Radio link sits with Search at the foot of the sidebar; Discover, Works, Composers and Guides stay at the top.
+- **Radio:** the main stations lead the page as picture cards: Everything, Classical music, Opera and Ballet. Eras and countries follow as smaller choices. Each station plays one random movement at a time and keeps going while you browse; station descriptions show range through contrast (Everything is "From Classical symphonies to grand opera"), never the first and last composer. Opening Radio from the sidebar or the home page starts Everything straight away, unless something is already playing. The player's Shuffle button makes skipping, and the end of each movement, jump to a random piece. The Radio link sits with Search at the foot of the sidebar.
 
 ## Signature elements
 
