@@ -5,6 +5,7 @@ import composerDebussy from '@/assets/catalog/composer-debussy.webp'
 import composerDvorak from '@/assets/catalog/composer-dvorak.webp'
 import composerMonteverdi from '@/assets/catalog/composer-monteverdi.webp'
 import composerLiszt from '@/assets/catalog/composer-liszt.webp'
+import composerPaganini from '@/assets/catalog/composer-paganini.webp'
 import composerRachmaninoff from '@/assets/catalog/composer-rachmaninoff.webp'
 import composerMahler from '@/assets/catalog/composer-mahler.webp'
 import composerWagner from '@/assets/catalog/composer-wagner.webp'
@@ -58,6 +59,7 @@ export const catalogAssets = {
   composerDvorak,
   composerMonteverdi,
   composerLiszt,
+  composerPaganini,
   composerRachmaninoff,
   composerMahler,
   composerWagner,
@@ -171,6 +173,11 @@ export const assetCredits: Record<CatalogAssetKey, ImageCredit> = {
     artist: 'Henri Lehmann',
     year: '1839',
     source: commons('Liszt_(Lehmann_portrait)_(cropped).jpg'),
+  },
+  composerPaganini: {
+    artist: 'Attributed to Daniel Maclise',
+    year: '1831',
+    source: commons('Daniel_Maclise_(1806-1870)_(attributed_to)_-_Niccol%C3%B2_Paganini_(1782%E2%80%931840)_-_2005.2549_-_Royal_Academy_of_Music.jpg'),
   },
   composerRachmaninoff: {
     artist: 'Kubey-Rembrandt Studios',
