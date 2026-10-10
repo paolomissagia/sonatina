@@ -100,7 +100,7 @@ Colours drawn over images use `--scrim`, `--on-image` and `--on-image-soft`.
 - Credit the performer next to the Listen button, and the licence with its link when it is Creative Commons.
 - Historical recordings are welcome: Caruso, Gigli, Stravinsky conducting his own Rite. Their age is part of the charm.
 - A work without a suitable recording has no player rather than a poor one.
-- **Radio:** the main stations lead the page as picture cards: Everything, Classical music, Opera and Ballet. Eras and countries follow as smaller choices. Each station plays one random movement at a time and keeps going while you browse; station descriptions show range through contrast (Everything is "From Classical symphonies to grand opera"), never the first and last composer. Opening Radio from the sidebar or the home page starts Everything straight away, unless something is already playing. The player's Shuffle button makes skipping, and the end of each movement, jump to a random piece. The Radio link sits after Articles in the sidebar.
+- **Radio:** the main stations lead the page as picture cards: Everything, Classical music, Opera and Ballet. Eras and countries follow as smaller choices. Each station plays one random movement at a time and keeps going while you browse; station descriptions show range through contrast (Everything is "From Classical symphonies to grand opera"), never the first and last composer. Opening Radio from the sidebar or the home page starts Everything straight away, unless something is already playing. The player's Shuffle button makes skipping, and the end of each movement, jump to a random piece. The Radio link sits with Search at the foot of the sidebar.
 
 ## Signature elements
 

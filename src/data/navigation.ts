@@ -27,7 +27,8 @@ export const navItems: NavItem[] = [
   { id: 'works', label: 'Works', icon: Music2 },
   { id: 'composers', label: 'Composers', icon: UserRound },
   { id: 'articles', label: 'Articles', icon: BookOpen },
-  { id: 'radio', label: 'Radio', icon: Radio },
 ]
+
+export const radioItem: NavItem = { id: 'radio', label: 'Radio', icon: Radio }
 
 export const aboutItem: NavItem = { id: 'about', label: 'About', icon: Info }

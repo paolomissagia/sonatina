@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    /* Shadcn */
+    /* Import alias: @/ is src/ */
     "paths": {
       "@/*": [
         "./src/*"
