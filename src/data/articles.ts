@@ -600,7 +600,7 @@ export const articles: Article[] = [
     asset: 'burgtheaterAuditorium',
     audience: 'Opera lovers and the curious',
     overview:
-      'The first decades of recorded sound captured some of the most famous voices in history. Many of the opera recordings in the catalogue come from this era, and they are worth hearing on their own terms.',
+      'The first decades of recorded sound captured some of the most famous voices in history. Several of the opera recordings in the catalogue come from this era, and they are worth hearing on their own terms.',
     sections: [
       {
         title: 'Enrico Caruso',
@@ -636,9 +636,9 @@ export const articles: Article[] = [
     workIds: [
       'puccini-la-boheme',
       'puccini-tosca',
-      'verdi-la-traviata',
-      'verdi-aida',
-      'puccini-madama-butterfly',
+      'verdi-rigoletto',
+      'puccini-gianni-schicchi',
+      'rossini-barber-of-seville',
     ],
   },
   {
