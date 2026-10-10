@@ -4,11 +4,8 @@ import { assetCredits, catalogAssets } from '@/assets/catalog-assets'
 import { ImageCreditLink } from '@/components/image-credit-link'
 import { exploreCategories } from '@/data/explore-categories'
 import { editorPicks } from '@/data/home'
-import { useStartRadio } from '@/player/use-start-radio'
 
 export function HomePage() {
-  const startRadio = useStartRadio()
-
   return (
     <div className="home-page">
       <title>Sonatina · Discover classical music</title>
@@ -26,7 +23,7 @@ export function HomePage() {
             <Link className="primary-action" to="/works">
               Start exploring
             </Link>
-            <Link className="hero-radio-action" to="/radio" onClick={startRadio}>
+            <Link className="hero-radio-action" to="/radio">
               <Radio size={17} />
               Listen to the radio
             </Link>
