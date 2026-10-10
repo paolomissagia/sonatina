@@ -12,24 +12,6 @@ import { loadRecordings } from '@/player/use-recording'
 /** The tracks `first` to `last` of a recording: the whole work, or one movement on the radio. */
 type Queue = RadioSegment
 
-/** A remembered number, or the fallback when storage is empty or unavailable. */
-function readSetting(key: string, fallback: number) {
-  try {
-    const value = Number(localStorage.getItem(key))
-    return localStorage.getItem(key) === null || Number.isNaN(value) ? fallback : value
-  } catch {
-    return fallback
-  }
-}
-
-function writeSetting(key: string, value: number) {
-  try {
-    localStorage.setItem(key, String(value))
-  } catch {
-    // Private windows can refuse storage; the setting just isn't remembered.
-  }
-}
-
 export function PlayerProvider({ children }: { children: ReactNode }) {
   const audioRef = useRef<HTMLAudioElement>(null)
   const [queue, setQueue] = useState<Queue | null>(null)
@@ -41,8 +23,8 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
   const [station, setStation] = useState<Station | null>(null)
   const [shuffle, setShuffle] = useState(false)
   const [repeat, setRepeat] = useState<Repeat>('off')
-  const [volume, setVolumeState] = useState(() => readSetting('sonatina.volume', 1))
-  const [muted, setMuted] = useState(() => readSetting('sonatina.muted', 0) === 1)
+  const [volume, setVolumeState] = useState(1)
+  const [muted, setMuted] = useState(false)
   const recentRef = useRef<string[]>([])
   const failuresRef = useRef(0)
 
@@ -140,7 +122,7 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
 
   const toggleMute = useCallback(() => setMuted((on) => !on), [])
 
-  // Repeat track is the audio element's own loop; volume and mute are remembered between visits.
+  // Repeat track is the audio element's own loop.
   useEffect(() => {
     const audio = audioRef.current
     if (audio) {
@@ -148,8 +130,6 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
       audio.volume = volume
       audio.muted = muted
     }
-    writeSetting('sonatina.volume', volume)
-    writeSetting('sonatina.muted', muted ? 1 : 0)
   }, [repeat, volume, muted])
 
   const previous = useCallback(() => {
