@@ -1,7 +1,7 @@
 import { Pause, Play } from 'lucide-react'
 import { catalogAssets } from '@/assets/catalog-assets'
 import { SectionHeading } from '@/components/section-heading'
-import { stations, type Station } from '@/data/stations'
+import { getStations, type Station } from '@/data/stations'
 import { usePlayer } from '@/player/player-context'
 
 export function RadioPage() {
@@ -18,6 +18,26 @@ export function RadioPage() {
 
   const isOn = (station: Station) => player.station?.id === station.id && player.playing
 
+  const chips = (title: string, stations: Station[]) => (
+    <div className="radio-more">
+      <h2>{title}</h2>
+      <div className="collection-filter-list" aria-label={`Stations ${title.toLowerCase()}`}>
+        {stations.map((station) => (
+          <button
+            aria-pressed={player.station?.id === station.id}
+            className={player.station?.id === station.id ? 'active' : undefined}
+            key={station.id}
+            type="button"
+            onClick={() => handleStation(station)}
+          >
+            {isOn(station) ? <Pause size={14} /> : <Play size={14} />}
+            {station.name}
+          </button>
+        ))}
+      </div>
+    </div>
+  )
+
   return (
     <section className="radio-page">
       <title>Radio · Sonatina</title>
@@ -30,7 +50,7 @@ export function RadioPage() {
       </div>
 
       <div className="radio-grid">
-        {stations.map((station) => (
+        {getStations('main').map((station) => (
           <button
             aria-pressed={player.station?.id === station.id}
             className="home-category-card radio-station"
@@ -45,6 +65,9 @@ export function RadioPage() {
           </button>
         ))}
       </div>
+
+      {chips('By era', getStations('era'))}
+      {chips('By country', getStations('country'))}
     </section>
   )
 }

@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } fro
 import { catalogAssets } from '@/assets/catalog-assets'
 import { getComposerName } from '@/data/composers'
 import { getWorkAsset } from '@/data/works'
-import type { Station } from '@/data/stations'
+import { findStation, type Station } from '@/data/stations'
 import type { Recording } from '@/models/recording'
 import type { Work } from '@/models/work'
 import { PlayerContext } from '@/player/player-context'
@@ -21,6 +21,7 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
   const [duration, setDuration] = useState(0)
   const [error, setError] = useState(false)
   const [station, setStation] = useState<Station | null>(null)
+  const [shuffle, setShuffle] = useState(false)
   const recentRef = useRef<string[]>([])
   const failuresRef = useRef(0)
 
@@ -82,13 +83,26 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
     }
   }, [queue])
 
+  // Shuffle moves on to a random piece from the current station, or from everything when
+  // a single work is playing, which turns the player into the Everything radio.
+  const playRandomPiece = useCallback(() => {
+    const target = station ?? findStation('everything')
+    if (target) {
+      tune(target)
+    }
+  }, [station, tune])
+
   const next = useCallback(() => {
-    if (queue && index < queue.last) {
+    if (shuffle) {
+      playRandomPiece()
+    } else if (queue && index < queue.last) {
       start(queue, index + 1)
     } else if (station) {
       tune(station)
     }
-  }, [queue, index, station, start, tune])
+  }, [shuffle, playRandomPiece, queue, index, station, start, tune])
+
+  const toggleShuffle = useCallback(() => setShuffle((on) => !on), [])
 
   const previous = useCallback(() => {
     const audio = audioRef.current
@@ -127,7 +141,12 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
 
   const handleEnded = () => {
     failuresRef.current = 0
-    if (queue && index < queue.last) {
+    const tracks = queue?.recording.tracks
+    // With shuffle on, finish the movement, then move on to a random piece.
+    const movementEnds = !queue || !tracks || index >= queue.last || tracks[index + 1].movement !== tracks[index].movement
+    if (shuffle && movementEnds) {
+      playRandomPiece()
+    } else if (queue && index < queue.last) {
       start(queue, index + 1)
     } else if (station) {
       tune(station)
@@ -193,15 +212,17 @@ export function PlayerProvider({ children }: { children: ReactNode }) {
       duration,
       error,
       station,
+      shuffle,
       play,
       tune,
+      toggleShuffle,
       toggle,
       next,
       previous,
       seek,
       close,
     }),
-    [queue, index, playing, time, duration, error, station, play, tune, toggle, next, previous, seek, close],
+    [queue, index, playing, time, duration, error, station, shuffle, play, tune, toggleShuffle, toggle, next, previous, seek, close],
   )
 
   return (

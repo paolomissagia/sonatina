@@ -13,6 +13,8 @@ export type PlayerState = {
   error: boolean
   /** The radio station picking what plays next, or null when playing a single work. */
   station: Station | null
+  /** When on, skipping and the end of each movement move on to a random piece. */
+  shuffle: boolean
   /** The last track of the current work, or of the current movement on the radio. */
   last: number
 }
@@ -22,6 +24,7 @@ export type PlayerActions = {
   play: (work: Work, recording: Recording, index?: number) => void
   /** Start a radio station, or move it on to another movement. Call it from a click too. */
   tune: (station: Station) => void
+  toggleShuffle: () => void
   toggle: () => void
   next: () => void
   previous: () => void

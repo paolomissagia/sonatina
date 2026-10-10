@@ -1,4 +1,4 @@
-import { Pause, Play, Radio, SkipBack, SkipForward, X } from 'lucide-react'
+import { Pause, Play, Radio, Shuffle, SkipBack, SkipForward, X } from 'lucide-react'
 import { Link } from 'react-router'
 import { getComposerName } from '@/data/composers'
 import { formatTime, usePlayer } from '@/player/player-context'
@@ -8,7 +8,7 @@ const numerals = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', '
 /** The "now playing" bar, pinned to the bottom of the page while a recording is loaded. */
 export function PlayerBar() {
   const player = usePlayer()
-  const { work, recording, index, last, playing, time, duration, error, station } = player
+  const { work, recording, index, last, playing, time, duration, error, station, shuffle } = player
 
   if (!work || !recording) {
     return null
@@ -37,10 +37,20 @@ export function PlayerBar() {
           className="player-button"
           type="button"
           aria-label="Next track"
-          disabled={index >= last && !station}
+          disabled={index >= last && !station && !shuffle}
           onClick={player.next}
         >
           <SkipForward size={17} />
+        </button>
+        <button
+          className={shuffle ? 'player-button player-shuffle active' : 'player-button player-shuffle'}
+          type="button"
+          aria-label="Shuffle"
+          aria-pressed={shuffle}
+          title={shuffle ? 'Shuffle is on: skip to a random piece' : 'Shuffle'}
+          onClick={player.toggleShuffle}
+        >
+          <Shuffle size={16} />
         </button>
       </div>
 
