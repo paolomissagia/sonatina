@@ -26,7 +26,7 @@ describe('searchCatalog', () => {
     expect(titles('op. 67')).toEqual(expect.arrayContaining(['Symphony No. 5', 'Peter and the Wolf']))
     expect(titles('BWV 988')).toEqual(['Goldberg Variations'])
     expect(titles('moonlight')).toContain('Piano Sonata No. 14, “Moonlight”')
-    expect(titles('minor op. 17')).toContain('Piano Trio')
+    expect(titles('d minor bwv 1043')).toEqual(['Concerto for Two Violins'])
   })
 
   it('requires every term to match', () => {

@@ -1,7 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { recordings } from '@/data/recordings'
 import { findStation } from '@/data/stations'
-import { findWork } from '@/data/works'
 import { pickRadioSegment } from './radio'
 
 /** A seeded generator, so the tests are repeatable. */
@@ -34,18 +33,16 @@ describe('pickRadioSegment', () => {
 
   it('avoids recently played works while others remain', () => {
     const recent = ['dvorak-symphony-9', 'dvorak-cello-concerto']
-    const segment = pickRadioSegment(only(...recent, 'dvorak-slavonic-dances'), recordings, recent, random)!
-    expect(segment.work.id).toBe('dvorak-slavonic-dances')
+    const segment = pickRadioSegment(only(...recent, 'dvorak-american-quartet'), recordings, recent, random)!
+    expect(segment.work.id).toBe('dvorak-american-quartet')
   })
 
   it('falls back to repeats when every work was played recently', () => {
-    const all = ['grieg-piano-concerto', 'grieg-peer-gynt']
+    const all = ['grieg-piano-concerto', 'rachmaninoff-prelude-g-minor']
     expect(all).toContain(pickRadioSegment(only(...all), recordings, all, random)!.work.id)
   })
 
   it('returns null when nothing on the station has a recording', () => {
-    const work = findWork('clara-schumann-three-romances')!
-    const station = { ...findStation('everything')!, matches: (candidate: typeof work) => candidate.id === work.id }
-    expect(pickRadioSegment(station, recordings, [], random)).toBeNull()
+    expect(pickRadioSegment(findStation('everything')!, {}, [], random)).toBeNull()
   })
 })

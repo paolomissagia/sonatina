@@ -91,7 +91,7 @@ export const guides: Guide[] = [
       {
         title: 'Choose your first whole opera',
         body: [
-          'Pick something with a clear story and a manageable length. Gianni Schicchi is a one-act comedy of under an hour, and Purcell’s Dido and Aeneas lasts about an hour. Puccini’s La bohème runs under two hours and is full of melody.',
+          'Pick something with a clear story and a manageable length. Gianni Schicchi is a one-act comedy of under an hour. Puccini’s La bohème runs under two hours and is full of melody.',
           'If you would rather laugh, Rossini’s The Barber of Seville and Mozart’s The Marriage of Figaro are among the funniest operas ever written.',
         ],
       },
@@ -123,7 +123,6 @@ export const guides: Guide[] = [
       'puccini-la-boheme',
       'mozart-marriage-of-figaro',
       'rossini-barber-of-seville',
-      'purcell-dido-and-aeneas',
     ],
   },
   {
@@ -152,7 +151,7 @@ export const guides: Guide[] = [
       {
         title: 'The Romantic ballet',
         body: [
-          'Earlier in the nineteenth century, Paris was the capital of ballet. Adam’s Giselle, with its ghostly second act, and Delibes’s comic Coppélia, about a doll who seems to come alive, are still at the heart of the repertoire.',
+          'Earlier in the nineteenth century, Paris was the capital of ballet. Adam’s Giselle, with its ghostly second act of jilted brides who dance men to death, is still at the heart of the repertoire.',
         ],
       },
       {
@@ -173,7 +172,6 @@ export const guides: Guide[] = [
       'tchaikovsky-swan-lake',
       'tchaikovsky-sleeping-beauty',
       'adam-giselle',
-      'delibes-coppelia',
       'stravinsky-firebird',
       'stravinsky-petrushka',
       'prokofiev-romeo-and-juliet',
@@ -212,8 +210,8 @@ export const guides: Guide[] = [
       {
         title: 'Suite, overture and symphonic poem',
         body: [
-          'A suite is a sequence of dances, like Bach’s Cello Suites or Handel’s Water Music. An overture opens an opera or a play, though some, like Mendelssohn’s A Midsummer Night’s Dream, became concert pieces in their own right.',
-          'A symphonic poem is an orchestral piece that tells a story or paints a scene in one movement. Liszt invented the term; Debussy’s Prelude to the Afternoon of a Faun is a famous later example.',
+          'A suite is a sequence of dances, like Bach’s Cello Suites or his Orchestral Suite No. 3. An overture opens an opera or a play, though some, like Beethoven’s Egmont, became concert pieces in their own right.',
+          'A symphonic poem is an orchestral piece that tells a story or paints a scene in one movement. Liszt invented the term; Saint-Saëns’s Danse macabre is a famous example.',
         ],
       },
       {
@@ -231,8 +229,8 @@ export const guides: Guide[] = [
       'tchaikovsky-piano-concerto-1',
       'beethoven-moonlight-sonata',
       'liszt-piano-sonata',
-      'handel-water-music',
-      'debussy-afternoon-of-a-faun',
+      'handel-royal-fireworks',
+      'saint-saens-danse-macabre',
     ],
   },
   {
@@ -273,7 +271,7 @@ export const guides: Guide[] = [
       {
         title: 'Music for church and court',
         body: [
-          'Most Baroque music was written for a job: for a church, a city or a king. Monteverdi’s Vespers was published in 1610 with a dedication to the Pope. Handel wrote his Water Music for King George I on the Thames, and his oratorio Messiah for a charity concert in Dublin.',
+          'Most Baroque music was written for a job: for a church, a city or a king. Monteverdi’s Vespers was published in 1610 with a dedication to the Pope. Handel wrote his Music for the Royal Fireworks for King George II, and his oratorio Messiah for a charity concert in Dublin.',
         ],
       },
     ],
@@ -283,7 +281,7 @@ export const guides: Guide[] = [
       'vivaldi-four-seasons',
       'bach-brandenburg-concertos',
       'bach-mass-in-b-minor',
-      'handel-water-music',
+      'handel-royal-fireworks',
       'handel-messiah',
     ],
   },
@@ -379,19 +377,19 @@ export const guides: Guide[] = [
       {
         title: 'Virtuosity',
         body: [
-          'The nineteenth century was the age of the touring virtuoso. Liszt’s concerts caused “Lisztomania”. Clara Schumann performed across Europe for more than sixty years, championed the music of her husband Robert and of Brahms, and still found time to compose works like her Piano Trio.',
+          'The nineteenth century was the age of the touring virtuoso. Liszt’s concerts caused “Lisztomania”. Clara Schumann performed across Europe for more than sixty years, championed the music of her husband Robert and of Brahms, and still found time to compose, beginning her Piano Concerto at thirteen.',
         ],
       },
     ],
     workIds: [
       'dvorak-symphony-9',
       'mahler-symphony-2',
-      'mendelssohn-midsummer-nights-dream',
+      'grieg-piano-concerto',
       'wagner-tristan-und-isolde',
       'chopin-nocturne-op-9-no-2',
       'liszt-hungarian-rhapsody-2',
-      'grieg-peer-gynt',
-      'clara-schumann-piano-trio',
+      'prokofiev-peter-and-the-wolf',
+      'clara-schumann-piano-concerto',
     ],
   },
   {
@@ -409,7 +407,7 @@ export const guides: Guide[] = [
         title: 'Colour before structure',
         body: [
           'Debussy wanted music to suggest rather than state. The Prelude to the Afternoon of a Faun opens with a solo flute drifting through shifting, unresolved harmonies, and many musicians date modern music from its premiere in 1894.',
-          'His music is often called Impressionist, after the painters, a label he disliked. Listen to La mer or Clair de lune and you will hear why it stuck: the music paints light and water rather than telling a story.',
+          'His music is often called Impressionist, after the painters, a label he disliked. Listen to Clair de lune and you will hear why it stuck: the music paints light and water rather than telling a story.',
         ],
       },
       {
@@ -432,8 +430,8 @@ export const guides: Guide[] = [
       },
     ],
     workIds: [
-      'debussy-afternoon-of-a-faun',
-      'debussy-la-mer',
+      'saint-saens-danse-macabre',
+      'debussy-clair-de-lune',
       'stravinsky-rite-of-spring',
       'stravinsky-firebird',
       'ravel-bolero',
@@ -586,7 +584,13 @@ export const guides: Guide[] = [
         ],
       },
     ],
-    workIds: ['puccini-la-boheme', 'puccini-tosca', 'verdi-la-traviata', 'verdi-aida', 'puccini-madama-butterfly'],
+    workIds: [
+      'puccini-la-boheme',
+      'puccini-tosca',
+      'verdi-la-traviata',
+      'verdi-aida',
+      'puccini-madama-butterfly',
+    ],
   },
   {
     id: 'hear-the-composers-themselves',
@@ -658,7 +662,7 @@ export const guides: Guide[] = [
       {
         title: 'Listen for the instruments',
         body: [
-          'Try to name who is playing. Morning Mood from Grieg’s Peer Gynt passes its melody between a flute and an oboe; Mahler’s Fifth Symphony opens with a lone trumpet. Once you start noticing instruments, the orchestra stops being a wall of sound.',
+          'Try to name who is playing. In Prokofiev’s Peter and the Wolf every character has its own instrument; Mahler’s Fifth Symphony opens with a lone trumpet. Once you start noticing instruments, the orchestra stops being a wall of sound.',
         ],
       },
       {
@@ -682,7 +686,7 @@ export const guides: Guide[] = [
     ],
     workIds: [
       'beethoven-symphony-5',
-      'grieg-peer-gynt',
+      'prokofiev-peter-and-the-wolf',
       'mahler-symphony-5',
       'stravinsky-rite-of-spring',
       'mozart-eine-kleine-nachtmusik',

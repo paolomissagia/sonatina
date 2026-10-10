@@ -16,9 +16,9 @@ describe('getRecommendedWorks', () => {
     const fifth = findWork('beethoven-symphony-5')!
     expect(getRecommendedWorks(fifth).every((work) => work.composerId === 'beethoven')).toBe(true)
 
-    const trio = findWork('clara-schumann-piano-trio')!
-    const [first, ...rest] = getRecommendedWorks(trio)
-    expect(first.composerId).toBe('clara-schumann')
+    const carmen = findWork('bizet-carmen')!
+    const [first, ...rest] = getRecommendedWorks(carmen)
+    expect(first.composerId).toBe('bizet')
     expect(rest.every((work) => getWorkPeriod(work) === 'Romantic')).toBe(true)
   })
 })

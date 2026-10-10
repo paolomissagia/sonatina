@@ -14,10 +14,8 @@ import composerRossini from '@/assets/catalog/composer-rossini.webp'
 import composerBerlioz from '@/assets/catalog/composer-berlioz.webp'
 import composerBruckner from '@/assets/catalog/composer-bruckner.webp'
 import composerSibelius from '@/assets/catalog/composer-sibelius.webp'
-import composerPurcell from '@/assets/catalog/composer-purcell.webp'
 import composerElgar from '@/assets/catalog/composer-elgar.webp'
 import composerAdam from '@/assets/catalog/composer-adam.webp'
-import composerDelibes from '@/assets/catalog/composer-delibes.webp'
 import composerProkofiev from '@/assets/catalog/composer-prokofiev.webp'
 import composerFaure from '@/assets/catalog/composer-faure.webp'
 import composerSaintSaens from '@/assets/catalog/composer-saint-saens.webp'
@@ -69,10 +67,8 @@ export const catalogAssets = {
   composerBerlioz,
   composerBruckner,
   composerSibelius,
-  composerPurcell,
   composerElgar,
   composerAdam,
-  composerDelibes,
   composerProkofiev,
   composerFaure,
   composerSaintSaens,
@@ -221,11 +217,6 @@ export const assetCredits: Record<CatalogAssetKey, ImageCredit> = {
     year: '1913',
     source: commons('Jean_Sibelius,_1913.jpg'),
   },
-  composerPurcell: {
-    artist: 'John Closterman',
-    year: 'c. 1695',
-    source: commons('Henry_Purcell_by_John_Closterman.jpg'),
-  },
   composerElgar: {
     artist: 'Herbert Lambert',
     year: '1931',
@@ -235,11 +226,6 @@ export const assetCredits: Record<CatalogAssetKey, ImageCredit> = {
     artist: 'Charles Vogt',
     year: '1850',
     source: commons('Adolphe_Adam_1850_-_Charles_Vogt_-_Gallica.jpg'),
-  },
-  composerDelibes: {
-    artist: 'Unknown photographer',
-    year: '1875',
-    source: commons('L%C3%A9o_Delibes_01.jpg'),
   },
   composerProkofiev: {
     artist: 'Bain News Service',

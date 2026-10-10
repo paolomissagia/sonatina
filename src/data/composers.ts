@@ -454,20 +454,6 @@ export const composers: Composer[] = [
       'Sibelius became a national hero in Finland, then part of the Russian Empire, with music inspired by the Finnish epic, the Kalevala, and by the country’s landscape. He wrote seven symphonies, each more compressed than the last. After the mid-1920s he published almost nothing more, though he lived another thirty years.',
   },
   {
-    id: 'purcell',
-    name: 'Henry Purcell',
-    shortName: 'Purcell',
-    period: 'Baroque',
-    born: { year: 1659, place: 'London' },
-    died: { year: 1695, place: 'London' },
-    nationality: 'English',
-    bio: 'England’s great Baroque composer of theatre and church music.',
-    asset: 'composerPurcell',
-    knownFor: ['Opera', 'Theatre music', 'Church music'],
-    overview:
-      'Purcell spent his short life in London, as organist of Westminster Abbey and composer to the royal court, writing for church, court and theatre. Dido and Aeneas is one of the first great English operas. He died at 36 and is buried in Westminster Abbey, next to the organ he played.',
-  },
-  {
     id: 'elgar',
     name: 'Edward Elgar',
     shortName: 'Elgar',
@@ -494,20 +480,6 @@ export const composers: Composer[] = [
     knownFor: ['Ballet', 'Comic opera', 'O Holy Night'],
     overview:
       'Adam wrote dozens of comic operas for the Paris stage, but he is remembered above all for Giselle, the great ballet of the Romantic era, and for the Christmas carol O Holy Night.',
-  },
-  {
-    id: 'delibes',
-    name: 'Léo Delibes',
-    shortName: 'Delibes',
-    period: 'Romantic',
-    born: { year: 1836, place: 'Saint-Germain-du-Val' },
-    died: { year: 1891, place: 'Paris' },
-    nationality: 'French',
-    bio: 'Elegant, tuneful ballet music.',
-    asset: 'composerDelibes',
-    knownFor: ['Ballet', 'Opera', 'Coppélia'],
-    overview:
-      'Delibes began as a church organist and theatre accompanist in Paris. His ballets Coppélia and Sylvia brought a new symphonic richness to dance music: Tchaikovsky wrote that had he known Sylvia earlier, he would not have written Swan Lake. His opera Lakmé contains the famous Flower Duet.',
   },
   {
     id: 'prokofiev',

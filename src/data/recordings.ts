@@ -35,16 +35,6 @@ export const recordings: Record<string, Recording> = {
       { title: 'Presto agitato', movement: 2, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/1/1d/Moonlight_Sonata_Presto.ogg/Moonlight_Sonata_Presto.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Moonlight_Sonata_Presto.ogg' },
     ],
   },
-  'grieg-peer-gynt': {
-    performer: 'Musopen Symphony Orchestra',
-    license: 'Public domain',
-    tracks: [
-      { title: 'Morning Mood', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c2/Grieg_-_Peer_Gynt_Suite_No._1%2C_Op._46_-_I._Morning_Mood_%28Musopen_Symphony%29.flac/Grieg_-_Peer_Gynt_Suite_No._1%2C_Op._46_-_I._Morning_Mood_%28Musopen_Symphony%29.flac.mp3', page: 'https://commons.wikimedia.org/wiki/File:Grieg_-_Peer_Gynt_Suite_No._1,_Op._46_-_I._Morning_Mood_(Musopen_Symphony).flac' },
-      { title: 'Åse’s Death', movement: 1, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/3/35/Grieg_-_Peer_Gynt_Suite_No._1%2C_Op._46_-_II._The_Death_of_Aase_%28Musopen_Symphony%29.flac/Grieg_-_Peer_Gynt_Suite_No._1%2C_Op._46_-_II._The_Death_of_Aase_%28Musopen_Symphony%29.flac.mp3', page: 'https://commons.wikimedia.org/wiki/File:Grieg_-_Peer_Gynt_Suite_No._1,_Op._46_-_II._The_Death_of_Aase_(Musopen_Symphony).flac' },
-      { title: 'Anitra’s Dance', movement: 2, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/4/4a/Grieg_-_Peer_Gynt_Suite_No._1%2C_Op._46_-_III._Anitra%27s_Dance_%28Musopen_Symphony%29.flac/Grieg_-_Peer_Gynt_Suite_No._1%2C_Op._46_-_III._Anitra%27s_Dance_%28Musopen_Symphony%29.flac.mp3', page: 'https://commons.wikimedia.org/wiki/File:Grieg_-_Peer_Gynt_Suite_No._1,_Op._46_-_III._Anitra%27s_Dance_(Musopen_Symphony).flac' },
-      { title: 'In the Hall of the Mountain King', movement: 3, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/8/84/Grieg_-_Peer_Gynt_Suite_No._1%2C_Op._46_-_IV._In_the_Hall_of_the_Mountain_King_%28Musopen_Symphony%29.flac/Grieg_-_Peer_Gynt_Suite_No._1%2C_Op._46_-_IV._In_the_Hall_of_the_Mountain_King_%28Musopen_Symphony%29.flac.mp3', page: 'https://commons.wikimedia.org/wiki/File:Grieg_-_Peer_Gynt_Suite_No._1,_Op._46_-_IV._In_the_Hall_of_the_Mountain_King_(Musopen_Symphony).flac' },
-    ],
-  },
   'mozart-symphony-40': {
     performer: 'Musopen Symphony Orchestra',
     license: 'Public domain',
@@ -322,32 +312,6 @@ export const recordings: Record<string, Recording> = {
       { title: 'Complete concerto', movement: 0, src: 'https://archive.org/download/lp_first-concerto-for-piano-and-orchestra_clara-schumann-michael-ponti-volker-sch/disc1/01.01.%20Allegro%20Maestoso%3B%20Romanze%20%28Andante%20Non%20Troppo%20Con%20Grazia%29%3B%20Finale.%20Allegro%20Non%20Troppo.mp3', page: 'https://archive.org/details/lp_first-concerto-for-piano-and-orchestra_clara-schumann-michael-ponti-volker-sch' },
     ],
   },
-  'clara-schumann-piano-trio': {
-    performer: 'Mannes–Gimpel–Silva Trio (1951)',
-    tracks: [
-      { title: 'Allegro moderato', movement: 0, src: 'https://archive.org/download/lp_trio-in-g-minor-op-17-trio-no-8-in-b-flat_clara-schumann-ludwig-van-beethoven-the-ma/disc1/01.01.%20Trio%20In%20G%20Minor%2C%20Op%2017%3A%201st%20Mov%27t%3A%20%20Allegro%20Moderato.mp3', page: 'https://archive.org/details/lp_trio-in-g-minor-op-17-trio-no-8-in-b-flat_clara-schumann-ludwig-van-beethoven-the-ma' },
-      { title: 'Scherzo: Tempo di menuetto', movement: 1, src: 'https://archive.org/download/lp_trio-in-g-minor-op-17-trio-no-8-in-b-flat_clara-schumann-ludwig-van-beethoven-the-ma/disc1/01.02.%20Trio%20In%20G%20Minor%2C%20Op%2017%3A%202nd%20Mov%27t%3A%20%20Tempo%20Di%20Menuetto.mp3', page: 'https://archive.org/details/lp_trio-in-g-minor-op-17-trio-no-8-in-b-flat_clara-schumann-ludwig-van-beethoven-the-ma' },
-      { title: 'Andante', movement: 2, src: 'https://archive.org/download/lp_trio-in-g-minor-op-17-trio-no-8-in-b-flat_clara-schumann-ludwig-van-beethoven-the-ma/disc1/01.03.%20Trio%20In%20G%20Minor%2C%20Op%2017%3A%203rd%20Mov%27t%3A%20%20Andante.mp3', page: 'https://archive.org/details/lp_trio-in-g-minor-op-17-trio-no-8-in-b-flat_clara-schumann-ludwig-van-beethoven-the-ma' },
-      { title: 'Allegretto', movement: 3, src: 'https://archive.org/download/lp_trio-in-g-minor-op-17-trio-no-8-in-b-flat_clara-schumann-ludwig-van-beethoven-the-ma/disc1/02.01.%20Trio%20In%20G%20Minor%2C%20Op%2017%3A%204th%20Mov%27t%3A%20%20Allegretto.mp3', page: 'https://archive.org/details/lp_trio-in-g-minor-op-17-trio-no-8-in-b-flat_clara-schumann-ludwig-van-beethoven-the-ma' },
-    ],
-  },
-  'debussy-afternoon-of-a-faun': {
-    performer: 'Walther Straram, Straram Orchestra (1930)',
-    tracks: [
-      { title: 'Side 1', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/4/43/Columbia-dwx1550ix-c-wlx1289.ogg/Columbia-dwx1550ix-c-wlx1289.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Columbia-dwx1550ix-c-wlx1289.ogg' },
-      { title: 'Side 2', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/5/51/Columbia-dwx1550iix-c-wlx1290.ogg/Columbia-dwx1550iix-c-wlx1290.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Columbia-dwx1550iix-c-wlx1290.ogg' },
-    ],
-  },
-  'debussy-la-mer': {
-    performer: 'Jean Martinon, Orchestre National de l’ORTF (1973–74)',
-    license: 'CC BY-NC-ND 4.0',
-    licenseUrl: 'https://creativecommons.org/licenses/by-nc-nd/4.0/',
-    tracks: [
-      { title: 'De l’aube à midi sur la mer', movement: 0, src: 'https://archive.org/download/DebussyLaMermartinon/4-01LaMer_DeLaubeMidiSurLaMer.mp3', page: 'https://archive.org/details/DebussyLaMermartinon' },
-      { title: 'Jeux de vagues', movement: 1, src: 'https://archive.org/download/DebussyLaMermartinon/4-02LaMer_JeuxDeVagues.mp3', page: 'https://archive.org/details/DebussyLaMermartinon' },
-      { title: 'Dialogue du vent et de la mer', movement: 2, src: 'https://archive.org/download/DebussyLaMermartinon/4-03LaMer_DialogueDuVentEtDeLaMer.mp3', page: 'https://archive.org/details/DebussyLaMermartinon' },
-    ],
-  },
   'dvorak-cello-concerto': {
     performer: 'Pablo Casals, Czech Philharmonic, George Szell (1937)',
     license: 'CC BY-NC-SA 3.0',
@@ -356,17 +320,6 @@ export const recordings: Record<string, Recording> = {
       { title: 'Allegro', movement: 0, src: 'https://archive.org/download/DVORAKCelloConcerto-Casals-NEWTRANSFER/01.I.Allegro.mp3', page: 'https://archive.org/details/DVORAKCelloConcerto-Casals-NEWTRANSFER' },
       { title: 'Adagio ma non troppo', movement: 1, src: 'https://archive.org/download/DVORAKCelloConcerto-Casals-NEWTRANSFER/02.Ii.AdagioMaNonTroppo.mp3', page: 'https://archive.org/details/DVORAKCelloConcerto-Casals-NEWTRANSFER' },
       { title: 'Finale: Allegro moderato', movement: 2, src: 'https://archive.org/download/DVORAKCelloConcerto-Casals-NEWTRANSFER/03.Iii.Finale-AllegroModerato.mp3', page: 'https://archive.org/details/DVORAKCelloConcerto-Casals-NEWTRANSFER' },
-    ],
-  },
-  'dvorak-slavonic-dances': {
-    performer: 'Joseph Keilberth, Bamberg Symphony (1959)',
-    tracks: [
-      { title: 'No. 1', movement: 0, performer: 'Joseph Keilberth, Bamberg Symphony (1959)', src: 'https://archive.org/download/lp_slavonic-dances_antonin-dvoak-joseph-keilberth-bamberger-s/disc1/01.01.%20No.%201%20In%20C%20Major%2C%20Op.%2046%2C%20No.%201.mp3', page: 'https://archive.org/details/lp_slavonic-dances_antonin-dvoak-joseph-keilberth-bamberger-s' },
-      { title: 'No. 2 in E minor', movement: 1, performer: 'United States Air Force Band', src: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Slavonic_Dance_No._2_-_Strolling_Strings_-_United_States_Air_Force_Band.mp3', page: 'https://commons.wikimedia.org/wiki/File:Slavonic_Dance_No._2_-_Strolling_Strings_-_United_States_Air_Force_Band.mp3' },
-      { title: 'No. 3', movement: 2, performer: 'Joseph Keilberth, Bamberg Symphony (1959)', src: 'https://archive.org/download/lp_slavonic-dances_antonin-dvoak-joseph-keilberth-bamberger-s/disc1/01.02.%20No.%203%20In%20A-Flat%20Major%2C%20Op.%2046%2C%20No.%203.mp3', page: 'https://archive.org/details/lp_slavonic-dances_antonin-dvoak-joseph-keilberth-bamberger-s' },
-      { title: 'No. 4', movement: 3, performer: 'Joseph Keilberth, Bamberg Symphony (1959)', src: 'https://archive.org/download/lp_slavonic-dances_antonin-dvoak-joseph-keilberth-bamberger-s/disc1/01.03.%20No.%204%20In%20F%20Major%2C%20Op.%2046%2C%20No.%204.mp3', page: 'https://archive.org/details/lp_slavonic-dances_antonin-dvoak-joseph-keilberth-bamberger-s' },
-      { title: 'No. 6', movement: 5, performer: 'Joseph Keilberth, Bamberg Symphony (1959)', src: 'https://archive.org/download/lp_slavonic-dances_antonin-dvoak-joseph-keilberth-bamberger-s/disc1/01.04.%20No.%206%20In%20D%20Major%2C%20Op.%2046%2C%20No.%206.mp3', page: 'https://archive.org/details/lp_slavonic-dances_antonin-dvoak-joseph-keilberth-bamberger-s' },
-      { title: 'No. 8', movement: 7, performer: 'Joseph Keilberth, Bamberg Symphony (1959)', src: 'https://archive.org/download/lp_slavonic-dances_antonin-dvoak-joseph-keilberth-bamberger-s/disc1/01.05.%20No.%208%20In%20G%20Minor%2C%20Op.%2046%2C%20No.%208.mp3', page: 'https://archive.org/details/lp_slavonic-dances_antonin-dvoak-joseph-keilberth-bamberger-s' },
     ],
   },
   'grieg-piano-concerto': {
@@ -435,28 +388,6 @@ export const recordings: Record<string, Recording> = {
       { title: 'Worthy is the Lamb. Amen', movement: 2, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/5/55/Handel_-_Messiah%2C_Part_3_%28Scherchen%29_-_54._Worthy_is_the_Lamb._Amen.ogg/Handel_-_Messiah%2C_Part_3_%28Scherchen%29_-_54._Worthy_is_the_Lamb._Amen.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Handel_-_Messiah,_Part_3_(Scherchen)_-_54._Worthy_is_the_Lamb._Amen.ogg' },
     ],
   },
-  'handel-water-music': {
-    performer: 'Various performers',
-    tracks: [
-      { title: 'Overture', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/6/6e/1-George_Frideric_Handel_-_Water_Music_Suite_in_F_major_%28Overture%29_HWV348.ogg/1-George_Frideric_Handel_-_Water_Music_Suite_in_F_major_%28Overture%29_HWV348.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:1-George_Frideric_Handel_-_Water_Music_Suite_in_F_major_(Overture)_HWV348.ogg' },
-      { title: 'Adagio e staccato', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f2/2-George_Frideric_Handel_-_Water_Music_Suite_in_F_major_%28AdagioEStaccato%29_HWV348.ogg/2-George_Frideric_Handel_-_Water_Music_Suite_in_F_major_%28AdagioEStaccato%29_HWV348.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:2-George_Frideric_Handel_-_Water_Music_Suite_in_F_major_(AdagioEStaccato)_HWV348.ogg' },
-      { title: 'Allegro-Andante-Allegro', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/3/3f/3-George_Frideric_Handel_-_Water_Music_Suite_in_F_major_%28Allegro-Andante-Allegro%29_HWV348.ogg/3-George_Frideric_Handel_-_Water_Music_Suite_in_F_major_%28Allegro-Andante-Allegro%29_HWV348.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:3-George_Frideric_Handel_-_Water_Music_Suite_in_F_major_(Allegro-Andante-Allegro)_HWV348.ogg' },
-      { title: 'Presto', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/8/83/4-George_Frideric_Handel_-_Water_Music_Suite_in_F_major_%28Presto%29_HWV348.ogg/4-George_Frideric_Handel_-_Water_Music_Suite_in_F_major_%28Presto%29_HWV348.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:4-George_Frideric_Handel_-_Water_Music_Suite_in_F_major_(Presto)_HWV348.ogg' },
-      { title: 'Air', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/0/03/5-George_Frideric_Handel_-_Water_Music_Suite_in_F_major_%28Air%29_HWV348.ogg/5-George_Frideric_Handel_-_Water_Music_Suite_in_F_major_%28Air%29_HWV348.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:5-George_Frideric_Handel_-_Water_Music_Suite_in_F_major_(Air)_HWV348.ogg' },
-      { title: 'Minuet', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b4/6-George_Frideric_Handel_-_Water_Music_Suite_in_F_major_%28Minuet%29_HWV348.ogg/6-George_Frideric_Handel_-_Water_Music_Suite_in_F_major_%28Minuet%29_HWV348.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:6-George_Frideric_Handel_-_Water_Music_Suite_in_F_major_(Minuet)_HWV348.ogg' },
-      { title: 'Bourrée – Hornpipe', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/7-George_Frideric_Handel_-_Water_Music_Suite_in_F_major_%28Bourre-Hornpipe%29_HWV348.ogg/7-George_Frideric_Handel_-_Water_Music_Suite_in_F_major_%28Bourre-Hornpipe%29_HWV348.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:7-George_Frideric_Handel_-_Water_Music_Suite_in_F_major_(Bourre-Hornpipe)_HWV348.ogg' },
-      { title: 'Allegro Moderato', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/3/36/8-George_Frideric_Handel_-_Water_Music_Suite_in_F_major_%28Allegro_Moderato%29_HWV348.ogg/8-George_Frideric_Handel_-_Water_Music_Suite_in_F_major_%28Allegro_Moderato%29_HWV348.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:8-George_Frideric_Handel_-_Water_Music_Suite_in_F_major_(Allegro_Moderato)_HWV348.ogg' },
-      { title: 'Allegro', movement: 1, performer: 'United States Marine Band', src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/d/de/Handel%27s_Water_Music_-_11._Allegro_-_Chamber_Orchestra_-_United_States_Marine_Band.opus/Handel%27s_Water_Music_-_11._Allegro_-_Chamber_Orchestra_-_United_States_Marine_Band.opus.mp3', page: 'https://commons.wikimedia.org/wiki/File:Handel%27s_Water_Music_-_11._Allegro_-_Chamber_Orchestra_-_United_States_Marine_Band.opus' },
-      { title: 'Alla hornpipe', movement: 1, performer: 'United States Marine Band', src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/5/5c/Handel%27s_Water_Music_-_12._Alla_hornpipe_-_Chamber_Orchestra_-_United_States_Marine_Band.opus/Handel%27s_Water_Music_-_12._Alla_hornpipe_-_Chamber_Orchestra_-_United_States_Marine_Band.opus.mp3', page: 'https://commons.wikimedia.org/wiki/File:Handel%27s_Water_Music_-_12._Alla_hornpipe_-_Chamber_Orchestra_-_United_States_Marine_Band.opus' },
-      { title: 'Minuet', movement: 1, performer: 'United States Marine Band', src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c9/Handel%27s_Water_Music_-_13._Minuet_-_Chamber_Orchestra_-_United_States_Marine_Band.opus/Handel%27s_Water_Music_-_13._Minuet_-_Chamber_Orchestra_-_United_States_Marine_Band.opus.mp3', page: 'https://commons.wikimedia.org/wiki/File:Handel%27s_Water_Music_-_13._Minuet_-_Chamber_Orchestra_-_United_States_Marine_Band.opus' },
-      { title: 'Lentement', movement: 1, performer: 'United States Marine Band', src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/7/75/Handel%27s_Water_Music_-_14._Lentement_-_Chamber_Orchestra_-_United_States_Marine_Band.opus/Handel%27s_Water_Music_-_14._Lentement_-_Chamber_Orchestra_-_United_States_Marine_Band.opus.mp3', page: 'https://commons.wikimedia.org/wiki/File:Handel%27s_Water_Music_-_14._Lentement_-_Chamber_Orchestra_-_United_States_Marine_Band.opus' },
-      { title: 'Bourree', movement: 1, performer: 'United States Marine Band', src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/2/2d/Handel%27s_Water_Music_-_15._Bourree_-_Chamber_Orchestra_-_United_States_Marine_Band.opus/Handel%27s_Water_Music_-_15._Bourree_-_Chamber_Orchestra_-_United_States_Marine_Band.opus.mp3', page: 'https://commons.wikimedia.org/wiki/File:Handel%27s_Water_Music_-_15._Bourree_-_Chamber_Orchestra_-_United_States_Marine_Band.opus' },
-      { title: 'Sarabande', movement: 2, performer: 'United States Marine Band', src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/e/e8/Handel%27s_Water_Music_-_16._Sarabande_-_Chamber_Orchestra_-_United_States_Marine_Band.opus/Handel%27s_Water_Music_-_16._Sarabande_-_Chamber_Orchestra_-_United_States_Marine_Band.opus.mp3', page: 'https://commons.wikimedia.org/wiki/File:Handel%27s_Water_Music_-_16._Sarabande_-_Chamber_Orchestra_-_United_States_Marine_Band.opus' },
-      { title: 'Rigaudon', movement: 2, performer: 'United States Marine Band', src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c7/Handel%27s_Water_Music_-_17._%26_18._Rigaudon_-_Chamber_Orchestra_-_United_States_Marine_Band.opus/Handel%27s_Water_Music_-_17._%26_18._Rigaudon_-_Chamber_Orchestra_-_United_States_Marine_Band.opus.mp3', page: 'https://commons.wikimedia.org/wiki/File:Handel%27s_Water_Music_-_17._%26_18._Rigaudon_-_Chamber_Orchestra_-_United_States_Marine_Band.opus' },
-      { title: 'Menuet', movement: 2, performer: 'United States Marine Band', src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/a/ac/Handel%27s_Water_Music_-_19._%26_20._Menuet_-_Chamber_Orchestra_-_United_States_Marine_Band.opus/Handel%27s_Water_Music_-_19._%26_20._Menuet_-_Chamber_Orchestra_-_United_States_Marine_Band.opus.mp3', page: 'https://commons.wikimedia.org/wiki/File:Handel%27s_Water_Music_-_19._%26_20._Menuet_-_Chamber_Orchestra_-_United_States_Marine_Band.opus' },
-      { title: 'Gigue', movement: 2, performer: 'United States Marine Band', src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/f/fe/Handel%27s_Water_Music_-_21._%26_22._Gigue_-_Chamber_Orchestra_-_United_States_Marine_Band.opus/Handel%27s_Water_Music_-_21._%26_22._Gigue_-_Chamber_Orchestra_-_United_States_Marine_Band.opus.mp3', page: 'https://commons.wikimedia.org/wiki/File:Handel%27s_Water_Music_-_21._%26_22._Gigue_-_Chamber_Orchestra_-_United_States_Marine_Band.opus' },
-    ],
-  },
   'haydn-emperor-quartet': {
     performer: 'Tátrai Quartet (1964)',
     tracks: [
@@ -511,15 +442,6 @@ export const recordings: Record<string, Recording> = {
       { title: 'Our duty we have now perform\'d', movement: 3, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d4/Haydn_-_The_Creation_%28Dalal%29_-_31_Our_duty_we_have_now_perform%27d.oga/Haydn_-_The_Creation_%28Dalal%29_-_31_Our_duty_we_have_now_perform%27d.oga.mp3', page: 'https://commons.wikimedia.org/wiki/File:Haydn_-_The_Creation_(Dalal)_-_31_Our_duty_we_have_now_perform%27d.oga' },
       { title: 'O happy pair', movement: 3, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/7/77/Haydn_-_The_Creation_%28Dalal%29_-_32_O_happy_pair.oga/Haydn_-_The_Creation_%28Dalal%29_-_32_O_happy_pair.oga.mp3', page: 'https://commons.wikimedia.org/wiki/File:Haydn_-_The_Creation_(Dalal)_-_32_O_happy_pair.oga' },
       { title: 'Sing the Lord, ye voices all', movement: 3, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/6/62/Haydn_-_The_Creation_%28Dalal%29_-_33_Sing_the_Lord%2C_ye_voices_all.oga/Haydn_-_The_Creation_%28Dalal%29_-_33_Sing_the_Lord%2C_ye_voices_all.oga.mp3', page: 'https://commons.wikimedia.org/wiki/File:Haydn_-_The_Creation_(Dalal)_-_33_Sing_the_Lord,_ye_voices_all.oga' },
-    ],
-  },
-  'mendelssohn-midsummer-nights-dream': {
-    performer: 'European Archive',
-    tracks: [
-      { title: 'Overture', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b0/A_Midsummer_Night%27s_Dream_Op._61_Overture_%28Mendelssohn%29_European_Archive.ogg/A_Midsummer_Night%27s_Dream_Op._61_Overture_%28Mendelssohn%29_European_Archive.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:A_Midsummer_Night%27s_Dream_Op._61_Overture_(Mendelssohn)_European_Archive.ogg' },
-      { title: 'Scherzo', movement: 1, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/7/71/A_Midsummer_Night%27s_Dream_Op._61_Scherzo_%28Mendelssohn%29_European_Archive.ogg/A_Midsummer_Night%27s_Dream_Op._61_Scherzo_%28Mendelssohn%29_European_Archive.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:A_Midsummer_Night%27s_Dream_Op._61_Scherzo_(Mendelssohn)_European_Archive.ogg' },
-      { title: 'Nocturne', movement: 2, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/d/de/A_Midsummer_Night%27s_Dream%2C_Op._61_-_Nocturne.ogg/A_Midsummer_Night%27s_Dream%2C_Op._61_-_Nocturne.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:A_Midsummer_Night%27s_Dream,_Op._61_-_Nocturne.ogg' },
-      { title: 'Wedding March', movement: 3, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/c/cb/A_Midsummer_Night%27s_Dream_Op._61_Wedding_March_%28Mendelssohn%29_European_Archive.ogg/A_Midsummer_Night%27s_Dream_Op._61_Wedding_March_%28Mendelssohn%29_European_Archive.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:A_Midsummer_Night%27s_Dream_Op._61_Wedding_March_(Mendelssohn)_European_Archive.ogg' },
     ],
   },
   'mendelssohn-violin-concerto': {
@@ -715,12 +637,6 @@ export const recordings: Record<string, Recording> = {
       { title: 'Tempo di Bolero, moderato assai', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c3/Bolero-Maurice_Ravel-1930.ogg/Bolero-Maurice_Ravel-1930.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Bolero-Maurice_Ravel-1930.ogg' },
     ],
   },
-  'ravel-pavane': {
-    performer: 'Thérèse Dussaut, piano',
-    tracks: [
-      { title: 'Pavane pour une infante défunte', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d6/Maurice_Ravel_-_Th%C3%A9r%C3%A8se_Dussaut_-_Pavane_pour_une_infante_d%C3%A9funte.ogg/Maurice_Ravel_-_Th%C3%A9r%C3%A8se_Dussaut_-_Pavane_pour_une_infante_d%C3%A9funte.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Maurice_Ravel_-_Th%C3%A9r%C3%A8se_Dussaut_-_Pavane_pour_une_infante_d%C3%A9funte.ogg' },
-    ],
-  },
   'schubert-trout-quintet': {
     performer: 'Historical recording',
     tracks: [
@@ -841,22 +757,6 @@ export const recordings: Record<string, Recording> = {
       { title: 'Libera me (parte 2)', movement: 6, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/e/e6/ICBSA_Verdi_-_Messa_da_requiem_parte_18%2C_Libera_me_%28parte_2%29.ogg/ICBSA_Verdi_-_Messa_da_requiem_parte_18%2C_Libera_me_%28parte_2%29.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:ICBSA_Verdi_-_Messa_da_requiem_parte_18,_Libera_me_(parte_2).ogg' },
       { title: 'Libera me (parte 3)', movement: 6, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/4/41/ICBSA_Verdi_-_Messa_da_requiem_parte_19%2C_Libera_me_%28parte_3%29.ogg/ICBSA_Verdi_-_Messa_da_requiem_parte_19%2C_Libera_me_%28parte_3%29.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:ICBSA_Verdi_-_Messa_da_requiem_parte_19,_Libera_me_(parte_3).ogg' },
       { title: 'Libera me (parte 4)', movement: 6, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/0/08/ICBSA_Verdi_-_Messa_da_requiem_parte_20%2C_Libera_me_%28parte_4%29.ogg/ICBSA_Verdi_-_Messa_da_requiem_parte_20%2C_Libera_me_%28parte_4%29.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:ICBSA_Verdi_-_Messa_da_requiem_parte_20,_Libera_me_(parte_4).ogg' },
-    ],
-  },
-  'vivaldi-gloria': {
-    performer: 'Historical recording',
-    tracks: [
-      { title: 'Gloria In Excelsis Deo', movement: 0, src: 'https://archive.org/download/Gloria_201309/GloriaRv589-01.GloriaInExcelsisDeo.mp3', page: 'https://archive.org/details/Gloria_201309' },
-      { title: 'Et In Terra Pax Hominibus', movement: 1, src: 'https://archive.org/download/Gloria_201309/GloriaRv589-02.EtInTerraPaxHominibus.mp3', page: 'https://archive.org/details/Gloria_201309' },
-      { title: 'Laudamus Te', movement: 2, src: 'https://archive.org/download/Gloria_201309/GloriaRv589-03.LaudamusTe.mp3', page: 'https://archive.org/details/Gloria_201309' },
-      { title: 'Gratias Agimus Tibi Propter Magnam Gloriam', movement: 3, src: 'https://archive.org/download/Gloria_201309/GloriaRv589-04.GratiasAgimusTibiPropterMagnamGloriam.mp3', page: 'https://archive.org/details/Gloria_201309' },
-      { title: 'Domine Deus', movement: 5, src: 'https://archive.org/download/Gloria_201309/GloriaRv589-05.DomineDeus.mp3', page: 'https://archive.org/details/Gloria_201309' },
-      { title: 'Domine Fili Unigenite', movement: 6, src: 'https://archive.org/download/Gloria_201309/GloriaRv589-06.DomineFiliUnigenite.mp3', page: 'https://archive.org/details/Gloria_201309' },
-      { title: 'Domine Deus Agnus Dei', movement: 7, src: 'https://archive.org/download/Gloria_201309/GloriaRv589-07.DomineDeusAgnusDei.mp3', page: 'https://archive.org/details/Gloria_201309' },
-      { title: 'Qui Tollis Peccata Mundi', movement: 8, src: 'https://archive.org/download/Gloria_201309/GloriaRv589-08.QuiTollisPeccataMundi.mp3', page: 'https://archive.org/details/Gloria_201309' },
-      { title: 'Qui Sedes Ad Dexteram', movement: 9, src: 'https://archive.org/download/Gloria_201309/GloriaRv589-09.QuiSedesAdDexteram.mp3', page: 'https://archive.org/details/Gloria_201309' },
-      { title: 'Quoniam Tu Solus Sanctus', movement: 10, src: 'https://archive.org/download/Gloria_201309/GloriaRv589-10.QuoniamTuSolusSanctus.mp3', page: 'https://archive.org/details/Gloria_201309' },
-      { title: 'Cum Sancto Spiritu', movement: 11, src: 'https://archive.org/download/Gloria_201309/GloriaRv589-11.CumSanctoSpiritu.mp3', page: 'https://archive.org/details/Gloria_201309' },
     ],
   },
   'monteverdi-orfeo': {
@@ -1142,26 +1042,6 @@ export const recordings: Record<string, Recording> = {
       { title: 'Allegro, ma non tanto', movement: 2, src: 'https://archive.org/download/SIBELIUSViolinConcertoInDMinor-NEWTRANSFER/03.Iii.AllegroMaNonTanto.mp3', page: 'https://archive.org/details/SIBELIUSViolinConcertoInDMinor-NEWTRANSFER' },
     ],
   },
-  'purcell-dido-and-aeneas': {
-    performer: 'Joan Hammond, Isobel Baillie, Dennis Noble, Constant Lambert (1945)',
-    tracks: [
-      { title: 'Act I', movement: 0, src: 'https://archive.org/download/constant-lambert-purcell-dido-and-aeneas-hmv-c-7628-34-1945/01%20Constant%20Lambert%20-%20Purcel%20Dido%20and%20Aeneas%20act%201%20HMV%201945.mp3', page: 'https://archive.org/details/constant-lambert-purcell-dido-and-aeneas-hmv-c-7628-34-1945' },
-      { title: 'Act II', movement: 1, src: 'https://archive.org/download/constant-lambert-purcell-dido-and-aeneas-hmv-c-7628-34-1945/02%20Constant%20Lambert%20-%20Purcel%20Dido%20and%20Aeneas%20act%202%20HMV%201945.mp3', page: 'https://archive.org/details/constant-lambert-purcell-dido-and-aeneas-hmv-c-7628-34-1945' },
-      { title: 'Act III', movement: 2, src: 'https://archive.org/download/constant-lambert-purcell-dido-and-aeneas-hmv-c-7628-34-1945/03%20Constant%20Lambert%20-%20Purcel%20Dido%20and%20Aeneas%20act%203%20HMV%201945.mp3', page: 'https://archive.org/details/constant-lambert-purcell-dido-and-aeneas-hmv-c-7628-34-1945' },
-    ],
-  },
-  'elgar-enigma-variations': {
-    performer: 'Hallé Orchestra, John Barbirolli (1947)',
-    tracks: [
-      { title: 'Theme and Variation I', movement: 0, src: 'https://archive.org/download/78_enigma-variations-op-36-theme-andante-var-i-cae_hall-orchestra/C_3692_2EA_11926-4.mp3', page: 'https://archive.org/details/78_enigma-variations-op-36-theme-andante-var-i-cae_hall-orchestra' },
-      { title: 'Variations II–IV', movement: 2, src: 'https://archive.org/download/78_enigma-variations-op-36-varsii-hdsp-iii-rbt-iv-wmb_hall-orche/C_3692_2EA_11927-3.mp3', page: 'https://archive.org/details/78_enigma-variations-op-36-varsii-hdsp-iii-rbt-iv-wmb_hall-orche' },
-      { title: 'Variations V–VII', movement: 5, src: 'https://archive.org/download/78_enigma-variations-op-36-vars-v-rpa-var-vi-ysobel-vii-troyte_hall-orc/C_3693_2EA_11929-4.mp3', page: 'https://archive.org/details/78_enigma-variations-op-36-vars-v-rpa-var-vi-ysobel-vii-troyte_hall-orc' },
-      { title: 'Variations VIII and IX (Nimrod)', movement: 8, src: 'https://archive.org/download/78_enigma-variations-op-36-vars-viii-wn-ix-nimrod_hall-orchestra/C_3693_2EA_11928-4.mp3', page: 'https://archive.org/details/78_enigma-variations-op-36-vars-viii-wn-ix-nimrod_hall-orchestra' },
-      { title: 'Variations X and XI', movement: 10, src: 'https://archive.org/download/78_enigma-variations-op-36-vars-x-dorabella-xi-grs_hall-orchestra/C_3694_2EA_11930-3.mp3', page: 'https://archive.org/details/78_enigma-variations-op-36-vars-x-dorabella-xi-grs_hall-orchestra' },
-      { title: 'Variations XII and XIII', movement: 12, src: 'https://archive.org/download/78_enigma-variations-op-36-vars-xii-bgn-xiii-romanza_hall-orchestra/C_3694_2EA_11931-3.mp3', page: 'https://archive.org/details/78_enigma-variations-op-36-vars-xii-bgn-xiii-romanza_hall-orchestra' },
-      { title: 'Variation XIV: Finale', movement: 14, src: 'https://archive.org/download/78_enigma-variations-op-36-var-xiv-edu-finale_hall-orchestra/C_3695_2EA_11932-4.mp3', page: 'https://archive.org/details/78_enigma-variations-op-36-var-xiv-edu-finale_hall-orchestra' },
-    ],
-  },
   'elgar-cello-concerto': {
     performer: 'Beatrice Harrison, cello, conducted by Elgar (1919–20)',
     tracks: [
@@ -1178,13 +1058,6 @@ export const recordings: Record<string, Recording> = {
       { title: 'Meeting of the Prince and Giselle', movement: 1, src: 'https://archive.org/download/78_giselle-meeting-of-the-prince-and-giselle_royal-opera-house-orchestra-covent-garden_gbia7041973a/GISELLE%22-Mee%20-%20ROYAL%20OPERA%20HOUSE%20ORCHESTRA%2C%20COVENT%20GARDEN.mp3', page: 'https://archive.org/details/78_giselle-meeting-of-the-prince-and-giselle_royal-opera-house-orchestra-covent-garden_gbia7041973a' },
       { title: 'Pas de deux', movement: 1, src: 'https://archive.org/download/78_giselle-pas-de-deux_royal-opera-house-orchestra-covent-garden-adam-jacob-robert-irv_gbia7041973b/GISELLE%22-Pas%20de%20Deux%20-%20ROYAL%20OPERA%20HOUSE%20ORCHESTRA%2C%20COVENT%20GARDEN.mp3', page: 'https://archive.org/details/78_giselle-pas-de-deux_royal-opera-house-orchestra-covent-garden-adam-jacob-robert-irv_gbia7041973b' },
       { title: 'Finale', movement: 1, src: 'https://archive.org/download/78_giselle-finale-scene_royal-opera-house-orchestra-covent-garden-adam-jacob-robert-ir_gbia7041974b/GISELLE%22-Finale%20Scene%20-%20ROYAL%20OPERA%20HOUSE%20ORCHESTRA%2C%20COVENT%20GARDEN.mp3', page: 'https://archive.org/details/78_giselle-finale-scene_royal-opera-house-orchestra-covent-garden-adam-jacob-robert-ir_gbia7041974b' },
-    ],
-  },
-  'delibes-coppelia': {
-    performer: 'London Symphony Orchestra, Eugene Goossens',
-    tracks: [
-      { title: 'Mazurka', movement: 0, src: 'https://archive.org/download/78_coppelia-ballet_london-symphony-orchestra-delibes-eugene-goossens_gbia7000085b/%22COPPELIA%20BALLET%22%20-%20LONDON%20SYMPHONY%20ORCHESTRA.mp3', page: 'https://archive.org/details/78_coppelia-ballet_london-symphony-orchestra-delibes-eugene-goossens_gbia7000085b' },
-      { title: 'Czardas', movement: 0, src: 'https://archive.org/download/78_coppelia-ballet_london-symphony-orchestra-delibes-eugene-goossens_gbia7000085a/%22COPPELIA%20BALLET%22%20-%20LONDON%20SYMPHONY%20ORCHESTRA.mp3', page: 'https://archive.org/details/78_coppelia-ballet_london-symphony-orchestra-delibes-eugene-goossens_gbia7000085a' },
     ],
   },
   'prokofiev-romeo-and-juliet': {
@@ -1216,35 +1089,6 @@ export const recordings: Record<string, Recording> = {
     licenseUrl: 'https://creativecommons.org/licenses/by/3.0/',
     tracks: [
       { title: 'Miserere mei, Deus', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d7/Allegri_-_Miserere_Mei%2C_Deus_-_Ensamble_Esc%C3%A9nico_Vocal_%28audio%29.ogg/Allegri_-_Miserere_Mei%2C_Deus_-_Ensamble_Esc%C3%A9nico_Vocal_%28audio%29.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Allegri_-_Miserere_Mei,_Deus_-_Ensamble_Esc%C3%A9nico_Vocal_(audio).ogg' },
-    ],
-  },
-  'saint-saens-carnival-of-the-animals': {
-    performer: 'Hallé Orchestra, Hamilton Harty (1925)',
-    tracks: [
-      { title: 'Introduction to Tortoises', movement: 0, src: 'https://archive.org/download/1-hamilton-harty-saint-saens-carnival-des-animaux-side-1/1%20Hamilton%20Harty%20-%20Saint-Sa%C3%ABns%20Carnival%20des%20animaux%20side%201.mp3', page: 'https://archive.org/details/1-hamilton-harty-saint-saens-carnival-des-animaux-side-1' },
-      { title: 'The Elephant to Characters with Long Ears', movement: 4, src: 'https://archive.org/download/1-hamilton-harty-saint-saens-carnival-des-animaux-side-1/2%20Hamilton%20Harty%20-%20Saint-Sa%C3%ABns%20Carnival%20des%20animaux%20side%202.mp3', page: 'https://archive.org/details/1-hamilton-harty-saint-saens-carnival-des-animaux-side-1' },
-      { title: 'The Cuckoo and Aviary', movement: 8, src: 'https://archive.org/download/1-hamilton-harty-saint-saens-carnival-des-animaux-side-1/3%20Hamilton%20Harty%20-%20Saint-Sa%C3%ABns%20Carnival%20des%20animaux%20side%203.mp3', page: 'https://archive.org/details/1-hamilton-harty-saint-saens-carnival-des-animaux-side-1' },
-      { title: 'Pianists and Fossils', movement: 10, src: 'https://archive.org/download/1-hamilton-harty-saint-saens-carnival-des-animaux-side-1/4%20Hamilton%20Harty%20-%20Saint-Sa%C3%ABns%20Carnival%20des%20animaux%20side%204.mp3', page: 'https://archive.org/details/1-hamilton-harty-saint-saens-carnival-des-animaux-side-1' },
-      { title: 'The Swan', movement: 12, src: 'https://archive.org/download/1-hamilton-harty-saint-saens-carnival-des-animaux-side-1/5%20Hamilton%20Harty%20-%20Saint-Sa%C3%ABns%20Carnival%20des%20animaux%20side%205.mp3', page: 'https://archive.org/details/1-hamilton-harty-saint-saens-carnival-des-animaux-side-1' },
-      { title: 'Finale', movement: 13, src: 'https://archive.org/download/1-hamilton-harty-saint-saens-carnival-des-animaux-side-1/6%20Hamilton%20Harty%20-%20Saint-Sa%C3%ABns%20Carnival%20des%20animaux%20side%206.mp3', page: 'https://archive.org/details/1-hamilton-harty-saint-saens-carnival-des-animaux-side-1' },
-    ],
-  },
-  'ravel-string-quartet': {
-    performer: 'Capet Quartet (1928)',
-    tracks: [
-      { title: 'Allegro moderato', movement: 0, src: 'https://archive.org/download/3-capet-sq-col-d-15057-60-ravel-1928-mov-3/1%20Capet%20SQ%20-%20Col%20D%2015057-60%20Ravel%201928%20mov%201.mp3', page: 'https://archive.org/details/3-capet-sq-col-d-15057-60-ravel-1928-mov-3' },
-      { title: 'Assez vif – Très rythmé', movement: 1, src: 'https://archive.org/download/3-capet-sq-col-d-15057-60-ravel-1928-mov-3/2%20Capet%20SQ%20-%20Col%20D%2015057-60%20Ravel%201928%20mov%202.mp3', page: 'https://archive.org/details/3-capet-sq-col-d-15057-60-ravel-1928-mov-3' },
-      { title: 'Très lent', movement: 2, src: 'https://archive.org/download/3-capet-sq-col-d-15057-60-ravel-1928-mov-3/3%20Capet%20SQ%20-%20Col%20D%2015057-60%20Ravel%201928%20mov%203.mp3', page: 'https://archive.org/details/3-capet-sq-col-d-15057-60-ravel-1928-mov-3' },
-      { title: 'Vif et agité', movement: 3, src: 'https://archive.org/download/3-capet-sq-col-d-15057-60-ravel-1928-mov-3/4%20Capet%20SQ%20-%20Col%20D%2015057-60%20Ravel%201928%20mov%204.mp3', page: 'https://archive.org/details/3-capet-sq-col-d-15057-60-ravel-1928-mov-3' },
-    ],
-  },
-  'debussy-string-quartet': {
-    performer: 'Capet Quartet (1928)',
-    tracks: [
-      { title: 'Animé et très décidé', movement: 0, src: 'https://archive.org/download/3-capet-sq-col-d-15085-8-debussy-mov-3-1928/1%20Capet%20SQ%20-%20Col%20D%2015085-8%20Debussy%20mov%201%201928.mp3', page: 'https://archive.org/details/3-capet-sq-col-d-15085-8-debussy-mov-3-1928' },
-      { title: 'Assez vif et bien rythmé', movement: 1, src: 'https://archive.org/download/3-capet-sq-col-d-15085-8-debussy-mov-3-1928/2%20Capet%20SQ%20-%20Col%20D%2015085-8%20Debussy%20mov%202%201928.mp3', page: 'https://archive.org/details/3-capet-sq-col-d-15085-8-debussy-mov-3-1928' },
-      { title: 'Andantino, doucement expressif', movement: 2, src: 'https://archive.org/download/3-capet-sq-col-d-15085-8-debussy-mov-3-1928/3%20Capet%20SQ%20-%20Col%20D%2015085-8%20Debussy%20mov%203%201928.mp3', page: 'https://archive.org/details/3-capet-sq-col-d-15085-8-debussy-mov-3-1928' },
-      { title: 'Très modéré', movement: 3, src: 'https://archive.org/download/3-capet-sq-col-d-15085-8-debussy-mov-3-1928/4%20Capet%20SQ%20-%20Col%20D%2015085-8%20Debussy%20mov%204%201928.mp3', page: 'https://archive.org/details/3-capet-sq-col-d-15085-8-debussy-mov-3-1928' },
     ],
   },
   'satie-gymnopedie-1': {
@@ -1772,30 +1616,6 @@ export const recordings: Record<string, Recording> = {
       { title: 'Allegro ma non troppo', movement: 3, src: 'https://archive.org/download/DvorakSymphonyNo.8/04.Iv.AllegroMaNonTroppo.mp3', page: 'https://archive.org/details/DvorakSymphonyNo.8' },
     ],
   },
-  'mendelssohn-italian-symphony': {
-    performer: 'Hallé Orchestra, Hamilton Harty (1931)',
-    license: 'CC BY-NC-SA 3.0',
-    licenseUrl: 'https://creativecommons.org/licenses/by-nc-sa/3.0/',
-    tracks: [
-      { title: 'Allegro vivace', movement: 0, src: 'https://archive.org/download/MENDELSSOHNSymphonyNo.4-Italian-Hartey-NEWTRANSFER01.I.AllegroVivace/01.I.AllegroVivace.mp3', page: 'https://archive.org/details/MENDELSSOHNSymphonyNo.4-Italian-Hartey-NEWTRANSFER01.I.AllegroVivace' },
-      { title: 'Andante con moto', movement: 1, src: 'https://archive.org/download/MENDELSSOHNSymphonyNo.4-Italian-Hartey-NEWTRANSFER01.I.AllegroVivace/02.Ii.AndanteConMoto.mp3', page: 'https://archive.org/details/MENDELSSOHNSymphonyNo.4-Italian-Hartey-NEWTRANSFER01.I.AllegroVivace' },
-      { title: 'Con moto moderato', movement: 2, src: 'https://archive.org/download/MENDELSSOHNSymphonyNo.4-Italian-Hartey-NEWTRANSFER01.I.AllegroVivace/03.Iii.ConMoltoModerato.mp3', page: 'https://archive.org/details/MENDELSSOHNSymphonyNo.4-Italian-Hartey-NEWTRANSFER01.I.AllegroVivace' },
-      { title: 'Saltarello: Presto', movement: 3, src: 'https://archive.org/download/MENDELSSOHNSymphonyNo.4-Italian-Hartey-NEWTRANSFER01.I.AllegroVivace/04.Iv.Finale-Salterello-presto.mp3', page: 'https://archive.org/details/MENDELSSOHNSymphonyNo.4-Italian-Hartey-NEWTRANSFER01.I.AllegroVivace' },
-    ],
-  },
-  'mendelssohn-hebrides': {
-    performer: 'London Philharmonic Orchestra, Adrian Boult',
-    tracks: [
-      { title: 'The Hebrides', movement: 0, src: 'https://archive.org/download/lpo-boult-mendelssohn-scottish-symph.-hebrides-a-midsummer-nights-dream/LPO%2C%20Boult%20-%20Mendelssohn%20%27Scottish%27%20Symphony%2C%20Etc.%20-%2001%20Overture%20%27The%20Hebrides%27%20%28Fingal%27s%20Cave%29%20Op.%2026.mp3', page: 'https://archive.org/details/lpo-boult-mendelssohn-scottish-symph.-hebrides-a-midsummer-nights-dream' },
-    ],
-  },
-  'saint-saens-organ-symphony': {
-    performer: 'New York Philharmonic, Charles Munch, Edouard Nies-Berger, organ (1947)',
-    tracks: [
-      { title: 'Part 1', movement: 0, src: 'https://archive.org/download/mm-747-saint-saens-sym-3-i/MM747%20Saint-Saens%20Sym%203%20%28i%29.mp3', page: 'https://archive.org/details/mm-747-saint-saens-sym-3-i' },
-      { title: 'Part 2', movement: 1, src: 'https://archive.org/download/mm-747-saint-saens-sym-3-i/MM747%20Saint-Saens%20Sym%203%20%28ii%29.mp3', page: 'https://archive.org/details/mm-747-saint-saens-sym-3-i' },
-    ],
-  },
   'saint-saens-danse-macabre': {
     performer: 'Vienna State Opera Orchestra, Hermann Scherchen (c. 1956)',
     license: 'CC BY-NC-SA 3.0',
@@ -1813,12 +1633,6 @@ export const recordings: Record<string, Recording> = {
       { title: 'Petrushka’s Room', movement: 1, src: 'https://archive.org/download/STRAVINSKYPtrouchka-NEWTRANSFER/02.SecondTableau-PtrouchkasRoom.mp3', page: 'https://archive.org/details/STRAVINSKYPtrouchka-NEWTRANSFER' },
       { title: 'The Moor’s Room', movement: 2, src: 'https://archive.org/download/STRAVINSKYPtrouchka-NEWTRANSFER/03.ThirdTableau-TheMoorsRoom.mp3', page: 'https://archive.org/details/STRAVINSKYPtrouchka-NEWTRANSFER' },
       { title: 'The Shrovetide Fair (Evening)', movement: 3, src: 'https://archive.org/download/STRAVINSKYPtrouchka-NEWTRANSFER/04.FourthTableau-TheShrovetideFairAndPtrouchkasDeath.mp3', page: 'https://archive.org/details/STRAVINSKYPtrouchka-NEWTRANSFER' },
-    ],
-  },
-  'debussy-arabesque-1': {
-    performer: 'Ellen Gilberg, piano',
-    tracks: [
-      { title: 'Arabesque No. 1', movement: 0, src: 'https://archive.org/download/78_arabesque-nr-1_ellen-gilberg-claude-debussy_gbia7013071a/Arabesque%20Nr.%201%20-%20ELLEN%20GILBERG%20-%20Claude%20Debussy.mp3', page: 'https://archive.org/details/78_arabesque-nr-1_ellen-gilberg-claude-debussy_gbia7013071a' },
     ],
   },
   'prokofiev-peter-and-the-wolf': {
