@@ -1,10 +1,9 @@
 import type { CatalogAssetKey } from '@/assets/catalog-assets'
 import type { Genre, Work } from '@/models/work'
-import { countries, findCountry, isWorkFromCountry, type Country } from './countries'
 import { getWorkPeriod } from './works'
 
 export type Station = {
-  /** URL-safe id, e.g. `baroque` or `country-italy`. */
+  /** URL-safe id, e.g. `baroque`. */
   id: string
   name: string
   description: string
@@ -80,23 +79,6 @@ export const stations: Station[] = [
   },
 ]
 
-function getCountryStation(country: Country): Station {
-  return {
-    id: `country-${country.id}`,
-    name: country.name,
-    description: `Composers from ${country.name}`,
-    asset: 'burgtheaterAuditorium',
-    matches: (work) => isWorkFromCountry(work, country),
-  }
-}
-
-export const countryStations = countries.map(getCountryStation)
-
 export function findStation(id: string | undefined) {
-  return [...stations, ...countryStations].find((station) => station.id === id)
-}
-
-export function getCountryStationFor(countryId: string) {
-  const country = findCountry(countryId)
-  return country ? findStation(`country-${country.id}`) : undefined
+  return stations.find((station) => station.id === id)
 }

@@ -1,6 +1,6 @@
 # Sonatina
 
-A friendly guide to classical music: browse works, composers (by period or country) and listening guides, play historical recordings of almost every work, or leave the radio on while you read.
+A friendly guide to classical music: browse works, composers by era and listening guides, play historical recordings of almost every work, or leave the radio on while you read.
 
 Live at https://sonatina.vercel.app (deploys from `main`). Brand and voice: [BRAND.md](BRAND.md).
 
@@ -55,9 +55,9 @@ src/
 Catalog content lives in `src/data/*.ts`. Records reference artwork by key (see `CatalogAssetKey`), and works reference composers by `composerId`. Movements are listed by name only, with no notes.
 
 - `works.ts`, `composers.ts`, `guides.ts`: the catalogue. A guide's `workIds` must name existing works.
-- `countries.ts`: present-day countries for the Composers filter (`/composers?country=italy`). A composer's `nationality` must belong to exactly one country; add a country when you add the first composer from it.
+- `eras.ts`: the Composers filter (`/composers?era=baroque`), built from the four periods. Each era links its period guide and radio station.
 - `recordings.ts`: the player's streams (see below).
-- `stations.ts`: the radio stations, plus one per country (played from the Composers country filter, not listed on the Radio page). Each is a filter over works by genre, period or country, never a hand-picked list of work ids; every station needs at least one work with a recording.
+- `stations.ts`: the radio stations. Each is a filter over works by genre or period, never a hand-picked list of work ids; every station needs at least one work with a recording.
 
 ### Adding artwork
 

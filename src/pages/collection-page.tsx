@@ -1,8 +1,7 @@
 import { Radio } from 'lucide-react'
 import { Link, useSearchParams } from 'react-router'
 import { catalogPageMeta, getCatalogItems, matchesWorkFilter, workFilters } from '@/data/catalog'
-import { countries, findCountry, getComposersByCountry } from '@/data/countries'
-import { getCountryStationFor } from '@/data/stations'
+import { eras, findEra, getComposersByEra, getEraGuide, getEraStation } from '@/data/eras'
 import { usePlayer } from '@/player/player-context'
 import type { CatalogSection } from '@/models/catalog'
 import { CollectionCard } from '@/components/collection-card'
@@ -24,12 +23,15 @@ export function CollectionPage({ view }: CollectionPageProps) {
   const page = catalogPageMeta[view]
   const items = getCatalogItems(view)
   const activeGenre = view === 'works' ? searchParams.get('genre') ?? '' : ''
-  const activeCountry = view === 'composers' ? findCountry(searchParams.get('country')) : undefined
-  const countryComposerIds = activeCountry ? getComposersByCountry(activeCountry).map((composer) => composer.id) : []
-  const countryStation = activeCountry ? getCountryStationFor(activeCountry.id) : undefined
+  const activeEra = view === 'composers' ? findEra(searchParams.get('era')) : undefined
+  const eraGuide = activeEra ? getEraGuide(activeEra) : undefined
+  const eraStation = activeEra ? getEraStation(activeEra) : undefined
+  // Within an era, composers are listed oldest first, so the list reads as a timeline.
   const visibleItems = view === 'works'
     ? items.filter((item) => matchesWorkFilter(item, activeGenre))
-    : items.filter((item) => !activeCountry || countryComposerIds.includes(item.id))
+    : activeEra
+      ? getComposersByEra(activeEra).flatMap((composer) => items.filter((item) => item.id === composer.id))
+      : items
 
   return (
     <section className="collection-page">
@@ -54,31 +56,34 @@ export function CollectionPage({ view }: CollectionPageProps) {
       ) : null}
 
       {view === 'composers' ? (
-        <div className="collection-filter-list" aria-label="Filter composers by country">
-          <Link className={activeCountry ? undefined : 'active'} to="/composers">
+        <div className="collection-filter-list" aria-label="Filter composers by era">
+          <Link className={activeEra ? undefined : 'active'} to="/composers">
             All
           </Link>
-          {countries.map((country) => (
+          {eras.map((era) => (
             <Link
-              className={activeCountry?.id === country.id ? 'active' : undefined}
-              key={country.id}
-              to={`/composers?country=${country.id}`}
+              className={activeEra?.id === era.id ? 'active' : undefined}
+              key={era.id}
+              to={`/composers?era=${era.id}`}
             >
-              {country.name}
+              {era.period}
             </Link>
           ))}
         </div>
       ) : null}
 
-      {activeCountry ? (
-        <div className="country-intro">
-          <p>{activeCountry.overview}</p>
-          {countryStation ? (
-            <button className="primary-action" type="button" onClick={() => player.tune(countryStation)}>
-              <Radio size={16} />
-              Play {activeCountry.name} radio
-            </button>
-          ) : null}
+      {activeEra ? (
+        <div className="era-intro">
+          {eraGuide ? <p>{eraGuide.description}</p> : null}
+          <div className="era-intro-actions">
+            {eraStation ? (
+              <button className="primary-action" type="button" onClick={() => player.tune(eraStation)}>
+                <Radio size={16} />
+                Play {activeEra.period} radio
+              </button>
+            ) : null}
+            {eraGuide ? <Link to={`/guides/${eraGuide.id}`}>Read the guide</Link> : null}
+          </div>
         </div>
       ) : null}
 

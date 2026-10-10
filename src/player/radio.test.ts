@@ -29,16 +29,18 @@ describe('pickRadioSegment', () => {
     }
   })
 
+  /** A station limited to the given works, so the outcome is predictable. */
+  const only = (...ids: string[]) => ({ ...findStation('everything')!, matches: (work: { id: string }) => ids.includes(work.id) })
+
   it('avoids recently played works while others remain', () => {
-    const station = findStation('country-czechia')!
-    const segment = pickRadioSegment(station, recordings, ['dvorak-symphony-9', 'dvorak-cello-concerto'], random)!
-    expect(['dvorak-symphony-9', 'dvorak-cello-concerto']).not.toContain(segment.work.id)
+    const recent = ['dvorak-symphony-9', 'dvorak-cello-concerto']
+    const segment = pickRadioSegment(only(...recent, 'dvorak-slavonic-dances'), recordings, recent, random)!
+    expect(segment.work.id).toBe('dvorak-slavonic-dances')
   })
 
   it('falls back to repeats when every work was played recently', () => {
-    const station = findStation('country-norway')!
     const all = ['grieg-piano-concerto', 'grieg-peer-gynt']
-    expect(all).toContain(pickRadioSegment(station, recordings, all, random)!.work.id)
+    expect(all).toContain(pickRadioSegment(only(...all), recordings, all, random)!.work.id)
   })
 
   it('returns null when nothing on the station has a recording', () => {

@@ -2177,8 +2177,8 @@ button {
   }
 }
 
-/* Countries: the intro above a filtered composers list, and the home page row. */
-.country-intro {
+/* Eras: the intro above a filtered composers list. */
+.era-intro {
   max-width: 700px;
   margin: -6px 0 28px;
   display: grid;
@@ -2186,24 +2186,29 @@ button {
   gap: 18px;
 }
 
-.country-intro p {
+.era-intro-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 22px;
+}
+
+.era-intro-actions a:not(.primary-action) {
+  color: rgb(var(--gilt));
+  font-weight: 760;
+  text-decoration: none;
+}
+
+.era-intro-actions a:not(.primary-action):hover {
+  text-decoration: underline;
+}
+
+.era-intro p {
   margin: 0;
   color: rgb(var(--ink-soft));
   font-size: 17px;
   font-weight: 600;
   line-height: 1.6;
-}
-
-.home-country-list {
-  margin: 0;
-}
-
-.home-country-list small {
-  margin-left: 8px;
-  color: rgb(var(--gilt));
-  font-size: 12px;
-  font-weight: 760;
-  font-variant-numeric: tabular-nums;
 }
 
 .hero-radio-action {
