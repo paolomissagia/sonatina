@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { Route, Routes, useLocation, useParams } from 'react-router'
+import { Route, Routes, useLocation, useNavigationType, useParams } from 'react-router'
 import { AppSidebar } from '@/components/app-sidebar'
 import { PlayerBar } from '@/components/player-bar'
 import { TopBar } from '@/components/top-bar'
@@ -54,7 +54,10 @@ function RoutedGuideDetailPage() {
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const workspaceRef = useRef<HTMLDivElement>(null)
-  const { pathname } = useLocation()
+  const { key, pathname } = useLocation()
+  const navigationType = useNavigationType()
+  // Scroll positions by history entry, so Back returns to where you were.
+  const scrollPositions = useRef(new Map<string, number>())
   const handleNavigate = () => {
     setIsSidebarOpen(false)
   }
@@ -70,10 +73,12 @@ function App() {
     return () => clearTimeout(timer)
   }, [])
 
-  // The workspace, not the window, is the scroll container, so reset it on navigation.
+  // The workspace, not the window, is the scroll container: new pages open at the top,
+  // and Back or Forward restores the position the page was left at.
   useEffect(() => {
-    workspaceRef.current?.scrollTo({ top: 0 })
-  }, [pathname])
+    const top = navigationType === 'POP' ? scrollPositions.current.get(key) ?? 0 : 0
+    workspaceRef.current?.scrollTo({ top })
+  }, [key, pathname, navigationType])
 
   useEffect(() => {
     if (!isSidebarOpen) {
@@ -106,7 +111,11 @@ function App() {
         />
       ) : null}
 
-      <div className="workspace" ref={workspaceRef}>
+      <div
+        className="workspace"
+        ref={workspaceRef}
+        onScroll={(event) => scrollPositions.current.set(key, event.currentTarget.scrollTop)}
+      >
         <TopBar
           isMenuOpen={isSidebarOpen}
           onMenuClick={() => setIsSidebarOpen(true)}
