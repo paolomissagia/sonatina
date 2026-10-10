@@ -88,6 +88,7 @@ Colours drawn over images use `--scrim`, `--on-image` and `--on-image-soft`.
 
   No manuscripts, posters, prints or photographs as work images: mixing media is what makes a grid look inconsistent.
 - **Scenes** (home hero, About): paintings in the same vein, such as Klimt and Menzel.
+- **Radio stations** reuse the category covers and scenes; they never get their own art.
 - **Everything is public domain and credited.** No AI-generated imagery anywhere on the site.
 - **Format:** WebP, at most about 1600 px wide (portraits 1200 px square), quality about 75–80.
 
@@ -97,16 +98,17 @@ Colours drawn over images use `--scrim`, `--on-image` and `--on-image-soft`.
 - Credit the performer next to the Listen button, and the licence with its link when it is Creative Commons.
 - Historical recordings are welcome: Caruso, Gigli, Stravinsky conducting his own Rite. Their age is part of the charm.
 - A work without a suitable recording has no player rather than a poor one.
+- **Radio:** stations by period (Baroque, Classical, Romantic, Modern) and by kind (Opera, Piano, Orchestra, Voices), plus Everything. Each plays one random movement at a time and keeps going while you browse. The Radio link sits with Search at the foot of the sidebar; Discover, Works, Composers and Guides stay at the top.
 
 ## Signature elements
 
 - **Italic gilt emphasis** on the key word of a headline.
 - **The dark frame**: an ink sidebar and a home hero where the painting glows through a deep overlay and the headline's emphasis is gilt.
 - **Image heroes that fade into parchment** on detail pages, with the copy on the left and the picture on the right.
-- **Roman-numeral movement lists**: I. Allegro con brio · *The four-note motif*.
+- **Roman-numeral movement lists**: I. Allegro con brio. Names only, no notes.
 - **Breadcrumbs** with a `›` separator.
 - **Soft cards**: 8 px radius, a 1 px Rule border, warm shadow.
-- **The player bar**: part of the dark frame, pinned to the bottom, with a gilt play button.
+- **The player bar**: part of the dark frame, pinned to the bottom, with a gilt play button. On the radio it shows the station in small gilt capitals above the work.
 
 ## Logo
 

@@ -1,6 +1,6 @@
 # Sonatina
 
-A friendly guide to classical music: browse works, composers, and listening guides, with curated picks and cross-linked recommendations.
+A friendly guide to classical music: browse works, composers (by period or country) and listening guides, play historical recordings of almost every work, or leave the radio on while you read.
 
 Live at https://sonatina.vercel.app (deploys from `main`). Brand and voice: [BRAND.md](BRAND.md).
 
@@ -47,10 +47,17 @@ src/
   models/           Domain types (Work, Composer, Guide, …)
   data/             Static catalog content, plus lookup, search, filter and
                     recommendation helpers (tested in *.test.ts alongside)
+  player/           Player context, the lazily loaded recordings table and
+                    the radio's track picker
   assets/           WebP artwork; catalog-assets.ts maps asset keys to imports
 ```
 
-Catalog content lives in `src/data/*.ts`. Records reference artwork by key (see `CatalogAssetKey`), and works reference composers by `composerId`.
+Catalog content lives in `src/data/*.ts`. Records reference artwork by key (see `CatalogAssetKey`), and works reference composers by `composerId`. Movements are listed by name only, with no notes.
+
+- `works.ts`, `composers.ts`, `guides.ts`: the catalogue. A guide's `workIds` must name existing works.
+- `countries.ts`: present-day countries for the Composers filter (`/composers?country=italy`). A composer's `nationality` must belong to exactly one country; add a country when you add the first composer from it.
+- `recordings.ts`: the player's streams (see below).
+- `stations.ts`: the radio stations, plus one per country (played from the Composers country filter, not listed on the Radio page). Each is a filter over works; every station needs at least one work with a recording.
 
 ### Adding artwork
 
@@ -64,7 +71,9 @@ The script refuses anything that isn't public domain or CC0, writes the WebP, an
 
 ### Adding recordings
 
-Works have a player. Recordings stream straight from **Wikimedia Commons** or the **Internet Archive** (we never host audio) and live in `src/data/recordings.ts`, keyed by work id, with each track mapped to one of the work's movements. Long stage works (operas, ballets) map their arias or excerpts onto the right act.
+Works have a player. Recordings stream straight from **Wikimedia Commons** or the **Internet Archive** (we never host audio) and live in `src/data/recordings.ts`, keyed by work id, with each track mapped to one of the work's movements. Long stage works (operas, ballets) map their arias or excerpts onto the right act. Keep a movement's tracks next to each other: the radio plays one movement at a time.
+
+The table loads in its own chunk on demand, and the player lives at the app root, so playback carries on while you browse. Only the current track ever loads; never prefetch audio.
 
 Avoid computer renderings of the score (MIDI, "sequenced", Mutopia) and spoken introductions. For a Commons file, look up its MP3 stream with:
 
