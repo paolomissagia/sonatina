@@ -246,11 +246,11 @@ export const recordings: Record<string, Recording> = {
     ],
   },
   'beethoven-fur-elise': {
-    performer: 'Sebion7125',
-    license: 'CC BY-SA 3.0',
-    licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/',
+    performer: 'Artur Schnabel, piano (1932)',
+    license: 'CC BY-NC-SA 3.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by-nc-sa/3.0/',
     tracks: [
-      { title: 'Poco moto', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/8/8f/Fur_Elise.ogg/Fur_Elise.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Fur_Elise.ogg' },
+      { title: 'Für Elise', movement: 0, src: 'https://archive.org/download/BeethovenFrElise-Schnabel/Beethoven-FrEliseWoo59.mp3', page: 'https://archive.org/details/BeethovenFrElise-Schnabel' },
     ],
   },
   'beethoven-string-quartet-14': {
@@ -307,12 +307,13 @@ export const recordings: Record<string, Recording> = {
     ],
   },
   'chopin-piano-concerto-1': {
-    performer: 'Chamber version for piano and string quartet',
-    license: 'CC0',
+    performer: 'Arthur Rubinstein, London Symphony Orchestra, John Barbirolli',
+    license: 'CC BY-NC-SA 3.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by-nc-sa/3.0/',
     tracks: [
-      { title: 'Allegro maestoso', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a2/Chopin_-_Piano_Concerto_no._1%2C_Op._11_%28string_quartet%29-1.ogg/Chopin_-_Piano_Concerto_no._1%2C_Op._11_%28string_quartet%29-1.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Chopin_-_Piano_Concerto_no._1,_Op._11_(string_quartet)-1.ogg' },
-      { title: 'Romance: Larghetto', movement: 1, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/a/a4/Chopin_-_Piano_Concerto_no._1%2C_Op._11_%28string_quartet%29-2.ogg/Chopin_-_Piano_Concerto_no._1%2C_Op._11_%28string_quartet%29-2.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Chopin_-_Piano_Concerto_no._1,_Op._11_(string_quartet)-2.ogg' },
-      { title: 'Rondo: Vivace', movement: 2, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/0/08/Chopin_-_Piano_Concerto_no._1%2C_Op._11_%28string_quartet%29-3.ogg/Chopin_-_Piano_Concerto_no._1%2C_Op._11_%28string_quartet%29-3.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Chopin_-_Piano_Concerto_no._1,_Op._11_(string_quartet)-3.ogg' },
+      { title: 'Allegro maestoso', movement: 0, src: 'https://archive.org/download/ChopinPianoConcertoNo.1/01.I.AllegroMaestosoRisoluto.mp3', page: 'https://archive.org/details/ChopinPianoConcertoNo.1' },
+      { title: 'Romance: Larghetto', movement: 1, src: 'https://archive.org/download/ChopinPianoConcertoNo.1/02.Ii.Romance-Larghetto.mp3', page: 'https://archive.org/details/ChopinPianoConcertoNo.1' },
+      { title: 'Rondo: Vivace', movement: 2, src: 'https://archive.org/download/ChopinPianoConcertoNo.1/03.Iii.Rondo-Vivace.mp3', page: 'https://archive.org/details/ChopinPianoConcertoNo.1' },
     ],
   },
   'clara-schumann-piano-concerto': {
@@ -348,13 +349,13 @@ export const recordings: Record<string, Recording> = {
     ],
   },
   'dvorak-cello-concerto': {
-    performer: 'John Michel, cello',
-    license: 'CC BY-SA 3.0',
-    licenseUrl: 'https://creativecommons.org/licenses/by-sa/3.0/',
+    performer: 'Pablo Casals, Czech Philharmonic, George Szell (1937)',
+    license: 'CC BY-NC-SA 3.0',
+    licenseUrl: 'https://creativecommons.org/licenses/by-nc-sa/3.0/',
     tracks: [
-      { title: 'Allegro', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/7/7d/JOHN_MICHEL_CELLO-DVORAK_CELLO_CONCERTO_IN_B_MINOR_1st.ogg/JOHN_MICHEL_CELLO-DVORAK_CELLO_CONCERTO_IN_B_MINOR_1st.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:JOHN_MICHEL_CELLO-DVORAK_CELLO_CONCERTO_IN_B_MINOR_1st.ogg' },
-      { title: 'Adagio ma non troppo', movement: 1, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/8/8a/JOHN_MICHEL_CELLO-DVORAK_CELLO_CONCERTO_in_B_Minor_2nd.ogg/JOHN_MICHEL_CELLO-DVORAK_CELLO_CONCERTO_in_B_Minor_2nd.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:JOHN_MICHEL_CELLO-DVORAK_CELLO_CONCERTO_in_B_Minor_2nd.ogg' },
-      { title: 'Finale: Allegro moderato', movement: 2, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/8/88/JOHN_MICHEL_CELLO-DVORAK_CELLO_CONCERTO_in_B_minor_3rd.ogg/JOHN_MICHEL_CELLO-DVORAK_CELLO_CONCERTO_in_B_minor_3rd.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:JOHN_MICHEL_CELLO-DVORAK_CELLO_CONCERTO_in_B_minor_3rd.ogg' },
+      { title: 'Allegro', movement: 0, src: 'https://archive.org/download/DVORAKCelloConcerto-Casals-NEWTRANSFER/01.I.Allegro.mp3', page: 'https://archive.org/details/DVORAKCelloConcerto-Casals-NEWTRANSFER' },
+      { title: 'Adagio ma non troppo', movement: 1, src: 'https://archive.org/download/DVORAKCelloConcerto-Casals-NEWTRANSFER/02.Ii.AdagioMaNonTroppo.mp3', page: 'https://archive.org/details/DVORAKCelloConcerto-Casals-NEWTRANSFER' },
+      { title: 'Finale: Allegro moderato', movement: 2, src: 'https://archive.org/download/DVORAKCelloConcerto-Casals-NEWTRANSFER/03.Iii.Finale-AllegroModerato.mp3', page: 'https://archive.org/details/DVORAKCelloConcerto-Casals-NEWTRANSFER' },
     ],
   },
   'dvorak-slavonic-dances': {
@@ -923,10 +924,11 @@ export const recordings: Record<string, Recording> = {
     ],
   },
   'liszt-hungarian-rhapsody-2': {
-    performer: 'Jaan Patterson',
-    license: 'CC0',
+    performer: 'Sergei Rachmaninoff, piano (1919–20)',
     tracks: [
-      { title: 'Hungarian Rhapsody No. 2', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/3/3b/Jaan_Patterson_-_01_-_Hungarian_Rhapsody_No2_S2442_Franz_Liszt.ogg/Jaan_Patterson_-_01_-_Hungarian_Rhapsody_No2_S2442_Franz_Liszt.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Jaan_Patterson_-_01_-_Hungarian_Rhapsody_No2_S2442_Franz_Liszt.ogg' },
+      { title: 'Part 1', movement: 0, src: 'https://archive.org/download/78_second-rhapsodie-part-1_sergei-rachmaninoff-f-liszt_gbia0023321/02%20-%20Second%20Rhapsodie-Part%201%20-%20Sergei%20Rachmaninoff-restored.mp3', page: 'https://archive.org/details/78_second-rhapsodie-part-1_sergei-rachmaninoff-f-liszt_gbia0023321' },
+      { title: 'Part 2', movement: 1, src: 'https://archive.org/download/78_second-rhapsodie-part-1_sergei-rachmaninoff-f-liszt_gbia0023321/01%20-%20Second%20Rhapsodie-Part%202%20-%20Sergei%20Rachmaninoff-restored.mp3', page: 'https://archive.org/details/78_second-rhapsodie-part-1_sergei-rachmaninoff-f-liszt_gbia0023321' },
+      { title: 'Part 3', movement: 1, src: 'https://archive.org/download/78_second-rhapsodie-part-3_sergei-rachmaninoff-e-liszt_gbia0023248b/Second%20Rhapsodie%20-%20Part%203%20-%20Sergei%20Rachmaninoff.mp3', page: 'https://archive.org/details/78_second-rhapsodie-part-3_sergei-rachmaninoff-e-liszt_gbia0023248b' },
     ],
   },
   'liszt-piano-sonata': {
