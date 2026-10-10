@@ -4,7 +4,7 @@ export type RecordingTrack = {
   movement: number
   /** When a track's performer differs from the recording's. */
   performer?: string
-  /** An MP3 streamed directly from Wikimedia Commons or the Internet Archive. */
+  /** An MP3 streamed directly from an approved source (see SOURCES.md). */
   src: string
   /** The recording's page at its source. */
   page: string

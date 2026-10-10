@@ -81,4 +81,4 @@ Avoid computer renderings of the score (MIDI, "sequenced", Mutopia) and spoken i
 node scripts/add-recording.mjs "File:<Commons audio file>" […]
 ```
 
-For the Internet Archive, the stream is `https://archive.org/download/<identifier>/<file>` and the page is `https://archive.org/details/<identifier>`. Credit the performer; add the licence and its link when the source states a Creative Commons one. Tests check every track points at a real movement and a Commons or Archive MP3. [SOURCES.md](SOURCES.md) lists the approved and ruled-out sources, including Romanian Radio's archive, which is approved but not yet in use.
+For the Internet Archive, the stream is `https://archive.org/download/<identifier>/<file>` and the page is `https://archive.org/details/<identifier>`. Credit the performer; add the licence and its link when the source states a Creative Commons one. Tests check every track points at a real movement and an MP3 from an approved source. [SOURCES.md](SOURCES.md) lists the approved and ruled-out sources, including Romanian Radio's archive and how to search it.

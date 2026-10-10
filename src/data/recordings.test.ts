@@ -26,11 +26,12 @@ describe('recordings', () => {
     }
   })
 
-  it('stream MP3s from Wikimedia Commons or the Internet Archive', () => {
+  // The approved sources in SOURCES.md: Commons, the Internet Archive and Romanian Radio (through Europeana).
+  it('stream MP3s from an approved source', () => {
     for (const [workId, recording] of entries) {
       for (const track of recording.tracks) {
-        expect(track.src, workId).toMatch(/^https:\/\/(upload\.wikimedia\.org\/.+|archive\.org\/download\/.+)\.mp3$/i)
-        expect(track.page, workId).toMatch(/^https:\/\/(commons\.wikimedia\.org\/wiki\/File:|archive\.org\/details\/)/)
+        expect(track.src, workId).toMatch(/^https:\/\/(upload\.wikimedia\.org\/.+|archive\.org\/download\/.+|resource\.culturalia\.ro\/.+)\.mp3$/i)
+        expect(track.page, workId).toMatch(/^https:\/\/(commons\.wikimedia\.org\/wiki\/File:|archive\.org\/details\/|www\.europeana\.eu\/item\/)/)
       }
     }
   })
