@@ -2781,25 +2781,6 @@ export const works: Work[] = [
     ],
   },
   {
-    id: 'prokofiev-peter-and-the-wolf',
-    title: 'Peter and the Wolf',
-    composerId: 'prokofiev',
-    catalogue: 'Op. 67',
-    description: 'A story for children, where every character is an instrument.',
-    composed: '1936',
-    year: 1936,
-    durationMinutes: 26,
-    genre: 'Orchestral',
-    form: 'Symphonic fairy tale for narrator and orchestra',
-    premiere: '2 May 1936, Moscow',
-    instrumentation: 'Narrator and orchestra',
-    overview:
-      'Prokofiev wrote this tale for a children’s theatre in Moscow, to introduce young listeners to the orchestra. Each character has its own instrument and theme: the bird is a flute, the duck an oboe, the cat a clarinet, the grandfather a bassoon, the wolf three horns, and Peter the strings.',
-    movements: [
-      { title: 'Peter and the Wolf' },
-    ],
-  },
-  {
     id: 'prokofiev-classical-symphony',
     title: 'Symphony No. 1, “Classical”',
     composerId: 'prokofiev',

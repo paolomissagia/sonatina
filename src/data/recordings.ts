@@ -1653,14 +1653,6 @@ export const recordings: Record<string, Recording> = {
       { title: 'The Shrovetide Fair (Evening)', movement: 3, src: 'https://archive.org/download/STRAVINSKYPtrouchka-NEWTRANSFER/04.FourthTableau-TheShrovetideFairAndPtrouchkasDeath.mp3', page: 'https://archive.org/details/STRAVINSKYPtrouchka-NEWTRANSFER' },
     ],
   },
-  'prokofiev-peter-and-the-wolf': {
-    performer: 'Eleanor Roosevelt, narrator, Boston Symphony Orchestra, Serge Koussevitzky (1948)',
-    license: 'CC BY-NC-SA 3.0',
-    licenseUrl: 'https://creativecommons.org/licenses/by-nc-sa/3.0/',
-    tracks: [
-      { title: 'Peter and the Wolf', movement: 0, src: 'https://archive.org/download/ProkofievPeterAndTheWolfkoussevitzky/Prokofiev-PeterAndTheWolf.mp3', page: 'https://archive.org/details/ProkofievPeterAndTheWolfkoussevitzky' },
-    ],
-  },
   'prokofiev-classical-symphony': {
     performer: 'Philadelphia Orchestra, Eugene Ormandy (1950)',
     license: 'CC BY-NC-SA 3.0',
