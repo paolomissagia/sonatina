@@ -1,7 +1,7 @@
 import { Pause, Play } from 'lucide-react'
 import { catalogAssets } from '@/assets/catalog-assets'
 import { SectionHeading } from '@/components/section-heading'
-import { countryStations, stations, type Station } from '@/data/stations'
+import { stations, type Station } from '@/data/stations'
 import { usePlayer } from '@/player/player-context'
 
 export function RadioPage() {
@@ -45,28 +45,6 @@ export function RadioPage() {
           </button>
         ))}
       </div>
-
-      <div className="radio-countries">
-        <h2>By country</h2>
-        <div className="collection-filter-list" aria-label="Country stations">
-          {countryStations.map((station) => (
-            <button
-              aria-pressed={player.station?.id === station.id}
-              className={player.station?.id === station.id ? 'active' : undefined}
-              key={station.id}
-              type="button"
-              onClick={() => handleStation(station)}
-            >
-              {isOn(station) ? <Pause size={14} /> : <Play size={14} />}
-              {station.name}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <p className="radio-note">
-        Recordings stream straight from public archives, one movement at a time, and nothing loads ahead.
-      </p>
     </section>
   )
 }
