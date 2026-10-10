@@ -3,6 +3,7 @@ import {
   Home,
   Info,
   Music2,
+  Radio,
   UserRound,
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
@@ -12,6 +13,7 @@ export type ViewId =
   | 'works'
   | 'composers'
   | 'guides'
+  | 'radio'
   | 'about'
 
 export type NavItem = {
@@ -25,6 +27,7 @@ export const navItems: NavItem[] = [
   { id: 'works', label: 'Works', icon: Music2 },
   { id: 'composers', label: 'Composers', icon: UserRound },
   { id: 'guides', label: 'Guides', icon: BookOpen },
+  { id: 'radio', label: 'Radio', icon: Radio },
 ]
 
 export const aboutItem: NavItem = { id: 'about', label: 'About', icon: Info }

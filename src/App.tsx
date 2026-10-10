@@ -12,6 +12,7 @@ import { ComposerDetailPage } from '@/pages/composer-detail-page'
 import { GuideDetailPage } from '@/pages/guide-detail-page'
 import { HomePage } from '@/pages/home-page'
 import { NotFoundPage } from '@/pages/not-found-page'
+import { RadioPage } from '@/pages/radio-page'
 import { loadRecordings } from '@/player/use-recording'
 import { SearchPage } from '@/pages/search-page'
 import { WorkDetailPage } from '@/pages/work-detail-page'
@@ -120,6 +121,7 @@ function App() {
             <Route path="/composers/:id" element={<RoutedComposerDetailPage />} />
             <Route path="/guides" element={<CollectionPage view="guides" />} />
             <Route path="/guides/:id" element={<RoutedGuideDetailPage />} />
+            <Route path="/radio" element={<RadioPage />} />
             <Route path="/search" element={<SearchPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="*" element={<NotFoundPage />} />

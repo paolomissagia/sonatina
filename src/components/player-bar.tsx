@@ -1,4 +1,4 @@
-import { Pause, Play, SkipBack, SkipForward, X } from 'lucide-react'
+import { Pause, Play, Radio, SkipBack, SkipForward, X } from 'lucide-react'
 import { Link } from 'react-router'
 import { getComposerName } from '@/data/composers'
 import { formatTime, usePlayer } from '@/player/player-context'
@@ -8,7 +8,7 @@ const numerals = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', '
 /** The "now playing" bar, pinned to the bottom of the page while a recording is loaded. */
 export function PlayerBar() {
   const player = usePlayer()
-  const { work, recording, index, playing, time, duration, error } = player
+  const { work, recording, index, last, playing, time, duration, error, station } = player
 
   if (!work || !recording) {
     return null
@@ -37,7 +37,7 @@ export function PlayerBar() {
           className="player-button"
           type="button"
           aria-label="Next track"
-          disabled={index + 1 >= recording.tracks.length}
+          disabled={index >= last && !station}
           onClick={player.next}
         >
           <SkipForward size={17} />
@@ -45,6 +45,12 @@ export function PlayerBar() {
       </div>
 
       <div className="player-info">
+        {station ? (
+          <Link className="player-station" to="/radio">
+            <Radio size={13} aria-hidden="true" />
+            {station.name} radio
+          </Link>
+        ) : null}
         <Link className="player-work" to={`/works/${work.id}`}>
           {work.title} <span>· {getComposerName(work.composerId)}</span>
         </Link>

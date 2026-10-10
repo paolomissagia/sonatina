@@ -1,6 +1,8 @@
+import type { ReactNode } from 'react'
+
 export type FactListItem = {
   label: string
-  value: string
+  value: ReactNode
 }
 
 type FactListProps = {

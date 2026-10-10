@@ -1,7 +1,8 @@
-import { CalendarDays, Clock3 } from 'lucide-react'
+import { CalendarDays, Clock3, Radio } from 'lucide-react'
 import { Link } from 'react-router'
 import { assetCredits, catalogAssets } from '@/assets/catalog-assets'
 import { ImageCreditLink } from '@/components/image-credit-link'
+import { countries, getComposersByCountry } from '@/data/countries'
 import { exploreCategories } from '@/data/explore-categories'
 import { editorPicks } from '@/data/home'
 
@@ -23,6 +24,10 @@ export function HomePage() {
             <Link className="primary-action" to="/works">
               Start exploring
             </Link>
+            <Link className="hero-radio-action" to="/radio">
+              <Radio size={17} />
+              Listen to the radio
+            </Link>
           </div>
         </div>
       </section>
@@ -37,6 +42,20 @@ export function HomePage() {
               <img src={catalogAssets[category.asset]} alt="" loading="lazy" decoding="async" />
               <span>{category.title}</span>
               <p>{category.description}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="home-section">
+        <div className="home-section-heading">
+          <h2>Explore by country</h2>
+        </div>
+        <div className="collection-filter-list home-country-list">
+          {countries.map((country) => (
+            <Link key={country.id} to={`/composers?country=${country.id}`}>
+              {country.name}
+              <small>{getComposersByCountry(country).length}</small>
             </Link>
           ))}
         </div>

@@ -679,7 +679,8 @@ button {
   gap: 10px;
 }
 
-.collection-filter-list a {
+.collection-filter-list a,
+.collection-filter-list button {
   min-height: 40px;
   padding: 0 16px;
   border: 1px solid rgb(var(--rule));
@@ -694,7 +695,16 @@ button {
   text-decoration: none;
 }
 
-.collection-filter-list a.active {
+.collection-filter-list button {
+  gap: 7px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 760;
+  cursor: pointer;
+}
+
+.collection-filter-list a.active,
+.collection-filter-list button.active {
   border-color: rgb(var(--ink));
   color: rgb(var(--ivory));
   background: rgb(var(--ink));
@@ -2143,6 +2153,139 @@ button {
   }
 }
 
+/* Countries: the intro above a filtered composers list, and the home page row. */
+.country-intro {
+  max-width: 700px;
+  margin: -6px 0 28px;
+  display: grid;
+  justify-items: start;
+  gap: 18px;
+}
+
+.country-intro p {
+  margin: 0;
+  color: rgb(var(--ink-soft));
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.home-country-list {
+  margin: 0;
+}
+
+.home-country-list small {
+  margin-left: 8px;
+  color: rgb(var(--gilt));
+  font-size: 12px;
+  font-weight: 760;
+  font-variant-numeric: tabular-nums;
+}
+
+.hero-radio-action {
+  min-height: 48px;
+  padding: 0 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid rgb(var(--frame-gilt) / 0.6);
+  border-radius: 999px;
+  color: rgb(var(--frame-ink));
+  font-weight: 760;
+  text-decoration: none;
+}
+
+.hero-radio-action:hover {
+  border-color: rgb(var(--frame-gilt));
+  background: rgb(var(--frame-gilt) / 0.12);
+}
+
+/* Radio: station cards share the home Explore card look, as buttons. */
+.radio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.radio-station {
+  min-height: 180px;
+  width: 100%;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.radio-station i {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  color: rgb(var(--frame-deep));
+  background: rgb(var(--frame-gilt));
+  box-shadow: 0 6px 16px rgb(var(--scrim) / 0.3);
+}
+
+.radio-station span {
+  margin-top: 96px;
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.radio-station[aria-pressed='true'] {
+  outline: 2px solid rgb(var(--gilt));
+  outline-offset: 3px;
+}
+
+.radio-station:focus-visible {
+  outline: 2px solid rgb(var(--gilt));
+  outline-offset: 3px;
+}
+
+.radio-countries {
+  margin-top: 40px;
+}
+
+.radio-countries h2 {
+  margin: 0 0 14px;
+  font-family: var(--font-display);
+  font-size: 25px;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.radio-note {
+  margin: 8px 0 0;
+  color: rgb(var(--umber));
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@media (max-width: 960px) {
+  .radio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .radio-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .radio-station {
+    min-height: 150px;
+  }
+
+  .radio-station span {
+    margin-top: 66px;
+  }
+}
+
 /* Player: a dark bar pinned to the bottom of the page, part of the frame. */
 .player-bar {
   position: sticky;
@@ -2209,6 +2352,24 @@ button {
 
 .player-info {
   min-width: 0;
+}
+
+.player-station {
+  margin-bottom: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: rgb(var(--frame-gilt));
+  font-size: 11px;
+  font-weight: 760;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.player-station:focus-visible {
+  outline: 2px solid rgb(var(--frame-gilt));
+  outline-offset: 2px;
 }
 
 .player-work {

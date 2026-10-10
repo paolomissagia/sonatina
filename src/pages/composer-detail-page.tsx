@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router'
 import { assetCredits, catalogAssets } from '@/assets/catalog-assets'
 import { formatLifespan, getRecommendedComposers } from '@/data/composers'
+import { getComposerCountry } from '@/data/countries'
 import type { Composer } from '@/models/composer'
 import { getWorkAsset, getWorksByComposer } from '@/data/works'
 import { DetailHero } from '@/components/detail-hero'
@@ -21,10 +22,14 @@ export function ComposerDetailPage({ composer }: ComposerDetailPageProps) {
   const composerWorks = getWorksByComposer(composer.id)
   const essentialWorks = composerWorks.slice(0, 4)
   const recommendedComposers = getRecommendedComposers(composer)
+  const country = getComposerCountry(composer)
   const facts = [
     { label: 'Born', value: `${composer.born.year}, ${composer.born.place}` },
     { label: 'Died', value: `${composer.died.year}, ${composer.died.place}` },
-    { label: 'Nationality', value: composer.nationality },
+    {
+      label: 'Nationality',
+      value: country ? <Link to={`/composers?country=${country.id}`}>{composer.nationality}</Link> : composer.nationality,
+    },
     { label: 'Period', value: composer.period },
     { label: 'Known for', value: composer.knownFor.join(', ') },
   ]

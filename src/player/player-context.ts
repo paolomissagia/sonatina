@@ -1,4 +1,5 @@
 import { createContext, useContext } from 'react'
+import type { Station } from '@/data/stations'
 import type { Recording } from '@/models/recording'
 import type { Work } from '@/models/work'
 
@@ -10,11 +11,17 @@ export type PlayerState = {
   time: number
   duration: number
   error: boolean
+  /** The radio station picking what plays next, or null when playing a single work. */
+  station: Station | null
+  /** The last track of the current work, or of the current movement on the radio. */
+  last: number
 }
 
 export type PlayerActions = {
   /** Start playing a work's recording from a track. Call it from a click so browsers allow playback. */
   play: (work: Work, recording: Recording, index?: number) => void
+  /** Start a radio station, or move it on to another movement. Call it from a click too. */
+  tune: (station: Station) => void
   toggle: () => void
   next: () => void
   previous: () => void
