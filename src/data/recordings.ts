@@ -293,6 +293,7 @@ export const recordings: Record<string, Recording> = {
   'brahms-hungarian-dances': {
     performer: 'Various performers',
     tracks: [
+      { title: 'No. 1 (fragment)', movement: 0, performer: 'Johannes Brahms, piano (1889 wax cylinder)', src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/d/d6/Brahms_-_Hungarian_Dance_No._1_%28performed_by_the_composer%29.oga/Brahms_-_Hungarian_Dance_No._1_%28performed_by_the_composer%29.oga.mp3', page: 'https://commons.wikimedia.org/wiki/File:Brahms_-_Hungarian_Dance_No._1_(performed_by_the_composer).oga' },
       { title: 'No. 5', movement: 0, performer: 'Arthur Nikisch, piano roll (1906)', src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/0/0a/Brahms_nikisch_hd5.ogg/Brahms_nikisch_hd5.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Brahms_nikisch_hd5.ogg' },
       { title: 'No. 6', movement: 0, performer: 'Arthur Nikisch, piano roll (1906)', src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/5/50/Brahms_nikisch_hd6.ogg/Brahms_nikisch_hd6.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Brahms_nikisch_hd6.ogg' },
       { title: 'No. 1', movement: 0, performer: 'United States Air Force Band', src: 'https://upload.wikimedia.org/wikipedia/commons/2/23/Hungarian_Dance_No._1_-_Strolling_Strings_-_United_States_Air_Force_Band.mp3', page: 'https://commons.wikimedia.org/wiki/File:Hungarian_Dance_No._1_-_Strolling_Strings_-_United_States_Air_Force_Band.mp3' },
