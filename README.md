@@ -7,7 +7,7 @@ Live at https://sonatina.vercel.app (deploys from `main`). Brand and voice: [BRA
 ## Stack
 
 - React 19 + TypeScript, built with Vite 8
-- React Router 8 (declarative `BrowserRouter` routes in `src/App.tsx`)
+- React Router 8 in framework mode: routes in `src/routes.ts`, every page prerendered to static HTML
 - Plain CSS: `src/reset.css` (base reset), `src/index.css` (brand tokens), `src/App.css` (components)
 - EB Garamond and Geist, self-hosted via Fontsource
 - Vitest for unit tests, oxlint for linting
@@ -23,11 +23,11 @@ npm test       # unit tests
 
 Other scripts:
 
-| Command           | What it does                               |
-| ----------------- | ------------------------------------------ |
-| `npm run build`   | Type-check (`tsc -b`) and build to `dist/` |
-| `npm run preview` | Serve the production build locally         |
-| `npm run lint`    | Run oxlint                                 |
+| Command           | What it does                                                        |
+| ----------------- | ------------------------------------------------------------------- |
+| `npm run build`   | Type-check (`tsc -b`) and prerender every page to `build/client/`   |
+| `npm run preview` | Serve the production build locally                                  |
+| `npm run lint`    | Run oxlint                                                          |
 
 ### Docker
 
@@ -37,12 +37,29 @@ docker compose up --build
 
 Then open http://localhost:5173. Source changes are mounted into the container and served by Vite's dev server.
 
+## Search engines and link previews
+
+React Router's framework mode prerenders every page at build time (`react-router.config.ts`, `ssr: false`), so search engines and link previews get each page's content as static HTML; the app then hydrates it in the browser. There is no server: Vercel serves `build/client` (`vercel.json`).
+
+- **Head tags.** Each route's `meta` export returns its title, description, canonical link, share card and schema.org data, built by `metaTags` (`src/seo.ts`) from the helpers in `src/data/page-meta.ts`. React Router updates them as you browse.
+- **Sitemap and robots.txt** are resource routes (`src/routes/sitemap.ts`, `src/routes/robots.ts`), prerendered from the same page list.
+- **404.** `npm run build` copies React Router's fallback page to `404.html`, which Vercel serves with a 404 status for unknown addresses; the app's not-found route renders in it.
+- **Query strings.** Pages are prerendered without one, so filters (`?era=`, `?genre=`) and search (`?q=`) apply once the page has hydrated (`src/use-hydrated.ts`).
+- **The site's address** is in `src/site.ts`: change it there when the site moves to its own domain.
+
+The shared template in `dotfiles/templates/vite-react` describes this setup for multi-page sites, and a leaner one for single-page sites.
+
 ## Project layout
 
 ```
+react-router.config.ts  Prerendering: every static route, work, composer and article
 src/
-  App.tsx           App shell and routes
-  pages/            One component per route
+  root.tsx          The HTML document and the app around every page
+  routes.ts         The routes
+  routes/           One module per route: its page and its `meta` (head tags);
+                    sitemap.ts and robots.ts render sitemap.xml and robots.txt
+  App.tsx           App shell: sidebar, top bar, player
+  pages/            One component per page
   components/       Shared UI (cards, detail hero, tabs, sidebar, …)
   models/           Domain types (Work, Composer, Article, …)
   data/             Static catalog content, plus lookup, search, filter and

@@ -3,6 +3,7 @@ import { Link, useSearchParams } from 'react-router'
 import { catalogPageMeta, getCatalogItems, matchesWorkFilter, workFilters } from '@/data/catalog'
 import { eras, findEra, getComposersByEra, getEraArticle, getEraStation } from '@/data/eras'
 import { usePlayer } from '@/player/player-context'
+import { useHydrated } from '@/use-hydrated'
 import type { CatalogSection } from '@/models/catalog'
 import { CollectionCard } from '@/components/collection-card'
 import { SectionHeading } from '@/components/section-heading'
@@ -12,8 +13,12 @@ type CollectionPageProps = {
   view: CatalogSection
 }
 
+const noFilter = new URLSearchParams()
+
 export function CollectionPage({ view }: CollectionPageProps) {
-  const [searchParams] = useSearchParams()
+  const [params] = useSearchParams()
+  // The page was prerendered without a filter; apply ?genre= or ?era= once hydrated.
+  const searchParams = useHydrated() ? params : noFilter
   const player = usePlayer()
 
   if (view === 'articles') {
@@ -35,9 +40,8 @@ export function CollectionPage({ view }: CollectionPageProps) {
 
   return (
     <section className="collection-page">
-      <title>{`${page.title} · Sonatina`}</title>
       <div className="page-intro">
-        <SectionHeading title={page.title} />
+        <SectionHeading title={page.title} level="h1" />
         <p>{page.description}</p>
       </div>
 

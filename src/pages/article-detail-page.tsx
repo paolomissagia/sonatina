@@ -25,7 +25,6 @@ export function ArticleDetailPage({ article }: ArticleDetailPageProps) {
 
   return (
     <article className="article-detail-page">
-      <title>{`${article.title} · Sonatina`}</title>
       <DetailHero
         breadcrumb={[
           { label: 'Articles', to: '/articles' },

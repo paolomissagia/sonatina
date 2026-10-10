@@ -19,7 +19,6 @@ export function ArticlesPage() {
 
   return (
     <section className="articles-page">
-      <title>Articles · Sonatina</title>
       <header className="articles-header">
         <h1>Articles</h1>
         <p>In-depth articles to help you explore, understand, and enjoy classical music.</p>

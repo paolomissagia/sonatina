@@ -33,7 +33,6 @@ export function ComposerDetailPage({ composer }: ComposerDetailPageProps) {
 
   return (
     <article className="composer-page">
-      <title>{`${composer.name} · Sonatina`}</title>
       <DetailHero
         breadcrumb={[
           { label: 'Composers', to: '/composers' },

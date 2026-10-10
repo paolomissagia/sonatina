@@ -8,7 +8,6 @@ import { editorPicks } from '@/data/home'
 export function HomePage() {
   return (
     <div className="home-page">
-      <title>Sonatina · Discover classical music</title>
       <section className="home-hero">
         <img src={catalogAssets.burgtheaterAuditorium} alt="" />
         <ImageCreditLink credit={assetCredits.burgtheaterAuditorium} imageSrc={catalogAssets.burgtheaterAuditorium} />

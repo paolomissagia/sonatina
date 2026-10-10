@@ -26,3 +26,7 @@ dist-ssr
 
 # Claude Code worktrees
 .claude/worktrees
+
+# React Router
+build
+.react-router

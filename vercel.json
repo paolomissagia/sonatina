@@ -1,4 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "outputDirectory": "build/client",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/guides", "destination": "/articles", "permanent": true },
+    { "source": "/guides/:id", "destination": "/articles/:id", "permanent": true }
+  ]
 }

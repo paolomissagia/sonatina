@@ -475,7 +475,7 @@ button {
   gap: 20px;
 }
 
-.section-heading h2 {
+.section-heading :is(h1, h2) {
   margin: 0;
   font-size: 22px;
   line-height: 1.15;

@@ -40,9 +40,8 @@ export function RadioPage() {
 
   return (
     <section className="radio-page">
-      <title>Radio · Sonatina</title>
       <div className="page-intro">
-        <SectionHeading title="Radio" />
+        <SectionHeading title="Radio" level="h1" />
         <p>
           Pick a station and let the catalogue play. Each one plays a movement at a time, chosen at random, so you
           can keep it on while you browse.

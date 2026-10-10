@@ -1,63 +1,13 @@
-import { useEffect, useRef, useState } from 'react'
-import { Navigate, Route, Routes, useLocation, useNavigationType, useParams } from 'react-router'
+import { useEffect, useRef, useState, type ReactNode } from 'react'
+import { useLocation, useNavigationType } from 'react-router'
 import { AppSidebar } from '@/components/app-sidebar'
 import { PlayerBar } from '@/components/player-bar'
 import { TopBar } from '@/components/top-bar'
-import { findComposer } from '@/data/composers'
-import { findArticle } from '@/data/articles'
-import { findWork } from '@/data/works'
-import { AboutPage } from '@/pages/about-page'
-import { CollectionPage } from '@/pages/collection-page'
-import { ComposerDetailPage } from '@/pages/composer-detail-page'
-import { ArticleDetailPage } from '@/pages/article-detail-page'
-import { HomePage } from '@/pages/home-page'
-import { NotFoundPage } from '@/pages/not-found-page'
-import { RadioPage } from '@/pages/radio-page'
 import { loadRecordings } from '@/player/use-recording'
-import { SearchPage } from '@/pages/search-page'
-import { WorkDetailPage } from '@/pages/work-detail-page'
 import './App.css'
 
-function RoutedComposerDetailPage() {
-  const { id } = useParams()
-  const composer = findComposer(id)
-
-  if (!composer) {
-    return <NotFoundPage />
-  }
-
-  return <ComposerDetailPage composer={composer} key={composer.id} />
-}
-
-function RoutedWorkDetailPage() {
-  const { id } = useParams()
-  const work = findWork(id)
-
-  if (!work) {
-    return <NotFoundPage />
-  }
-
-  return <WorkDetailPage work={work} key={work.id} />
-}
-
-/** Articles used to be called guides; keep old links working. */
-function GuideRedirect() {
-  const { id } = useParams()
-  return <Navigate replace to={id ? `/articles/${id}` : '/articles'} />
-}
-
-function RoutedArticleDetailPage() {
-  const { id } = useParams()
-  const article = findArticle(id)
-
-  if (!article) {
-    return <NotFoundPage />
-  }
-
-  return <ArticleDetailPage article={article} key={article.id} />
-}
-
-function App() {
+/** The sidebar, top bar and player around every page. Routes live in routes.ts. */
+export function AppShell({ children }: { children: ReactNode }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
   const workspaceRef = useRef<HTMLDivElement>(null)
   const { key, pathname } = useLocation()
@@ -127,27 +77,9 @@ function App() {
           onMenuClick={() => setIsSidebarOpen(true)}
         />
 
-        <main className="content">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/works" element={<CollectionPage view="works" />} />
-            <Route path="/works/:id" element={<RoutedWorkDetailPage />} />
-            <Route path="/composers" element={<CollectionPage view="composers" />} />
-            <Route path="/composers/:id" element={<RoutedComposerDetailPage />} />
-            <Route path="/articles" element={<CollectionPage view="articles" />} />
-            <Route path="/articles/:id" element={<RoutedArticleDetailPage />} />
-            <Route path="/guides" element={<GuideRedirect />} />
-            <Route path="/guides/:id" element={<GuideRedirect />} />
-            <Route path="/radio" element={<RadioPage />} />
-            <Route path="/search" element={<SearchPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
-        </main>
+        <main className="content">{children}</main>
         <PlayerBar />
       </div>
     </div>
   )
 }
-
-export default App

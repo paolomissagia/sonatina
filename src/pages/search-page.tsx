@@ -1,15 +1,16 @@
 import { Search } from 'lucide-react'
 import { useSearchParams } from 'react-router'
 import { SearchResultsPage } from '@/components/search-results-page'
+import { useHydrated } from '@/use-hydrated'
 
 export function SearchPage() {
   const [searchParams, setSearchParams] = useSearchParams()
-  const query = searchParams.get('q') ?? ''
+  // The page was prerendered without a query; read ?q= once hydrated.
+  const query = useHydrated() ? searchParams.get('q') ?? '' : ''
   const hasQuery = query.trim().length > 0
 
   return (
     <section className="search-route-page">
-      <title>{hasQuery ? `Search: ${query.trim()} · Sonatina` : 'Search · Sonatina'}</title>
       <div className="search-route-header">
         <h1>Search</h1>
         <p>Find works, composers, and articles from one place.</p>
