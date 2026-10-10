@@ -3,17 +3,28 @@ import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router'
 import App from './App.tsx'
 import { PlayerProvider } from '@/components/player-provider'
+import { getIndexablePages, notFoundMeta, searchMeta } from '@/data/page-meta'
 
-export { getIndexablePages, siteUrl } from '@/data/page-meta'
-
-/**
- * The page at `url` as HTML, for the build to write out as a static file. React puts the
- * page's head tags (title, meta, link) first; scripts/prerender.mjs moves them into <head>.
+/*
+ * The pages scripts/prerender.mjs writes at build time (see the template in
+ * dotfiles/templates/vite-react). Every work, composer and article is listed from the
+ * catalogue, so the sitemap follows the content.
  */
-export function render(url: string) {
+
+export { site } from './site'
+
+export function routes() {
+  return getIndexablePages().map(({ path }) => ({ path }))
+}
+
+export const unlisted = [searchMeta.path]
+
+export const notFoundPath = notFoundMeta.path
+
+export function render(path: string) {
   return renderToString(
     <StrictMode>
-      <StaticRouter location={url}>
+      <StaticRouter location={path}>
         <PlayerProvider>
           <App />
         </PlayerProvider>

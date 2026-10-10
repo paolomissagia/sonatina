@@ -11,7 +11,6 @@ node_modules
 .pnpm-store
 dist
 dist-ssr
-dist-server
 *.local
 
 # Editor directories and files

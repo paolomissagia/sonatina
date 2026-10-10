@@ -39,9 +39,13 @@ Then open http://localhost:5173. Source changes are mounted into the container a
 
 ## Search engines and link previews
 
-`npm run build` prerenders every page to static HTML (`scripts/prerender.mjs`, using `src/entry-server.tsx`), so search engines and link previews see real content without running JavaScript. It also writes `404.html`, `sitemap.xml` and `robots.txt`. Vercel serves the pages at clean URLs, and unknown addresses get a real 404 (`vercel.json`).
+Follows the shared template in `dotfiles/templates/vite-react` (see its README). `npm run build` prerenders every page to static HTML, so search engines and link previews see real content without running JavaScript, and writes `404.html`, `sitemap.xml` and `robots.txt`. Vercel serves the pages at clean URLs, and unknown addresses get a real 404.
 
-Each page declares its title, description, canonical link, share image and structured data with `<PageMeta>`, from the helpers in `src/data/page-meta.ts`. React moves those tags into the head while you browse; the build does the same for the static files. The site's address is `siteUrl` in that file: change it there when the site moves to its own domain.
+- `src/entry-server.tsx` lists the pages from the catalogue and renders them; `scripts/prerender.mjs` writes them out.
+- Each page renders `<PageMeta>` with its title, description, share image and structured data, from the helpers in `src/data/page-meta.ts`.
+- `src/mount.tsx` hydrates the prerendered HTML; pages opened with a query string render fresh.
+- The site's address is in `src/site.ts`: change it there when the site moves to its own domain.
+- `src/seo.test.ts` renders every page and checks what a search engine would read.
 
 ## Project layout
 

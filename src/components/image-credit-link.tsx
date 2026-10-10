@@ -1,5 +1,5 @@
 import { X } from 'lucide-react'
-import { useRef, useState } from 'react'
+import { useRef, useState, useSyncExternalStore } from 'react'
 import { createPortal } from 'react-dom'
 import type { ImageCredit } from '@/assets/catalog-assets'
 
@@ -23,6 +23,8 @@ function fullImage(source: string) {
   return { src: at(1280), srcSet: `${at(1280)} 1280w, ${at(1920)} 1920w` }
 }
 
+const subscribeToNothing = () => () => {}
+
 /**
  * Credit pill for a public-domain image. It opens the artwork in a viewer rather than
  * leaving the site; the source is one link away inside it. The artwork title is hidden
@@ -32,6 +34,10 @@ export function ImageCreditLink({ credit, imageSrc }: ImageCreditLinkProps) {
   const dialogRef = useRef<HTMLDialogElement>(null)
   const [open, setOpen] = useState(false)
   const [failed, setFailed] = useState(false)
+  // The viewer lives in a portal on document.body, which only exists in the browser. React
+  // uses the server value (false) while hydrating, so the first render matches the
+  // prerendered HTML, then renders the portal.
+  const mounted = useSyncExternalStore(subscribeToNothing, () => true, () => false)
   const full = fullImage(credit.source)
   const name = credit.title ?? 'Portrait'
 
@@ -52,9 +58,8 @@ export function ImageCreditLink({ credit, imageSrc }: ImageCreditLinkProps) {
         {credit.artist}, {credit.year}
       </button>
 
-      {/* Rendered at the document root so the hero's image styles don't reach the viewer.
-          There is no document while the page is prerendered; the viewer only opens on click. */}
-      {typeof document !== 'undefined' && createPortal(
+      {/* Rendered at the document root so the hero's image styles don't reach the viewer. */}
+      {mounted && createPortal(
         <dialog
           className="image-viewer"
           ref={dialogRef}

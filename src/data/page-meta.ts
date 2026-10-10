@@ -1,30 +1,18 @@
-import { catalogAssets, type CatalogAssetKey } from '@/assets/catalog-assets'
+import { assetCredits, catalogAssets, type CatalogAssetKey } from '@/assets/catalog-assets'
+import type { PageImage, PageMetaProps } from '@/components/page-meta'
 import type { Article } from '@/models/article'
 import type { Composer } from '@/models/composer'
 import type { Work } from '@/models/work'
+import { site } from '@/site'
 import { articles } from './articles'
 import { catalogPageMeta } from './catalog'
 import { composers, getComposerName } from './composers'
 import { getWorkAsset, works } from './works'
 
-/** Where the site lives. Links in search results and shared cards are built from it. */
-export const siteUrl = 'https://sonatina.vercel.app'
-
-export const siteName = 'Sonatina'
-
-export type PageMeta = {
-  title: string
-  /** For search results and link previews; about 160 characters at most. */
-  description: string
-  /** The page's own address, e.g. `/works/bach-goldberg-variations`. */
-  path: string
-  image?: CatalogAssetKey
-  type?: 'website' | 'article' | 'profile'
-  /** Structured data (schema.org) describing what the page is about. */
-  jsonLd?: Record<string, unknown>
-  /** Pages that shouldn't appear in search results, such as search itself. */
-  noindex?: boolean
-}
+/*
+ * Each page's title, description, share image and structured data, for <PageMeta>.
+ * Built from the catalogue, so pages and the sitemap never drift from the content.
+ */
 
 const descriptionLength = 160
 
@@ -39,92 +27,104 @@ function summarize(...parts: string[]) {
   return `${cut.slice(0, cut.lastIndexOf(' ')).replace(/[,;:.]$/, '')}…`
 }
 
-export const absoluteUrl = (path: string) => new URL(path, siteUrl).href
+const absolute = (path: string) => new URL(path, site.url).href
 
-const imageUrl = (key: CatalogAssetKey) => absoluteUrl(catalogAssets[key])
+/** A catalogue painting or portrait as the share image, described from its credit. */
+function image(key: CatalogAssetKey, alt?: string): PageImage {
+  const credit = assetCredits[key]
+  return {
+    url: catalogAssets[key],
+    alt: alt ?? (credit.title ? `${credit.title}, by ${credit.artist}` : `Portrait by ${credit.artist}`),
+  }
+}
 
-export const homeMeta: PageMeta = {
+const hall = image('burgtheaterAuditorium')
+
+export const homeMeta: PageMetaProps = {
   title: 'Sonatina · Discover classical music',
   description:
     'A friendly guide to classical music: explore composers and their essential works, read short articles, and listen to great recordings or leave the radio on.',
   path: '/',
-  image: 'burgtheaterAuditorium',
+  image: hall,
   jsonLd: {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: siteName,
-    url: absoluteUrl('/'),
+    name: site.name,
+    url: absolute('/'),
     potentialAction: {
       '@type': 'SearchAction',
-      target: `${absoluteUrl('/search')}?q={search_term_string}`,
+      target: `${absolute('/search')}?q={search_term_string}`,
       'query-input': 'required name=search_term_string',
     },
   },
 }
 
-export function listingMeta(view: 'works' | 'composers' | 'articles'): PageMeta {
+export function listingMeta(view: 'works' | 'composers' | 'articles'): PageMetaProps {
   const page = catalogPageMeta[view]
-  return { title: `${page.title} · ${siteName}`, description: page.description, path: `/${view}` }
+  return { title: `${page.title} · ${site.name}`, description: page.description, path: `/${view}`, image: hall }
 }
 
-export const radioMeta: PageMeta = {
-  title: `Radio · ${siteName}`,
+export const radioMeta: PageMetaProps = {
+  title: `Radio · ${site.name}`,
   description: 'Free classical music radio: pick a station by genre, era or country and let the catalogue play, one movement at a time.',
   path: '/radio',
+  image: hall,
 }
 
-export const aboutMeta: PageMeta = {
-  title: `About · ${siteName}`,
+export const aboutMeta: PageMetaProps = {
+  title: `About · ${site.name}`,
   description: 'Why Sonatina exists, where its recordings and paintings come from, and how it is made.',
   path: '/about',
+  image: hall,
 }
 
-export const searchMeta: PageMeta = {
-  title: `Search · ${siteName}`,
+export const searchMeta: PageMetaProps = {
+  title: `Search · ${site.name}`,
   description: 'Find works, composers and articles.',
   path: '/search',
   noindex: true,
 }
 
-export const notFoundMeta: PageMeta = {
-  title: `Page not found · ${siteName}`,
+export const notFoundMeta: PageMetaProps = {
+  title: `Page not found · ${site.name}`,
   description: 'This page doesn’t exist. It may have moved, or the link may be incorrect.',
   path: '/404',
   noindex: true,
 }
 
-export function workMeta(work: Work): PageMeta {
+export function workMeta(work: Work): PageMetaProps {
   const composer = getComposerName(work.composerId)
   const path = `/works/${work.id}`
+  const cover = getWorkAsset(work)
   return {
-    title: `${work.title} · ${composer} · ${siteName}`,
+    title: `${work.title} · ${composer} · ${site.name}`,
     description: summarize(work.description, work.overview),
     path,
-    image: getWorkAsset(work),
+    image: image(cover),
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': 'MusicComposition',
       name: work.title,
       alternateName: work.nickname,
-      composer: { '@type': 'Person', name: composer, url: absoluteUrl(`/composers/${work.composerId}`) },
+      composer: { '@type': 'Person', name: composer, url: absolute(`/composers/${work.composerId}`) },
       dateCreated: String(work.year),
       genre: work.genre,
       musicalKey: work.key,
-      description: work.description,
-      url: absoluteUrl(path),
-      image: imageUrl(getWorkAsset(work)),
       identifier: work.catalogue,
+      description: work.description,
+      url: absolute(path),
+      image: absolute(catalogAssets[cover]),
     },
   }
 }
 
-export function composerMeta(composer: Composer): PageMeta {
+export function composerMeta(composer: Composer): PageMetaProps {
   const path = `/composers/${composer.id}`
   return {
-    title: `${composer.name} · ${siteName}`,
+    title: `${composer.name} · ${site.name}`,
     description: summarize(composer.bio, composer.overview),
     path,
-    image: composer.asset,
+    image: image(composer.asset, `Portrait of ${composer.name}`),
     type: 'profile',
     jsonLd: {
       '@context': 'https://schema.org',
@@ -137,34 +137,34 @@ export function composerMeta(composer: Composer): PageMeta {
       nationality: composer.nationality,
       jobTitle: 'Composer',
       description: composer.bio,
-      url: absoluteUrl(path),
-      image: imageUrl(composer.asset),
+      url: absolute(path),
+      image: absolute(catalogAssets[composer.asset]),
     },
   }
 }
 
-export function articleMeta(article: Article): PageMeta {
+export function articleMeta(article: Article): PageMetaProps {
   const path = `/articles/${article.id}`
   return {
-    title: `${article.title} · ${siteName}`,
+    title: `${article.title} · ${site.name}`,
     description: summarize(article.description),
     path,
-    image: article.asset,
+    image: image(article.asset),
     type: 'article',
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': 'Article',
       headline: article.title,
       description: article.description,
-      image: imageUrl(article.asset),
-      url: absoluteUrl(path),
-      publisher: { '@type': 'Organization', name: siteName, url: absoluteUrl('/') },
+      image: absolute(catalogAssets[article.asset]),
+      url: absolute(path),
+      publisher: { '@type': 'Organization', name: site.name, url: absolute('/') },
     },
   }
 }
 
-/** Every page worth listing in the sitemap, in a stable order. */
-export function getIndexablePages(): PageMeta[] {
+/** Every page for the sitemap, in a stable order. */
+export function getIndexablePages(): PageMetaProps[] {
   return [
     homeMeta,
     listingMeta('works'),
