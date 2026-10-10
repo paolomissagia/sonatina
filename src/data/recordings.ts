@@ -605,16 +605,6 @@ export const recordings: Record<string, Recording> = {
       { title: 'Tempo di Bolero, moderato assai', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c3/Bolero-Maurice_Ravel-1930.ogg/Bolero-Maurice_Ravel-1930.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Bolero-Maurice_Ravel-1930.ogg' },
     ],
   },
-  'schubert-trout-quintet': {
-    performer: 'Historical recording',
-    tracks: [
-      { title: 'Allegro vivace', movement: 0, src: 'https://archive.org/download/PianoQuintetInAMajorTroutQuintetDieForelle/PianoQuintetInAMajortroutD.667-I.AllegroVivace.mp3', page: 'https://archive.org/details/PianoQuintetInAMajorTroutQuintetDieForelle' },
-      { title: 'Andante', movement: 1, src: 'https://archive.org/download/PianoQuintetInAMajorTroutQuintetDieForelle/PianoQuintetInAMajortroutD.667-Ii.Andante.mp3', page: 'https://archive.org/details/PianoQuintetInAMajorTroutQuintetDieForelle' },
-      { title: 'Scherzo: Presto', movement: 2, src: 'https://archive.org/download/PianoQuintetInAMajorTroutQuintetDieForelle/PianoQuintetInAMajortroutD.667-Iii.Scherzo.presto.mp3', page: 'https://archive.org/details/PianoQuintetInAMajorTroutQuintetDieForelle' },
-      { title: 'Andantino – Allegretto', movement: 3, src: 'https://archive.org/download/PianoQuintetInAMajorTroutQuintetDieForelle/PianoQuintetInAMajortroutD.667-Iv.Tema.andantino.mp3', page: 'https://archive.org/details/PianoQuintetInAMajorTroutQuintetDieForelle' },
-      { title: 'Allegro giusto', movement: 4, src: 'https://archive.org/download/PianoQuintetInAMajorTroutQuintetDieForelle/PianoQuintetInAMajortroutD.667-V.Finale.allegroGiusto.mp3', page: 'https://archive.org/details/PianoQuintetInAMajorTroutQuintetDieForelle' },
-    ],
-  },
   'schubert-unfinished-symphony': {
     performer: 'Paul van Kempen, Dresden Philharmonic (1940)',
     tracks: [
@@ -734,23 +724,6 @@ export const recordings: Record<string, Recording> = {
       { title: 'Act III', movement: 4, src: 'https://archive.org/download/mia-017-9-monteverdi-l-orfeo-act-ii/MIA020-2%20Monteverdi%20L%27Orfeo%20Act%20III.mp3', page: 'https://archive.org/details/mia-017-9-monteverdi-l-orfeo-act-ii' },
       { title: 'Act IV', movement: 5, src: 'https://archive.org/download/mia-017-9-monteverdi-l-orfeo-act-ii/MIA022-4%20Monteverdi%20L%27Orfeo%20Act%20IV.mp3', page: 'https://archive.org/details/mia-017-9-monteverdi-l-orfeo-act-ii' },
       { title: 'Act V', movement: 6, src: 'https://archive.org/download/mia-017-9-monteverdi-l-orfeo-act-ii/MIA024-5%20Monteverdi%20L%27Orfeo%20Act%20V.mp3', page: 'https://archive.org/details/mia-017-9-monteverdi-l-orfeo-act-ii' },
-    ],
-  },
-  'monteverdi-vespers': {
-    performer: 'Helmut Koch, Kammerorchester Berlin (1970)',
-    tracks: [
-      { title: 'Deus in adiutorium', movement: 0, src: 'https://archive.org/download/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche/disc1/01.01.%20Intonazione%3A%20Deus%20in%20adiutorium%3B%20Domine%20ad%20adiuvandum.mp3', page: 'https://archive.org/details/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche' },
-      { title: 'Dixit Dominus', movement: 1, src: 'https://archive.org/download/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche/disc1/01.02.%20Dixit%20Dominus%20%28Psalmus%20109%29.mp3', page: 'https://archive.org/details/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche' },
-      { title: 'Nigra sum', movement: 2, src: 'https://archive.org/download/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche/disc1/01.03.%20Nigra%20sum.mp3', page: 'https://archive.org/details/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche' },
-      { title: 'Laudate pueri', movement: 3, src: 'https://archive.org/download/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche/disc1/02.01.%20Laudate%20pueri%20Dominum%20%28Psalmus%20112%29.mp3', page: 'https://archive.org/details/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche' },
-      { title: 'Pulchra es', movement: 4, src: 'https://archive.org/download/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche/disc1/02.02.%20Pulchra%20es.mp3', page: 'https://archive.org/details/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche' },
-      { title: 'Laetatus sum', movement: 5, src: 'https://archive.org/download/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche/disc1/02.03.%20Laetatus%20sum%20%28Psalmus%20121%29.mp3', page: 'https://archive.org/details/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche' },
-      { title: 'Duo Seraphim', movement: 6, src: 'https://archive.org/download/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche/disc2/03.01.%20Duo%20Seraphim.mp3', page: 'https://archive.org/details/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche' },
-      { title: 'Nisi Dominus', movement: 7, src: 'https://archive.org/download/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche/disc2/03.02.%20Nisi%20Dominus%20%28Psalmus%20126%29.mp3', page: 'https://archive.org/details/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche' },
-      { title: 'Audi coelum', movement: 8, src: 'https://archive.org/download/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche/disc2/03.03.%20Audi%20coelum.mp3', page: 'https://archive.org/details/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche' },
-      { title: 'Lauda Jerusalem', movement: 9, src: 'https://archive.org/download/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche/disc2/04.01.%20Lauda%2C%20Ierusalem%20%28Psalmus%20147%29.mp3', page: 'https://archive.org/details/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche' },
-      { title: 'Sonata sopra Sancta Maria', movement: 10, src: 'https://archive.org/download/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche/disc2/04.02.%20Sonata%20sopra%20Sancta%20Maria%20ora%20pro%20nobis.mp3', page: 'https://archive.org/details/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche' },
-      { title: 'Ave maris stella', movement: 11, src: 'https://archive.org/download/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche/disc2/04.03.%20Hymnus%3A%20Ave%20maris%20stella.mp3', page: 'https://archive.org/details/lp_claudio-monteverdi-vespro-della-beata-ve_claudio-monteverdi-helmut-koch-kammerorche' },
     ],
   },
   'liszt-liebestraum-3': {
@@ -1601,18 +1574,6 @@ export const recordings: Record<string, Recording> = {
       { title: 'Act III (conclusion)', movement: 2, src: 'https://archive.org/download/lp_turandot_giacomo-puccini-maria-meneghini-callas/disc3/06.01.%20Act%20III%20%28Concl.%29.mp3', page: 'https://archive.org/details/lp_turandot_giacomo-puccini-maria-meneghini-callas' },
     ],
   },
-  'puccini-gianni-schicchi': {
-    performer: 'Florence Easton, who created Lauretta (c. 1919)',
-    tracks: [
-      { title: 'O mio babbino caro', movement: 0, src: 'https://archive.org/download/78_gianni-schicchi-o-mio-babbino-caro_florence-easton-puccini_gbia0267927b/Gianni%20Schicchi%20-%20O%20mio%20babbino%20caro%20-%20FLORENCE%20EASTON.mp3', page: 'https://archive.org/details/78_gianni-schicchi-o-mio-babbino-caro_florence-easton-puccini_gbia0267927b' },
-    ],
-  },
-  'handel-royal-fireworks': {
-    performer: 'American Society of Ancient Instruments (1935)',
-    tracks: [
-      { title: 'Excerpts', movement: 0, src: 'https://archive.org/download/victor-m-271-bach-handel-album-american-society-of-ancient-instruments-stad/Victor%20set%20M%20271%20%5B03%5D%20Handel-Stad%20Fireworks%20Music%20HWV%20351%20excerpts%20American%20Society%20of%20Ancient%20Instruments%2C%20Stad.mp3', page: 'https://archive.org/details/victor-m-271-bach-handel-album-american-society-of-ancient-instruments-stad' },
-    ],
-  },
   'haydn-trumpet-concerto': {
     performer: 'Real Filharmonía de Galicia',
     license: 'CC BY 3.0',
@@ -1632,44 +1593,12 @@ export const recordings: Record<string, Recording> = {
       { title: 'Finale: Presto – Adagio', movement: 3, src: 'https://archive.org/download/haydn-45-wood-lsoiv/Haydn_45_Wood_LSO%28iv%29.mp3', page: 'https://archive.org/details/haydn-45-wood-lsoiv' },
     ],
   },
-  'dvorak-american-quartet': {
-    performer: 'Musopen String Quartet',
-    license: 'Public domain',
-    tracks: [
-      { title: 'Allegro ma non troppo', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b9/Dvo%C5%99%C3%A1k_-_String_Quartet_No._12_in_F_major%2C_Op._96_%27American%27_-_I._Allegro_ma_non_troppo_%28Musopen_String_Quartet%29.flac/Dvo%C5%99%C3%A1k_-_String_Quartet_No._12_in_F_major%2C_Op._96_%27American%27_-_I._Allegro_ma_non_troppo_%28Musopen_String_Quartet%29.flac.mp3', page: 'https://commons.wikimedia.org/wiki/File:Dvo%C5%99%C3%A1k_-_String_Quartet_No._12_in_F_major,_Op._96_%27American%27_-_I._Allegro_ma_non_troppo_(Musopen_String_Quartet).flac' },
-      { title: 'Lento', movement: 1, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/c/cc/Dvo%C5%99%C3%A1k_-_String_Quartet_No._12_in_F_major%2C_Op._96_%27American%27_-_II._Lento_%28Musopen_String_Quartet%29.flac/Dvo%C5%99%C3%A1k_-_String_Quartet_No._12_in_F_major%2C_Op._96_%27American%27_-_II._Lento_%28Musopen_String_Quartet%29.flac.mp3', page: 'https://commons.wikimedia.org/wiki/File:Dvo%C5%99%C3%A1k_-_String_Quartet_No._12_in_F_major,_Op._96_%27American%27_-_II._Lento_(Musopen_String_Quartet).flac' },
-      { title: 'Molto vivace', movement: 2, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/2/22/Dvo%C5%99%C3%A1k_-_String_Quartet_No._12_in_F_major%2C_Op._96_%27American%27_-_III._Molto_vivace_%28Musopen_String_Quartet%29.flac/Dvo%C5%99%C3%A1k_-_String_Quartet_No._12_in_F_major%2C_Op._96_%27American%27_-_III._Molto_vivace_%28Musopen_String_Quartet%29.flac.mp3', page: 'https://commons.wikimedia.org/wiki/File:Dvo%C5%99%C3%A1k_-_String_Quartet_No._12_in_F_major,_Op._96_%27American%27_-_III._Molto_vivace_(Musopen_String_Quartet).flac' },
-      { title: 'Finale: Vivace ma non troppo', movement: 3, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/3/36/Dvo%C5%99%C3%A1k_-_String_Quartet_No._12_in_F_major%2C_Op._96_%27American%27_-_IV._Finale._Vivace_ma_non_troppo_%28Musopen_String_Quartet%29.flac/Dvo%C5%99%C3%A1k_-_String_Quartet_No._12_in_F_major%2C_Op._96_%27American%27_-_IV._Finale._Vivace_ma_non_troppo_%28Musopen_String_Quartet%29.flac.mp3', page: 'https://commons.wikimedia.org/wiki/File:Dvo%C5%99%C3%A1k_-_String_Quartet_No._12_in_F_major,_Op._96_%27American%27_-_IV._Finale._Vivace_ma_non_troppo_(Musopen_String_Quartet).flac' },
-    ],
-  },
-  'dvorak-symphony-8': {
-    performer: 'Concertgebouw Orchestra, George Szell (1951)',
-    license: 'CC BY-NC-SA 3.0',
-    licenseUrl: 'https://creativecommons.org/licenses/by-nc-sa/3.0/',
-    tracks: [
-      { title: 'Allegro con brio', movement: 0, src: 'https://archive.org/download/DvorakSymphonyNo.8/01.I.AllegroConBrio.mp3', page: 'https://archive.org/details/DvorakSymphonyNo.8' },
-      { title: 'Adagio', movement: 1, src: 'https://archive.org/download/DvorakSymphonyNo.8/02.Ii.Adagio.mp3', page: 'https://archive.org/details/DvorakSymphonyNo.8' },
-      { title: 'Allegretto grazioso', movement: 2, src: 'https://archive.org/download/DvorakSymphonyNo.8/03.Iii.AllegrettoGrazioso.mp3', page: 'https://archive.org/details/DvorakSymphonyNo.8' },
-      { title: 'Allegro ma non troppo', movement: 3, src: 'https://archive.org/download/DvorakSymphonyNo.8/04.Iv.AllegroMaNonTroppo.mp3', page: 'https://archive.org/details/DvorakSymphonyNo.8' },
-    ],
-  },
   'saint-saens-danse-macabre': {
     performer: 'Vienna State Opera Orchestra, Hermann Scherchen (c. 1956)',
     license: 'CC BY-NC-SA 3.0',
     licenseUrl: 'https://creativecommons.org/licenses/by-nc-sa/3.0/',
     tracks: [
       { title: 'Danse macabre', movement: 0, src: 'https://archive.org/download/SAINT-SANSDanseMacabre-Scherchen/SAINT-SA%C3%8BNS-%20Danse%20macabre%2C%20Op.%2040.mp3', page: 'https://archive.org/details/SAINT-SANSDanseMacabre-Scherchen' },
-    ],
-  },
-  'stravinsky-petrushka': {
-    performer: 'Philadelphia Orchestra, Leopold Stokowski (1937)',
-    license: 'CC BY-NC-SA 3.0',
-    licenseUrl: 'https://creativecommons.org/licenses/by-nc-sa/3.0/',
-    tracks: [
-      { title: 'The Shrovetide Fair', movement: 0, src: 'https://archive.org/download/STRAVINSKYPtrouchka-NEWTRANSFER/01.FirstTableau-TheShrovetideFair.mp3', page: 'https://archive.org/details/STRAVINSKYPtrouchka-NEWTRANSFER' },
-      { title: 'Petrushka’s Room', movement: 1, src: 'https://archive.org/download/STRAVINSKYPtrouchka-NEWTRANSFER/02.SecondTableau-PtrouchkasRoom.mp3', page: 'https://archive.org/details/STRAVINSKYPtrouchka-NEWTRANSFER' },
-      { title: 'The Moor’s Room', movement: 2, src: 'https://archive.org/download/STRAVINSKYPtrouchka-NEWTRANSFER/03.ThirdTableau-TheMoorsRoom.mp3', page: 'https://archive.org/details/STRAVINSKYPtrouchka-NEWTRANSFER' },
-      { title: 'The Shrovetide Fair (Evening)', movement: 3, src: 'https://archive.org/download/STRAVINSKYPtrouchka-NEWTRANSFER/04.FourthTableau-TheShrovetideFairAndPtrouchkasDeath.mp3', page: 'https://archive.org/details/STRAVINSKYPtrouchka-NEWTRANSFER' },
     ],
   },
   'prokofiev-classical-symphony': {

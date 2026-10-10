@@ -33,8 +33,8 @@ describe('pickRadioSegment', () => {
 
   it('avoids recently played works while others remain', () => {
     const recent = ['dvorak-symphony-9', 'dvorak-cello-concerto']
-    const segment = pickRadioSegment(only(...recent, 'dvorak-american-quartet'), recordings, recent, random)!
-    expect(segment.work.id).toBe('dvorak-american-quartet')
+    const segment = pickRadioSegment(only(...recent, 'beethoven-symphony-5'), recordings, recent, random)!
+    expect(segment.work.id).toBe('beethoven-symphony-5')
   })
 
   it('falls back to repeats when every work was played recently', () => {
