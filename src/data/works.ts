@@ -255,10 +255,11 @@ export const works: Work[] = [
   },
   {
     id: 'mozart-eine-kleine-nachtmusik',
-    title: 'Eine kleine Nachtmusik',
+    title: 'Serenade No. 13, “Eine kleine Nachtmusik”',
     composerId: 'mozart',
     catalogue: 'K. 525',
     key: 'G major',
+    nickname: 'Eine kleine Nachtmusik',
     description: 'A graceful serenade for strings.',
     composed: '1787',
     year: 1787,
