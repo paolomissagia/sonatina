@@ -73,7 +73,7 @@ export function SearchResultsPage({ query }: SearchResultsPageProps) {
       {visibleResultCount === 0 ? (
         <div className="empty-results">
           <h3>No results found</h3>
-          <p>Try searching for a composer, work, or guide.</p>
+          <p>Try searching for a composer, work, or article.</p>
         </div>
       ) : (
         visibleGroups.map(({ category, results: categoryResults }) => {

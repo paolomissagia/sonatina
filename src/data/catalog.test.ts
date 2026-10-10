@@ -3,12 +3,12 @@ import { assetCredits, catalogAssets } from '@/assets/catalog-assets'
 import { findCatalogItem, getCatalogItems, matchesWorkFilter, workFilters } from './catalog'
 import { composers, findComposer, formatLifespan } from './composers'
 import { exploreCategories } from './explore-categories'
-import { findGuide, getReadTime, guides } from './guides'
+import { findArticle, getReadTime, articles } from './articles'
 import { editorPicks } from './home'
 import { genres } from '@/models/work'
 import { findWork, formatDuration, formatKeyAndCatalogue, genreCovers, getWorkAsset, getWorkPeriod, works } from './works'
 
-const sections = ['works', 'composers', 'guides'] as const
+const sections = ['works', 'composers', 'articles'] as const
 const slug = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
 
 describe('catalog data', () => {
@@ -123,26 +123,26 @@ describe('works', () => {
   })
 })
 
-describe('guides', () => {
+describe('articles', () => {
   it('have sections with text', () => {
-    for (const guide of guides) {
-      expect(guide.sections.length, guide.title).toBeGreaterThan(0)
-      for (const section of guide.sections) {
-        expect(section.body.length, `${guide.title}: ${section.title}`).toBeGreaterThan(0)
+    for (const article of articles) {
+      expect(article.sections.length, article.title).toBeGreaterThan(0)
+      for (const section of article.sections) {
+        expect(section.body.length, `${article.title}: ${section.title}`).toBeGreaterThan(0)
       }
     }
   })
 
   it('only link to works that exist', () => {
-    for (const guide of guides) {
-      for (const workId of guide.workIds) {
-        expect(findWork(workId), `${guide.title} → ${workId}`).toBeDefined()
+    for (const article of articles) {
+      for (const workId of article.workIds) {
+        expect(findWork(workId), `${article.title} → ${workId}`).toBeDefined()
       }
     }
   })
 
   it('estimate reading time from their length', () => {
-    expect(getReadTime(findGuide('where-to-start')!)).toMatch(/^\d+ min read$/)
+    expect(getReadTime(findArticle('where-to-start')!)).toMatch(/^\d+ min read$/)
   })
 })
 

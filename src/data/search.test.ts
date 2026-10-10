@@ -41,7 +41,7 @@ describe('searchCatalog', () => {
 
   it('tags each result with its section', () => {
     const categories = searchCatalog('bach').map((result) => result.category)
-    expect(new Set(categories)).toEqual(new Set(['works', 'composers', 'guides']))
+    expect(new Set(categories)).toEqual(new Set(['works', 'composers', 'articles']))
   })
 
   it('returns nothing when no item matches', () => {

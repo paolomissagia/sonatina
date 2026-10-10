@@ -1,12 +1,12 @@
 import { Radio } from 'lucide-react'
 import { Link, useSearchParams } from 'react-router'
 import { catalogPageMeta, getCatalogItems, matchesWorkFilter, workFilters } from '@/data/catalog'
-import { eras, findEra, getComposersByEra, getEraGuide, getEraStation } from '@/data/eras'
+import { eras, findEra, getComposersByEra, getEraArticle, getEraStation } from '@/data/eras'
 import { usePlayer } from '@/player/player-context'
 import type { CatalogSection } from '@/models/catalog'
 import { CollectionCard } from '@/components/collection-card'
 import { SectionHeading } from '@/components/section-heading'
-import { GuidesPage } from './guides-page'
+import { ArticlesPage } from './articles-page'
 
 type CollectionPageProps = {
   view: CatalogSection
@@ -16,15 +16,15 @@ export function CollectionPage({ view }: CollectionPageProps) {
   const [searchParams] = useSearchParams()
   const player = usePlayer()
 
-  if (view === 'guides') {
-    return <GuidesPage />
+  if (view === 'articles') {
+    return <ArticlesPage />
   }
 
   const page = catalogPageMeta[view]
   const items = getCatalogItems(view)
   const activeGenre = view === 'works' ? searchParams.get('genre') ?? '' : ''
   const activeEra = view === 'composers' ? findEra(searchParams.get('era')) : undefined
-  const eraGuide = activeEra ? getEraGuide(activeEra) : undefined
+  const eraGuide = activeEra ? getEraArticle(activeEra) : undefined
   const eraStation = activeEra ? getEraStation(activeEra) : undefined
   // Within an era, composers are listed oldest first, so the list reads as a timeline.
   const visibleItems = view === 'works'
@@ -82,7 +82,7 @@ export function CollectionPage({ view }: CollectionPageProps) {
                 Play {activeEra.period} radio
               </button>
             ) : null}
-            {eraGuide ? <Link to={`/guides/${eraGuide.id}`}>Read the guide</Link> : null}
+            {eraGuide ? <Link to={`/articles/${eraGuide.id}`}>Read the article</Link> : null}
           </div>
         </div>
       ) : null}

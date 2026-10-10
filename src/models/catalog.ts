@@ -1,7 +1,7 @@
 import type { CatalogAssetKey } from '@/assets/catalog-assets'
 import type { Genre } from './work'
 
-export type CatalogSection = 'works' | 'composers' | 'guides'
+export type CatalogSection = 'works' | 'composers' | 'articles'
 
 export type CatalogItem = {
   id: string

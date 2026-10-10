@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { composers } from './composers'
-import { eras, findEra, getComposersByEra, getEraGuide, getEraStation } from './eras'
+import { eras, findEra, getComposersByEra, getEraArticle, getEraStation } from './eras'
 
 describe('eras', () => {
   it('cover every composer exactly once', () => {
@@ -8,9 +8,9 @@ describe('eras', () => {
     expect(listed.sort()).toEqual(composers.map((composer) => composer.id).sort())
   })
 
-  it('each have a guide and a radio station', () => {
+  it('each have a article and a radio station', () => {
     for (const era of eras) {
-      expect(getEraGuide(era), era.period).toBeDefined()
+      expect(getEraArticle(era), era.period).toBeDefined()
       expect(getEraStation(era)?.name, era.period).toBe(era.period)
     }
   })

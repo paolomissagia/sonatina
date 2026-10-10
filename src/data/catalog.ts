@@ -1,9 +1,9 @@
 import type { CatalogItem, CatalogSection } from '@/models/catalog'
 import type { Composer } from '@/models/composer'
-import type { Guide } from '@/models/guide'
+import type { Article } from '@/models/article'
 import { genres, type Genre, type Work } from '@/models/work'
 import { composers, formatLifespan, getComposerName } from './composers'
-import { getReadTime, guides } from './guides'
+import { getReadTime, articles } from './articles'
 import { getWorkAsset, getWorkPeriod, works } from './works'
 
 export type CatalogPageMeta = {
@@ -20,8 +20,8 @@ export const catalogPageMeta: Record<CatalogSection, CatalogPageMeta> = {
     title: 'Composers',
     description: 'Browse major composers by style, period, and influence.',
   },
-  guides: {
-    title: 'Guides',
+  articles: {
+    title: 'Articles',
     description: 'Short paths into repertoire, listening habits, and classical music history.',
   },
 }
@@ -29,7 +29,7 @@ export const catalogPageMeta: Record<CatalogSection, CatalogPageMeta> = {
 const catalogTables = {
   works,
   composers,
-  guides,
+  articles,
 }
 
 function workToCatalogItem(work: Work): CatalogItem {
@@ -57,15 +57,15 @@ function composerToCatalogItem(composer: Composer): CatalogItem {
   }
 }
 
-function guideToCatalogItem(guide: Guide): CatalogItem {
+function articleToCatalogItem(article: Article): CatalogItem {
   return {
-    id: guide.id,
-    title: guide.title,
-    subtitle: guide.type,
-    detail: guide.description,
-    asset: guide.asset,
-    meta: getReadTime(guide),
-    keywords: guide.category,
+    id: article.id,
+    title: article.title,
+    subtitle: article.type,
+    detail: article.description,
+    asset: article.asset,
+    meta: getReadTime(article),
+    keywords: article.category,
   }
 }
 
@@ -100,7 +100,7 @@ export function getCatalogItems(section: CatalogSection): CatalogItem[] {
     return catalogTables.composers.map(composerToCatalogItem)
   }
 
-  return catalogTables.guides.map(guideToCatalogItem)
+  return catalogTables.articles.map(articleToCatalogItem)
 }
 
 export function findCatalogItem(section: CatalogSection, id: string | undefined) {

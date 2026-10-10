@@ -787,18 +787,18 @@ button {
   font-weight: 750;
 }
 
-.guides-page {
+.articles-page {
   max-width: 920px;
   margin: 0 auto;
   padding: 34px 0 72px;
 }
 
-.guides-header {
+.articles-header {
   max-width: 680px;
   margin-bottom: 34px;
 }
 
-.guides-header h1 {
+.articles-header h1 {
   margin: 0;
   color: rgb(var(--ink));
   font-family: var(--font-display);
@@ -808,7 +808,7 @@ button {
   letter-spacing: -0.04em;
 }
 
-.guides-header p {
+.articles-header p {
   max-width: 620px;
   margin: 24px 0 0;
   color: rgb(var(--umber));
@@ -817,14 +817,14 @@ button {
   line-height: 1.55;
 }
 
-.guide-filter-list {
+.article-filter-list {
   margin-bottom: 36px;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
 
-.guide-filter-list button {
+.article-filter-list button {
   min-height: 44px;
   padding: 0 20px;
   border: 1px solid rgb(var(--rule));
@@ -843,24 +843,24 @@ button {
     transform 160ms ease;
 }
 
-.guide-filter-list button:hover {
+.article-filter-list button:hover {
   border-color: rgb(var(--rule-strong));
   transform: translateY(-1px);
 }
 
-.guide-filter-list button.active {
+.article-filter-list button.active {
   border-color: rgb(var(--ink));
   color: rgb(var(--ivory));
   background: rgb(var(--ink));
 }
 
-.guide-list {
+.article-list {
   display: grid;
   grid-auto-rows: 1fr;
   gap: 20px;
 }
 
-.guide-row {
+.article-row {
   min-height: 178px;
   border: 1px solid rgb(var(--rule));
   border-radius: 8px;
@@ -877,18 +877,18 @@ button {
     transform 160ms ease;
 }
 
-.guide-row:hover {
+.article-row:hover {
   border-color: rgb(var(--rule-strong));
   box-shadow: 0 18px 42px rgb(var(--shadow) / 0.11);
   transform: translateY(-2px);
 }
 
-.guide-row:focus-visible {
+.article-row:focus-visible {
   outline: 3px solid rgb(var(--gilt) / 0.32);
   outline-offset: 4px;
 }
 
-.guide-row-image {
+.article-row-image {
   position: relative;
   min-height: 178px;
   overflow: hidden;
@@ -896,7 +896,7 @@ button {
 }
 
 /* The image fills its frame instead of sizing the card, so every card matches. */
-.guide-row-image img {
+.article-row-image img {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -906,18 +906,18 @@ button {
   transition: transform 220ms ease;
 }
 
-.guide-row:hover .guide-row-image img {
+.article-row:hover .article-row-image img {
   transform: scale(1.035);
 }
 
-.guide-row-copy {
+.article-row-copy {
   padding: 28px 34px;
   display: flex;
   min-width: 0;
   flex-direction: column;
 }
 
-.guide-row-copy span {
+.article-row-copy span {
   margin-bottom: 12px;
   color: rgb(var(--gilt));
   font-size: 12px;
@@ -926,7 +926,7 @@ button {
   text-transform: uppercase;
 }
 
-.guide-row-copy h2 {
+.article-row-copy h2 {
   margin: 0;
   color: rgb(var(--ink));
   font-size: 24px;
@@ -934,7 +934,7 @@ button {
   letter-spacing: -0.025em;
 }
 
-.guide-row-copy p {
+.article-row-copy p {
   max-width: 620px;
   margin: 10px 0 0;
   color: rgb(var(--umber));
@@ -943,7 +943,7 @@ button {
   line-height: 1.45;
 }
 
-.guide-row-copy small {
+.article-row-copy small {
   margin-top: auto;
   padding-top: 24px;
   color: rgb(var(--umber));
@@ -1459,12 +1459,12 @@ button {
   margin-top: 44px;
 }
 
-.guide-article {
+.article-body {
   max-width: 720px;
   padding-top: 42px;
 }
 
-.guide-article-lead {
+.article-lead {
   margin: 0 0 12px;
   color: rgb(var(--ink));
   font-size: 21px;
@@ -1472,7 +1472,7 @@ button {
   line-height: 1.55;
 }
 
-.guide-article h2 {
+.article-body h2 {
   margin: 36px 0 0;
   font-family: var(--font-display);
   font-size: 27px;
@@ -1480,7 +1480,7 @@ button {
   letter-spacing: -0.025em;
 }
 
-.guide-article p:not(.guide-article-lead) {
+.article-body p:not(.article-lead) {
   margin: 14px 0 0;
   color: rgb(var(--ink-soft));
   font-size: 18px;
@@ -1993,39 +1993,39 @@ button {
     grid-template-columns: 1fr;
   }
 
-  .guides-page {
+  .articles-page {
     padding-top: 20px;
   }
 
-  .guides-header h1 {
+  .articles-header h1 {
     font-size: 48px;
   }
 
-  .guides-header p {
+  .articles-header p {
     font-size: 17px;
   }
 
-  .guide-filter-list {
+  .article-filter-list {
     gap: 8px;
   }
 
-  .guide-filter-list button {
+  .article-filter-list button {
     min-height: 40px;
     padding: 0 14px;
     font-size: 14px;
   }
 
-  .guide-row {
+  .article-row {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
   }
 
-  .guide-row-image {
+  .article-row-image {
     min-height: 0;
     aspect-ratio: 16 / 9;
   }
 
-  .guide-row-copy {
+  .article-row-copy {
     padding: 22px;
   }
 

@@ -1,15 +1,15 @@
 import { useEffect, useRef, useState } from 'react'
-import { Route, Routes, useLocation, useNavigationType, useParams } from 'react-router'
+import { Navigate, Route, Routes, useLocation, useNavigationType, useParams } from 'react-router'
 import { AppSidebar } from '@/components/app-sidebar'
 import { PlayerBar } from '@/components/player-bar'
 import { TopBar } from '@/components/top-bar'
 import { findComposer } from '@/data/composers'
-import { findGuide } from '@/data/guides'
+import { findArticle } from '@/data/articles'
 import { findWork } from '@/data/works'
 import { AboutPage } from '@/pages/about-page'
 import { CollectionPage } from '@/pages/collection-page'
 import { ComposerDetailPage } from '@/pages/composer-detail-page'
-import { GuideDetailPage } from '@/pages/guide-detail-page'
+import { ArticleDetailPage } from '@/pages/article-detail-page'
 import { HomePage } from '@/pages/home-page'
 import { NotFoundPage } from '@/pages/not-found-page'
 import { RadioPage } from '@/pages/radio-page'
@@ -40,15 +40,21 @@ function RoutedWorkDetailPage() {
   return <WorkDetailPage work={work} key={work.id} />
 }
 
-function RoutedGuideDetailPage() {
+/** Articles used to be called guides; keep old links working. */
+function GuideRedirect() {
   const { id } = useParams()
-  const guide = findGuide(id)
+  return <Navigate replace to={id ? `/articles/${id}` : '/articles'} />
+}
 
-  if (!guide) {
+function RoutedArticleDetailPage() {
+  const { id } = useParams()
+  const article = findArticle(id)
+
+  if (!article) {
     return <NotFoundPage />
   }
 
-  return <GuideDetailPage guide={guide} key={guide.id} />
+  return <ArticleDetailPage article={article} key={article.id} />
 }
 
 function App() {
@@ -128,8 +134,10 @@ function App() {
             <Route path="/works/:id" element={<RoutedWorkDetailPage />} />
             <Route path="/composers" element={<CollectionPage view="composers" />} />
             <Route path="/composers/:id" element={<RoutedComposerDetailPage />} />
-            <Route path="/guides" element={<CollectionPage view="guides" />} />
-            <Route path="/guides/:id" element={<RoutedGuideDetailPage />} />
+            <Route path="/articles" element={<CollectionPage view="articles" />} />
+            <Route path="/articles/:id" element={<RoutedArticleDetailPage />} />
+            <Route path="/guides" element={<GuideRedirect />} />
+            <Route path="/guides/:id" element={<GuideRedirect />} />
             <Route path="/radio" element={<RadioPage />} />
             <Route path="/search" element={<SearchPage />} />
             <Route path="/about" element={<AboutPage />} />

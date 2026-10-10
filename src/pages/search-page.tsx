@@ -12,14 +12,14 @@ export function SearchPage() {
       <title>{hasQuery ? `Search: ${query.trim()} · Sonatina` : 'Search · Sonatina'}</title>
       <div className="search-route-header">
         <h1>Search</h1>
-        <p>Find works, composers, and guides from one place.</p>
+        <p>Find works, composers, and articles from one place.</p>
       </div>
 
       <label className="search-field search-route-field">
         <Search size={18} />
         <input
           autoFocus
-          placeholder="Search works, composers, guides..."
+          placeholder="Search works, composers, articles..."
           value={query}
           type="search"
           aria-label="Search Sonatina"
@@ -34,7 +34,7 @@ export function SearchPage() {
       ) : (
         <div className="search-empty-state">
           <h2>Start typing to search Sonatina</h2>
-          <p>Search across works, composers, and listening guides.</p>
+          <p>Search across works, composers and articles.</p>
         </div>
       )}
     </section>

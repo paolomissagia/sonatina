@@ -5,7 +5,7 @@ export type SearchResult = CatalogItem & {
   category: CatalogSection
 }
 
-export const searchCategories: CatalogSection[] = ['works', 'composers', 'guides']
+export const searchCategories: CatalogSection[] = ['works', 'composers', 'articles']
 
 const searchableItems: SearchResult[] = searchCategories.flatMap((category) =>
   getCatalogItems(category).map((item) => ({

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { composers, findComposer, getRecommendedComposers } from './composers'
-import { findGuide, getRecommendedGuides, guides } from './guides'
+import { findArticle, getRecommendedArticles, articles } from './articles'
 import { findWork, getRecommendedWorks, getWorkPeriod, getWorksByComposer, works } from './works'
 
 describe('getRecommendedWorks', () => {
@@ -48,15 +48,15 @@ describe('getRecommendedComposers', () => {
   })
 })
 
-describe('getRecommendedGuides', () => {
-  it('never recommends the guide itself', () => {
-    for (const guide of guides) {
-      expect(getRecommendedGuides(guide).map((candidate) => candidate.id)).not.toContain(guide.id)
+describe('getRecommendedArticles', () => {
+  it('never recommends the article itself', () => {
+    for (const article of articles) {
+      expect(getRecommendedArticles(article).map((candidate) => candidate.id)).not.toContain(article.id)
     }
   })
 
-  it('puts guides from the same category first', () => {
-    const guide = findGuide('your-first-opera')!
-    expect(getRecommendedGuides(guide)[0].category).toBe(guide.category)
+  it('puts articles from the same category first', () => {
+    const article = findArticle('your-first-opera')!
+    expect(getRecommendedArticles(article)[0].category).toBe(article.category)
   })
 })

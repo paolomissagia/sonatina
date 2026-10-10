@@ -1,26 +1,26 @@
 import type { CatalogAssetKey } from '@/assets/catalog-assets'
 
-export const guideCategories = ['Getting started', 'Composers', 'Genres', 'Periods', 'Listening'] as const
+export const articleCategories = ['Guides', 'Composers', 'Genres', 'Periods', 'Listening'] as const
 
-export type GuideCategory = (typeof guideCategories)[number]
+export type ArticleCategory = (typeof articleCategories)[number]
 
-export type GuideSection = {
+export type ArticleSection = {
   title: string
   /** Paragraphs. */
   body: string[]
 }
 
-export type Guide = {
+export type Article = {
   /** URL slug. */
   id: string
   title: string
   type: string
-  category: GuideCategory
+  category: ArticleCategory
   description: string
   asset: CatalogAssetKey
   audience: string
   overview: string
-  sections: GuideSection[]
-  /** Works the guide talks about, linked at the end. */
+  sections: ArticleSection[]
+  /** Works the article talks about, linked at the end. */
   workIds: string[]
 }

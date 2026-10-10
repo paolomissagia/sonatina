@@ -12,7 +12,7 @@ export type ViewId =
   | 'discover'
   | 'works'
   | 'composers'
-  | 'guides'
+  | 'articles'
   | 'radio'
   | 'about'
 
@@ -26,7 +26,7 @@ export const navItems: NavItem[] = [
   { id: 'discover', label: 'Discover', icon: Home },
   { id: 'works', label: 'Works', icon: Music2 },
   { id: 'composers', label: 'Composers', icon: UserRound },
-  { id: 'guides', label: 'Guides', icon: BookOpen },
+  { id: 'articles', label: 'Articles', icon: BookOpen },
 ]
 
 export const radioItem: NavItem = { id: 'radio', label: 'Radio', icon: Radio }
