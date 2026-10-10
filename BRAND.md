@@ -26,6 +26,7 @@ Taglines: *Classical music belongs to everyone.* · *Discover the world of class
 - **Dates:** spans use an en dash: 1685–1750, c. 1720.
 - **No em dashes** (the long dash) anywhere. Use a hyphen with spaces ( - ) or rewrite the sentence.
 - **Catalogue numbers:** Op. 67, BWV 1007, K. 626.
+- **Work titles:** a generic title carries its key and catalogue number so it can't be mistaken for another composer's: "Violin Concerto in D major, Op. 35", "Symphony No. 5 in C minor, Op. 67". Nicknamed and named works keep their name: "Symphony No. 3, “Eroica”", "Carmen".
 - **Quotes:** only quotes with a known source. If a quote is commonly misattributed, leave it out.
 - **Periods:** Baroque, Classical, Romantic, Modern. Use one label per work and composer; cross-period figures get a note in their overview, not a combined label.
 

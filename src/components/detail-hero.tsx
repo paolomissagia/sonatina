@@ -26,6 +26,13 @@ type DetailHeroProps = {
   title: string
 }
 
+/** Keeps keys and catalogue numbers on one line: "D major, Op. 35", never "D" then "major". */
+function keepNumbersTogether(title: string) {
+  return title
+    .replace(/\b(Op\.|No\.|K\.|BWV|D\.|S\.|L\.|SV|WAB|Hob\.) /g, '$1\u00a0')
+    .replace(/\b([A-G](?:-flat|-sharp)?) (major|minor)\b/g, '$1\u00a0$2')
+}
+
 export function DetailHero({
   actions,
   breadcrumb,
@@ -55,7 +62,7 @@ export function DetailHero({
           ))}
         </nav>
 
-        <h1>{title}</h1>
+        <h1>{keepNumbersTogether(title)}</h1>
         {subtitle ? <p className="detail-visual-subtitle">{subtitle}</p> : null}
         {quote ? (
           <figure className="detail-visual-quote">

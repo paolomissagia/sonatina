@@ -1414,12 +1414,6 @@ export const recordings: Record<string, Recording> = {
       { title: '1812 Overture', movement: 0, src: 'https://archive.org/download/TCHAIKOVSKY1812Overture-Rodzinski-NEWTRANSFER/Tchaikovsky-1812OvertureOp.49.mp3', page: 'https://archive.org/details/TCHAIKOVSKY1812Overture-Rodzinski-NEWTRANSFER' },
     ],
   },
-  'tchaikovsky-sleeping-beauty': {
-    performer: 'London Symphony Orchestra, Pierre Monteux (1958)',
-    tracks: [
-      { title: 'Introduction', movement: 0, src: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/4/43/Tchaikovsky_-_%D0%A1%D0%BF%D1%8F%D1%89%D0%B0%D1%8F_%D0%BA%D1%80%D0%B0%D1%81%D0%B0%D0%B2%D0%B8%D1%86%D0%B0_-_Sleeping_Beauty_ouverture.ogg/Tchaikovsky_-_%D0%A1%D0%BF%D1%8F%D1%89%D0%B0%D1%8F_%D0%BA%D1%80%D0%B0%D1%81%D0%B0%D0%B2%D0%B8%D1%86%D0%B0_-_Sleeping_Beauty_ouverture.ogg.mp3', page: 'https://commons.wikimedia.org/wiki/File:Tchaikovsky_-_%D0%A1%D0%BF%D1%8F%D1%89%D0%B0%D1%8F_%D0%BA%D1%80%D0%B0%D1%81%D0%B0%D0%B2%D0%B8%D1%86%D0%B0_-_Sleeping_Beauty_ouverture.ogg' },
-    ],
-  },
   'rachmaninoff-piano-concerto-3': {
     performer: 'Sergei Rachmaninoff, Philadelphia Orchestra, Eugene Ormandy (1939–40)',
     tracks: [

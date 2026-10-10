@@ -170,7 +170,6 @@ export const articles: Article[] = [
     workIds: [
       'tchaikovsky-nutcracker',
       'tchaikovsky-swan-lake',
-      'tchaikovsky-sleeping-beauty',
       'adam-giselle',
       'stravinsky-firebird',
       'stravinsky-petrushka',

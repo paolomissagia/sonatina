@@ -15,7 +15,6 @@ export function PlayerBar() {
   }
 
   const track = recording.tracks[index]
-  const performer = track.performer ?? recording.performer
   const movementCount = work.movements.length
   const label = movementCount > 1 ? `${toRoman(track.movement + 1)}. ${track.title}` : track.title
 
@@ -116,10 +115,6 @@ export function PlayerBar() {
         />
       </div>
 
-      <a className="player-credit" href={track.page} target="_blank" rel="noreferrer">
-        {performer}
-        {recording.license && recording.license !== 'Public domain' ? ` · ${recording.license}` : ''}
-      </a>
 
       <button className="player-button player-close" type="button" aria-label="Close player" onClick={player.close}>
         <X size={16} />

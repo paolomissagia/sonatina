@@ -6,7 +6,7 @@ import { findComposer } from './composers'
 export const works: Work[] = [
   {
     id: 'beethoven-symphony-5',
-    title: 'Symphony No. 5',
+    title: 'Symphony No. 5 in C minor, Op. 67',
     composerId: 'beethoven',
     catalogue: 'Op. 67',
     key: 'C minor',
@@ -60,7 +60,7 @@ export const works: Work[] = [
   },
   {
     id: 'mozart-requiem',
-    title: 'Requiem',
+    title: 'Requiem in D minor, K. 626',
     composerId: 'mozart',
     catalogue: 'K. 626',
     key: 'D minor',
@@ -93,7 +93,7 @@ export const works: Work[] = [
   },
   {
     id: 'bach-cello-suite-1',
-    title: 'Cello Suite No. 1',
+    title: 'Cello Suite No. 1 in G major, BWV 1007',
     composerId: 'bach',
     catalogue: 'BWV 1007',
     key: 'G major',
@@ -372,7 +372,7 @@ export const works: Work[] = [
   },
   {
     id: 'mozart-symphony-40',
-    title: 'Symphony No. 40',
+    title: 'Symphony No. 40 in G minor, K. 550',
     composerId: 'mozart',
     catalogue: 'K. 550',
     key: 'G minor',
@@ -416,7 +416,7 @@ export const works: Work[] = [
   },
   {
     id: 'mozart-piano-concerto-21',
-    title: 'Piano Concerto No. 21',
+    title: 'Piano Concerto No. 21 in C major, K. 467',
     composerId: 'mozart',
     catalogue: 'K. 467',
     key: 'C major',
@@ -503,7 +503,7 @@ export const works: Work[] = [
   },
   {
     id: 'beethoven-string-quartet-14',
-    title: 'String Quartet No. 14',
+    title: 'String Quartet No. 14 in C-sharp minor, Op. 131',
     composerId: 'beethoven',
     catalogue: 'Op. 131',
     key: 'C-sharp minor',
@@ -528,7 +528,7 @@ export const works: Work[] = [
   },
   {
     id: 'clara-schumann-piano-concerto',
-    title: 'Piano Concerto',
+    title: 'Piano Concerto in A minor, Op. 7',
     composerId: 'clara-schumann',
     catalogue: 'Op. 7',
     key: 'A minor',
@@ -574,7 +574,7 @@ export const works: Work[] = [
   },
   {
     id: 'dvorak-cello-concerto',
-    title: 'Cello Concerto',
+    title: 'Cello Concerto in B minor, Op. 104',
     composerId: 'dvorak',
     catalogue: 'Op. 104',
     key: 'B minor',
@@ -767,7 +767,7 @@ export const works: Work[] = [
   },
   {
     id: 'chopin-ballade-1',
-    title: 'Ballade No. 1',
+    title: 'Ballade No. 1 in G minor, Op. 23',
     composerId: 'chopin',
     catalogue: 'Op. 23',
     key: 'G minor',
@@ -787,7 +787,7 @@ export const works: Work[] = [
   },
   {
     id: 'chopin-piano-concerto-1',
-    title: 'Piano Concerto No. 1',
+    title: 'Piano Concerto No. 1 in E minor, Op. 11',
     composerId: 'chopin',
     catalogue: 'Op. 11',
     key: 'E minor',
@@ -809,7 +809,7 @@ export const works: Work[] = [
   },
   {
     id: 'mendelssohn-violin-concerto',
-    title: 'Violin Concerto',
+    title: 'Violin Concerto in E minor, Op. 64',
     composerId: 'mendelssohn',
     catalogue: 'Op. 64',
     key: 'E minor',
@@ -831,7 +831,7 @@ export const works: Work[] = [
   },
   {
     id: 'brahms-symphony-4',
-    title: 'Symphony No. 4',
+    title: 'Symphony No. 4 in E minor, Op. 98',
     composerId: 'brahms',
     catalogue: 'Op. 98',
     key: 'E minor',
@@ -968,7 +968,7 @@ export const works: Work[] = [
   },
   {
     id: 'tchaikovsky-piano-concerto-1',
-    title: 'Piano Concerto No. 1',
+    title: 'Piano Concerto No. 1 in B-flat minor, Op. 23',
     composerId: 'tchaikovsky',
     catalogue: 'Op. 23',
     key: 'B-flat minor',
@@ -1135,7 +1135,7 @@ export const works: Work[] = [
   },
   {
     id: 'grieg-piano-concerto',
-    title: 'Piano Concerto',
+    title: 'Piano Concerto in A minor, Op. 16',
     composerId: 'grieg',
     catalogue: 'Op. 16',
     key: 'A minor',
@@ -1250,7 +1250,7 @@ export const works: Work[] = [
   },
   {
     id: 'liszt-piano-sonata',
-    title: 'Piano Sonata in B minor',
+    title: 'Piano Sonata in B minor, S. 178',
     composerId: 'liszt',
     catalogue: 'S. 178',
     key: 'B minor',
@@ -1268,7 +1268,7 @@ export const works: Work[] = [
   },
   {
     id: 'liszt-piano-concerto-1',
-    title: 'Piano Concerto No. 1',
+    title: 'Piano Concerto No. 1 in E-flat major, S. 124',
     composerId: 'liszt',
     catalogue: 'S. 124',
     key: 'E-flat major',
@@ -1286,7 +1286,7 @@ export const works: Work[] = [
   },
   {
     id: 'rachmaninoff-piano-concerto-2',
-    title: 'Piano Concerto No. 2',
+    title: 'Piano Concerto No. 2 in C minor, Op. 18',
     composerId: 'rachmaninoff',
     catalogue: 'Op. 18',
     key: 'C minor',
@@ -1304,7 +1304,7 @@ export const works: Work[] = [
   },
   {
     id: 'rachmaninoff-prelude-c-sharp-minor',
-    title: 'Prelude in C-sharp minor',
+    title: 'Prelude in C-sharp minor, Op. 3, No. 2',
     composerId: 'rachmaninoff',
     catalogue: 'Op. 3, No. 2',
     key: 'C-sharp minor',
@@ -1339,7 +1339,7 @@ export const works: Work[] = [
   },
   {
     id: 'mahler-symphony-5',
-    title: 'Symphony No. 5',
+    title: 'Symphony No. 5 in C-sharp minor',
     composerId: 'mahler',
     key: 'C-sharp minor',
     description: 'From a trumpet-call funeral march to the famous Adagietto.',
@@ -1488,7 +1488,7 @@ export const works: Work[] = [
   },
   {
     id: 'robert-schumann-piano-concerto',
-    title: 'Piano Concerto',
+    title: 'Piano Concerto in A minor, Op. 54',
     composerId: 'robert-schumann',
     catalogue: 'Op. 54',
     key: 'A minor',
@@ -1603,7 +1603,7 @@ export const works: Work[] = [
   },
   {
     id: 'bruckner-symphony-7',
-    title: 'Symphony No. 7',
+    title: 'Symphony No. 7 in E major, WAB 107',
     composerId: 'bruckner',
     catalogue: 'WAB 107',
     key: 'E major',
@@ -1626,7 +1626,7 @@ export const works: Work[] = [
   },
   {
     id: 'sibelius-symphony-2',
-    title: 'Symphony No. 2',
+    title: 'Symphony No. 2 in D major, Op. 43',
     composerId: 'sibelius',
     catalogue: 'Op. 43',
     key: 'D major',
@@ -1666,7 +1666,7 @@ export const works: Work[] = [
   },
   {
     id: 'sibelius-violin-concerto',
-    title: 'Violin Concerto',
+    title: 'Violin Concerto in D minor, Op. 47',
     composerId: 'sibelius',
     catalogue: 'Op. 47',
     key: 'D minor',
@@ -1688,7 +1688,7 @@ export const works: Work[] = [
   },
   {
     id: 'elgar-cello-concerto',
-    title: 'Cello Concerto',
+    title: 'Cello Concerto in E minor, Op. 85',
     composerId: 'elgar',
     catalogue: 'Op. 85',
     key: 'E minor',
@@ -1749,7 +1749,7 @@ export const works: Work[] = [
   },
   {
     id: 'faure-requiem',
-    title: 'Requiem',
+    title: 'Requiem in D minor, Op. 48',
     composerId: 'faure',
     catalogue: 'Op. 48',
     key: 'D minor',
@@ -1857,7 +1857,7 @@ export const works: Work[] = [
   },
   {
     id: 'beethoven-symphony-7',
-    title: 'Symphony No. 7',
+    title: 'Symphony No. 7 in A major, Op. 92',
     composerId: 'beethoven',
     catalogue: 'Op. 92',
     key: 'A major',
@@ -1880,7 +1880,7 @@ export const works: Work[] = [
   },
   {
     id: 'beethoven-violin-concerto',
-    title: 'Violin Concerto',
+    title: 'Violin Concerto in D major, Op. 61',
     composerId: 'beethoven',
     catalogue: 'Op. 61',
     key: 'D major',
@@ -2009,7 +2009,7 @@ export const works: Work[] = [
   },
   {
     id: 'mozart-clarinet-concerto',
-    title: 'Clarinet Concerto',
+    title: 'Clarinet Concerto in A major, K. 622',
     composerId: 'mozart',
     catalogue: 'K. 622',
     key: 'A major',
@@ -2031,7 +2031,7 @@ export const works: Work[] = [
   },
   {
     id: 'mozart-piano-sonata-11',
-    title: 'Piano Sonata No. 11',
+    title: 'Piano Sonata No. 11 in A major, K. 331',
     composerId: 'mozart',
     catalogue: 'K. 331',
     key: 'A major',
@@ -2053,7 +2053,7 @@ export const works: Work[] = [
   },
   {
     id: 'mozart-piano-concerto-20',
-    title: 'Piano Concerto No. 20',
+    title: 'Piano Concerto No. 20 in D minor, K. 466',
     composerId: 'mozart',
     catalogue: 'K. 466',
     key: 'D minor',
@@ -2091,7 +2091,7 @@ export const works: Work[] = [
   },
   {
     id: 'bach-orchestral-suite-3',
-    title: 'Orchestral Suite No. 3',
+    title: 'Orchestral Suite No. 3 in D major, BWV 1068',
     composerId: 'bach',
     catalogue: 'BWV 1068',
     key: 'D major',
@@ -2114,7 +2114,7 @@ export const works: Work[] = [
   },
   {
     id: 'bach-double-violin-concerto',
-    title: 'Concerto for Two Violins',
+    title: 'Concerto for Two Violins in D minor, BWV 1043',
     composerId: 'bach',
     catalogue: 'BWV 1043',
     key: 'D minor',
@@ -2176,7 +2176,7 @@ export const works: Work[] = [
   },
   {
     id: 'bach-violin-partita-2',
-    title: 'Violin Partita No. 2',
+    title: 'Violin Partita No. 2 in D minor, BWV 1004',
     composerId: 'bach',
     catalogue: 'BWV 1004',
     key: 'D minor',
@@ -2224,7 +2224,7 @@ export const works: Work[] = [
   },
   {
     id: 'tchaikovsky-violin-concerto',
-    title: 'Violin Concerto',
+    title: 'Violin Concerto in D major, Op. 35',
     composerId: 'tchaikovsky',
     catalogue: 'Op. 35',
     key: 'D major',
@@ -2246,7 +2246,7 @@ export const works: Work[] = [
   },
   {
     id: 'tchaikovsky-symphony-5',
-    title: 'Symphony No. 5',
+    title: 'Symphony No. 5 in E minor, Op. 64',
     composerId: 'tchaikovsky',
     catalogue: 'Op. 64',
     key: 'E minor',
@@ -2287,30 +2287,8 @@ export const works: Work[] = [
     ],
   },
   {
-    id: 'tchaikovsky-sleeping-beauty',
-    title: 'The Sleeping Beauty',
-    composerId: 'tchaikovsky',
-    catalogue: 'Op. 66',
-    description: 'The fairy tale as a grand ballet, with the famous Garland Waltz.',
-    composed: '1888–89',
-    year: 1890,
-    durationMinutes: 160,
-    genre: 'Ballet',
-    form: 'Ballet in a prologue and three acts',
-    premiere: '15 January 1890, Mariinsky Theatre, St Petersburg',
-    instrumentation: 'Orchestra',
-    overview:
-      'Tchaikovsky’s second ballet, choreographed by Marius Petipa, tells Perrault’s tale of Princess Aurora, cursed by the wicked fairy Carabosse to sleep for a hundred years. Its Garland Waltz later became the song Once Upon a Dream in Disney’s film.',
-    movements: [
-      { title: 'Prologue' },
-      { title: 'Act I' },
-      { title: 'Act II' },
-      { title: 'Act III' },
-    ],
-  },
-  {
     id: 'rachmaninoff-piano-concerto-3',
-    title: 'Piano Concerto No. 3',
+    title: 'Piano Concerto No. 3 in D minor, Op. 30',
     composerId: 'rachmaninoff',
     catalogue: 'Op. 30',
     key: 'D minor',
@@ -2332,7 +2310,7 @@ export const works: Work[] = [
   },
   {
     id: 'rachmaninoff-prelude-g-minor',
-    title: 'Prelude in G minor',
+    title: 'Prelude in G minor, Op. 23 No. 5',
     composerId: 'rachmaninoff',
     catalogue: 'Op. 23 No. 5',
     description: 'A march with a dreamy, singing middle section.',
@@ -2348,7 +2326,7 @@ export const works: Work[] = [
   },
   {
     id: 'chopin-heroic-polonaise',
-    title: 'Polonaise in A-flat major',
+    title: 'Polonaise in A-flat major, Op. 53',
     composerId: 'chopin',
     catalogue: 'Op. 53',
     nickname: 'Heroic',
@@ -2365,7 +2343,7 @@ export const works: Work[] = [
   },
   {
     id: 'chopin-revolutionary-etude',
-    title: 'Étude in C minor',
+    title: 'Étude in C minor, Op. 10 No. 12',
     composerId: 'chopin',
     catalogue: 'Op. 10 No. 12',
     nickname: 'Revolutionary',
@@ -2384,7 +2362,7 @@ export const works: Work[] = [
   },
   {
     id: 'chopin-minute-waltz',
-    title: 'Waltz in D-flat major',
+    title: 'Waltz in D-flat major, Op. 64 No. 1',
     composerId: 'chopin',
     catalogue: 'Op. 64 No. 1',
     nickname: 'Minute Waltz',
@@ -2422,7 +2400,7 @@ export const works: Work[] = [
   },
   {
     id: 'chopin-piano-sonata-2',
-    title: 'Piano Sonata No. 2',
+    title: 'Piano Sonata No. 2 in B-flat minor, Op. 35',
     composerId: 'chopin',
     catalogue: 'Op. 35',
     key: 'B-flat minor',
@@ -2490,7 +2468,7 @@ export const works: Work[] = [
   },
   {
     id: 'schubert-impromptus',
-    title: 'Impromptus',
+    title: 'Impromptus, D. 899',
     composerId: 'schubert',
     catalogue: 'D. 899',
     description: 'Four song-like pieces for piano, among Schubert’s most loved.',
@@ -2511,7 +2489,7 @@ export const works: Work[] = [
   },
   {
     id: 'brahms-symphony-1',
-    title: 'Symphony No. 1',
+    title: 'Symphony No. 1 in C minor, Op. 68',
     composerId: 'brahms',
     catalogue: 'Op. 68',
     key: 'C minor',
@@ -2534,7 +2512,7 @@ export const works: Work[] = [
   },
   {
     id: 'brahms-violin-concerto',
-    title: 'Violin Concerto',
+    title: 'Violin Concerto in D major, Op. 77',
     composerId: 'brahms',
     catalogue: 'Op. 77',
     key: 'D major',
@@ -2556,7 +2534,7 @@ export const works: Work[] = [
   },
   {
     id: 'brahms-piano-concerto-2',
-    title: 'Piano Concerto No. 2',
+    title: 'Piano Concerto No. 2 in B-flat major, Op. 83',
     composerId: 'brahms',
     catalogue: 'Op. 83',
     key: 'B-flat major',
@@ -2673,7 +2651,7 @@ export const works: Work[] = [
   },
   {
     id: 'haydn-trumpet-concerto',
-    title: 'Trumpet Concerto',
+    title: 'Trumpet Concerto in E-flat major, Hob. VIIe:1',
     composerId: 'haydn',
     catalogue: 'Hob. VIIe:1',
     key: 'E-flat major',
@@ -2740,7 +2718,7 @@ export const works: Work[] = [
   },
   {
     id: 'dvorak-symphony-8',
-    title: 'Symphony No. 8',
+    title: 'Symphony No. 8 in G major, Op. 88',
     composerId: 'dvorak',
     catalogue: 'Op. 88',
     key: 'G major',
@@ -2886,7 +2864,7 @@ export const works: Work[] = [
   },
   {
     id: 'schubert-piano-sonata-21',
-    title: 'Piano Sonata No. 21',
+    title: 'Piano Sonata No. 21 in B-flat major, D. 960',
     composerId: 'schubert',
     catalogue: 'D. 960',
     key: 'B-flat major',
@@ -2908,7 +2886,7 @@ export const works: Work[] = [
   },
   {
     id: 'schubert-piano-sonata-19',
-    title: 'Piano Sonata No. 19',
+    title: 'Piano Sonata No. 19 in C minor, D. 958',
     composerId: 'schubert',
     catalogue: 'D. 958',
     key: 'C minor',
@@ -2930,7 +2908,7 @@ export const works: Work[] = [
   },
   {
     id: 'schubert-piano-sonata-20',
-    title: 'Piano Sonata No. 20',
+    title: 'Piano Sonata No. 20 in A major, D. 959',
     composerId: 'schubert',
     catalogue: 'D. 959',
     key: 'A major',
@@ -3038,8 +3016,9 @@ export function formatDuration(minutes: number) {
 }
 
 /** "C minor, Op. 67" */
+/** Key and catalogue number, leaving out whatever the title already says. */
 export function formatKeyAndCatalogue(work: Work) {
-  return [work.key, work.catalogue].filter(Boolean).join(', ')
+  return [work.key, work.catalogue].filter((part) => part && !work.title.includes(part)).join(', ')
 }
 
 /** Up to four other works: same composer first, then same period, then the rest. */

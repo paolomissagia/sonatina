@@ -118,7 +118,9 @@ describe('works', () => {
     expect(formatDuration(33)).toBe('33 min')
     expect(formatDuration(120)).toBe('2 h')
     expect(formatDuration(130)).toBe('2 h 10 min')
-    expect(formatKeyAndCatalogue(findWork('beethoven-symphony-5')!)).toBe('C minor, Op. 67')
+    expect(formatKeyAndCatalogue(findWork('beethoven-moonlight-sonata')!)).toBe('C-sharp minor, Op. 27, No. 2')
+    // A title that already names its key and catalogue doesn't repeat them.
+    expect(formatKeyAndCatalogue(findWork('beethoven-symphony-5')!)).toBe('')
     expect(formatKeyAndCatalogue(findWork('stravinsky-rite-of-spring')!)).toBe('')
   })
 })
@@ -148,7 +150,7 @@ describe('articles', () => {
 
 describe('findCatalogItem', () => {
   it('finds an item by section and slug', () => {
-    expect(findCatalogItem('works', 'beethoven-symphony-5')?.title).toBe('Symphony No. 5')
+    expect(findCatalogItem('works', 'beethoven-symphony-5')?.title).toBe('Symphony No. 5 in C minor, Op. 67')
   })
 
   it('returns undefined for unknown or missing ids', () => {
@@ -198,7 +200,7 @@ describe('matchesWorkFilter', () => {
       expect.arrayContaining(['Clair de lune', 'Piano Sonata No. 14, “Moonlight”', 'Goldberg Variations']),
     )
     expect(titlesFor('concerto')).toEqual(expect.arrayContaining(['The Four Seasons', 'Brandenburg Concertos']))
-    expect(titlesFor('chamber')).toEqual(expect.arrayContaining(['Cello Suite No. 1']))
+    expect(titlesFor('chamber')).toEqual(expect.arrayContaining(['Cello Suite No. 1 in G major, BWV 1007']))
     expect(items.filter((item) => matchesWorkFilter(item, 'opera')).every((item) => item.genre === 'Opera')).toBe(true)
   })
 
