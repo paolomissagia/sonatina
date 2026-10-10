@@ -198,7 +198,8 @@ describe('matchesWorkFilter', () => {
       expect.arrayContaining(['Clair de lune', 'Piano Sonata No. 14, “Moonlight”', 'Goldberg Variations']),
     )
     expect(titlesFor('concerto')).toEqual(expect.arrayContaining(['The Four Seasons', 'Brandenburg Concertos']))
-    expect(titlesFor('chamber')).toEqual(expect.arrayContaining(['Winterreise', 'Cello Suite No. 1']))
+    expect(titlesFor('chamber')).toEqual(expect.arrayContaining(['Cello Suite No. 1']))
+    expect(titlesFor('song')).toEqual(expect.arrayContaining(['Winterreise', 'Dichterliebe']))
     expect(items.filter((item) => matchesWorkFilter(item, 'opera')).every((item) => item.genre === 'Opera')).toBe(true)
   })
 

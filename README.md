@@ -57,7 +57,7 @@ Catalog content lives in `src/data/*.ts`. Records reference artwork by key (see 
 - `works.ts`, `composers.ts`, `guides.ts`: the catalogue. A guide's `workIds` must name existing works.
 - `countries.ts`: present-day countries for the Composers filter (`/composers?country=italy`). A composer's `nationality` must belong to exactly one country; add a country when you add the first composer from it.
 - `recordings.ts`: the player's streams (see below).
-- `stations.ts`: the radio stations, plus one per country (played from the Composers country filter, not listed on the Radio page). Each is a filter over works; every station needs at least one work with a recording.
+- `stations.ts`: the radio stations, plus one per country (played from the Composers country filter, not listed on the Radio page). Each is a filter over works by genre, period or country, never a hand-picked list of work ids; every station needs at least one work with a recording.
 
 ### Adding artwork
 

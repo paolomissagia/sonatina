@@ -896,7 +896,7 @@ export const works: Work[] = [
     composed: '1827',
     year: 1827,
     durationMinutes: 75,
-    genre: 'Chamber',
+    genre: 'Song',
     form: 'Song cycle of 24 songs',
     instrumentation: 'Voice and piano',
     overview:
@@ -1634,7 +1634,7 @@ export const works: Work[] = [
     composed: '1908–09',
     year: 1909,
     durationMinutes: 63,
-    genre: 'Symphony',
+    genre: 'Song',
     form: 'Symphony for two voices and orchestra, in six songs',
     premiere: '20 November 1911, Munich, conducted by Bruno Walter',
     instrumentation: 'Tenor, alto (or baritone) and orchestra',
@@ -1820,7 +1820,7 @@ export const works: Work[] = [
     composed: '1840',
     year: 1840,
     durationMinutes: 30,
-    genre: 'Chamber',
+    genre: 'Song',
     form: 'Song cycle of sixteen songs',
     instrumentation: 'Voice and piano',
     overview:
@@ -2267,6 +2267,7 @@ export const genreCovers: Record<Genre, CatalogAssetKey> = {
   Piano: 'categoryPiano',
   Chamber: 'categoryChamber',
   Choral: 'genreChoral',
+  Song: 'genreSong',
   Opera: 'categoryOpera',
   Ballet: 'genreBallet',
 }

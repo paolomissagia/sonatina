@@ -83,6 +83,7 @@ Colours drawn over images use `--scrim`, `--on-image` and `--on-image-soft`.
   | Piano | Renoir, *Young Girls at the Piano* (1892) |
   | Chamber | Winternitz, *The String Quartet* (1899) |
   | Choral | Webster, *A Village Choir* (1847) |
+  | Song | Schmid, *A Schubertiade* (1897) |
   | Opera | Renoir, *La Loge* (1874) |
   | Ballet | Degas, *The Dance Foyer at the Opera* (1872) |
 
@@ -98,7 +99,7 @@ Colours drawn over images use `--scrim`, `--on-image` and `--on-image-soft`.
 - Credit the performer next to the Listen button, and the licence with its link when it is Creative Commons.
 - Historical recordings are welcome: Caruso, Gigli, Stravinsky conducting his own Rite. Their age is part of the charm.
 - A work without a suitable recording has no player rather than a poor one.
-- **Radio:** stations by period (Baroque, Classical, Romantic, Modern) and by kind (Opera, Piano, Orchestra, Voices), plus Everything. Each plays one random movement at a time and keeps going while you browse. Opening Radio from the sidebar or the home page starts Everything straight away, unless something is already playing; choosing another station is optional. The Radio link sits with Search at the foot of the sidebar; Discover, Works, Composers and Guides stay at the top.
+- **Radio:** stations by period (Baroque, Classical, Romantic, Modern) and by kind (Opera, Piano, Orchestra, Voices), plus Everything. Each plays one random movement at a time and keeps going while you browse. Station descriptions show range through contrast (Everything is "From Classical symphonies to grand opera"), not the first and last composer, so they never need updating as the catalogue grows. Opening Radio from the sidebar or the home page starts Everything straight away, unless something is already playing; choosing another station is optional. The Radio link sits with Search at the foot of the sidebar; Discover, Works, Composers and Guides stay at the top.
 
 ## Signature elements
 
