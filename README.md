@@ -64,13 +64,12 @@ The script refuses anything that isn't public domain or CC0, writes the WebP, an
 
 ### Adding recordings
 
-Works can have a player. Recordings stream straight from Wikimedia Commons (we never host audio) and live in `src/data/recordings.ts`, keyed by work id, with each track mapped to one of the work's movements.
+Works have a player. Recordings stream straight from **Wikimedia Commons** or the **Internet Archive** (we never host audio) and live in `src/data/recordings.ts`, keyed by work id, with each track mapped to one of the work's movements. Long stage works (operas, ballets) map their arias or excerpts onto the right act.
 
-Only use recordings released freely **by their performers**: Musopen's own sessions, or CC0 / CC BY / CC BY-SA uploads. Commercial recordings from the 1930s to 1960s are often tagged "public domain" on Commons under European rules but are still protected in the US, so leave out anything marked `PD-EU-audio` or transferred from old LPs. Look up files with:
+Avoid computer renderings of the score (MIDI, "sequenced", Mutopia) and spoken introductions. For a Commons file, look up its MP3 stream with:
 
 ```sh
 node scripts/add-recording.mjs "File:<Commons audio file>" […]
 ```
 
-It refuses non-free licences and prints each track with its MP3 stream URL. CC BY recordings need the performer and a `licenseUrl`. Tests check every track points at a real movement and a Wikimedia MP3.
-
+For the Internet Archive, the stream is `https://archive.org/download/<identifier>/<file>` and the page is `https://archive.org/details/<identifier>`. Credit the performer; add the licence and its link when the source states a Creative Commons one. Tests check every track points at a real movement and a Commons or Archive MP3.

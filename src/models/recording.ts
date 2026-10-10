@@ -4,16 +4,16 @@ export type RecordingTrack = {
   movement: number
   /** When a track's performer differs from the recording's. */
   performer?: string
-  /** Wikimedia's MP3 version of the file, streamed directly. */
+  /** An MP3 streamed directly from Wikimedia Commons or the Internet Archive. */
   src: string
-  /** The file's page on Wikimedia Commons. */
+  /** The recording's page at its source. */
   page: string
 }
 
 export type Recording = {
   performer: string
-  /** "Public domain", or the Creative Commons licence, which requires this credit. */
-  license: string
+  /** "Public domain" or a Creative Commons licence, when the source states one. */
+  license?: string
   licenseUrl?: string
   tracks: RecordingTrack[]
 }

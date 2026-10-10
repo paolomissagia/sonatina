@@ -110,16 +110,16 @@ export function WorkDetailPage({ work }: WorkDetailPageProps) {
               </button>
               <p className="listen-credit">
                 Recording: {recording.performer}
-                {recording.licenseUrl ? (
+                {recording.license && recording.licenseUrl ? (
                   <>
                     {' · '}
                     <a href={recording.licenseUrl} target="_blank" rel="noreferrer">
                       {recording.license}
                     </a>
                   </>
-                ) : (
+                ) : recording.license ? (
                   ` · ${recording.license}`
-                )}
+                ) : null}
               </p>
             </>
           ) : undefined

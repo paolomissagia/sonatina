@@ -70,7 +70,7 @@ export function PlayerBar() {
 
       <a className="player-credit" href={track.page} target="_blank" rel="noreferrer">
         {performer}
-        {recording.license === 'Public domain' ? '' : ` · ${recording.license}`}
+        {recording.license && recording.license !== 'Public domain' ? ` · ${recording.license}` : ''}
       </a>
 
       <button className="player-button player-close" type="button" aria-label="Close player" onClick={player.close}>

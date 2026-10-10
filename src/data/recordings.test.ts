@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { recordings } from './recordings'
-import { findWork } from './works'
+import { findWork, works } from './works'
 
 describe('recordings', () => {
   const entries = Object.entries(recordings)
@@ -9,6 +9,10 @@ describe('recordings', () => {
     for (const [workId] of entries) {
       expect(findWork(workId), workId).toBeDefined()
     }
+  })
+
+  it('cover nearly the whole catalogue', () => {
+    expect(entries.length / works.length).toBeGreaterThan(0.9)
   })
 
   it('point every track at one of the work’s movements', () => {
@@ -22,28 +26,21 @@ describe('recordings', () => {
     }
   })
 
-  it('stream MP3s from Wikimedia and link to each file’s page', () => {
+  it('stream MP3s from Wikimedia Commons or the Internet Archive', () => {
     for (const [workId, recording] of entries) {
       for (const track of recording.tracks) {
-        expect(track.src, workId).toMatch(/^https:\/\/upload\.wikimedia\.org\/.+\.mp3$/)
-        expect(track.page, workId).toMatch(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/)
+        expect(track.src, workId).toMatch(/^https:\/\/(upload\.wikimedia\.org\/.+|archive\.org\/download\/.+)\.mp3$/i)
+        expect(track.page, workId).toMatch(/^https:\/\/(commons\.wikimedia\.org\/wiki\/File:|archive\.org\/details\/)/)
       }
     }
   })
 
-  it('are public domain or Creative Commons, with a licence link when credit is required', () => {
+  it('credit a performer, and link Creative Commons licences', () => {
     for (const [workId, recording] of entries) {
-      expect(recording.license, workId).toMatch(/^(Public domain|CC0|CC BY(-SA)? \d\.\d)$/)
       expect(recording.performer, workId).not.toBe('')
-      if (recording.license.startsWith('CC BY')) {
+      if (recording.license?.startsWith('CC BY')) {
         expect(recording.licenseUrl, workId).toMatch(/^https:\/\/creativecommons\.org\/licenses\//)
       }
-    }
-  })
-
-  it('leave out works still under copyright in some countries', () => {
-    for (const [workId] of entries) {
-      expect(findWork(workId)!.composerId, workId).not.toBe('stravinsky')
     }
   })
 })

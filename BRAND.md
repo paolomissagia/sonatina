@@ -93,8 +93,9 @@ Colours drawn over images use `--scrim`, `--on-image` and `--on-image-soft`.
 
 ## Recordings
 
-- Played from Wikimedia Commons, never hosted. Only recordings their performers released freely (Musopen sessions, CC0, CC BY, CC BY-SA).
-- Credit the performer next to the Listen button; add the licence and its link whenever it is Creative Commons.
+- Streamed from Wikimedia Commons or the Internet Archive, never hosted. Real performances only: no MIDI or synthesised renderings.
+- Credit the performer next to the Listen button, and the licence with its link when it is Creative Commons.
+- Historical recordings are welcome: Caruso, Gigli, Stravinsky conducting his own Rite. Their age is part of the charm.
 - A work without a suitable recording has no player rather than a poor one.
 
 ## Signature elements
