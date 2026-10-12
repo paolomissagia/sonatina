@@ -2,7 +2,10 @@ import i18next, { t } from 'i18next'
 import type { ArticleCategory } from '@/models/article'
 import type { Period } from '@/models/composer'
 import type { Genre } from '@/models/work'
+import de from '@/locales/de.json'
 import en from '@/locales/en.json'
+import fr from '@/locales/fr.json'
+import it from '@/locales/it.json'
 
 /** Import `t` from here rather than from i18next, so translations are loaded before first use. */
 export { t }
@@ -43,7 +46,12 @@ export function localizePath(path: string, target: Locale) {
 void i18next.init({
   lng: locale,
   fallbackLng: defaultLocale,
-  resources: { en: { translation: en } },
+  resources: {
+    en: { translation: en },
+    de: { translation: de },
+    fr: { translation: fr },
+    it: { translation: it },
+  },
   // Resources are bundled, so labels are ready as soon as this module loads.
   initAsync: false,
   // React escapes text itself.
