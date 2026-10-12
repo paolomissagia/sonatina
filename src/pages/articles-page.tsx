@@ -2,15 +2,14 @@ import { useMemo, useState } from 'react'
 import { Link } from 'react-router'
 import { catalogAssets } from '@/assets/catalog-assets'
 import { getReadTime, articles } from '@/data/articles'
-import { articleCategories } from '@/models/article'
-
-const articleFilters = ['All', ...articleCategories]
+import { articleCategories, type ArticleCategory } from '@/models/article'
+import { articleCategoryLabels, t } from '@/i18n'
 
 export function ArticlesPage() {
-  const [activeFilter, setActiveFilter] = useState('All')
+  const [activeFilter, setActiveFilter] = useState<ArticleCategory>()
 
   const visibleArticles = useMemo(() => {
-    if (activeFilter === 'All') {
+    if (!activeFilter) {
       return articles
     }
 
@@ -19,21 +18,24 @@ export function ArticlesPage() {
 
   return (
     <section className="articles-page">
-      <title>Articles · Sonatina</title>
+      <title>{`${t('nav_articles')} · Sonatina`}</title>
       <header className="articles-header">
-        <h1>Articles</h1>
-        <p>In-depth articles to help you explore, understand, and enjoy classical music.</p>
+        <h1>{t('nav_articles')}</h1>
+        <p>{t('articles_page_intro')}</p>
       </header>
 
-      <div className="article-filter-list" aria-label="Article categories">
-        {articleFilters.map((filter) => (
+      <div className="article-filter-list" aria-label={t('articles_filter_label')}>
+        <button className={activeFilter ? undefined : 'active'} onClick={() => setActiveFilter(undefined)} type="button">
+          {t('filter_all')}
+        </button>
+        {articleCategories.map((category) => (
           <button
-            className={filter === activeFilter ? 'active' : undefined}
-            key={filter}
-            onClick={() => setActiveFilter(filter)}
+            className={category === activeFilter ? 'active' : undefined}
+            key={category}
+            onClick={() => setActiveFilter(category)}
             type="button"
           >
-            {filter}
+            {articleCategoryLabels[category]}
           </button>
         ))}
       </div>
@@ -45,7 +47,7 @@ export function ArticlesPage() {
               <img src={catalogAssets[article.asset]} alt="" loading="lazy" decoding="async" />
             </div>
             <div className="article-row-copy">
-              <span>{article.category}</span>
+              <span>{articleCategoryLabels[article.category]}</span>
               <h2>{article.title}</h2>
               <p>{article.description}</p>
               <small>{getReadTime(article)}</small>

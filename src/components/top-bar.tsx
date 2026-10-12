@@ -1,4 +1,5 @@
 import { Menu } from 'lucide-react'
+import { t } from '@/i18n'
 
 type TopBarProps = {
   isMenuOpen: boolean
@@ -11,7 +12,7 @@ export function TopBar({ isMenuOpen, onMenuClick }: TopBarProps) {
       <button
         className="icon-button mobile-menu"
         type="button"
-        aria-label="Open menu"
+        aria-label={t('menu_open')}
         aria-expanded={isMenuOpen}
         onClick={onMenuClick}
       >

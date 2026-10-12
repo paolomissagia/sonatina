@@ -1,21 +1,22 @@
 import { BookOpen, Music2, UsersRound } from 'lucide-react'
 import { assetCredits, catalogAssets } from '@/assets/catalog-assets'
 import { ImageCreditLink } from '@/components/image-credit-link'
+import { t } from '@/i18n'
 
 const principles = [
   {
-    title: 'Discover',
-    description: 'Explore works, composers, and periods through curated collections and context.',
+    title: t('about_discover'),
+    description: t('about_discover_text'),
     icon: UsersRound,
   },
   {
-    title: 'Understand',
-    description: 'Learn the stories behind the music without needing a music degree.',
+    title: t('about_understand'),
+    description: t('about_understand_text'),
     icon: BookOpen,
   },
   {
-    title: 'Enjoy',
-    description: 'Because classical music should be experienced, not just studied.',
+    title: t('about_enjoy'),
+    description: t('about_enjoy_text'),
     icon: Music2,
   },
 ]
@@ -23,19 +24,16 @@ const principles = [
 export function AboutPage() {
   return (
     <section className="about-page">
-      <title>About · Sonatina</title>
+      <title>{`${t('nav_about')} · Sonatina`}</title>
       <div className="about-header">
-        <p>About Sonatina</p>
+        <p>{t('about_kicker')}</p>
         <h1>
-          Classical music belongs to <em>everyone.</em>
+          {t('about_heading')} <em>{t('about_heading_em')}</em>
         </h1>
-        <p>
-          We built Sonatina to make the world of classical music more welcoming, more
-          beautiful, and more inviting.
-        </p>
+        <p>{t('about_intro')}</p>
       </div>
 
-      <div className="about-principles" aria-label="What Sonatina helps with">
+      <div className="about-principles" aria-label={t('about_principles_label')}>
         {principles.map((principle) => {
           const Icon = principle.icon
 
@@ -54,11 +52,8 @@ export function AboutPage() {
       </div>
 
       <div className="about-mission">
-        <h2>Our mission</h2>
-        <p>
-          To help more people discover, understand, and fall in love with classical music,
-          one piece at a time.
-        </p>
+        <h2>{t('about_mission')}</h2>
+        <p>{t('about_mission_text')}</p>
       </div>
 
       <figure className="about-quote">
@@ -67,10 +62,7 @@ export function AboutPage() {
           <ImageCreditLink credit={assetCredits.concertAtSanssouci} imageSrc={catalogAssets.concertAtSanssouci} />
         </div>
         <figcaption>
-          <blockquote>
-            “Music expresses that which cannot be put into words and that which cannot
-            remain silent.”
-          </blockquote>
+          <blockquote>“{t('about_quote')}”</blockquote>
           <cite>Victor Hugo</cite>
         </figcaption>
       </figure>

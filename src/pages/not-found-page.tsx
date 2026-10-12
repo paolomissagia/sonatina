@@ -1,17 +1,18 @@
 import { Link } from 'react-router'
+import { t } from '@/i18n'
 
 export function NotFoundPage() {
   return (
     <section className="search-route-page">
-      <title>Page not found · Sonatina</title>
+      <title>{`${t('not_found_title')} · Sonatina`}</title>
       <div className="search-route-header">
-        <h1>Page not found</h1>
+        <h1>{t('not_found_title')}</h1>
       </div>
       <div className="search-empty-state">
-        <p>We couldn&apos;t find what you were looking for. It may have moved, or the link may be incorrect.</p>
+        <p>{t('not_found_text')}</p>
         <div className="home-hero-actions">
           <Link className="primary-action" to="/">
-            Back to Discover
+            {t('not_found_back')}
           </Link>
         </div>
       </div>

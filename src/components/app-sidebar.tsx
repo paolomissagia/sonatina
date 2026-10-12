@@ -1,8 +1,10 @@
 import { Search, X } from 'lucide-react'
 import { NavLink } from 'react-router'
 import { aboutItem, navItems, radioItem } from '@/data/navigation'
+import { LanguagePicker } from './language-picker'
 import { Logo } from './logo'
 import { SidebarLink } from './sidebar-link'
+import { t } from '@/i18n'
 
 type AppSidebarProps = {
   isOpen: boolean
@@ -12,17 +14,17 @@ type AppSidebarProps = {
 
 export function AppSidebar({ isOpen, onClose, onNavigate }: AppSidebarProps) {
   return (
-    <aside className={isOpen ? 'sidebar open' : 'sidebar'} aria-label="Primary">
+    <aside className={isOpen ? 'sidebar open' : 'sidebar'} aria-label={t('nav_primary')}>
       <div className="sidebar-header">
         <div className="brand">
           <Logo />
         </div>
-        <button className="icon-button sidebar-close" type="button" aria-label="Close menu" onClick={onClose}>
+        <button className="icon-button sidebar-close" type="button" aria-label={t('menu_close')} onClick={onClose}>
           <X size={18} />
         </button>
       </div>
 
-      <nav className="sidebar-group" aria-label="Browse">
+      <nav className="sidebar-group" aria-label={t('nav_browse')}>
         {navItems.map((item) => (
           <SidebarLink
             item={item}
@@ -40,12 +42,13 @@ export function AppSidebar({ isOpen, onClose, onNavigate }: AppSidebarProps) {
           onClick={onNavigate}
         >
           <Search size={17} strokeWidth={1.9} />
-          <span>Search</span>
+          <span>{t('nav_search')}</span>
         </NavLink>
         <SidebarLink
           item={aboutItem}
           onNavigate={onNavigate}
         />
+        <LanguagePicker />
       </div>
     </aside>
   )

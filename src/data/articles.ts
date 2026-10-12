@@ -1,4 +1,5 @@
 import type { Article } from '@/models/article'
+import { t } from '@/i18n'
 
 export const articles: Article[] = [
   {
@@ -817,7 +818,7 @@ export function getReadTime(article: Article) {
   const text = [article.overview, ...article.sections.flatMap((section) => [section.title, ...section.body])].join(' ')
   const words = text.split(/\s+/).filter(Boolean).length
 
-  return `${Math.max(1, Math.ceil(words / 200))} min read`
+  return t('read_time', { minutes: Math.max(1, Math.ceil(words / 200)) })
 }
 
 /** Up to four other articles, those in the same category first. */

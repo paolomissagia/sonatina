@@ -2,6 +2,7 @@ import type { CatalogAssetKey } from '@/assets/catalog-assets'
 import type { Period } from '@/models/composer'
 import type { Genre, Work } from '@/models/work'
 import { findComposer } from './composers'
+import { t } from '@/i18n'
 
 export const works: Work[] = [
   {
@@ -2820,10 +2821,10 @@ export function formatDuration(minutes: number) {
   const rest = minutes % 60
 
   if (hours === 0) {
-    return `${rest} min`
+    return t('duration_minutes', { minutes: rest })
   }
 
-  return rest === 0 ? `${hours} h` : `${hours} h ${rest} min`
+  return rest === 0 ? t('duration_hours', { hours }) : t('duration_hours_minutes', { hours, minutes: rest })
 }
 
 /** "C minor, Op. 67" */

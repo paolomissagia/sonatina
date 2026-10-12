@@ -1,6 +1,7 @@
 import { Pause, Play } from 'lucide-react'
 import type { Movement } from '@/models/work'
 import { toRoman } from '@/player/roman'
+import { t } from '@/i18n'
 
 type MovementListProps = {
   className?: string
@@ -35,7 +36,7 @@ export function MovementList({ activeMovement, className, movements, onPlay, pla
                 <button
                   className="movement-play"
                   type="button"
-                  aria-label={`${active && playing ? 'Pause' : 'Play'} ${numeral} ${movement.title}`}
+                  aria-label={t(active && playing ? 'movement_pause' : 'movement_play', { movement: `${numeral} ${movement.title}` })}
                   onClick={() => onPlay(index)}
                 >
                   {content}

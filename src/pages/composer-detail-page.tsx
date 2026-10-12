@@ -4,6 +4,7 @@ import { assetCredits, catalogAssets } from '@/assets/catalog-assets'
 import { formatLifespan, getRecommendedComposers } from '@/data/composers'
 import { findEra } from '@/data/eras'
 import type { Composer } from '@/models/composer'
+import { periodLabels, t } from '@/i18n'
 import { getWorkAsset, getWorksByComposer } from '@/data/works'
 import { DetailHero } from '@/components/detail-hero'
 import { DetailTabs } from '@/components/detail-tabs'
@@ -14,21 +15,23 @@ type ComposerDetailPageProps = {
   composer: Composer
 }
 
-const tabs = ['Overview', 'Works'] as const
+const tabs = ['overview', 'works'] as const
 type ComposerTab = (typeof tabs)[number]
+const tabLabels: Record<ComposerTab, string> = { overview: t('tab_overview'), works: t('tab_works') }
 
 export function ComposerDetailPage({ composer }: ComposerDetailPageProps) {
-  const [activeTab, setActiveTab] = useState<ComposerTab>('Overview')
+  const [activeTab, setActiveTab] = useState<ComposerTab>('overview')
   const composerWorks = getWorksByComposer(composer.id)
   const essentialWorks = composerWorks.slice(0, 4)
   const recommendedComposers = getRecommendedComposers(composer)
   const era = findEra(composer.period.toLowerCase())
+  const period = periodLabels[composer.period]
   const facts = [
-    { label: 'Born', value: `${composer.born.year}, ${composer.born.place}` },
-    { label: 'Died', value: `${composer.died.year}, ${composer.died.place}` },
-    { label: 'Nationality', value: composer.nationality },
-    { label: 'Period', value: era ? <Link to={`/composers?era=${era.id}`}>{composer.period}</Link> : composer.period },
-    { label: 'Known for', value: composer.knownFor.join(', ') },
+    { label: t('composer_born'), value: `${composer.born.year}, ${composer.born.place}` },
+    { label: t('composer_died'), value: `${composer.died.year}, ${composer.died.place}` },
+    { label: t('composer_nationality'), value: composer.nationality },
+    { label: t('composer_period'), value: era ? <Link to={`/composers?era=${era.id}`}>{period}</Link> : period },
+    { label: t('composer_known_for'), value: composer.knownFor.join(', ') },
   ]
 
   return (
@@ -36,12 +39,12 @@ export function ComposerDetailPage({ composer }: ComposerDetailPageProps) {
       <title>{`${composer.name} · Sonatina`}</title>
       <DetailHero
         breadcrumb={[
-          { label: 'Composers', to: '/composers' },
+          { label: t('nav_composers'), to: '/composers' },
           { label: composer.name },
         ]}
         facts={facts}
-        factsTitle="Quick facts"
-        imageAlt={`Portrait of ${composer.name}`}
+        factsTitle={t('composer_facts')}
+        imageAlt={t('composer_portrait', { name: composer.name })}
         imageCredit={assetCredits[composer.asset]}
         imageSrc={catalogAssets[composer.asset]}
         quote={composer.quote}
@@ -51,25 +54,26 @@ export function ComposerDetailPage({ composer }: ComposerDetailPageProps) {
 
       <DetailTabs
         activeTab={activeTab}
-        ariaLabel={`${composer.name} sections`}
+        ariaLabel={t('sections_label', { title: composer.name })}
+        labels={tabLabels}
         onChange={setActiveTab}
         tabs={tabs}
       />
 
-      {activeTab === 'Overview' ? (
+      {activeTab === 'overview' ? (
         <>
           <div className="composer-content-grid">
             <section className="composer-overview">
-              <h2>About {composer.shortName}</h2>
+              <h2>{t('composer_about', { name: composer.shortName })}</h2>
               <p>{composer.overview}</p>
             </section>
 
             <section className="essential-works">
               <div className="essential-works-heading">
-                <h2>Essential works</h2>
+                <h2>{t('composer_essential')}</h2>
                 {composerWorks.length > essentialWorks.length ? (
-                  <button className="text-action" type="button" onClick={() => setActiveTab('Works')}>
-                    View all
+                  <button className="text-action" type="button" onClick={() => setActiveTab('works')}>
+                    {t('view_all')}
                   </button>
                 ) : null}
               </div>
@@ -85,19 +89,19 @@ export function ComposerDetailPage({ composer }: ComposerDetailPageProps) {
                   ))}
                 </div>
               ) : (
-                <p className="essential-works-empty">No works in the catalog yet.</p>
+                <p className="essential-works-empty">{t('composer_no_works')}</p>
               )}
             </section>
           </div>
 
           {recommendedComposers.length > 0 ? (
-            <RecommendationSection title="Recommended composers">
+            <RecommendationSection title={t('composer_recommended')}>
               {recommendedComposers.map((recommendedComposer) => (
                 <RecommendationCard
                   imageSrc={catalogAssets[recommendedComposer.asset]}
                   key={recommendedComposer.id}
                   meta={formatLifespan(recommendedComposer)}
-                  subtitle={recommendedComposer.period}
+                  subtitle={periodLabels[recommendedComposer.period]}
                   title={recommendedComposer.name}
                   to={`/composers/${recommendedComposer.id}`}
                 />
@@ -107,9 +111,9 @@ export function ComposerDetailPage({ composer }: ComposerDetailPageProps) {
         </>
       ) : null}
 
-      {activeTab === 'Works' ? (
+      {activeTab === 'works' ? (
         composerWorks.length > 0 ? (
-          <RecommendationSection title={`Works by ${composer.name}`}>
+          <RecommendationSection title={t('composer_works_by', { name: composer.name })}>
             {composerWorks.map((work) => (
               <RecommendationCard
                 imageSrc={catalogAssets[getWorkAsset(work)]}
@@ -122,7 +126,7 @@ export function ComposerDetailPage({ composer }: ComposerDetailPageProps) {
             ))}
           </RecommendationSection>
         ) : (
-          <p className="essential-works-empty">No works in the catalog yet.</p>
+          <p className="essential-works-empty">{t('composer_no_works')}</p>
         )
       ) : null}
     </article>

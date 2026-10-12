@@ -5,6 +5,7 @@ import type { Quote } from '@/models/composer'
 import { ImageCreditLink } from './image-credit-link'
 import type { FactListItem } from './fact-list'
 import { FactList } from './fact-list'
+import { t } from '@/i18n'
 
 type DetailHeroBreadcrumb = {
   label: string
@@ -52,7 +53,7 @@ export function DetailHero({
       <img src={imageSrc} alt={imageAlt} />
       {imageCredit ? <ImageCreditLink credit={imageCredit} imageSrc={imageSrc} /> : null}
       <div className="detail-visual-hero-copy">
-        <nav className="detail-visual-breadcrumb" aria-label="Breadcrumb">
+        <nav className="detail-visual-breadcrumb" aria-label={t('breadcrumb')}>
           {breadcrumb.map((item, index) => (
             <span className="detail-visual-breadcrumb-item" key={`${item.label}-${index}`}>
               {item.to ? <Link to={item.to}>{item.label}</Link> : <strong>{item.label}</strong>}

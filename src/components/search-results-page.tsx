@@ -5,6 +5,7 @@ import { catalogPageMeta } from '@/data/catalog'
 import { searchCatalog, searchCategories, type SearchResult } from '@/data/search'
 import type { CatalogSection } from '@/models/catalog'
 import { SectionHeading } from './section-heading'
+import { t } from '@/i18n'
 
 const previewLimit = 3
 
@@ -48,15 +49,15 @@ export function SearchResultsPage({ query }: SearchResultsPageProps) {
 
   return (
     <section className="search-page">
-      <SectionHeading title={`Search results for "${trimmedQuery}"`} />
+      <SectionHeading title={t('search_results_for', { query: trimmedQuery })} />
 
-      <div className="search-tabs" aria-label="Search result categories">
+      <div className="search-tabs" aria-label={t('search_categories_label')}>
         <button
           className={activeCategory === 'all' ? 'active' : undefined}
           type="button"
           onClick={() => setActiveCategory('all')}
         >
-          All ({totalResults})
+          {t('filter_all')} ({totalResults})
         </button>
         {groupedResults.map(({ category, results: categoryResults }) => (
           <button
@@ -72,8 +73,8 @@ export function SearchResultsPage({ query }: SearchResultsPageProps) {
 
       {visibleResultCount === 0 ? (
         <div className="empty-results">
-          <h3>No results found</h3>
-          <p>Try searching for a composer, work, or article.</p>
+          <h3>{t('search_none_title')}</h3>
+          <p>{t('search_none_text')}</p>
         </div>
       ) : (
         visibleGroups.map(({ category, results: categoryResults }) => {
@@ -86,7 +87,7 @@ export function SearchResultsPage({ query }: SearchResultsPageProps) {
                 <h3>{catalogPageMeta[category].title}</h3>
                 {isPreview ? (
                   <button type="button" onClick={() => setActiveCategory(category)}>
-                    View all ({categoryResults.length})
+                    {t('view_all')} ({categoryResults.length})
                   </button>
                 ) : null}
               </div>
