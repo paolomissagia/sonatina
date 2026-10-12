@@ -6,15 +6,17 @@ import type { Genre } from '@/models/work'
 /** Import `t` from here rather than from i18next, so translations are loaded before first use. */
 export { t }
 
-export const locales = ['en', 'de', 'fr', 'it'] as const
+export const locales = ['en', 'de', 'es', 'fr', 'it', 'pt'] as const
 export type Locale = (typeof locales)[number]
 const defaultLocale: Locale = 'en'
 
 export const localeNames: Record<Locale, string> = {
   en: 'English',
   de: 'Deutsch',
+  es: 'Español',
   fr: 'Français',
   it: 'Italiano',
+  pt: 'Português',
 }
 
 export function isLocale(value: unknown): value is Locale {
