@@ -2,10 +2,6 @@ import i18next, { t } from 'i18next'
 import type { ArticleCategory } from '@/models/article'
 import type { Period } from '@/models/composer'
 import type { Genre } from '@/models/work'
-import de from '@/locales/de.json'
-import en from '@/locales/en.json'
-import fr from '@/locales/fr.json'
-import it from '@/locales/it.json'
 
 /** Import `t` from here rather than from i18next, so translations are loaded before first use. */
 export { t }
@@ -21,7 +17,7 @@ export const localeNames: Record<Locale, string> = {
   it: 'Italiano',
 }
 
-function isLocale(value: unknown): value is Locale {
+export function isLocale(value: unknown): value is Locale {
   return locales.includes(value as Locale)
 }
 
@@ -43,15 +39,17 @@ export function localizePath(path: string, target: Locale) {
   return target === defaultLocale ? path : `/${target}${path === '/' ? '' : path}`
 }
 
+/** Every `src/locales/<language>.json`, keyed by language. */
+const messages = Object.fromEntries(
+  Object.entries(import.meta.glob<Record<string, string>>('./locales/*.json', { eager: true, import: 'default' })).map(
+    ([path, file]) => [path.slice('./locales/'.length, -'.json'.length), file],
+  ),
+)
+
 void i18next.init({
   lng: locale,
   fallbackLng: defaultLocale,
-  resources: {
-    en: { translation: en },
-    de: { translation: de },
-    fr: { translation: fr },
-    it: { translation: it },
-  },
+  resources: Object.fromEntries(locales.map((code) => [code, { translation: messages[code] }])),
   // Resources are bundled, so labels are ready as soon as this module loads.
   initAsync: false,
   // React escapes text itself.
