@@ -4,6 +4,7 @@ import { getReadTime, getRecommendedArticles } from '@/data/articles'
 import { findWork, getWorkAsset } from '@/data/works'
 import type { Article } from '@/models/article'
 import type { Work } from '@/models/work'
+import { articleCategoryLabels, t } from '@/i18n'
 import { DetailHero } from '@/components/detail-hero'
 import { RecommendationCard } from '@/components/recommendation-card'
 import { RecommendationSection } from '@/components/recommendation-section'
@@ -16,11 +17,12 @@ export function ArticleDetailPage({ article }: ArticleDetailPageProps) {
   const readTime = getReadTime(article)
   const recommendedArticles = getRecommendedArticles(article)
   const articleWorks = article.workIds.map(findWork).filter((work): work is Work => work !== undefined)
+  const category = articleCategoryLabels[article.category]
   const articleDetails = [
-    { label: 'Type', value: article.type },
-    { label: 'Category', value: article.category },
-    { label: 'Audience', value: article.audience },
-    { label: 'Read time', value: readTime },
+    { label: t('article_type'), value: article.type },
+    { label: t('article_category'), value: category },
+    { label: t('article_audience'), value: article.audience },
+    { label: t('article_read_time'), value: readTime },
   ]
 
   return (
@@ -28,17 +30,17 @@ export function ArticleDetailPage({ article }: ArticleDetailPageProps) {
       <title>{`${article.title} · Sonatina`}</title>
       <DetailHero
         breadcrumb={[
-          { label: 'Articles', to: '/articles' },
+          { label: t('nav_articles'), to: '/articles' },
           { label: article.title },
         ]}
         description={article.description}
         facts={articleDetails}
-        factsTitle="Article details"
+        factsTitle={t('article_details')}
         imageCredit={assetCredits[article.asset]}
         imageSrc={catalogAssets[article.asset]}
         meta={
           <>
-            <span>{article.category}</span>
+            <span>{category}</span>
             <span>{readTime}</span>
           </>
         }
@@ -60,7 +62,7 @@ export function ArticleDetailPage({ article }: ArticleDetailPageProps) {
       </div>
 
       {articleWorks.length > 0 ? (
-        <RecommendationSection title="Works in this article">
+        <RecommendationSection title={t('article_works')}>
           {articleWorks.map((work) => (
             <RecommendationCard
               imageSrc={catalogAssets[getWorkAsset(work)]}
@@ -75,13 +77,13 @@ export function ArticleDetailPage({ article }: ArticleDetailPageProps) {
       ) : null}
 
       {recommendedArticles.length > 0 ? (
-        <RecommendationSection title="Recommended articles">
+        <RecommendationSection title={t('article_recommended')}>
           {recommendedArticles.map((recommendedArticle) => (
             <RecommendationCard
               imageSrc={catalogAssets[recommendedArticle.asset]}
               key={recommendedArticle.id}
               meta={getReadTime(recommendedArticle)}
-              subtitle={recommendedArticle.category}
+              subtitle={articleCategoryLabels[recommendedArticle.category]}
               title={recommendedArticle.title}
               to={`/articles/${recommendedArticle.id}`}
             />

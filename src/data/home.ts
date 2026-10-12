@@ -3,6 +3,7 @@ import type { EditorPick } from '@/models/home'
 import { findCatalogItem } from './catalog'
 import { findComposer } from './composers'
 import { findWork } from './works'
+import { t } from '@/i18n'
 
 type EditorPickSource = {
   section: CatalogSection
@@ -12,9 +13,9 @@ type EditorPickSource = {
 }
 
 const pickLabels: Record<CatalogSection, string> = {
-  works: 'Work',
-  composers: 'Composer',
-  articles: 'Article',
+  works: t('pick_work'),
+  composers: t('pick_composer'),
+  articles: t('pick_article'),
 }
 
 /** Historic recordings worth hearing first, plus the article that tells their story. */
@@ -35,7 +36,7 @@ export const editorPicks: EditorPick[] = editorPickSources.flatMap(({ section, i
   return [
     {
       section,
-      type: recording ? 'Historic recording' : pickLabels[section],
+      type: recording ? t('pick_recording') : pickLabels[section],
       title: item.title,
       subtitle: item.subtitle,
       meta: recording ?? item.meta ?? '',

@@ -2,6 +2,7 @@ import { X } from 'lucide-react'
 import { useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import type { ImageCredit } from '@/assets/catalog-assets'
+import { t } from '@/i18n'
 
 type ImageCreditLinkProps = {
   credit: ImageCredit
@@ -33,7 +34,7 @@ export function ImageCreditLink({ credit, imageSrc }: ImageCreditLinkProps) {
   const [open, setOpen] = useState(false)
   const [failed, setFailed] = useState(false)
   const full = fullImage(credit.source)
-  const name = credit.title ?? 'Portrait'
+  const name = credit.title ?? t('image_portrait')
 
   const close = () => dialogRef.current?.close()
 
@@ -48,7 +49,7 @@ export function ImageCreditLink({ credit, imageSrc }: ImageCreditLinkProps) {
           dialogRef.current?.showModal()
         }}
       >
-        {credit.title ? <span className="image-credit-title">{credit.title} - </span> : 'Portrait: '}
+        {credit.title ? <span className="image-credit-title">{credit.title} - </span> : `${t('image_portrait')}: `}
         {credit.artist}, {credit.year}
       </button>
 
@@ -69,7 +70,7 @@ export function ImageCreditLink({ credit, imageSrc }: ImageCreditLinkProps) {
           {open ? (
             <figure>
               <img
-                alt={credit.title ? `${credit.title} by ${credit.artist}` : `Portrait by ${credit.artist}`}
+                alt={credit.title ? t('image_title_by', { title: credit.title, artist: credit.artist }) : t('image_portrait_by', { artist: credit.artist })}
                 src={failed || !full ? imageSrc : full.src}
                 srcSet={failed || !full ? undefined : full.srcSet}
                 sizes="94vw"
@@ -80,12 +81,12 @@ export function ImageCreditLink({ credit, imageSrc }: ImageCreditLinkProps) {
                   <strong>{name}</strong> {credit.artist}, {credit.year}
                 </span>
                 <a href={credit.source} target="_blank" rel="noreferrer">
-                  View source
+                  {t('image_source')}
                 </a>
               </figcaption>
             </figure>
           ) : null}
-          <button className="image-viewer-close" type="button" aria-label="Close" onClick={close}>
+          <button className="image-viewer-close" type="button" aria-label={t('close')} onClick={close}>
             <X size={18} />
           </button>
         </dialog>,

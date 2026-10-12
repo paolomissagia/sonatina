@@ -3,6 +3,7 @@ import { Link, useSearchParams } from 'react-router'
 import { catalogPageMeta, getCatalogItems, matchesWorkFilter, workFilters } from '@/data/catalog'
 import { eras, findEra, getComposersByEra, getEraArticle, getEraStation } from '@/data/eras'
 import { usePlayer } from '@/player/player-context'
+import { periodLabels, t } from '@/i18n'
 import type { CatalogSection } from '@/models/catalog'
 import { CollectionCard } from '@/components/collection-card'
 import { SectionHeading } from '@/components/section-heading'
@@ -42,7 +43,7 @@ export function CollectionPage({ view }: CollectionPageProps) {
       </div>
 
       {view === 'works' ? (
-        <div className="collection-filter-list" aria-label="Filter works by genre">
+        <div className="collection-filter-list" aria-label={t('works_filter_label')}>
           {workFilters.map((filter) => (
             <Link
               className={activeGenre === filter.value ? 'active' : undefined}
@@ -56,9 +57,9 @@ export function CollectionPage({ view }: CollectionPageProps) {
       ) : null}
 
       {view === 'composers' ? (
-        <div className="collection-filter-list" aria-label="Filter composers by era">
+        <div className="collection-filter-list" aria-label={t('composers_filter_label')}>
           <Link className={activeEra ? undefined : 'active'} to="/composers">
-            All
+            {t('filter_all')}
           </Link>
           {eras.map((era) => (
             <Link
@@ -66,7 +67,7 @@ export function CollectionPage({ view }: CollectionPageProps) {
               key={era.id}
               to={`/composers?era=${era.id}`}
             >
-              {era.period}
+              {periodLabels[era.period]}
             </Link>
           ))}
         </div>
@@ -79,10 +80,10 @@ export function CollectionPage({ view }: CollectionPageProps) {
             {eraStation ? (
               <button className="primary-action" type="button" onClick={() => player.tune(eraStation)}>
                 <Radio size={16} />
-                Play {activeEra.period} radio
+                {t('era_radio', { period: periodLabels[activeEra.period] })}
               </button>
             ) : null}
-            {eraGuide ? <Link to={`/articles/${eraGuide.id}`}>Read the article</Link> : null}
+            {eraGuide ? <Link to={`/articles/${eraGuide.id}`}>{t('era_article')}</Link> : null}
           </div>
         </div>
       ) : null}

@@ -1,7 +1,8 @@
 import type { CatalogItem, CatalogSection } from '@/models/catalog'
 import type { Composer } from '@/models/composer'
 import type { Article } from '@/models/article'
-import { genres, type Genre, type Work } from '@/models/work'
+import { genres, type Work } from '@/models/work'
+import { genreLabels, periodLabels, t } from '@/i18n'
 import { composers, formatLifespan, getComposerName } from './composers'
 import { getReadTime, articles } from './articles'
 import { getWorkAsset, getWorkPeriod, works } from './works'
@@ -13,16 +14,16 @@ export type CatalogPageMeta = {
 
 export const catalogPageMeta: Record<CatalogSection, CatalogPageMeta> = {
   works: {
-    title: 'Works',
-    description: 'Essential pieces and repertoire landmarks from across classical music.',
+    title: t('nav_works'),
+    description: t('works_intro'),
   },
   composers: {
-    title: 'Composers',
-    description: 'Browse major composers by style, period, and influence.',
+    title: t('nav_composers'),
+    description: t('composers_intro'),
   },
   articles: {
-    title: 'Articles',
-    description: 'Short paths into repertoire, listening habits, and classical music history.',
+    title: t('nav_articles'),
+    description: t('articles_intro'),
   },
 }
 
@@ -49,7 +50,7 @@ function composerToCatalogItem(composer: Composer): CatalogItem {
   return {
     id: composer.id,
     title: composer.name,
-    subtitle: composer.period,
+    subtitle: periodLabels[composer.period],
     detail: composer.bio,
     asset: composer.asset,
     meta: formatLifespan(composer),
@@ -69,20 +70,9 @@ function articleToCatalogItem(article: Article): CatalogItem {
   }
 }
 
-const genreLabels: Record<Genre, string> = {
-  Symphony: 'Symphonies',
-  Concerto: 'Concertos',
-  Orchestral: 'Orchestral',
-  Piano: 'Piano',
-  Chamber: 'Chamber',
-  Choral: 'Choral',
-  Opera: 'Opera',
-  Ballet: 'Ballet',
-}
-
 /** Works-page filters, linked as `/works?genre=<value>`. */
 export const workFilters = [
-  { label: 'All', value: '' },
+  { label: t('filter_all'), value: '' },
   ...genres.map((genre) => ({ label: genreLabels[genre], value: genre.toLowerCase() })),
 ]
 

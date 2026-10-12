@@ -1,27 +1,28 @@
 import type { HomeExploreCategory } from '@/models/home'
+import { t } from '@/i18n'
 
 export const exploreCategories: HomeExploreCategory[] = [
   {
-    title: 'Opera',
-    description: 'Voices, drama, and stage works',
+    title: t('explore_opera'),
+    description: t('explore_opera_text'),
     asset: 'categoryOpera',
     to: '/works?genre=opera',
   },
   {
-    title: 'Piano',
-    description: 'Sonatas, nocturnes, and miniatures',
+    title: t('explore_piano'),
+    description: t('explore_piano_text'),
     asset: 'categoryPiano',
     to: '/works?genre=piano',
   },
   {
-    title: 'Symphonies',
-    description: 'Large-scale orchestral landmarks',
+    title: t('explore_symphonies'),
+    description: t('explore_symphonies_text'),
     asset: 'categorySymphony',
     to: '/works?genre=symphony',
   },
   {
-    title: 'Chamber Music',
-    description: 'Trios, serenades, and intimate forms',
+    title: t('explore_chamber'),
+    description: t('explore_chamber_text'),
     asset: 'categoryChamber',
     to: '/works?genre=chamber',
   },

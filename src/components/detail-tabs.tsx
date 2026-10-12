@@ -1,6 +1,7 @@
 type DetailTabsProps<T extends string> = {
   activeTab?: T
   ariaLabel: string
+  labels: Record<T, string>
   tabs: readonly T[]
   onChange?: (tab: T) => void
 }
@@ -8,6 +9,7 @@ type DetailTabsProps<T extends string> = {
 export function DetailTabs<T extends string>({
   activeTab,
   ariaLabel,
+  labels,
   tabs,
   onChange,
 }: DetailTabsProps<T>) {
@@ -24,7 +26,7 @@ export function DetailTabs<T extends string>({
           role="tab"
           type="button"
         >
-          {tab}
+          {labels[tab]}
         </button>
       ))}
     </div>

@@ -17,6 +17,7 @@ import { loadRecordings } from '@/player/use-recording'
 import { SearchPage } from '@/pages/search-page'
 import { WorkDetailPage } from '@/pages/work-detail-page'
 import './App.css'
+import { t } from '@/i18n'
 
 function RoutedComposerDetailPage() {
   const { id } = useParams()
@@ -112,7 +113,7 @@ function App() {
         <button
           className="sidebar-backdrop"
           type="button"
-          aria-label="Close menu"
+          aria-label={t('menu_close')}
           onClick={() => setIsSidebarOpen(false)}
         />
       ) : null}

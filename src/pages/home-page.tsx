@@ -4,28 +4,29 @@ import { assetCredits, catalogAssets } from '@/assets/catalog-assets'
 import { ImageCreditLink } from '@/components/image-credit-link'
 import { exploreCategories } from '@/data/explore-categories'
 import { editorPicks } from '@/data/home'
+import { t } from '@/i18n'
 
 export function HomePage() {
   return (
     <div className="home-page">
-      <title>Sonatina · Discover classical music</title>
+      <title>{t('home_title')}</title>
       <section className="home-hero">
         <img src={catalogAssets.burgtheaterAuditorium} alt="" />
         <ImageCreditLink credit={assetCredits.burgtheaterAuditorium} imageSrc={catalogAssets.burgtheaterAuditorium} />
         <div className="home-hero-copy">
           <h1>
-            Discover
-            <span>the world of</span>
-            <em>classical music.</em>
+            {t('home_hero_discover')}
+            <span>{t('home_hero_world')}</span>
+            <em>{t('home_hero_music')}</em>
           </h1>
-          <p>Explore works, composers and articles that make classical music easier to approach.</p>
+          <p>{t('home_hero_text')}</p>
           <div className="home-hero-actions">
             <Link className="primary-action" to="/works">
-              Start exploring
+              {t('home_start')}
             </Link>
             <Link className="hero-radio-action" to="/radio">
               <Radio size={17} />
-              Listen to the radio
+              {t('home_radio')}
             </Link>
           </div>
         </div>
@@ -33,7 +34,7 @@ export function HomePage() {
 
       <section className="home-section">
         <div className="home-section-heading">
-          <h2>Explore</h2>
+          <h2>{t('home_explore')}</h2>
         </div>
         <div className="home-explore-grid">
           {exploreCategories.map((category) => (
@@ -48,7 +49,7 @@ export function HomePage() {
 
       <section className="home-section">
         <div className="home-section-heading">
-          <h2>Editor&apos;s picks</h2>
+          <h2>{t('home_picks')}</h2>
         </div>
         <div className="editor-picks-grid">
           {editorPicks.map((pick) => (

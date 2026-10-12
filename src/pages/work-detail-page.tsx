@@ -5,6 +5,7 @@ import { findComposer, getComposerName } from '@/data/composers'
 import type { Work } from '@/models/work'
 import { formatDuration, formatKeyAndCatalogue, getRecommendedWorks, getWorkAsset, getWorkPeriod } from '@/data/works'
 import { usePlayer } from '@/player/player-context'
+import { periodLabels, t } from '@/i18n'
 import { useRecording } from '@/player/use-recording'
 import { DetailHero } from '@/components/detail-hero'
 import { DetailTabs } from '@/components/detail-tabs'
@@ -16,23 +17,28 @@ type WorkDetailPageProps = {
   work: Work
 }
 
-const tabs = ['Overview', 'Movements', 'Details'] as const
+const tabs = ['overview', 'movements', 'details'] as const
 type WorkTab = (typeof tabs)[number]
+const tabLabels: Record<WorkTab, string> = {
+  overview: t('tab_overview'),
+  movements: t('tab_movements'),
+  details: t('tab_details'),
+}
 
 function getMovementsTitle(work: Work) {
   if (work.partOf) {
-    return `From ${work.partOf}`
+    return t('movements_from', { set: work.partOf })
   }
 
   if (work.form.startsWith('Song cycle')) {
-    return 'Songs'
+    return t('movements_songs')
   }
 
-  return work.genre === 'Opera' || work.genre === 'Ballet' ? 'Structure' : 'Movements'
+  return work.genre === 'Opera' || work.genre === 'Ballet' ? t('movements_structure') : t('movements')
 }
 
 export function WorkDetailPage({ work }: WorkDetailPageProps) {
-  const [activeTab, setActiveTab] = useState<WorkTab>('Overview')
+  const [activeTab, setActiveTab] = useState<WorkTab>('overview')
   const composer = findComposer(work.composerId)
   const composerName = getComposerName(work.composerId)
   const recommendedWorks = getRecommendedWorks(work)
@@ -80,17 +86,18 @@ export function WorkDetailPage({ work }: WorkDetailPageProps) {
       onPlay={recording ? playMovement : undefined}
     />
   )
+  const period = getWorkPeriod(work)
   const workDetails = [
-    { label: 'Composer', value: composerName },
-    ...(work.catalogue ? [{ label: 'Catalogue', value: work.catalogue }] : []),
-    ...(work.key ? [{ label: 'Key', value: work.key }] : []),
-    ...(work.nickname ? [{ label: 'Also known as', value: work.nickname }] : []),
-    { label: 'Composed', value: work.composed },
-    ...(work.premiere ? [{ label: 'Premiere', value: work.premiere }] : []),
-    { label: 'Duration', value: `About ${formatDuration(work.durationMinutes)}` },
-    { label: 'Form', value: work.form },
-    { label: 'Period', value: getWorkPeriod(work) ?? '' },
-    { label: 'Instrumentation', value: work.instrumentation },
+    { label: t('work_composer'), value: composerName },
+    ...(work.catalogue ? [{ label: t('work_catalogue'), value: work.catalogue }] : []),
+    ...(work.key ? [{ label: t('work_key'), value: work.key }] : []),
+    ...(work.nickname ? [{ label: t('work_nickname'), value: work.nickname }] : []),
+    { label: t('work_composed'), value: work.composed },
+    ...(work.premiere ? [{ label: t('work_premiere'), value: work.premiere }] : []),
+    { label: t('work_duration'), value: t('work_duration_about', { duration: formatDuration(work.durationMinutes) }) },
+    { label: t('work_form'), value: work.form },
+    { label: t('work_period'), value: period ? periodLabels[period] : '' },
+    { label: t('work_instrumentation'), value: work.instrumentation },
   ]
 
   return (
@@ -98,7 +105,7 @@ export function WorkDetailPage({ work }: WorkDetailPageProps) {
       <title>{`${work.title} · ${composerName} · Sonatina`}</title>
       <DetailHero
         breadcrumb={[
-          { label: 'Works', to: '/works' },
+          { label: t('nav_works'), to: '/works' },
           ...(composer ? [{ label: composerName, to: `/composers/${composer.id}` }] : []),
           { label: work.title },
         ]}
@@ -107,10 +114,10 @@ export function WorkDetailPage({ work }: WorkDetailPageProps) {
             <>
               <button className="primary-action listen-action" type="button" onClick={playWork}>
                 {isCurrent && player.playing ? <Pause size={17} /> : <Play size={17} />}
-                {isCurrent && player.playing ? 'Pause' : isCurrent ? 'Resume' : 'Listen'}
+                {isCurrent && player.playing ? t('pause') : isCurrent ? t('work_resume') : t('work_listen')}
               </button>
               <p className="listen-credit">
-                Recording: {recording.performer}
+                {t('work_recording', { performer: recording.performer })}
                 {recording.license && recording.licenseUrl ? (
                   <>
                     {' · '}
@@ -141,16 +148,17 @@ export function WorkDetailPage({ work }: WorkDetailPageProps) {
 
       <DetailTabs
         activeTab={activeTab}
-        ariaLabel={`${work.title} sections`}
+        ariaLabel={t('sections_label', { title: work.title })}
+        labels={tabLabels}
         onChange={setActiveTab}
         tabs={tabs}
       />
 
-      {activeTab === 'Overview' ? (
+      {activeTab === 'overview' ? (
         <div className="work-tab-panel">
           <div className="work-overview-grid">
             <section className="work-listen">
-              <h2>Why listen?</h2>
+              <h2>{t('work_why_listen')}</h2>
               <p>{work.overview}</p>
             </section>
 
@@ -158,7 +166,7 @@ export function WorkDetailPage({ work }: WorkDetailPageProps) {
           </div>
 
           {recommendedWorks.length > 0 ? (
-            <RecommendationSection title="Recommended works">
+            <RecommendationSection title={t('work_recommended')}>
               {recommendedWorks.map((relatedWork) => (
                 <RecommendationCard
                   imageSrc={catalogAssets[getWorkAsset(relatedWork)]}
@@ -174,13 +182,13 @@ export function WorkDetailPage({ work }: WorkDetailPageProps) {
         </div>
       ) : null}
 
-      {activeTab === 'Movements' ? (
+      {activeTab === 'movements' ? (
         movementList('movement-tab-card')
       ) : null}
 
-      {activeTab === 'Details' ? (
+      {activeTab === 'details' ? (
         <section className="work-details-panel">
-          <h2>Details</h2>
+          <h2>{t('work_details')}</h2>
           <dl>
             {workDetails.map((detail) => (
               <div key={detail.label}>

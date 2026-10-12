@@ -3,12 +3,13 @@ import { Link } from 'react-router'
 import { getComposerName } from '@/data/composers'
 import { formatTime, usePlayer } from '@/player/player-context'
 import { toRoman } from '@/player/roman'
+import { t } from '@/i18n'
 
 /** The "now playing" bar, pinned to the bottom of the page while a recording is loaded. */
 export function PlayerBar() {
   const player = usePlayer()
   const { work, recording, index, last, playing, time, duration, error, station, shuffle, repeat, volume, muted } = player
-  const repeatLabels = { off: 'Repeat: off', work: 'Repeat: this work', track: 'Repeat: this track' }
+  const repeatLabels = { off: t('player_repeat_off'), work: t('player_repeat_work'), track: t('player_repeat_track') }
 
   if (!work || !recording) {
     return null
@@ -19,15 +20,15 @@ export function PlayerBar() {
   const label = movementCount > 1 ? `${toRoman(track.movement + 1)}. ${track.title}` : track.title
 
   return (
-    <section className="player-bar" aria-label="Now playing">
+    <section className="player-bar" aria-label={t('player_label')}>
       <div className="player-controls">
-        <button className="player-button" type="button" aria-label="Previous track" onClick={player.previous}>
+        <button className="player-button" type="button" aria-label={t('player_previous')} onClick={player.previous}>
           <SkipBack size={17} />
         </button>
         <button
           className="player-button player-play"
           type="button"
-          aria-label={playing ? 'Pause' : 'Play'}
+          aria-label={playing ? t('pause') : t('play')}
           onClick={player.toggle}
         >
           {playing ? <Pause size={18} /> : <Play size={18} />}
@@ -35,7 +36,7 @@ export function PlayerBar() {
         <button
           className="player-button"
           type="button"
-          aria-label="Next track"
+          aria-label={t('player_next')}
           disabled={index >= last && !station && !shuffle}
           onClick={player.next}
         >
@@ -47,9 +48,9 @@ export function PlayerBar() {
         <button
           className={shuffle ? 'player-button player-toggle active' : 'player-button player-toggle'}
           type="button"
-          aria-label="Shuffle"
+          aria-label={t('player_shuffle')}
           aria-pressed={shuffle}
-          title={shuffle ? 'Shuffle is on: skip to a random piece' : 'Shuffle'}
+          title={shuffle ? t('player_shuffle_on') : t('player_shuffle')}
           onClick={player.toggleShuffle}
         >
           <Shuffle size={16} />
@@ -69,22 +70,22 @@ export function PlayerBar() {
         {station ? (
           <Link className="player-station" to="/radio">
             <Radio size={13} aria-hidden="true" />
-            {station.name} radio
+            {t('player_station', { station: station.name })}
           </Link>
         ) : null}
         <Link className="player-work" to={`/works/${work.id}`}>
           {work.title} <span>· {getComposerName(work.composerId)}</span>
         </Link>
         <p className="player-track">
-          {error ? 'This recording couldn’t be loaded. Try another track.' : label}
+          {error ? t('player_error') : label}
         </p>
       </div>
 
       <div className="player-progress">
         <span>{formatTime(time)}</span>
         <input
-          aria-label="Seek"
-          aria-valuetext={`${formatTime(time)} of ${formatTime(duration)}`}
+          aria-label={t('player_seek')}
+          aria-valuetext={t('player_seek_value', { time: formatTime(time), duration: formatTime(duration) })}
           max={duration || 0}
           min={0}
           step={1}
@@ -99,13 +100,13 @@ export function PlayerBar() {
         <button
           className="player-button"
           type="button"
-          aria-label={muted ? 'Unmute' : 'Mute'}
+          aria-label={muted ? t('player_unmute') : t('player_mute')}
           onClick={player.toggleMute}
         >
           {muted || volume === 0 ? <VolumeX size={16} /> : <Volume2 size={16} />}
         </button>
         <input
-          aria-label="Volume"
+          aria-label={t('player_volume')}
           max={1}
           min={0}
           step={0.05}
@@ -116,7 +117,7 @@ export function PlayerBar() {
       </div>
 
 
-      <button className="player-button player-close" type="button" aria-label="Close player" onClick={player.close}>
+      <button className="player-button player-close" type="button" aria-label={t('player_close')} onClick={player.close}>
         <X size={16} />
       </button>
     </section>
