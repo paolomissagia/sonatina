@@ -2,6 +2,7 @@ import { X } from 'lucide-react'
 import { useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import type { ImageCredit } from '@/assets/catalog-assets'
+import { useHydrated } from '@/use-hydrated'
 
 type ImageCreditLinkProps = {
   credit: ImageCredit
@@ -32,6 +33,8 @@ export function ImageCreditLink({ credit, imageSrc }: ImageCreditLinkProps) {
   const dialogRef = useRef<HTMLDialogElement>(null)
   const [open, setOpen] = useState(false)
   const [failed, setFailed] = useState(false)
+  // The viewer is a portal on document.body, which only exists once the page is in the browser.
+  const hydrated = useHydrated()
   const full = fullImage(credit.source)
   const name = credit.title ?? 'Portrait'
 
@@ -53,7 +56,7 @@ export function ImageCreditLink({ credit, imageSrc }: ImageCreditLinkProps) {
       </button>
 
       {/* Rendered at the document root so the hero's image styles don't reach the viewer. */}
-      {createPortal(
+      {hydrated && createPortal(
         <dialog
           className="image-viewer"
           ref={dialogRef}

@@ -23,11 +23,11 @@ npm test       # unit tests
 
 Other scripts:
 
-| Command           | What it does                               |
-| ----------------- | ------------------------------------------ |
-| `npm run build`   | Type-check (`tsc -b`) and build to `dist/` |
-| `npm run preview` | Serve the production build locally         |
-| `npm run lint`    | Run oxlint                                 |
+| Command           | What it does                                                       |
+| ----------------- | ------------------------------------------------------------------ |
+| `npm run build`   | Type-check (`tsc -b`) and prerender every page to `build/client/` |
+| `npm run preview` | Serve the production build locally, the way Vercel serves it       |
+| `npm run lint`    | Run oxlint                                                         |
 
 ### Docker
 
@@ -41,6 +41,8 @@ Then open http://localhost:5173. Source changes are mounted into the container a
 
 ```
 src/
+  root.tsx          HTML document and player provider
+  routes.ts         Hands every address to App.tsx
   App.tsx           App shell and routes
   pages/            One component per route
   components/       Shared UI (cards, detail hero, tabs, sidebar, …)
@@ -51,6 +53,8 @@ src/
                     the radio's track picker
   assets/           WebP artwork; catalog-assets.ts maps asset keys to imports
 ```
+
+The site uses React Router's framework mode with no server: `npm run build` prerenders the static pages and every work, composer and article (listed in `react-router.config.ts`) to HTML, and other addresses get `__spa-fallback.html`. The first render in the browser must match that HTML, so anything read from the query string or `document` waits for `useHydrated()`.
 
 Catalog content lives in `src/data/*.ts`. Records reference artwork by key (see `CatalogAssetKey`), and works reference composers by `composerId`. Movements are listed by name only, with no notes.
 

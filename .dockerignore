@@ -11,3 +11,5 @@ Dockerfile
 .idea
 .vscode
 .pnpm-store
+build
+.react-router
