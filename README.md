@@ -8,7 +8,7 @@ Live at https://sonatina.vercel.app (deploys from `main`). Brand and voice: [BRA
 
 - React 19 + TypeScript, built with Vite 8
 - React Router 8 (declarative `BrowserRouter` routes in `src/App.tsx`)
-- i18next for interface text in English, German, French and Italian
+- i18next for interface text in English, German, Spanish, French, Italian and Portuguese
 - Plain CSS: `src/reset.css` (base reset), `src/index.css` (brand tokens), `src/App.css` (components)
 - EB Garamond and Geist, self-hosted via Fontsource
 - Vitest for unit tests, oxlint for linting
@@ -62,7 +62,7 @@ Catalog content lives in `src/data/*.ts`. Records reference artwork by key (see 
 
 ### Languages
 
-Interface text lives in `src/locales/<language>.json`; English (`en.json`) is the source, and `src/i18next.d.ts` types the keys, so a misspelled key or a missing `{{value}}` fails the type-check. A language without a translation for a key falls back to English. The catalogue itself (works, composers, articles) is English only for now.
+Interface text lives in `src/locales/<language>.json`, loaded automatically; to add a language, add its file and its code and name to `locales` and `localeNames` in `src/i18n.ts`. English (`en.json`) is the source, and `src/i18next.d.ts` types the keys, so a misspelled key or a missing `{{value}}` fails the type-check. A language without a translation for a key falls back to English. The catalogue itself (works, composers, articles) is English only for now.
 
 - The address picks the language: `/de/works` is German, unprefixed addresses English. `src/i18n.ts` reads it once and hands React Router the prefix as its `basename`, so routes and links don't mention languages.
 - Only the home page redirects: someone landing on `/` goes to the language they last picked in the sidebar, else their browser's. Any other link opens in the language it was shared in.

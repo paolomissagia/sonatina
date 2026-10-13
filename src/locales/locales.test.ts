@@ -1,18 +1,21 @@
 import { describe, expect, it } from 'vitest'
-import de from './de.json'
+import { locales } from '@/i18n'
 import en from './en.json'
-import fr from './fr.json'
-import itLocale from './it.json'
 
-const translations = { de, fr, it: itLocale }
+const files = import.meta.glob<Record<string, string>>('./*.json', { eager: true, import: 'default' })
+const messages = (code: string) => files[`./${code}.json`]
 
 const placeholders = (text: string) => [...text.matchAll(/\{\{(\w+)\}\}/g)].map((match) => match[1]).sort()
 
-describe.each(Object.entries(translations))('%s', (_, messages) => {
-  const entries: [string, string][] = Object.entries(messages)
+it('has a messages file for every language, and no others', () => {
+  expect(Object.keys(files).sort()).toEqual(locales.map((code) => `./${code}.json`).sort())
+})
+
+describe.each(locales.filter((code) => code !== 'en'))('%s', (code) => {
+  const entries = Object.entries(messages(code) ?? {})
 
   it('has exactly the English keys', () => {
-    expect(Object.keys(messages).sort()).toEqual(Object.keys(en).sort())
+    expect(entries.map(([key]) => key).sort()).toEqual(Object.keys(en).sort())
   })
 
   it('keeps every {{placeholder}} from English', () => {
