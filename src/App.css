@@ -130,46 +130,83 @@ button {
   gap: 5px;
 }
 
-/* Looks like a sidebar link; the native select keeps it usable with a keyboard and on phones. */
+/* A sidebar link that opens a list of languages above it. */
 .language-picker {
   position: relative;
-  min-height: 40px;
-  padding: 0 12px;
-  border-radius: 8px;
-  color: rgb(var(--frame-muted));
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  transition:
-    background 160ms ease,
-    color 160ms ease;
 }
 
-.language-picker:hover,
-.language-picker:focus-within {
+.language-trigger[aria-expanded='true'] {
   color: rgb(var(--frame-ink));
   background: rgb(var(--frame-ink) / 0.08);
 }
 
-.language-picker svg {
-  flex: 0 0 auto;
-}
-
-.language-picker select {
+.language-trigger span {
   flex: 1;
-  min-width: 0;
-  min-height: 40px;
-  border: 0;
-  color: inherit;
-  background: transparent;
-  font: inherit;
-  cursor: pointer;
-  /* The open list follows the dark sidebar. */
-  color-scheme: dark;
 }
 
-.language-picker select:focus-visible {
+.language-chevron {
+  opacity: 0.7;
+}
+
+.language-menu {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 6px);
+  left: 0;
+  z-index: 3;
+  margin: 0;
+  padding: 5px;
+  border: 1px solid rgb(var(--frame-rule));
+  border-radius: 10px;
+  background: rgb(var(--frame-deep));
+  box-shadow: 0 18px 48px rgb(var(--shadow) / 0.35);
+  list-style: none;
+  display: grid;
+  gap: 2px;
+  animation: language-menu-in 140ms ease-out;
+}
+
+.language-option {
+  min-height: 36px;
+  padding: 0 10px;
+  border-radius: 7px;
+  color: rgb(var(--frame-muted));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  text-decoration: none;
+  transition:
+    background 120ms ease,
+    color 120ms ease;
+}
+
+.language-option:hover,
+.language-option:focus-visible {
+  color: rgb(var(--frame-ink));
+  background: rgb(var(--frame-ink) / 0.08);
   outline: none;
+}
+
+.language-option[aria-current] {
+  color: rgb(var(--frame-ink));
+}
+
+.language-option svg {
+  color: rgb(var(--frame-gilt));
+}
+
+@keyframes language-menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .language-menu {
+    animation: none;
+  }
 }
 
 .topbar {
