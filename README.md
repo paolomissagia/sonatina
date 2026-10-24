@@ -2,7 +2,7 @@
 
 A friendly guide to classical music: browse works, composers by era and articles, play historical recordings of almost every work, or leave the radio on while you read.
 
-Live at https://sonatina.vercel.app (deploys from `main`). Brand and voice: [BRAND.md](BRAND.md).
+Live at https://www.sonatina.eu (deploys from `main`). Brand and voice: [BRAND.md](BRAND.md).
 
 ## Stack
 

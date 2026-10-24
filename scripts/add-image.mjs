@@ -22,7 +22,7 @@ if (!file?.startsWith('File:') || !out?.endsWith('.webp')) {
   process.exit(1)
 }
 
-const headers = { 'User-Agent': 'sonatina/1.0 (https://sonatina.vercel.app)' }
+const headers = { 'User-Agent': 'sonatina/1.0 (https://www.sonatina.eu)' }
 const api = new URL('https://commons.wikimedia.org/w/api.php')
 api.search = new URLSearchParams({
   format: 'json', action: 'query', prop: 'imageinfo', iiprop: 'url|size|extmetadata', iiurlwidth: '2400', titles: file,

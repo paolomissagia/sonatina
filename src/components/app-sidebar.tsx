@@ -49,6 +49,12 @@ export function AppSidebar({ isOpen, onClose, onNavigate }: AppSidebarProps) {
           onNavigate={onNavigate}
         />
         <LanguagePicker />
+        <p className="sidebar-credit">
+          {t('made_by')}{' '}
+          <a href="https://www.paolomissagia.com" rel="author">
+            Paolo Missagia
+          </a>
+        </p>
       </div>
     </aside>
   )

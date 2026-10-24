@@ -15,7 +15,7 @@ if (files.length === 0 || !files.every((file) => file.startsWith('File:'))) {
   process.exit(1)
 }
 
-const headers = { 'User-Agent': 'sonatina/1.0 (https://sonatina.vercel.app)' }
+const headers = { 'User-Agent': 'sonatina/1.0 (https://www.sonatina.eu)' }
 const plain = (html = '') =>
   html.replace(/<[^>]+>/g, '').replace(/\s*(date|label|title) QS:.*/s, '').replace(/\s+/g, ' ').trim()
 const free = /^(public domain|pd|cc0|cc by(-sa)? \d)/i

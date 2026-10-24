@@ -130,6 +130,26 @@ button {
   gap: 5px;
 }
 
+/* The author credit under the sidebar links. */
+.sidebar-credit {
+  margin: 8px 0 0;
+  padding: 0 12px;
+  color: rgb(var(--frame-muted) / 0.7);
+  font-size: 0.75rem;
+}
+
+.sidebar-credit a {
+  color: rgb(var(--frame-muted));
+  text-decoration: underline;
+  text-decoration-color: rgb(var(--frame-muted) / 0.4);
+  text-underline-offset: 3px;
+}
+
+.sidebar-credit a:hover {
+  color: rgb(var(--frame-ink));
+  text-decoration-color: rgb(var(--frame-gilt));
+}
+
 /* A sidebar link that opens a list of languages above it. */
 .language-picker {
   position: relative;
