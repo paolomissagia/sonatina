@@ -1,35 +1,39 @@
-import {
-  BookOpen,
-  Home,
-  Info,
-  Music2,
-  Radio,
-  UserRound,
-} from 'lucide-react'
-import type { LucideIcon } from 'lucide-react'
-import { t } from '@/i18n'
+import { t, type MessageKey } from '@/i18n'
 
-export type ViewId =
-  | 'discover'
-  | 'works'
-  | 'composers'
-  | 'articles'
-  | 'radio'
-  | 'about'
+export type ViewId = 'discover' | 'works' | 'composers' | 'articles' | 'radio' | 'search' | 'about'
 
 export type NavItem = {
   id: ViewId
-  label: string
-  icon: LucideIcon
+  /** Where the item leads; the item is active anywhere under it. */
+  path: '/' | `/${Exclude<ViewId, 'discover'>}`
+  readonly label: string
 }
 
+const item = (id: ViewId, key: MessageKey): NavItem => ({
+  id,
+  path: id === 'discover' ? '/' : `/${id as Exclude<ViewId, 'discover'>}`,
+  get label() {
+    return t(key)
+  },
+})
+
+/** The sections, in the order the sidebar and the tab bar list them. */
 export const navItems: NavItem[] = [
-  { id: 'discover', label: t('nav_discover'), icon: Home },
-  { id: 'works', label: t('nav_works'), icon: Music2 },
-  { id: 'composers', label: t('nav_composers'), icon: UserRound },
-  { id: 'articles', label: t('nav_articles'), icon: BookOpen },
+  item('discover', 'nav_discover'),
+  item('works', 'nav_works'),
+  item('composers', 'nav_composers'),
+  item('articles', 'nav_articles'),
 ]
 
-export const radioItem: NavItem = { id: 'radio', label: t('nav_radio'), icon: Radio }
+export const radioItem = item('radio', 'nav_radio')
+export const searchItem = item('search', 'nav_search')
+export const aboutItem = item('about', 'nav_about')
 
-export const aboutItem: NavItem = { id: 'about', label: t('nav_about'), icon: Info }
+/** The section a path belongs to: `/works/bach-cello-suites` is under Works. */
+export function getActiveView(pathname: string): ViewId | undefined {
+  const first = pathname.split('/')[1] ?? ''
+  if (first === '') {
+    return 'discover'
+  }
+  return [...navItems, radioItem, searchItem, aboutItem].find((nav) => nav.id === first)?.id
+}

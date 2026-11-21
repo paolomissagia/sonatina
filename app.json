@@ -1,0 +1,76 @@
+{
+  "expo": {
+    "name": "Sonatina",
+    "slug": "sonatina",
+    "version": "1.0.0",
+    "scheme": "sonatina",
+    "orientation": "default",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#ebe1cf",
+    "description": "A friendly guide to classical music: works, composers and articles, with historical recordings of almost every work and a radio to leave on while you read.",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.paolomissagia.sonatina",
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "audio"
+        ]
+      }
+    },
+    "android": {
+      "package": "com.paolomissagia.sonatina",
+      "adaptiveIcon": {
+        "backgroundColor": "#241b13",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "blockedPermissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.SYSTEM_ALERT_WINDOW"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/favicon.png",
+      "name": "Sonatina",
+      "shortName": "Sonatina",
+      "lang": "en",
+      "themeColor": "#241b13",
+      "backgroundColor": "#ebe1cf",
+      "description": "A friendly guide to classical music: works, composers and listening guides."
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-audio",
+        {
+          "microphonePermission": false,
+          "recordAudioAndroid": false,
+          "enableBackgroundPlayback": true
+        }
+      ],
+      "expo-image",
+      "expo-font",
+      "expo-localization",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 160,
+          "resizeMode": "contain",
+          "backgroundColor": "#241b13"
+        }
+      ],
+      "expo-status-bar",
+      "expo-asset"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

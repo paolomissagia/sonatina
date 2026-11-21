@@ -7,12 +7,15 @@ export type SearchResult = CatalogItem & {
 
 export const searchCategories: CatalogSection[] = ['works', 'composers', 'articles']
 
-const searchableItems: SearchResult[] = searchCategories.flatMap((category) =>
-  getCatalogItems(category).map((item) => ({
-    ...item,
-    category,
-  })),
-)
+/** Built for each search, so labels such as a composer's period are in the current language. */
+function getSearchableItems(): SearchResult[] {
+  return searchCategories.flatMap((category) =>
+    getCatalogItems(category).map((item) => ({
+      ...item,
+      category,
+    })),
+  )
+}
 
 function matchesQuery(result: SearchResult, terms: string[]) {
   const haystack =
@@ -29,5 +32,5 @@ export function searchCatalog(query: string): SearchResult[] {
     return []
   }
 
-  return searchableItems.filter((result) => matchesQuery(result, terms))
+  return getSearchableItems().filter((result) => matchesQuery(result, terms))
 }

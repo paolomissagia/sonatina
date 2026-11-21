@@ -2,29 +2,29 @@ import type { CatalogItem, CatalogSection } from '@/models/catalog'
 import type { Composer } from '@/models/composer'
 import type { Article } from '@/models/article'
 import { genres, type Work } from '@/models/work'
-import { genreLabels, periodLabels, t } from '@/i18n'
+import { genreLabels, periodLabels, t, type MessageKey } from '@/i18n'
 import { composers, formatLifespan, getComposerName } from './composers'
 import { getReadTime, articles } from './articles'
 import { getWorkAsset, getWorkPeriod, works } from './works'
 
 export type CatalogPageMeta = {
-  title: string
-  description: string
+  readonly title: string
+  readonly description: string
 }
 
+const pageMeta = (title: MessageKey, description: MessageKey): CatalogPageMeta => ({
+  get title() {
+    return t(title)
+  },
+  get description() {
+    return t(description)
+  },
+})
+
 export const catalogPageMeta: Record<CatalogSection, CatalogPageMeta> = {
-  works: {
-    title: t('nav_works'),
-    description: t('works_intro'),
-  },
-  composers: {
-    title: t('nav_composers'),
-    description: t('composers_intro'),
-  },
-  articles: {
-    title: t('nav_articles'),
-    description: t('articles_intro'),
-  },
+  works: pageMeta('nav_works', 'works_intro'),
+  composers: pageMeta('nav_composers', 'composers_intro'),
+  articles: pageMeta('nav_articles', 'articles_intro'),
 }
 
 const catalogTables = {
@@ -50,7 +50,9 @@ function composerToCatalogItem(composer: Composer): CatalogItem {
   return {
     id: composer.id,
     title: composer.name,
-    subtitle: periodLabels[composer.period],
+    get subtitle() {
+      return periodLabels[composer.period]
+    },
     detail: composer.bio,
     asset: composer.asset,
     meta: formatLifespan(composer),
@@ -65,15 +67,27 @@ function articleToCatalogItem(article: Article): CatalogItem {
     subtitle: article.type,
     detail: article.description,
     asset: article.asset,
-    meta: getReadTime(article),
+    get meta() {
+      return getReadTime(article)
+    },
     keywords: article.category,
   }
 }
 
 /** Works-page filters, linked as `/works?genre=<value>`. */
-export const workFilters = [
-  { label: t('filter_all'), value: '' },
-  ...genres.map((genre) => ({ label: genreLabels[genre], value: genre.toLowerCase() })),
+export const workFilters: { readonly label: string; value: string }[] = [
+  {
+    get label() {
+      return t('filter_all')
+    },
+    value: '',
+  },
+  ...genres.map((genre) => ({
+    get label() {
+      return genreLabels[genre]
+    },
+    value: genre.toLowerCase(),
+  })),
 ]
 
 /** Whether a work belongs under a works-page filter. An empty filter matches everything. */

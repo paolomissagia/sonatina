@@ -32,41 +32,41 @@ Taglines: *Classical music belongs to everyone.* · *Discover the world of class
 
 ## Colour
 
-The palette is "concert hall": warm, toasted paper and brown-black ink for reading, framed by a dark sidebar and home hero, as if the house lights were down. Every colour in the CSS is one of these tokens, defined in `src/index.css` as `R G B` triplets so it can take an alpha: `rgb(var(--ink) / 0.5)`. Never add a raw colour.
+The palette is "concert hall": warm, toasted paper and brown-black ink for reading, framed by a dark sidebar, tab bar, player and home hero, as if the house lights were down. Every colour in the app is one of these tokens, defined in `src/ui/theme.ts` as `colors.ink` and so on; `alpha('ink', 0.5)` gives one at an opacity. Never add a raw colour.
 
 | Token | Hex | Use |
 | --- | --- | --- |
-| `--ivory` | `#f6efe2` | Cards and surfaces; text on Ink buttons |
-| `--parchment` | `#ebe1cf` | Page background, detail heroes |
-| `--linen` | `#e0d3bc` | Hover fills, quiet panels |
-| `--rule` | `#d5c7ae` | Borders and dividers |
-| `--rule-strong` | `#bba98a` | Hover borders |
-| `--ink` | `#2a2017` | Text, primary buttons |
-| `--ink-soft` | `#463a2d` | Body copy |
-| `--umber` | `#6b5c48` | Secondary text, captions |
-| `--gilt` | `#85561a` | Accent on paper: italic emphasis, links, markers. AA on Ivory and Parchment |
-| `--gilt-light` | `#a57b42` | Decorative only (arrows, numerals); not for text |
-| `--shadow` | `#3b2a17` | Soft shadows at 7–20% opacity |
+| `ivory` | `#f6efe2` | Cards and surfaces; text on Ink buttons |
+| `parchment` | `#ebe1cf` | Page background, detail heroes |
+| `linen` | `#e0d3bc` | Hover fills, quiet panels |
+| `rule` | `#d5c7ae` | Borders and dividers |
+| `ruleStrong` | `#bba98a` | Hover borders |
+| `ink` | `#2a2017` | Text, primary buttons |
+| `inkSoft` | `#463a2d` | Body copy |
+| `umber` | `#6b5c48` | Secondary text, captions |
+| `gilt` | `#85561a` | Accent on paper: italic emphasis, links, markers. AA on Ivory and Parchment |
+| `giltLight` | `#a57b42` | Decorative only (arrows, numerals); not for text |
+| `shadow` | `#3b2a17` | Soft shadows at 7–20% opacity |
 
-The frame (the sidebar and the home hero):
+The frame (the sidebar, the phone tab bar, the player and the home hero):
 
 | Token | Hex | Use |
 | --- | --- | --- |
-| `--frame` | `#241b13` | Sidebar |
-| `--frame-deep` | `#1d1610` | Home hero and its overlay |
-| `--frame-rule` | `#3a2e22` | Borders on the frame |
-| `--frame-ink` | `#f3e9d6` | Logo, headline and active links on the frame |
-| `--frame-muted` | `#cdbfa6` | Links and copy on the frame |
-| `--frame-gilt` | `#d8a75e` | Accent on the frame: headline emphasis, active marker, hero button |
+| `frame` | `#241b13` | Sidebar, tab bar and player |
+| `frameDeep` | `#1d1610` | Home hero and its overlay |
+| `frameRule` | `#3a2e22` | Borders on the frame |
+| `frameInk` | `#f3e9d6` | Logo, headline and active links on the frame |
+| `frameMuted` | `#cdbfa6` | Links and copy on the frame |
+| `frameGilt` | `#d8a75e` | Accent on the frame: headline emphasis, active marker, hero button |
 
-Colours drawn over images use `--scrim`, `--on-image` and `--on-image-soft`.
+Colours drawn over images use `scrim`, `onImage` and `onImageSoft`.
 
 **One identity, no theme switching.** Sonatina is always the concert hall; we don't offer a dark mode, so the brand looks the same everywhere.
 
 ## Type
 
-- **Headings:** EB Garamond (`--font-display`, self-hosted via `@fontsource-variable/eb-garamond`), set large with tight tracking. It shares its letterforms with the wordmark. The emphasised word is italic and gilt: "Discover the world of *classical music.*"
-- **Body and UI:** Geist (`--font-body`, via `@fontsource-variable/geist`), heavy weights (600–780) for labels.
+- **Headings:** EB Garamond (`fonts.display`, bundled from `@expo-google-fonts/eb-garamond`), set large with tight tracking. It shares its letterforms with the wordmark. The emphasised word is italic and gilt: "Discover the world of *classical music.*"
+- **Body and UI:** Geist (`fonts.body`, from `@expo-google-fonts/geist`), heavy weights (600–800) for labels. Each weight is its own font family, since Android ignores `fontWeight` on custom fonts.
 
 ## Imagery
 
@@ -101,12 +101,12 @@ Colours drawn over images use `--scrim`, `--on-image` and `--on-image-soft`.
 - Credit the performer next to the Listen button ("Unknown pianist" when a trusted collection doesn't name them), and the licence with its link when it is Creative Commons.
 - Historical recordings are welcome: Caruso, Gigli, Stravinsky conducting his own Rite. Their age is part of the charm.
 - A work without a suitable recording has no player rather than a poor one.
-- **Radio:** the main stations lead the page as picture cards: Everything, Classical music, Opera and Ballet. Eras and countries follow as smaller choices. Each station plays one random movement at a time and keeps going while you browse; station descriptions show range through contrast (Everything is "From Classical symphonies to grand opera"), never the first and last composer. Opening the Radio page never starts music on its own: playback begins when you pick a station. The player's Shuffle button makes skipping, and the end of each movement, jump to a random piece. The Radio link sits with Search at the foot of the sidebar.
+- **Radio:** the main stations lead the page as picture cards: Everything, Classical music, Opera and Ballet. Eras and countries follow as smaller choices. Each station plays one random movement at a time and keeps going while you browse; station descriptions show range through contrast (Everything is "From Classical symphonies to grand opera"), never the first and last composer. Opening the Radio page never starts music on its own: playback begins when you pick a station. The player's Shuffle button makes skipping, and the end of each movement, jump to a random piece. The Radio link sits with Search at the foot of the sidebar; on phones it is the last tab.
 
 ## Signature elements
 
 - **Italic gilt emphasis** on the key word of a headline.
-- **The dark frame**: an ink sidebar and a home hero where the painting glows through a deep overlay and the headline's emphasis is gilt.
+- **The dark frame**: an ink sidebar (a tab bar on phones) and a home hero where the painting glows through a deep overlay and the headline's emphasis is gilt.
 - **Image heroes that fade into parchment** on detail pages, with the copy on the left and the picture on the right.
 - **Roman-numeral movement lists**: I. Allegro con brio. Names only, no notes.
 - **Breadcrumbs** with a `›` separator.
@@ -115,5 +115,6 @@ Colours drawn over images use `--scrim`, `--on-image` and `--on-image-soft`.
 
 ## Logo
 
-- Wordmark: "Sonatina" in a high-contrast serif, with the S-and-treble-clef monogram. It is an inline SVG (`src/components/logo.tsx`) drawn in `currentColor`.
+- Wordmark: "Sonatina" in a high-contrast serif, with the S-and-treble-clef monogram. It is an SVG component (`src/components/logo.tsx`) drawn in the colour it is given.
 - Favicon: the monogram in Ivory on an Ink tile with rounded corners (`public/favicon.svg`, plus a 192 px PNG for touch icons). It reads on light and dark browser tabs alike.
+- App icon: the monogram in Frame Ink on the Frame colour, full bleed (`assets/icon.png`); Android's adaptive icon and the splash screen use the same monogram on the frame.
