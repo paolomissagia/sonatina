@@ -3,7 +3,7 @@ import type { EditorPick } from '@/models/home'
 import { findCatalogItem } from './catalog'
 import { findComposer } from './composers'
 import { findWork } from './works'
-import { t } from '@/i18n'
+import { labels, t } from '@/i18n'
 
 type EditorPickSource = {
   section: CatalogSection
@@ -12,11 +12,11 @@ type EditorPickSource = {
   recording?: string
 }
 
-const pickLabels: Record<CatalogSection, string> = {
-  works: t('pick_work'),
-  composers: t('pick_composer'),
-  articles: t('pick_article'),
-}
+const pickLabels = labels<CatalogSection>({
+  works: 'pick_work',
+  composers: 'pick_composer',
+  articles: 'pick_article',
+})
 
 /** Historic recordings worth hearing first, plus the article that tells their story. */
 const editorPickSources: EditorPickSource[] = [
@@ -36,10 +36,16 @@ export const editorPicks: EditorPick[] = editorPickSources.flatMap(({ section, i
   return [
     {
       section,
-      type: recording ? t('pick_recording') : pickLabels[section],
+      get type() {
+        return recording ? t('pick_recording') : pickLabels[section]
+      },
       title: item.title,
-      subtitle: item.subtitle,
-      meta: recording ?? item.meta ?? '',
+      get subtitle() {
+        return item.subtitle
+      },
+      get meta() {
+        return recording ?? item.meta ?? ''
+      },
       recording: Boolean(recording),
       // A recording is about its performer, so show the composer rather than the genre painting.
       asset: (recording && findComposer(findWork(id)?.composerId)?.asset) || item.asset,

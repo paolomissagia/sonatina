@@ -27,9 +27,9 @@ export type PlayerState = {
 }
 
 export type PlayerActions = {
-  /** Start playing a work's recording from a track. Call it from a click so browsers allow playback. */
+  /** Start playing a work's recording from a track. Call it from a tap so browsers allow playback. */
   play: (work: Work, recording: Recording, index?: number) => void
-  /** Start a radio station, or move it on to another movement. Call it from a click too. */
+  /** Start a radio station, or move it on to another movement. Call it from a tap too. */
   tune: (station: Station) => void
   toggleShuffle: () => void
   /** Off, then repeat the work, then repeat the track. */

@@ -1,10 +1,10 @@
-FROM node:lts-alpine
+FROM node:24-alpine
 
 WORKDIR /app
 
 COPY package.json package-lock.json ./
 RUN npm ci
 
-EXPOSE 5173
+EXPOSE 8081
 
-CMD ["sh", "-c", "npm ci && npm run dev -- --host 0.0.0.0"]
+CMD ["sh", "-c", "npm ci && npx expo start --web --port 8081"]

@@ -6,11 +6,11 @@ export type CatalogSection = 'works' | 'composers' | 'articles'
 export type CatalogItem = {
   id: string
   title: string
-  subtitle: string
+  readonly subtitle: string
   detail: string
   asset: CatalogAssetKey
   genre?: Genre
-  meta?: string
+  readonly meta?: string
   /** Extra searchable text: catalogue numbers, keys, nicknames, nationality. */
   keywords?: string
 }

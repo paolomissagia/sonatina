@@ -11,3 +11,4 @@ Dockerfile
 .idea
 .vscode
 .pnpm-store
+.expo
